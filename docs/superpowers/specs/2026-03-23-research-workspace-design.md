@@ -22,6 +22,7 @@ Research/
 ├── Meetings/            — 会议/讨论记录
 ├── Templates/           — Obsidian 模板文件
 ├── Attachments/         — 图片、PDF、截图等附件
+├── Resources/           — AI Prompts 等参考资料
 ├── Daily/               — 每日研究日志（可选）
 └── README.md            — Workspace 入口和使用指南
 ```
@@ -52,7 +53,7 @@ arxiv:          # arXiv ID, e.g. 2301.12345
 url:            # 论文链接
 code:           # GitHub repo 链接
 status: unread  # unread / reading / finished
-rating:         # 1-5
+rating:         # 1-5 整数（1=一般, 3=不错, 5=必读）
 date_added: "{{date}}"
 ---
 
@@ -142,6 +143,7 @@ date_started: "{{date}}"
 ---
 title:
 tags: []
+status: draft   # draft / active / stable
 date_updated: "{{date}}"
 ---
 
@@ -182,9 +184,29 @@ tags: []
 - [[]]  — 链接到相关论文/项目
 ```
 
-### 6. AI Prompt (`Templates/AI-Prompts.md`)
+### 6. Daily Note (`Templates/Daily.md`)
 
-收录常用 prompt，方便在 Claudian 或外部 Claude 对话中使用。
+```yaml
+---
+date: "{{date}}"
+---
+
+## Focus
+今天计划做什么。
+
+## Reading Log
+- [[]]  — 今天读了什么
+
+## Quick Notes
+随手记录的想法和发现。
+
+## Tomorrow
+明天要跟进的事项。
+```
+
+### 7. AI Prompt (`Resources/AI-Prompts.md`)
+
+放在 `Resources/` 文件夹（非 Templates，避免出现在模板选择器中）。收录常用 prompt，方便在 Claudian 或外部 Claude 对话中使用。
 
 ```markdown
 # AI Prompts for Research
@@ -226,12 +248,12 @@ tags: []
 |------|------|------|
 | 领域 | `LLM`, `CV`, `RL`, `multimodal`, `diffusion` | 研究方向 |
 | 方法 | `transformer`, `RLHF`, `distillation`, `RAG` | 技术方法 |
-| 会议 | `NeurIPS`, `ICML`, `ICLR`, `ACL`, `CVPR`, `arXiv` | 论文出处 |
+| 会议 | `NeurIPS`, `ICML`, `ICLR`, `ACL`, `CVPR`, `arXiv` | 论文出处（可选，`venue` 字段已记录详细信息） |
 | 任务 | `text-generation`, `image-classification`, `alignment` | 具体任务 |
 
 ### 标签规范
 
-- 英文小写，专有名词保留原有大小写（如 `NeurIPS`）
+- 使用术语的通用写法（如 `LLM`, `RAG`, `NeurIPS`, `diffusion`, `alignment`）
 - 不嵌套，保持扁平
 - 自由创建新标签，定期在 Tag pane 整理合并
 
@@ -259,8 +281,8 @@ tags: []
 
 ### 使用渠道
 
-- **Obsidian 内**：通过 Claudian 插件直接在笔记中调用 AI
-- **外部对话**：在 Claude 网页/API 中使用 AI-Prompts.md 里的 prompt
+- **Obsidian 内**：通过 Claudian 插件（已安装的社区插件，提供 Obsidian 内 Claude 对话功能）直接在笔记中调用 AI
+- **外部对话**：在 Claude 网页/API 中使用 Resources/AI-Prompts.md 里的 prompt
 
 ## Daily Workflow Summary
 
@@ -287,4 +309,4 @@ tags: []
 - 各模板的使用方法
 - 标签规范速查
 - AI 辅助工作流说明
-- 常用 prompt 速查（或链接到 AI-Prompts.md）
+- 常用 prompt 速查（或链接到 Resources/AI-Prompts.md）
