@@ -4,6 +4,8 @@ An Obsidian-based knowledge management workspace for AI research, with AI-assist
 
 基于 Obsidian 的 AI 研究知识管理工作区，支持 AI 辅助论文阅读。
 
+![Obsidian Demo](Attachments/obsidian-demo.png)
+
 ## ✨ Features
 
 - **Paper Notes** — 结构化论文笔记模板（含 Mermaid Mind Map）
@@ -56,7 +58,7 @@ An Obsidian-based knowledge management workspace for AI research, with AI-assist
 Tell Claude Code a paper name or link, it will automatically fetch, summarize, and save structured notes:
 
 ```
-读这篇论文 https://arxiv.org/abs/xxxx，按 Templates/Paper.md 格式生成笔记，保存到 Papers/
+总结论文 pi0
 ```
 
 Claude Code will:
