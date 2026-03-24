@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "MindFlow",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -16,8 +16,8 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    baseUrl: "liqing-ustc.github.io/MindFlow",
+    ignorePatterns: ["Templates/**", ".obsidian/**", "docs/**", "website/**", "private", "*.canvas"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
