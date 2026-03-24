@@ -35,11 +35,25 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
+    Component.DesktopOnly(Component.TableOfContents()),
   ],
   right: [
     Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+  ],
+  afterBody: [
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        repo: "liqing-ustc/MindFlow",
+        repoId: "R_kgDORucr2w",
+        category: "Comments",
+        categoryId: "DIC_kwDORucr284C5LSt",
+        mapping: "pathname",
+        reactionsEnabled: true,
+        inputPosition: "bottom",
+      },
+    }),
   ],
 }
 
