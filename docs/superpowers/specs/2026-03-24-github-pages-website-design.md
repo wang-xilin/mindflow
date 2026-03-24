@@ -14,7 +14,6 @@
 
 - 选择性发布（所有笔记全部公开）
 - 服务端动态功能
-- 评论系统
 
 ## Architecture
 
@@ -83,6 +82,7 @@ cd website && npm install
 | Backlinks | `Backlinks` component |
 | 标签筛选 | `TagList` + Tags page |
 | 文件树导航 | `Explorer` component |
+| 评论系统 | Giscus（自定义组件） |
 
 ### 排除目录
 在 `quartz.config.ts` 的 `ignorePatterns` 中排除以下目录：
@@ -135,6 +135,43 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
 ```
+
+## Comment System (Giscus)
+
+使用 [Giscus](https://giscus.app/) 为每个页面提供评论功能：
+- 基于 GitHub Discussions，评论数据存储在 `liqing-ustc/MindFlow` repo 的 Discussions 中
+- 读者需要 GitHub 账号才能评论（适合技术/学术受众）
+- 免费、无广告
+
+### 实现方式
+
+在 `website/quartz/components/` 中新建 `Comments.tsx` 自定义组件，嵌入 Giscus script：
+
+```tsx
+// website/quartz/components/Comments.tsx
+export default (() => {
+  return (
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="liqing-ustc/MindFlow"
+      data-repo-id="[REPO_ID]"           // 从 giscus.app 获取
+      data-category="Comments"
+      data-category-id="[CATEGORY_ID]"  // 从 giscus.app 获取
+      data-mapping="pathname"
+      data-theme="preferred_color_scheme"
+      crossOrigin="anonymous"
+      async
+    />
+  )
+}) satisfies QuartzComponent
+```
+
+然后在 `quartz.layout.ts` 的 `afterBody` 区域注册该组件，使其出现在每篇笔记底部。
+
+### 前置步骤
+
+1. 在 GitHub repo Settings → General → Features 中开启 **Discussions**
+2. 访问 [giscus.app](https://giscus.app/) 生成配置，获取 `data-repo-id` 和 `data-category-id`
 
 ## Homepage (index.md)
 
