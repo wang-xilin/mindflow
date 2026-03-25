@@ -2,5 +2,12 @@
   "promptDelete": false,
   "attachmentFolderPath": "Attachments",
   "newFileLocation": "current",
-  "newLinkFormat": "shortest"
+  "newLinkFormat": "shortest",
+  "userIgnoreFilters": [
+    "website/",
+    "dist/",
+    "docs/",
+    ".github/",
+    "node_modules/"
+  ]
 }

@@ -9,7 +9,6 @@ tags:
   - scene-understanding
 status: complete
 date_updated: 2026-03-24
-dg-publish: true
 ---
 ## Overview
 
