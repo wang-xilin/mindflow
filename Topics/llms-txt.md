@@ -3,8 +3,6 @@ title: "llms.txt: 让网站对 LLM 可读的新标准"
 tags: [LLM, web-agent]
 date_created: "2026-03-23"
 ---
-# llms.txt
-
 ## 是什么
 `llms.txt` 是由 Jeremy Howard（fast.ai 创始人）提出的 Web 标准提案，在网站根目录放置一个 Markdown 格式的文件，为 LLM 和 AI agent 提供网站的结构化概览。
 

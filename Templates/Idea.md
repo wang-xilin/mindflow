@@ -4,7 +4,6 @@ tags: []
 status: raw     # raw / developing / validated / archived
 date_created: "{{date}}"
 ---
-
 ## Core Idea
 一句话描述这个 idea。
 

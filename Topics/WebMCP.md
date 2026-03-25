@@ -3,8 +3,6 @@ title: "WebMCP: 让网站成为 AI Agent 的结构化工具"
 tags: [web-agent]
 date_created: "2026-03-23"
 ---
-# WebMCP
-
 ## 是什么
 Google 提出的 Web 标准提案，让网站主动声明自己能执行哪些操作，AI agent 可以直接调用结构化的 tool，而不需要解析 UI 或模拟人类交互。
 

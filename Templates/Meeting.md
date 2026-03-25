@@ -4,7 +4,6 @@ date: "{{date}}"
 attendees: []
 tags: []
 ---
-
 ## Agenda
 
 ## Discussion Notes

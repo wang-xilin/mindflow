@@ -4,7 +4,6 @@ tags: []
 status: planning  # planning / active / paused / completed
 date_started: "{{date}}"
 ---
-
 ## Goal
 这个项目要达成什么？
 
