@@ -62,10 +62,6 @@ TopNav.css = `
   opacity: 1;
 }
 
-/* Push search to the right */
-.page-header > header .search {
-  margin-left: auto;
-}
 `
 
 export default (() => TopNav) satisfies QuartzComponentConstructor

@@ -7,8 +7,6 @@ export const sharedPageComponents: SharedLayout = {
   header: [
     Component.PageTitle(),
     Component.TopNav(),
-    Component.Search(),
-    Component.Darkmode(),
   ],
   afterBody: [],
   footer: Component.Footer({
@@ -26,7 +24,19 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ContentMeta(),
     Component.TagList(),
   ],
-  left: [],
+  left: [
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        { Component: Component.Search(), grow: true },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer({
+      folderDefaultState: "collapsed",
+      useSavedState: false,
+    }),
+  ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Graph({
