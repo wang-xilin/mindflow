@@ -46,6 +46,7 @@ authors:
   - Sichun Xu
   - Mengyuan Yan
   - Andy Zeng
+institute: [Google, Everyday Robots]
 date_publish: 2022-04
 venue: CoRL 2022
 tags:
