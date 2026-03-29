@@ -174,17 +174,17 @@ Skill 是 MindFlow 的自动化核心——定义在 `skills/<category>/<name>/S
 | `1-literature` | `paper-digest` | L0 | 消化单篇论文 → Paper 笔记 | ✅ |
 | | `cross-paper-analysis` | L0 | 跨论文对比 → 共识/矛盾/空白 | ✅ |
 | | `literature-survey` | L1 | 主题级调研（搜索 + 批量 digest + 综合） | ✅ |
-| `2-ideation` | `idea-generate` | L0 | 从知识空白生成研究 idea | 🔮 |
-| | `idea-evaluate` | L0 | 评估 idea 可行性和新颖性 | 🔮 |
-| `3-experiment` | `experiment-design` | L0 | 设计实验方案 | 🔮 |
-| | `experiment-track` | L0 | 记录实验进展和结果 | 🔮 |
-| | `result-analysis` | L0 | 分析实验结果，提取 insight | 🔮 |
-| `4-writing` | `draft-section` | L0 | 起草论文/报告章节 | 🔮 |
-| | `writing-refine` | L0 | 打磨已有文稿 | 🔮 |
+| `2-ideation` | `idea-generate` | L0 | 从知识空白生成研究 idea | ✅ |
+| | `idea-evaluate` | L0 | 评估 idea 可行性和新颖性 | ✅ |
+| `3-experiment` | `experiment-design` | L0 | 设计实验方案 | ✅ |
+| | `experiment-track` | L0 | 记录实验进展和结果 | ✅ |
+| | `result-analysis` | L0 | 分析实验结果，提取 insight | ✅ |
+| `4-writing` | `draft-section` | L0 | 起草论文/报告章节 | ✅ |
+| | `writing-refine` | L0 | 打磨已有文稿 | ✅ |
 | `5-evolution` | `memory-distill` | L2 | 从日志蒸馏记忆 | ✅ |
-| | `agenda-evolve` | L2 | 演化研究议程 | 🔮 |
-| | `memory-retrieve` | L0 | 从记忆库检索相关经验 | 🔮 |
-| `6-orchestration` | `autoresearch` | L2 | 核心研究循环（读状态→判断→执行→积累） | 🔮 |
+| | `agenda-evolve` | L2 | 演化研究议程 | ✅ |
+| | `memory-retrieve` | L0 | 从记忆库检索相关经验 | ✅ |
+| `6-orchestration` | `autoresearch` | L2 | 核心研究循环（读状态→判断→执行→积累） | ✅ |
 
 详细设计 → `docs/specs/2026-03-28-skill-system-design.md`
 
@@ -258,10 +258,10 @@ L4: Domain Map      Domain-Map/{Name}.md             持久领域知识
 |:------|:-----|:-----|
 | 1. Skeleton | 仓库结构、协议文档、paper-digest / cross-paper-analysis / memory-distill / literature-survey | ✅ Done |
 | 1.5 Protocol | skill-protocol 改造（pushy description、Verify 节、budget 字段）+ 现有 skill 改造 | 🔮 |
-| 2. Core Loop | memory-retrieve、idea-generate、idea-evaluate、agenda-evolve | 🔮 |
-| 3. Experiment | experiment-design、experiment-track、result-analysis | 🔮 |
-| 4. Writing | draft-section、writing-refine | 🔮 |
-| 5. Orchestration | autoresearch（依赖 Phase 2-4 所有卫星 skill） | 🔮 |
+| 2. Core Loop | memory-retrieve、idea-generate、idea-evaluate、agenda-evolve | ✅ Done |
+| 3. Experiment | experiment-design、experiment-track、result-analysis | ✅ Done |
+| 4. Writing | draft-section、writing-refine | ✅ Done |
+| 5. Orchestration | autoresearch（依赖 Phase 2-4 所有卫星 skill） | ✅ Done |
 | 6. Orchestrator | daemon、scheduler、向量检索、notifier、agent-bridge（Layer 2） | 🔮 |
 
 ## 8. Changelog

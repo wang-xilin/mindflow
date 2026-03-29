@@ -49,18 +49,21 @@ Supervisor 不需要记住 skill 名称，用自然语言即可触发：
 
 ### Skills 概览
 
-**已实现**：
+**已实现**（14 个）：
 - `paper-digest`: 消化论文生成笔记
 - `cross-paper-analysis`: 跨论文对比分析
 - `literature-survey`: 主题级文献调研
+- `idea-generate`: 从知识空白生成研究 idea
+- `idea-evaluate`: 评估 idea 可行性和新颖性
+- `experiment-design`: 设计实验方案
+- `experiment-track`: 记录实验进展和结果
+- `result-analysis`: 分析实验结果，提取 insight
+- `draft-section`: 起草论文/报告章节
+- `writing-refine`: 打磨已有文稿
 - `memory-distill`: 从日志蒸馏记忆
-
-**待实现**（详见 `docs/specs/2026-03-28-skill-system-design.md`）：
-- `idea-generate` / `idea-evaluate`: 创意生成与评估
-- `experiment-design` / `experiment-track` / `result-analysis`: 实验全生命周期
-- `draft-section` / `writing-refine`: 写作技能
-- `agenda-evolve` / `memory-retrieve`: 进化技能
-- `autoresearch`: 核心研究循环（读状态→判断→执行→积累，持续运行）
+- `memory-retrieve`: 从记忆库检索相关经验
+- `agenda-evolve`: 演化研究议程
+- `autoresearch`: 核心研究循环（读状态→判断→执行→积累）
 
 ### 协议文档
 - `references/skill-protocol.md`: Skill 编写规范
