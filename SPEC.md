@@ -41,7 +41,7 @@ Markdown — 一切皆文件，一切可读，一切有版本控制。
 │  Zero dependency, any agent can execute          │
 ├─────────────────────────────────────────────────┤
 │  Obsidian Vault (Markdown)                       │
-│  Papers/ Topics/ Ideas/ Domain-Map/              │
+│  Papers/ Topics/ Ideas/ DomainMaps/              │
 │  Workbench/ (Researcher working state)           │
 └─────────────────────────────────────────────────┘
 ```
@@ -73,7 +73,7 @@ MindFlow/
 ├── Meetings/            # 会议记录（YYYY-MM-DD-Description.md）
 ├── Daily/               # 每日研究日志（YYYY-MM-DD.md）
 │
-├── Domain-Map/          # 核心认知地图（按 domain 拆分）
+├── DomainMaps/          # 核心认知地图（按 domain 拆分）
 │   ├── _index.md        #   索引页：domain 列表 + cross-domain insights
 │   ├── {CamelCase}.md   #   各 domain 的认知地图
 │
@@ -133,7 +133,7 @@ MindFlow/
 
 Domain Map 是 vault 中**层级最高的知识**——从所有 Papers/Topics/Ideas/Experiments 中蒸馏而来的核心认知。
 
-**结构**：`Domain-Map/` 目录，每个研究 domain 一个文件，包含四个象限：
+**结构**：`DomainMaps/` 目录，每个研究 domain 一个文件，包含四个象限：
 
 | 象限 | 含义 |
 |:-----|:-----|
@@ -201,7 +201,7 @@ L2: Provisional     Workbench/memory/insights.md     初步洞察（待验证）
      ↓ 实验/文献验证
 L3: Validated       Workbench/memory/insights.md     已验证洞察
      ↓ Researcher 判断证据充分时自主晋升
-L4: Domain Map      Domain-Map/{Name}.md             持久领域知识
+L4: Domain Map      DomainMaps/{Name}.md             持久领域知识
 ```
 
 详见 → `references/memory-protocol.md`
@@ -230,7 +230,7 @@ L4: Domain Map      Domain-Map/{Name}.md             持久领域知识
 
 ### 文件命名
 - Papers: `YYMM-ShortTitle.md`（CamelCase，2-4 关键词）
-- Domain Map: `Domain-Map/{Name}.md`（CamelCase）
+- Domain Map: `DomainMaps/{Name}.md`（CamelCase）
 - Meetings: `YYYY-MM-DD-Description.md`
 - Logs: `YYYY-MM-DD.md`
 - Skills: `skills/{N}-{category}/{kebab-case-name}/SKILL.md`
@@ -272,5 +272,5 @@ L4: Domain Map      Domain-Map/{Name}.md             持久领域知识
 | 2026-03-27 | Spec 精简至 ~250 行；补全目录结构（dist/docs/examples/website）、笔记类型表（Report）；明确 skill 编号约定；移除未定义缩写 |
 | 2026-03-27 | Spec 精简：从 ~600 行删减至 ~250 行。移除过度形式化的交互模式、Evolution 机制命名、insight-loop 详细实现、未实现的技术选型/仓库结构/Design Provenance。核心内容保留在协议文档和 design spec archive 中。 |
 | 2026-03-27 | 角色模型重定位：Human→Supervisor, AI→Researcher, PhD 导师制。移除所有 NEED APPROVAL 限制。 |
-| 2026-03-27 | 合并 design spec 内容、Domain Map 迁移至 `Domain-Map/`、新增 SPEC.md |
+| 2026-03-27 | 合并 design spec 内容、Domain Map 迁移至 `DomainMaps/`、新增 SPEC.md |
 | 2026-03-26 | 初始 vault 结构搭建 |

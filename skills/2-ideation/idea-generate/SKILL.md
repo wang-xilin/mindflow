@@ -65,14 +65,14 @@ idea-generate 是 MindFlow 的创意引擎。给定知识空白、validated insi
    - 若候选 idea 与某废弃方向实质相同（即使表述不同），跳过该 idea，改换角度。
    - 若候选 idea 在废弃方向基础上有明确的新突破口，可保留，但需在 idea 文件的 `## Open Questions` 节中注明"与废弃方向 X 的区别在于……"。
 
-### Step 3：读取 Domain-Map，锚定领域已知边界
+### Step 3：读取 DomainMaps，锚定领域已知边界
 
-1. 用 Read 读取 `Domain-Map/_index.md`，找到与 source 相关的 domain（如 VLA、VLN、RL 等）。
-2. 用 Read 读取对应的 `Domain-Map/{Name}.md`，重点关注：
+1. 用 Read 读取 `DomainMaps/_index.md`，找到与 source 相关的 domain（如 VLA、VLN、RL 等）。
+2. 用 Read 读取对应的 `DomainMaps/{Name}.md`，重点关注：
    - `## Established Knowledge`：已有共识，生成 idea 时可以利用，但不应作为 contribution 点（除非有明确突破）。
    - `## Active Debates`：领域内仍有争议的问题，是生成 idea 的高价值区域——可以针对某个 debate 设计决定性实验或提出新框架。
    - `## Open Questions`：领域显式列出的未解决问题，可直接对应生成 idea。
-3. 将 Domain-Map 的内容整合进 idea 生成时的"背景约束"：生成的 idea 要建立在 Established Knowledge 之上，要么解决 Open Questions，要么推进 Active Debates。
+3. 将 DomainMaps 的内容整合进 idea 生成时的"背景约束"：生成的 idea 要建立在 Established Knowledge 之上，要么解决 Open Questions，要么推进 Active Debates。
 
 ### Step 4：生成 2-3 个候选 idea
 
@@ -153,7 +153,7 @@ idea-generate 是 MindFlow 的创意引擎。给定知识空白、validated insi
 
 1. Read `Topics/VLA-MethodComparison-Analysis.md`，定位 `## 知识空白` 节，提取标注了"建议生成 Idea"的条目（例如："few-shot adaptation 在真实机器人上的系统性研究缺失"）
 2. Glob 检查 `Workbench/memory/failed-directions.md` 是否存在；若存在，Read 并记录废弃方向
-3. Read `Domain-Map/_index.md` → Read `Domain-Map/VLA.md`，了解 Established Knowledge（如"VLA 普遍依赖大规模预训练"）和 Active Debates（如"in-context learning 对 VLA 的实际效果存在争议"）
+3. Read `DomainMaps/_index.md` → Read `DomainMaps/VLA.md`，了解 Established Knowledge（如"VLA 普遍依赖大规模预训练"）和 Active Debates（如"in-context learning 对 VLA 的实际效果存在争议"）
 4. 生成 3 个候选 idea：
    - **Idea A**：假设"通过 LoRA adapter + 少量真实机器人数据，VLA 可在 5-shot 内适应新任务"（针对 few-shot 空白）
    - **Idea B**：假设"合成数据增强可显著降低 few-shot VLA 所需真实数据量"（从数据角度切入）
@@ -180,7 +180,7 @@ idea-generate 是 MindFlow 的创意引擎。给定知识空白、validated insi
 1. 解析 Supervisor 意图：任务 = VLA，场景约束 = few-shot，方向 = 性能改进（success rate / sample efficiency）
 2. Grep `Papers/` 搜索 `few-shot`、`VLA`，了解 vault 中已有哪些相关笔记
 3. Glob 检查 `Workbench/memory/failed-directions.md` 是否存在；Read 并记录废弃方向
-4. Read `Domain-Map/_index.md` → Read `Domain-Map/VLA.md`，提取 Active Debates 和 Open Questions
+4. Read `DomainMaps/_index.md` → Read `DomainMaps/VLA.md`，提取 Active Debates 和 Open Questions
 5. 生成 2-3 个候选 idea，每个聚焦不同技术路径（如 adapter fine-tuning、retrieval augmentation、meta-learning）
 6. Glob `Ideas/` 检查无重复
 7. Read `Templates/Idea.md`，Write 每个 idea 文件到 `Ideas/`

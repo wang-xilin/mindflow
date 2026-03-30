@@ -23,7 +23,7 @@ MindFlow 使用标准化的 Markdown skill 来自动化科研工作流。Skills 
 ### 核心概念
 - **Skills**: 定义在 `skills/<category>/<name>/SKILL.md` 中的可执行能力单元
 - **Workbench/**: Researcher 的工作状态（agenda、memory、queue、logs），Supervisor 可随时查看和编辑
-- **Domain-Map/**: Supervisor-Researcher 共同维护的核心认知地图，`_index.md` 为索引页，每个 domain 一个文件（如 `VLA.md`、`VLN.md`）
+- **DomainMaps/**: Supervisor-Researcher 共同维护的核心认知地图，`_index.md` 为索引页，每个 domain 一个文件（如 `VLA.md`、`VLN.md`）
 
 ### Skills 概览
 

@@ -118,7 +118,7 @@ Vision-and-Language Navigation (VLN) 是 embodied AI 的核心任务之一，要
 
 3. **Hierarchical architecture 是跨范式的共识**：无论是 ETPNav 的 topological planner + heuristic controller，NaVILA 的 VLM planner + RL locomotion policy，还是 LH-VLN 的 short-term + long-term memory，都采用了 hierarchical 设计。High-level semantic planning + low-level motor execution 的分层是 embodied navigation 的通用架构。
 
-4. **VLN-VLA 架构趋同是最值得关注的趋势**：NaVILA 直接证明了 VLN 可以重构为 VLA。语言化 mid-level action 桥接了高层指令理解和低层运动控制，这一思路可能成为统一 navigation 和 manipulation 的关键。（**建议加入 Domain-Map**）
+4. **VLN-VLA 架构趋同是最值得关注的趋势**：NaVILA 直接证明了 VLN 可以重构为 VLA。语言化 mid-level action 桥接了高层指令理解和低层运动控制，这一思路可能成为统一 navigation 和 manipulation 的关键。（**建议加入 DomainMaps**）
 
 5. **Long-horizon 是 VLN 的下一个根本性挑战**：LH-VLN 的所有方法 SR=0% 表明，多阶段长程导航远未被解决。Memory management（如何在有限计算预算内保留关键的长程记忆）是核心技术瓶颈。
 

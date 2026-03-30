@@ -25,7 +25,7 @@ date_completed:
 结果说明了什么？假设是否被验证？
 
 ## Insights
-从这个实验中获得的 insight（可链接到 Domain-Map）。
+从这个实验中获得的 insight（可链接到 DomainMaps）。
 
 ## Next Steps
 后续实验或研究方向建议。

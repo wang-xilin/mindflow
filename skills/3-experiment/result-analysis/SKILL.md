@@ -30,7 +30,7 @@ result-analysis 是 MindFlow 实验闭环的最后一环。给定一个实验笔
 | **Key Findings** | 实验揭示的最重要事实，不局限于 hypothesis |
 | **Comparison to Baseline** | 与 baseline 或对照组的量化对比 |
 | **Limitations** | 当前实验的约束条件和潜在偏差 |
-| **Implications** | 对后续研究方向、Idea 修正或 Domain-Map 更新的启示 |
+| **Implications** | 对后续研究方向、Idea 修正或 DomainMaps 更新的启示 |
 
 分析结果写入 Experiment 笔记的 `## Analysis` 节；若发现跨实验规律，追加到 `Workbench/memory/patterns.md`；若 verdict 明确，同步更新关联 Idea 的 `status` 字段。
 
@@ -117,7 +117,7 @@ Key Findings 可以包含：意外规律、config 敏感性、数据质量问题
 
 基于本次实验结果，给出 2-4 条对后续研究的启示：
 
-- 若 supported：可推进的下一步实验或值得写入 Domain-Map 的规律
+- 若 supported：可推进的下一步实验或值得写入 DomainMaps 的规律
 - 若 refuted：应修正的 hypothesis 方向或需要放弃的 Idea
 - 若 inconclusive：需要补充的实验设计（更多 runs / 不同 metric / ablation）
 - 跨实验的 pattern（若本次发现与历史记忆有共鸣）

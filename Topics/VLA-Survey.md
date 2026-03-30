@@ -140,11 +140,11 @@ Vision-Language-Action (VLA) 模型是将预训练 Vision-Language Models (VLMs)
 
 1. **Flow matching + hierarchical inference 是当前最强范式**：π₀ 系列的成功表明，VLM backbone + flow matching action expert + 高层语义推理的组合在灵巧操作上远超 autoregressive token 预测方法。
 
-2. **Fine-tuning 设计比模型规模更重要**：OpenVLA-OFT（7B，优化 fine-tuning）达到 97.1%，超越 π₀（3.3B，大规模预训练）在 LIBERO 上的 94.2%；SmolVLA（0.45B）超越 OpenVLA（7B）。这挑战了"bigger is better"的假设。（建议加入 Domain-Map：Established Knowledge）
+2. **Fine-tuning 设计比模型规模更重要**：OpenVLA-OFT（7B，优化 fine-tuning）达到 97.1%，超越 π₀（3.3B，大规模预训练）在 LIBERO 上的 94.2%；SmolVLA（0.45B）超越 OpenVLA（7B）。这挑战了"bigger is better"的假设。（建议加入 DomainMaps：Established Knowledge）
 
 3. **Data diversity >> Data specificity**：π0.5 的关键发现是 97.6% 的训练数据不来自目标任务，但对泛化至关重要。Co-training + post-training 策略是当前最有效的数据利用方式。
 
-4. **RL self-improvement 打开了 VLA 的性能天花板**：π\*₀.₆ 的 Recap 证明 VLA 可以通过部署经验持续改进，Advantage conditioning 优雅地解决了 RL 与 flow matching 的兼容性问题。（建议加入 Domain-Map：Active Debates——RL vs 更多 demonstration 哪个更 cost-effective？）
+4. **RL self-improvement 打开了 VLA 的性能天花板**：π\*₀.₆ 的 Recap 证明 VLA 可以通过部署经验持续改进，Advantage conditioning 优雅地解决了 RL 与 flow matching 的兼容性问题。（建议加入 DomainMaps：Active Debates——RL vs 更多 demonstration 哪个更 cost-effective？）
 
 5. **开源生态加速迭代**：从 Octo → OpenVLA → SmolVLA，开源模型不断降低 VLA 研究门槛。SmolVLA 基于 481 个社区数据集训练，展示了社区协作的力量。
 

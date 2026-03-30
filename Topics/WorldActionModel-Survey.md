@@ -126,7 +126,7 @@ World Action Model (WAM) 是 embodied AI 领域的新兴范式，核心思想是
 
 4. **Action-free video data 是核心数据优势**：WAM 最大的差异化优势之一是能自然利用海量无 action label 的视频数据。UWM 的 cotraining、DreamGen 的 neural trajectories、Motus 的 optical flow latent action 都在不同层面验证了这一点。
 
-5. **计算成本是主要瓶颈**：DreamZero 需要 2×GB200 GPU 实现 7Hz，DreamGen 生成数据需 1500×L40 GPU，Cosmos 预训练需 10,000×H100。这制约了 WAM 在资源有限实验室的可复现性和在消费级硬件上的部署。**建议加入 Domain-Map**：world-model 作为新 domain，与 VLA domain 存在强关联。
+5. **计算成本是主要瓶颈**：DreamZero 需要 2×GB200 GPU 实现 7Hz，DreamGen 生成数据需 1500×L40 GPU，Cosmos 预训练需 10,000×H100。这制约了 WAM 在资源有限实验室的可复现性和在消费级硬件上的部署。**建议加入 DomainMaps**：world-model 作为新 domain，与 VLA domain 存在强关联。
 
 ## Open Problems
 

@@ -46,7 +46,7 @@ memory-distill 是 MindFlow 记忆演化体系的基础技能。它定期扫描 
 通读所有收集到的日志内容，重点扫描每条 log entry 的 `observation` 字段及其他叙述性文字，寻找以下三类候选 pattern：
 
 1. **跨日期重复观察**：同一现象、规律或结论在两个或更多不同日期的日志中均有提及。即使措辞不同，只要语义相似，均视为同一 pattern 的多次出现。
-2. **意外发现（anomaly）**：某个结果或行为与 `Domain-Map/` 中记录的已有知识相悖，或日志中明确标注为"出乎意料"、"与预期不符"的观察。
+2. **意外发现（anomaly）**：某个结果或行为与 `DomainMaps/` 中记录的已有知识相悖，或日志中明确标注为"出乎意料"、"与预期不符"的观察。
 3. **关联线索（correlation clue）**：日志中提示两篇论文、两个实验或两个概念之间存在潜在联系，且该联系尚未在任何记忆文件中被明确记录。
 
 对每个候选 pattern，记录：
@@ -112,16 +112,16 @@ memory-distill 是 MindFlow 记忆演化体系的基础技能。它定期扫描 
    - 若独立来源 **≥ 2**：触发 L2 → L3 晋升，用 Edit 将 `status: provisional` 所在行改为 `status: validated`，并将 `confidence` 提升为 `medium` 或 `high`（根据证据强度判断）。
 
    若晋升后 `status: validated` 且 `confidence > 0.8`（即 `high`）：
-   - 用 Edit 将以下条目 append 到 `Workbench/queue.md` 的 Review 部分，建议晋升至 Domain-Map：
+   - 用 Edit 将以下条目 append 到 `Workbench/queue.md` 的 Review 部分，建议晋升至 DomainMaps：
 
      ```markdown
-     ### [YYYY-MM-DD] 建议晋升至 Domain-Map
+     ### [YYYY-MM-DD] 建议晋升至 DomainMaps
 
      - **insight**: [[Workbench/memory/insights.md#<heading>]]
      - **claim**: <insight 的 claim 原文>
      - **confidence**: high
      - **reason**: validated insight，≥2 独立来源，confidence > 0.8，符合 L3 → L4 晋升条件
-     - **suggested_map**: <建议写入的 Domain-Map/{Name}.md 文件名>
+     - **suggested_map**: <建议写入的 DomainMaps/{Name}.md 文件名>
      ```
 
 ### Step 5：记录变更
@@ -142,7 +142,7 @@ memory-distill 是 MindFlow 记忆演化体系的基础技能。它定期扫描 
 ## Guard
 
 - **仅追加，不修改**：永远不修改或删除记忆文件中的已有条目。若需更新，只能在对应条目的现有字段行末追加内容，或在条目末尾追加新字段行，不得改动原始文字。
-- **不直接修改 Domain-Map**：memory-distill 无权写入 `Domain-Map/` 下的任何文件，只能通过 `Workbench/queue.md` 的 Review 部分提出建议，由 Human 或上层技能决策。
+- **不直接修改 DomainMaps**：memory-distill 无权写入 `DomainMaps/` 下的任何文件，只能通过 `Workbench/queue.md` 的 Review 部分提出建议，由 Human 或上层技能决策。
 - **来源引用必须明确**：patterns.md 中每条 pattern 的 `occurrences`，以及 insights.md 中每条 insight 的 `evidence`，都必须包含指向具体日志文件的 Obsidian wikilink，不得仅凭印象记录"多次观察到"。
 - **不捏造 pattern**：只有在日志中确实出现的 observation 才能被提取为候选 pattern，不得基于推断或联想凭空生成。若某规律听起来合理但日志中找不到明确依据，不记录。
 - **晋升需引用具体证据**：将 pattern 晋升为 provisional insight，或将 provisional insight 标记为 validated 时，必须在 insight 的 `evidence` 字段中列出支撑该结论的所有具体日志来源。

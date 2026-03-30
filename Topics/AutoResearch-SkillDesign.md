@@ -633,7 +633,7 @@ skill-name/
 3. **跨模型评审**（from ARIS）：paper-digest 生成后可用第二模型做 quality check
 4. **Description 要 "pushy"**（from EvoScientist skill-creator）：SKILL.md 的 description 应积极触发，防止 under-triggering
 5. **MetaClaw 自学习 Skill**（from AutoResearchClaw）：从执行失败中自动提取 pattern → fix → 注入未来执行
-6. **Dual Memory 分离**（from EvoScientist）：将 "研究什么"（ideation memory）与 "怎么实现"（experimentation memory）分开存储和检索，可启发 MindFlow 将 Domain-Map（方向性知识）与 Workbench/memory（操作性知识）更明确地分离
+6. **Dual Memory 分离**（from EvoScientist）：将 "研究什么"（ideation memory）与 "怎么实现"（experimentation memory）分开存储和检索，可启发 MindFlow 将 DomainMaps（方向性知识）与 Workbench/memory（操作性知识）更明确地分离
 7. **Attempt 预算 + Gate 条件**（from EvoScientist experiment-pipeline）：给 skill 的每个阶段设 attempt 上限（如初始实现 ≤20 次），防止无限循环
 
 ### 不适用的

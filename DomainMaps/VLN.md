@@ -41,7 +41,7 @@ last_updated: "2026-03-27"
 
 1. **Sim-to-real gap**：VLN 绝大多数工作在 Habitat/MP3D 中评估，真实世界部署案例极少。NaVILA 是少数例外，其 language mid-level action 策略是否可推广？
 2. **Building-scale long-horizon navigation**：现有评测多为单层室内短距导航，跨楼层、跨建筑的长距导航缺乏研究。
-3. **VLN 与 VLA 的 shared spatial representation**：导航过程中构建的空间表示能否直接服务到达目的地后的 manipulation？详见 [[Domain-Map/SpatialRep|SpatialRep]]。
+3. **VLN 与 VLA 的 shared spatial representation**：导航过程中构建的空间表示能否直接服务到达目的地后的 manipulation？详见 [[DomainMaps/SpatialRep|SpatialRep]]。
 
 ## Known Dead Ends
 

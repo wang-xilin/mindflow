@@ -63,15 +63,15 @@ idea-evaluate 是 MindFlow 的 idea 质量守门人。给定一个研究 idea（
 
 若 `related_papers` 为空，用 Grep 在 `Papers/` 中搜索与 idea `tags` 相关的关键词，找出最相关的 2-4 篇笔记并读取。
 
-### Step 3：读取 Domain-Map 上下文
+### Step 3：读取 DomainMaps 上下文
 
-1. 用 Read 打开 `Domain-Map/_index.md`，定位与该 idea 相关的 domain（依据 tags 或 hypothesis 中的关键词）。
-2. 用 Read 打开对应的 `Domain-Map/{Name}.md`，重点阅读：
+1. 用 Read 打开 `DomainMaps/_index.md`，定位与该 idea 相关的 domain（依据 tags 或 hypothesis 中的关键词）。
+2. 用 Read 打开对应的 `DomainMaps/{Name}.md`，重点阅读：
    - **Active Debates**：领域当前争议（判断 Novelty 和 Impact）
    - **Open Questions**：未解决问题（判断 Impact 和 Evidence）
    - **Key Methods / Baselines**：主流方法（判断 Feasibility）
 
-若找不到对应 domain 文件，跳过此步，并在评估记录中注明"Domain-Map 无对应条目，评估基于 Paper 笔记"。
+若找不到对应 domain 文件，跳过此步，并在评估记录中注明"DomainMaps 无对应条目，评估基于 Paper 笔记"。
 
 ### Step 4：五维评估打分
 
@@ -91,7 +91,7 @@ idea-evaluate 是 MindFlow 的 idea 质量守门人。给定一个研究 idea（
 
 #### Impact（1-5）
 评估若实验成功，对领域的贡献和影响力：
-- **5**：直接解决 Domain-Map Open Questions 或 Active Debates，有顶会潜力
+- **5**：直接解决 DomainMaps Open Questions 或 Active Debates，有顶会潜力
 - **3**：对领域有增量贡献，但非核心问题
 - **1**：结论意义有限，受众极小
 
@@ -186,7 +186,7 @@ idea-evaluate 是 MindFlow 的 idea 质量守门人。给定一个研究 idea（
 ## Guard
 
 - **不修改 hypothesis 字段**：`hypothesis` 是 idea-generate 的职责范围，idea-evaluate 只读取不修改。
-- **评估必须基于可追溯证据**：每个维度的说明必须能对应到 vault 中的具体笔记（Paper、Domain-Map、已有 Idea）。禁止凭空判断——若无足够证据支撑某维度评分，在说明中注明"证据不足，保守估计"。
+- **评估必须基于可追溯证据**：每个维度的说明必须能对应到 vault 中的具体笔记（Paper、DomainMaps、已有 Idea）。禁止凭空判断——若无足够证据支撑某维度评分，在说明中注明"证据不足，保守估计"。
 - **不覆盖已有 Evaluation 节**：若 Idea 文件中已有 `## Evaluation` 节，追加新节（带新日期），不得删除历史评估记录。
 - **sparring 模式不写文件**：若以 sparring 模式调用，仅输出评估结论到对话，不执行任何 Edit 操作。
 - **语言规范**：中文正文 + 英文技术术语（模型名、方法名、benchmark 名保持英文，不翻译）。
@@ -204,7 +204,7 @@ idea-evaluate 是 MindFlow 的 idea 质量守门人。给定一个研究 idea（
 
 2. Read `Papers/2403-OpenVLA.md` 和 `Papers/2309-RT2.md` — 提取 Method 和 Key Results，确认两者均未涉及 recovery mechanism
 
-3. Read `Domain-Map/_index.md` → 定位 `VLA` → Read `Domain-Map/VLA.md` — Active Debates 中有"如何提升 VLA 在 out-of-distribution 场景的鲁棒性"
+3. Read `DomainMaps/_index.md` → 定位 `VLA` → Read `DomainMaps/VLA.md` — Active Debates 中有"如何提升 VLA 在 out-of-distribution 场景的鲁棒性"
 
 4. 五维评估结果：
 

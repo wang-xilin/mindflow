@@ -17,7 +17,7 @@ Workbench/
     failed-directions.md   # Abandoned research directions and the reasons why
   logs/                    # Raw session logs (Level 0 input to memory)
   evolution/
-    changelog.md           # Record of every Domain-Map update
+    changelog.md           # Record of every DomainMaps update
 ```
 
 | File | Purpose | Key Fields |
@@ -53,7 +53,7 @@ Each file's specific fields are listed in the table above. Common rules:
 Knowledge is promoted upward through five levels as evidence accumulates.
 
 ```
-Level 4  Domain Map           Domain-Map/{Name}.md
+Level 4  Domain Map           DomainMaps/{Name}.md
          Stable, integrated knowledge
               |  Researcher promotes when evidence sufficient
 Level 3  Validated Insight    insights.md, status: validated
@@ -80,7 +80,7 @@ Level 0  Raw Log              Workbench/logs/
 
 1. **Append-only**: Never edit or delete existing entries. To supersede, append a new entry with updated date.
 
-2. **Domain-Map logging**: Every L4 promotion must be logged to `Workbench/evolution/changelog.md`:
+2. **DomainMaps logging**: Every L4 promotion must be logged to `Workbench/evolution/changelog.md`:
 
    ```markdown
    ### [YYYY-MM-DD] Domain Map updated: <map name>

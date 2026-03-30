@@ -61,7 +61,7 @@ AI 会：
 2. 提取重复出现的 pattern
 3. 够格的 pattern 晋升为 provisional insight
 4. 有足够证据的 insight 标记为 validated
-5. 建议将高置信度 insight 添加到 `Domain-Map/{Name}.md`
+5. 建议将高置信度 insight 添加到 `DomainMaps/{Name}.md`
 
 ## 查看 AI 状态
 
@@ -70,6 +70,6 @@ AI 会：
 - `Workbench/memory/` — AI 积累的经验
 - `Workbench/queue.md` — 待办队列
 - `Workbench/logs/` — 每日工作日志
-- `Domain-Map/` — 你和 AI 的共同认知地图（按 domain 拆分）
+- `DomainMaps/` — 你和 AI 的共同认知地图（按 domain 拆分）
 
 所有文件都是 Markdown，你可以直接阅读和编辑。
