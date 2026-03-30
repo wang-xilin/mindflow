@@ -35,6 +35,7 @@
 | `diffusion-policy` | Diffusion-based action generation |
 | `imitation-learning` | 模仿学习（含 behavior cloning、teleoperation） |
 | `RL` | 强化学习（含 self-improvement） |
+| `world-model` | World model（环境动态建模、video prediction、action-conditioned simulation） |
 
 ### 感知/表示
 
