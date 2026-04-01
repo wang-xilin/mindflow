@@ -78,32 +78,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch
 1. 用 Read 读取所有相关 Paper 笔记（重点：Summary、Method、Key Results、Strengths & Weaknesses）。
 2. 读取 `DomainMaps/_index.md`（索引页）找到相关 domain，再读取对应的 `DomainMaps/{Name}.md` 了解当前认知状态。
 
-按以下维度综合：
-
-#### （1）领域概览
-- 该主题的核心问题是什么？为什么重要？
-- 近年研究的整体规模和活跃度如何？
-
-#### （2）技术路线分类
-- 将论文按方法论聚类（如 2-4 个主要技术路线）
-- 每个路线的代表论文、核心思路、优劣势
-
-#### （3）发展时间线
-- 关键里程碑和突破（按时间排列）
-- 技术路线的演进趋势
-
-#### （4）对比表
-构建对比表，格式：
-
-| Paper | Venue | 技术路线 | 核心方法 | 关键结果 | 局限性 |
-|:------|:------|:---------|:---------|:---------|:-------|
-
-Paper 列使用 `[[wikilink]]` 格式。
-
-#### （5）开放问题与研究机会
-- 多篇论文共同指出的未解决问题
-- 技术路线之间的矛盾或争议
-- 潜在的研究空白
+读取`Templates/Survey.md` 按其中的 section 结构综合分析。
 
 ### Step 6：产出
 
@@ -134,17 +109,16 @@ Topic 名称根据主题生成（CamelCase，如 `VLA-Manipulation`、`Diffusion
 ## Guard
 
 - **paper-digest 失败不阻塞**：单篇论文 digest 失败时记录原因并继续处理下一篇，不中断整个 survey 流程。
-- **搜索上限**：最多执行 10 次 WebSearch，避免过度消耗 token 和 API 配额。
+- **搜索上限**：最多执行 50 次 WebSearch，避免过度消耗 token 和 API 配额。
 - **不捏造论文**：所有纳入分析的论文必须来自实际搜索结果或 vault 已有笔记，不得凭记忆编造论文信息。
 - **不直接修改 DomainMaps**：综合分析中如有值得纳入 DomainMaps 的发现，在 Survey 文件的 Key Takeaways 中标注"建议加入 DomainMaps"，不得直接修改 `DomainMaps/` 下的任何文件。
 - **Papers/ 已有笔记只读**：不得修改 vault 中已存在的 Paper 笔记，只可读取。新论文的笔记由 paper-digest 创建。
-- **语言规范**：正文用中文撰写，英文技术术语保持英文不翻译。
 
 ## Verify
 
 - [ ] `Topics/*-Survey.md` 已创建
 - [ ] 技术路线分类 ≥2 条
-- [ ] Paper Comparison 对比表论文数 ≥3
+- [ ] Datasets & Benchmarks 表非空
 - [ ] Open Problems 节非空
 
 ## Examples
