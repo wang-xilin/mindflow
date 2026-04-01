@@ -86,15 +86,6 @@ mindmap
       7B 超越 32B 模型
 ```
 
-## Connections
-- Related papers:
-  - [[2412-RoboVLMs]]：VLM/VLA 在 robotics 中的系统性分析，Thinker 属于 VLM for robotics 路线
-  - [[2601-CycleVLA]]：同样关注 embodied task planning，但 CycleVLA 侧重 self-correction 而 Thinker 侧重 foundational perception
-  - [[2502-HiRobot]]：分层机器人架构，与 Thinker 的 task planning 能力互补
-- Related ideas:
-  - Thinker 的 final frame auxiliary input 思路可以推广到其他 video understanding 场景
-  - Domain-specific data curation（4.8M）vs general pre-training 的 trade-off 值得关注
-- Related projects:
 
 ## Notes
 - 这是一篇 IROS 2025 的 4 页短文，信息密度有限，核心价值在于 data curation methodology 和 benchmark 结果

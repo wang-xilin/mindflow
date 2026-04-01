@@ -90,10 +90,6 @@ mindmap
       Failure analysis
 ```
 
-## Connections
-- Related papers: [[VLN-VLA-Unification]]（Section 5 代表系统）、[[2210-VLMaps]]（VoxelMap 的灵感来源）、[[2309-ConceptGraphs]]（更丰富的语义表示可替代 VoxelMap）
-- Related ideas: modular vs end-to-end 的 tradeoff；open-vocabulary 是 real-world 部署的关键
-- Related projects:
 
 ## Notes
 - OK-Robot 是 modular Nav+Manip 系统的最佳代表：每个模块用最好的 off-the-shelf model，通过简单 pipeline 组合。其成功和失败都清楚地展示了 modular 方案的优势和局限。

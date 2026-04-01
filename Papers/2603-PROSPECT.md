@@ -62,10 +62,6 @@ mindmap
       Long-horizon +4.14% SR
 ```
 
-## Connections
-- Related papers: [[2402-NaVid]]（同为 streaming VLN，PROSPECT 超越之）、[[2412-NaVILA]]（VLA-based navigation）、[[2512-EfficientVLN]]（同用 3D geometry features，但采用 StreamVGGT）、[[2304-ETPNav]]（topological planning baseline）、[[2412-LHVLN]]（long-horizon VLN，PROSPECT 的 long-horizon 提升与之相关）
-- Related ideas: Latent predictive representation 可推广到其他 embodied agent 任务；CUT3R + SigLIP fusion 架构可作为通用 spatial-semantic backbone
-- Related projects:
 
 ## Notes
 - PROSPECT 代表了 streaming VLA 路线在 VLN 中的最新进展，与 graph-based 路线（ETPNav/ETP-R1）形成互补

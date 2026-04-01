@@ -127,10 +127,6 @@ mindmap
       开源开放权重
 ```
 
-## Connections
-- Related papers: Sora (video generation), GAIA-1 (world model for autonomous driving), UniSim (universal simulator), DALL-E (discrete tokenizer), VideoGPT (video generation with VQ-VAE)
-- Related ideas: World model 作为 Physical AI 训练的核心基础设施；video tokenizer 设计对下游 world model 质量的关键影响
-- Related projects: NVIDIA Isaac Sim, NVIDIA Omniverse
 
 ## Notes
 - 这是 NVIDIA 在 world model 领域的重要布局，定位为平台级产品而非单一模型

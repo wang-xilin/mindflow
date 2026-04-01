@@ -88,10 +88,6 @@ mindmap
       SFT 0% vs RL 11.68%
 ```
 
-## Connections
-- Related papers: [[2506-VLNR1]]（同期工作，GRPO 用于 VLN navigation，形成 manipulation vs navigation 的范式对比）, [[2506-SmolVLA]]（小模型 VLA，关注 parameter efficiency）
-- Related ideas: GRPO 在 embodied AI 不同任务上的统一范式（manipulation + navigation）；multiple-choice 建模作为 bridging continuous RL 和 discrete reasoning 的通用策略；planning task 与 spatial reasoning 的 misalignment 值得深入研究
-- Related projects:
 
 ## Notes
 - 与 [[2506-VLNR1]] 构成同期平行工作：都是将 DeepSeek-R1 的 GRPO 应用于 embodied AI，但分别针对 manipulation 和 navigation。两者都发现 RL 在 generalization 上优于 SFT，但绝对性能与各自领域 SOTA 仍有差距。

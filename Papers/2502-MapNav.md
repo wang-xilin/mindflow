@@ -121,10 +121,6 @@ mindmap
       Real-world 5个场景验证
 ```
 
-## Connections
-- Related papers: [[2402-NaVid]]（MapNav 的直接对比 baseline，MapNav 用 ASM 替代 NaVid 的 video-based history 编码，在 R2R-CE 上大幅超越）, [[2210-VLMaps]]（semantic map for navigation 的先驱工作，MapNav 的 ASM 在此基础上增加了 text annotation）, [[2305-NavGPT]]（LLM-for-VLN 先驱，MapNav 的 map-text 结合方案正是解决 NavGPT 视觉信息文本化损失的问题）, [[2512-EfficientVLN]]（supervised VLN SOTA，MapNav 的绝对性能与之仍有差距）, [[2304-ETPNav]]（topological planning for VLN-CE）, [[2412-NaVILA]]（VLM navigation 另一路线）, [[2202-DUET]]（discrete VLN topological map 方案）
-- Related ideas: ASM 的 text annotation 思路可以扩展到 3D scene graph 构建，将空间语义以 language-grounded 方式暴露给 VLM
-- Related projects:
 
 ## Notes
 - ASM 的核心 insight 是：VLM 理解 color-coded semantic map 的能力有限，但加上文本标注后性能飙升（+7.4% SR），说明当前 VLM 对视觉 semantics 的理解仍高度依赖 linguistic grounding

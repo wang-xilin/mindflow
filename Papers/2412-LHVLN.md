@@ -124,10 +124,6 @@ mindmap
       Long-term memory 对性能至关重要
 ```
 
-## Connections
-- Related papers: [[2304-ETPNav]]（VLN continuous env 的 topological mapping 前身）, [[2202-DUET]]（dual-scale graph 用于 VLN 长程规划）, [[2412-NaVILA]]（VLM-based navigation，同期工作）, [[2305-NavGPT]]（LLM for VLN reasoning）, [[2603-RoboClaw]]（long-horizon manipulation 任务框架）, [[2204-SayCan]]（LLM planning + skill execution 的 hierarchical 架构）
-- Related ideas: [[Hierarchical-VLA-SceneGraph]]（hierarchical planning for long-horizon tasks）
-- Related projects:
 
 ## Notes
 - 项目主页：hcplab-sysu.github.io/LH-VLN

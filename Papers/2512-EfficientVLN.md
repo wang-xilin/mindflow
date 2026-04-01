@@ -105,10 +105,6 @@ mindmap
       训练开销减少 78.1%
 ```
 
-## Connections
-- Related papers: [[Papers/2412-NaVILA]], [[Papers/2304-ETPNav]], [[Papers/2202-DUET]], [[Papers/2305-NavGPT]]
-- Related ideas: [[Ideas/Hierarchical-VLA-SceneGraph]]
-- Related projects:
 
 ## Notes
 - Dynamic mixed policy 的思路（前段探索、后段 oracle）可以推广到其他需要 DAgger 的 embodied AI 任务

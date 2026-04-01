@@ -61,10 +61,6 @@ mindmap
       RxR-CE +20% over SOTA
 ```
 
-## Connections
-- Related papers: [[VLN-VLA-Unification]], [[2202-DUET|VLN-DUET]]（discrete 版 topological map 前身）, [[2412-NaVILA]]（VLM-based navigation）, [[2504-Pi05|π0.5]]（hierarchical 架构对比）
-- Related ideas: ETPNav 的 hierarchical planning 与 VLA 的 hierarchical inference 结构对应，暗示 VLN-VLA 架构趋同
-- Related projects:
 
 ## Notes
 - ETPNav 代表了 VLN 领域 "task-specific 模型的巅峰"——下一步自然是引入 foundation model backbone

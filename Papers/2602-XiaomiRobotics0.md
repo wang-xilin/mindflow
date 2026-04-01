@@ -102,10 +102,6 @@ mindmap
       VLM 能力无损保持
 ```
 
-## Connections
-- Related papers: [[Papers/2410-Pi0]], [[Papers/2504-Pi05]], [[Papers/2511-PiStar06]], [[Papers/2601-CycleVLA]], [[Papers/2602-WorldVLALoop]], [[Papers/2603-DAMVLA]], [[Papers/2406-OpenVLA]], [[Papers/2502-OpenVLA-OFT]], [[Papers/2506-SmolVLA]], [[Papers/2503-GR00TN1]]
-- Related ideas: [[Ideas/SpatialToken-VLA]], [[Ideas/Unified-GEM-Framework]]
-- Related projects:
 
 ## Notes
 - Λ-Shape Attention Mask 的设计思路值得借鉴：通过控制 attention pattern 来防止 policy 走捷径。这种 attention engineering 的方法可能对其他异步/流式 VLA 场景也有启发。

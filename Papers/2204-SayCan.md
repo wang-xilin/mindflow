@@ -136,10 +136,6 @@ mindmap
       50% error reduction
 ```
 
-## Connections
-- Related papers: [[VLN-VLA-Unification]]（Section 5 代表系统）、[[2307-RT2]]（RT-2 是 SayCan skill library 的 evolution——从 separate skills 到 unified VLA）、[[2305-NavGPT]]（NavGPT 将 LLM-based planning 用于 navigation，与 SayCan 的 LLM planning 思路相通）、[[2401-OKRobot]]（OK-Robot 用 VLM perception 替代 SayCan 的 LLM planning）
-- Related ideas: LLM as task planner 的范式；affordance grounding 的思想可扩展到 VLN（navigation affordance）
-- Related projects:
 
 ## Notes
 - SayCan 是 LLM-grounded robotics 的奠基性工作，其 "Say × Can" 的 scoring 机制至今仍是 embodied AI task planning 的基础范式。

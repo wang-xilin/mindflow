@@ -79,10 +79,6 @@ mindmap
       Ethics & Safety
 ```
 
-## Connections
-- Related papers: [[2501-RoboticWorldModel]]（model-based RL world model 的具体实例）、[[2501-Cosmos]]（survey 中提到的 video world model）、[[2602-WorldVLALoop]]（world model + VLA 结合）、[[2602-DreamZero]]（world model 用于 decision-making）、[[2504-UWM]]（unified world model）、[[2505-DreamGen]]（video generation world model）、[[2406-IRASim]]（robotic action simulation）
-- Related ideas: world model 的 implicit vs. explicit representation 分类可以指导我们思考 VLA 中如何融入 world model 能力
-- Related projects: GitHub repo https://github.com/tsinghua-fib-lab/World-Model 持续更新论文列表
 
 ## Notes
 - 作为 world model 领域的入门综述非常合适，建议结合具体方向（如 embodied intelligence）的论文深入阅读

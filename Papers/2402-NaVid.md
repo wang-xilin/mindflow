@@ -133,10 +133,6 @@ mindmap
       4 tokens/frame 最优
 ```
 
-## Connections
-- Related papers: [[2304-ETPNav]]（VLN-CE topological planning，NaVid 的主要对比方法之一）, [[2412-NaVILA]]（同样用 VLM 做 navigation 但面向 legged robot，输出 language action）, [[2305-NavGPT]]（LLM-for-VLN 先驱，NaVid 通过 video encoding 解决了 NavGPT 视觉信息文本化损失的问题）, [[2412-LHVLN]]（Long-Horizon VLN，NaVid 的 long-horizon 局限正是 LHVLN 要解决的问题）, [[2210-VLMaps]]（semantic map for navigation，NaVid 证明 video tokens 可替代 explicit map）, [[2512-EfficientVLN]]（Efficient VLN 方法）, [[2202-DUET]]（discrete VLN 的 topological map 方案）
-- Related ideas: [[Hierarchical-VLA-SceneGraph]]（NaVid 的 video-based navigation 可作为该架构 navigation head 的候选方案，但需扩展 action space 以支持 manipulation）
-- Related projects:
 
 ## Notes
 - NaVid 的 video-based history encoding 思路值得关注：将 navigation trajectory 编码为 video 是一个简洁且有效的 representation，避免了 explicit map construction 的复杂性

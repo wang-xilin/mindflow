@@ -111,18 +111,6 @@ mindmap
       异步推理提速 30%
 ```
 
-## Connections
-- Related papers:
-  - [[2410-Pi0]] — π₀ 是 SmolVLA 的重要 baseline，同样使用 flow matching action expert，但参数量为 3.3B
-  - [[2406-OpenVLA]] — OpenVLA（7B）是另一个主要 baseline，SmolVLA 以 1/15 的参数量超越其性能
-  - [[2504-Pi05]] — π0.5 的 hierarchical inference 架构，SmolVLA 展示了更轻量的替代方案
-  - [[2511-PiStar06]] — π\*₀.₆ 在 VLA 上引入 RL self-improvement，SmolVLA 目前仅用 imitation learning，RL fine-tuning 是其潜在改进方向
-  - [[2603-RoboClaw]] — 另一种扩展 VLA 能力的方式（autonomous data collection + long-horizon），与 SmolVLA 的效率优化互补
-  - [[2401-MobileALOHA]] — Mobile ALOHA 的 co-training 思路与 SmolVLA 的社区数据预训练理念相似
-  - [[2405-Octo]] — Octo 是另一个开源机器人 foundation model，SmolVLA 在效率和开源程度上更进一步
-- Related ideas:
-  - [[Hierarchical-VLA-SceneGraph]] — SmolVLA 的轻量化设计可作为 hierarchical VLA 系统中的高效 manipulation policy
-- Related projects:
 
 ## Notes
 

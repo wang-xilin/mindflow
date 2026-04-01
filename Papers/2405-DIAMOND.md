@@ -84,10 +84,6 @@ mindmap
       低分辨率 demo
 ```
 
-## Connections
-- Related papers: [[2501-Cosmos]]（world model 平台）、[[2504-UWM]]（unified diffusion world model for robotics）、[[2408-GameNGen]]（同期 diffusion game engine，侧重 visual fidelity）、[[2602-DreamZero]]（world model for policy learning）、[[2512-Motus]]（latent action world model）
-- Related ideas: Diffusion model 在 world modeling 中相比 discrete tokenization 的优势；visual fidelity 与 RL performance 的关系
-- Related projects: DreamerV3、IRIS、STORM（主要对比方法）
 
 ## Notes
 - 与 GameNGen 形成有趣互补：DIAMOND 关注 world model 训练 RL agent，GameNGen 关注 interactive simulation。两者都选择了 diffusion model，但动机不同——DIAMOND 为了 visual fidelity 提升 RL 性能，GameNGen 为了 real-time 高质量渲染

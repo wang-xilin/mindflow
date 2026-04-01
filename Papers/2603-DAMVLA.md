@@ -102,18 +102,6 @@ mindmap
       显著优于 CogACT, OpenVLA, π₀
 ```
 
-## Connections
-- Related papers:
-  - [[2406-OpenVLA]]: DAM-VLA 的 VLM backbone 采用相同的 DINOv2 + SigLIP + LLaMA-2 架构，DAM-VLA 在 SIMPLER 上大幅超越 OpenVLA（83% vs 37%）
-  - [[2410-Pi0]]: π₀ 使用 flow matching action head，DAM-VLA 使用 dual diffusion head；DAM-VLA 在 SIMPLER 上优于 π₀（83% vs 70%）
-  - [[2504-Pi05]]: π0.5 关注 open-world long-horizon 任务，DAM-VLA 则聚焦 manipulation 精度的提升
-  - [[2307-RT2]]: VLA 领域的开创性工作，DAM-VLA 延续了 VLM-to-action 的范式但引入了专用 action model
-  - [[2502-HiRobot]]: 同样采用 hierarchical 思想将 high-level reasoning 和 low-level control 解耦
-  - [[2603-RoboClaw]]: 同期工作，同样关注 long-horizon manipulation，但采用 agentic framework + RL 路线
-  - [[2412-RoboVLMs]]: VLA 方法的系统性对比，可作为理解 DAM-VLA 设计选择的参考
-  - [[2502-OpenVLA-OFT]]: OpenVLA 的改进版本，与 DAM-VLA 属于同期 VLA 优化工作
-- Related ideas:
-- Related projects:
 
 ## Notes
 - DAM-VLA 的核心 insight——arm movement 和 gripper manipulation 需要不同的 action model——值得关注，这可能启发更细粒度的 action decomposition 研究

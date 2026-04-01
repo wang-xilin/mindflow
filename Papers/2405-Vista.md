@@ -78,10 +78,6 @@ mindmap
       15s coherent rollout
 ```
 
-## Connections
-- Related papers: [[2501-Cosmos]]（同为 world model 平台）、[[2505-DreamGen]]（driving world model）、[[2406-IRASim]]（action-conditioned simulation）、[[2504-UWM]]（universal world model）、[[2602-DreamZero]]（world model for planning）
-- Related ideas: world model 作为 reward signal 的思路可迁移到 robotic manipulation；latent replacement 的 conditioning 方式可能优于 channel concatenation
-- Related projects: OpenDriveLab 生态
 
 ## Notes
 - 实际 arXiv ID 为 2405.17398（非 2405.17906）

@@ -75,18 +75,6 @@ mindmap
       Runtime overhead 约 30%
 ```
 
-## Connections
-- Related papers:
-  - [[2412-RoboVLMs]]：VLA/VLM 在机器人中的系统性分析，讨论了 self-correction 机制
-  - [[2502-HiRobot]]：涉及 failure detection 和 recovery 的分层机器人架构
-  - [[2602-WorldVLALoop]]：同样在 LIBERO 上验证 VLA 改进，关注 long-horizon 问题
-  - [[2406-OpenVLA]]：CycleVLA 的 base model，提供 baseline 对比
-  - [[2502-OpenVLA-OFT]]：OpenVLA 的微调版本，同一 VLA 体系
-  - [[2410-Pi0]]：VLA policy 设计的代表性工作，涉及 action recovery 机制
-  - [[2511-PiStar06]]：VLA long-horizon 任务的改进
-  - [[2603-RoboClaw]]：VLA manipulation 相关
-- Related ideas:
-- Related projects:
 
 ## Notes
 - MBR decoding 思路来自 NLP 的 machine translation，作为 test-time scaling for VLA 的探索值得关注

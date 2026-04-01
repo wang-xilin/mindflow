@@ -95,10 +95,6 @@ mindmap
       Monotonic reward signal for RL
 ```
 
-## Connections
-- Related papers: [[2401-OKRobot]]（同样关注 real-world spatial understanding 但走 modular 路线）、SQA3D（3D spatial QA benchmark）、PaLM-E（multimodal embodied LLM）
-- Related ideas: 数据驱动的空间推理 vs 模型架构改进；VLM as reward model 在 robotics 中的趋势
-- Related projects: VLM-based spatial grounding 对 navigation 和 manipulation 均有价值
 
 ## Notes
 - 核心 insight：VLM 的 spatial reasoning 能力瓶颈在数据而非架构，通过自动化生成大规模 metric-space spatial VQA 数据即可显著提升。这与 scaling law 的思路一致。

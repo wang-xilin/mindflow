@@ -66,9 +66,5 @@ mindmap
       预训练 50min + policy 5min
 ```
 
-## Connections
-- Related papers: Dreamer (Hafner et al.), RSSM, SHAC, PPO, model-based policy optimization (MBPO)
-- Related ideas: world model for robotics, autoregressive dynamics prediction, sim-to-real transfer
-- Related projects:
 
 ## Notes

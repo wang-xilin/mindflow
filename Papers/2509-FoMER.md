@@ -100,15 +100,6 @@ mindmap
       无 closed-loop 评估
 ```
 
-## Connections
-- Related papers:
-  - [[2501-Cosmos]] — Cosmos-R1 在本 benchmark 中表现出 reasoning 与 accuracy 不匹配
-  - [[2307-RT2]] — RT-2 代表了 VLM 在 robotics 中的 action reasoning 方向
-  - OpenEQA、RoboVLM、HRIBench — 同为 embodied evaluation benchmarks，但缺少 reasoning trace
-- Related ideas:
-  - Step-by-step reasoning evaluation 的框架可迁移到 VLN task 中，评估 navigation agent 的 reasoning quality
-  - "答对但推理错" 的发现与 reward hacking 问题有概念上的联系
-- Related projects:
 
 ## Notes
 - 本文的 10 维评估框架值得借鉴——在我们自己的 embodied agent 评估中，也应该关注 reasoning trail 而非仅 final metric

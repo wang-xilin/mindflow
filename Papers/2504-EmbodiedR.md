@@ -107,17 +107,6 @@ mindmap
       99.43% 逻辑一致性
 ```
 
-## Connections
-- Related papers:
-  - [[2402-NaVid]] — 同为 VLM-based embodied navigation，但 NaVid 是端到端方法，Embodied-R 解耦 perception/reasoning
-  - [[2304-ETPNav]] — 同关注 embodied spatial reasoning 中的 task planning 和 spatial memory
-  - [[2411-RewardHacking]] — Embodied-R 的 logical consistency reward 直接针对 reward hacking 问题
-  - [[2511-PiStar06]] — π*-0.6 也用 RL 提升 VLA 能力，但面向 manipulation 而非 spatial reasoning
-- Related ideas:
-  - Perception-Reasoning 解耦范式对 VLN 任务有启发：可以用大 VLM 构建环境表征，小模型做导航决策
-  - Logical consistency reward 的思想可推广到其他 RL-based reasoning 训练中
-- Related projects:
-  - GRPO / DeepSeek-R1 系列：RL for reasoning 的方法论基础
 
 ## Notes
 - 训练硬件：8x NVIDIA A800-SXM4-40GB，RL 训练约 90 GPU-hours

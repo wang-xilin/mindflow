@@ -85,10 +85,6 @@ mindmap
       Emergent self-correction
 ```
 
-## Connections
-- Related papers: [[2406-OpenVLA]], [[2410-Pi0]], [[2405-Octo]], [[2307-RT2]], [[2504-Pi05]], [[2511-PiStar06]], [[2603-RoboClaw]], [[2412-NaVILA]], [[2401-MobileALOHA]], [[2502-HiRobot]]
-- Related ideas: [[Hierarchical-VLA-SceneGraph]]
-- Related projects:
 
 ## Notes
 

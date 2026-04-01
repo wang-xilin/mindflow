@@ -73,10 +73,6 @@ mindmap
       依赖 agent exploration coverage
 ```
 
-## Connections
-- Related papers: [[2501-Cosmos]]（NVIDIA world model 平台）、[[2504-UWM]]（unified world model with diffusion）、[[2405-DIAMOND]]（同期 diffusion world model 用于 Atari）、[[2602-DreamZero]]（world model as policy）
-- Related ideas: Diffusion model 作为 world simulator 的范式，noise augmentation 对抗 auto-regressive drift 的通用技术
-- Related projects: Sora（video generation）、GAIA-1（autonomous driving world model）
 
 ## Notes
 - 与 DIAMOND 形成互补：GameNGen 侧重 visual fidelity 和 real-time interaction，DIAMOND 侧重 RL training within world model

@@ -93,17 +93,6 @@ mindmap
       OOD reasoning does NOT transfer
 ```
 
-## Connections
-- Related papers:
-  - [[2510-XVLA]]: 同期 VLA 工作，同样使用 flow-matching，但关注 cross-embodiment soft prompt；VLASER 更关注 reasoning data 对 VLA 的影响
-  - InternVL3: VLASER 的 VLM backbone
-  - RoboPoint / ShareRobot: grounding 数据来源
-  - RDT-1B: RoboTwin 上的 baseline
-- Related ideas:
-  - Domain-specific data alignment 比 general reasoning 更重要这一发现，对我们选择 pretraining data 策略有直接指导意义
-  - Flow-matching + MoE 架构可能成为 VLA action head 的标准范式
-- Related projects:
-  - SimplerEnv / RoboTwin2.0: in-domain data 生成平台
 
 ## Notes
 - 代码和数据已承诺开源：https://github.com/OpenGVLab/Vlaser/

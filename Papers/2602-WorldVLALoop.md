@@ -79,9 +79,5 @@ mindmap
       Reward alignment 86.4%
 ```
 
-## Connections
-- Related papers:
-- Related ideas:
-- Related projects:
 
 ## Notes

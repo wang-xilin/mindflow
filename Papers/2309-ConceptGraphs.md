@@ -75,11 +75,6 @@ mindmap
       Manipulation planning
 ```
 
-## Connections
-- Related papers: [[VLN-VLA-Unification]]（Section 3 核心工作）, [[2210-VLMaps]]（per-pixel feature map 对比）
-- 与 VLA 的关系：scene graph 可以作为 [[2504-Pi05|π0.5]] hierarchical inference 的 high-level spatial context
-- 与 VLN 的关系：scene graph 可替代 [[2202-DUET|VLN-DUET]] 和 [[2304-ETPNav|ETPNav]] 的 topological map，提供更丰富的语义信息
-- Related ideas: 3D scene graph 作为 VLN-VLA 统一的 "spatial interface"
 
 ## Notes
 - ConceptGraphs 的 scene graph 结构天然适合作为 VLN 和 VLA 的桥梁：graph nodes 可以作为 navigation waypoints（VLN），也可以作为 manipulation targets（VLA）

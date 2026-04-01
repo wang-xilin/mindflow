@@ -100,10 +100,6 @@ mindmap
       Real-world +300% 提升
 ```
 
-## Connections
-- Related papers: [[2402-NaVid]]（VLN-PE 的主要 baseline 之一，在 physical setting 下暴露出 RGB-only 的脆弱性）、[[2304-ETPNav]]（VLN-CE topological planning，VLN-PE 是其 physically grounded 版本的自然延伸）、[[2210-VLMaps]]（VLN-PE 中改进 VLMaps 作为 map-based baseline）、[[2412-NaVILA]]（同关注 cross-embodiment navigation，NaVILA 面向 legged robot）、[[2305-NavGPT]]（LLM-based VLN，VLN-PE 中评估了类似 pipeline）、[[2603-PROSPECT]]（streaming VLN，VLN-PE 的 physical metric 可用于评估其 real-world 表现）、[[2512-EfficientVLN]]（Efficient VLN 方法）
-- Related ideas: Cross-embodiment co-training 策略可推广到 VLA 领域；Physical metrics（FR, StR）应成为 embodied navigation 的标准评估维度
-- Related projects:
 
 ## Notes
 - 本文最核心的 insight 是 "models overfit to simulation platforms"：在 Habitat 上用大量数据训练的模型，迁移到 Isaac Sim 后性能反而不如少量 in-domain 数据训练的小模型。这对整个 VLN 社区都是重要警示

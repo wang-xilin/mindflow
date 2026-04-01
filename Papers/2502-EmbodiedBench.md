@@ -105,18 +105,6 @@ mindmap
       Open-source lags behind proprietary
 ```
 
-## Connections
-- Related papers:
-  - VisualAgentBench：首个 MLLM agent benchmark，但只有 high-level
-  - ALFWorld / AgentBench：language-centric embodied agent 评估
-  - ALFRED (Shridhar et al., 2020)：EB-ALFRED 基于此
-  - Lota-Bench (Choi et al., 2024)：EB-ALFRED simulator 基础
-  - ManiSkill2：EB-Manipulation 基于此 simulator
-- Related ideas:
-  - Hierarchical VLM-VLA 架构（如 Hi Robot）可能比 direct MLLM action output 更适合 low-level control
-  - 将 MLLM 与 VLA 结合可能是解决 low-level 任务瓶颈的方向
-- Related projects:
-  - https://embodiedbench.github.io
 
 ## Notes
 - Accepted at ICML 2025

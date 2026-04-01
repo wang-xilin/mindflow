@@ -67,9 +67,5 @@ mindmap
       Real-robot success 0.87
 ```
 
-## Connections
-- Related papers:
-- Related ideas:
-- Related projects:
 
 ## Notes

@@ -98,16 +98,6 @@ mindmap
       Pointing 是 embodiment-agnostic
 ```
 
-## Connections
-- Related papers:
-  - [[2504-EmbodiedR]]: 同系列前作，Embodied-R 聚焦 spatial reasoning 的 perception-reasoning 解耦，Embodied-R1 进一步扩展到 pointing-based manipulation
-  - [[2506-RobotR1]]: 同样使用 GRPO 做 embodied reasoning 的 RL 训练，但 Robot-R1 侧重 next-state prediction QA 建模，Embodied-R1 直接输出 pointing action
-  - [[2603-DAMVLA]]: 另一种 VLA manipulation 方法，采用 diffusion action head 而非 pointing 表征
-  - [[2406-OpenVLA]]: End-to-end VLA baseline，Embodied-R1 用 pointing 表征实现了更好的跨 embodiment 泛化
-  - [[2405-Octo]]: SIMPLEREnv baseline 之一（30.0% vs 56.2%）
-  - [[2401-SpatialVLM]]: Spatial reasoning 的早期工作，Embodied-R1 的 spatial reasoning 阶段受其启发
-- Related ideas: pointing 作为 universal interface 的思路可推广到 navigation（waypoint prediction）和 mobile manipulation
-- Related projects:
 
 ## Notes
 - 项目主页：https://embodied-r1.github.io/

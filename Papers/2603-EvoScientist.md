@@ -111,9 +111,5 @@ mindmap
       消融证实进化机制有效
 ```
 
-## Connections
-- Related papers:
-- Related ideas: [[Ideas/Agent-Friendly-Internet]]
-- Related projects:
 
 ## Notes

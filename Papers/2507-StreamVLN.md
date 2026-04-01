@@ -72,10 +72,6 @@ mindmap
       Real robot deployment
 ```
 
-## Connections
-- Related papers: [[2512-EfficientVLN]]（直接改进 StreamVLN 的训练效率）, [[2412-NaVILA]]（同期 Video-LLM VLN，不同 action space 设计）, [[2304-ETPNav]]（StreamVLN 对比的 waypoint-based baseline）, [[2402-NaVid]]（Video-based VLM for VLN 先驱）, [[2412-LHVLN]]（长程 VLN 记忆管理）
-- Related ideas: 3D-aware token pruning 可扩展到其他 embodied tasks；SlowFast 策略可迁移至 VLA 的 streaming inference
-- Related projects:
 
 ## Notes
 - 与 [[2506-VLNR1]] 形成有趣对比：StreamVLN 用 SFT + DAgger 路线，VLN-R1 用 RL fine-tuning 路线，代表 VLN 的两种训练范式

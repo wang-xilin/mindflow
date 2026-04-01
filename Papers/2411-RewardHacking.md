@@ -84,10 +84,6 @@ mindmap
       SEAL Framework
 ```
 
-## Connections
-- Related papers:
-- Related ideas: [[Ideas/Hierarchical-VLA-SceneGraph]] (讨论了 RL reward design for Nav+Manip)
-- Related projects:
 
 ## Notes
 - Goodhart's Law 的四种变体分类（regressional, extremal, causal, adversarial）值得深入理解，可能对 robotics RL reward design 有启发

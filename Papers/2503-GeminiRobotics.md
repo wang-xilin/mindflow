@@ -125,11 +125,6 @@ mindmap
       Cross-embodiment 初步
 ```
 
-## Connections
-- Related papers: [[2307-RT2|RT-2]]（同为 Google 的 VLA 开创性工作，Gemini Robotics 可视为其精神继承者），[[2410-Pi0|Pi-0]]（主要竞争对手，论文中直接对比），[[2504-Pi05|Pi-0.5]]（Pi 系列后续，同样追求 open-world generalization），[[2406-OpenVLA|OpenVLA]]（开源 VLA 基准），[[2401-MobileALOHA|Mobile ALOHA]]（ALOHA 平台的前身工作，Gemini Robotics 使用 ALOHA 2 采集数据），[[2412-RoboVLMs|RoboVLMs]]（系统研究 VLA 设计决策，可用于理解 Gemini Robotics 的架构选择），[[2204-SayCan|SayCan]]（Google 早期 LLM+robotics 工作，Gemini Robotics-ER 的 code generation 路线延续了这一思路）
-- Related ideas: Cloud-edge 混合推理架构, Embodied reasoning as intermediate representation, Foundation model specialization pipeline, VLM-to-VLA fine-tuning
-- Related topics: [[VLN-VLA-Unification]]
-- Related projects:
 
 ## Notes
 - Gemini Robotics 代表了 Google DeepMind 在 robot foundation model 赛道的最新力作，与 Physical Intelligence 的 Pi 系列形成直接竞争

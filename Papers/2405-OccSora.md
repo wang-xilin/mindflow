@@ -66,10 +66,6 @@ mindmap
       移动物体不一致
 ```
 
-## Connections
-- Related papers: [[2501-Cosmos]]（NVIDIA world model）, [[2501-RoboticWorldModel]]（robotic world model survey）, [[2504-UWM]]（unified world model）, [[2505-DreamGen]]（generation for driving）, [[2406-IRASim]]（interactive simulation）, [[2602-DreamZero]]
-- Related ideas: 4D occupancy 作为 world model 的统一表征，可否扩展到 indoor robotics 场景
-- Related projects: nuScenes, Occ3D
 
 ## Notes
 - 这是将 video diffusion 思路迁移到 3D occupancy 空间的有趣尝试，但重建质量是核心瓶颈

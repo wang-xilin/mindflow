@@ -84,10 +84,6 @@ mindmap
       Pan rinsing
 ```
 
-## Connections
-- Related papers: [[VLN-VLA-Unification]]（Section 5 代表系统）、[[2410-Pi0]]（π₀ 的 flow matching action generation 可升级 Mobile ALOHA 的 policy）、[[2504-Pi05]]（π0.5 的 hierarchical inference 可解决 long-horizon 问题）
-- Related ideas: end-to-end vs modular 的 Nav+Manip 方案对比；co-training 作为 data augmentation 的思路
-- Related projects:
 
 ## Notes
 - Mobile ALOHA 代表了 Nav+Manip 的 **end-to-end imitation learning** 路线：不显式区分 navigation 和 manipulation，而是用 whole-body policy 统一处理。这与 [[2401-OKRobot|OK-Robot]] 的 modular pipeline 形成鲜明对比。

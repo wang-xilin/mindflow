@@ -70,9 +70,5 @@ mindmap
       7B 模型超越更大模型
 ```
 
-## Connections
-- Related papers: [[2406-OpenVLA]]、[[2410-Pi0]]、[[2504-Pi05]]、[[2506-SmolVLA]]、[[2405-Octo]]、[[2401-MobileALOHA]]、[[2412-RoboVLMs]]、[[2307-RT2]]、[[2502-HiRobot]]
-- Related ideas: [[Hierarchical-VLA-SceneGraph]]
-- Related projects:
 
 ## Notes

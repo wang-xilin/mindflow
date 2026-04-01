@@ -89,9 +89,5 @@ mindmap
       任务复杂度有限
 ```
 
-## Connections
-- Related papers: SuSIE (video subgoal generation), UniPi (video as universal policy), GenAug (generative augmentation), Genie 2 (world model), LAPA (latent action model)
-- Related ideas: Video generation as data augmentation for embodied AI; world model 作为 robot learning 的 data flywheel
-- Related projects: GR00T (NVIDIA humanoid foundation model), RoboCasa benchmark
 
 ## Notes

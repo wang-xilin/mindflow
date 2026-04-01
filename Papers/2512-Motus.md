@@ -84,9 +84,5 @@ mindmap
       真实机器人 +11~48%
 ```
 
-## Connections
-- Related papers: X-VLA, Pi0.5, UWM (Universal World Model), Wan 2.2, Qwen3-VL
-- Related ideas: latent action space for cross-embodiment transfer, world model as unified backbone
-- Related projects:
 
 ## Notes

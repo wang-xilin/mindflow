@@ -74,9 +74,5 @@ mindmap
       Human-to-robot transfer 54.3%
 ```
 
-## Connections
-- Related papers: SayCan (language grounding for robots), RT-2 (VLA), Genie (world model), UniPi (video as policy), SuSIE (video diffusion for manipulation)
-- Related ideas: world model as implicit policy, video pretraining for robotics, cross-embodiment generalization
-- Related projects:
 
 ## Notes

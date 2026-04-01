@@ -78,10 +78,6 @@ mindmap
       Token 减少 62%
 ```
 
-## Connections
-- Related papers: [[2305-NavGPT]]（LLM-based zero-shot VLN 先驱，SpatialNav 在此基础上引入 spatial structure）、[[2309-ConceptGraphs]]（open-vocabulary 3D scene graph，SSG 构建的技术基础）、[[2202-DUET]]（dual-scale graph transformer，SpatialNav 在 REVERIE 上与其对比）、[[2304-ETPNav]]（topological planning for VLN-CE，continuous environment 导航对比）、[[2512-EfficientVLN]]（learning-based VLN SOTA，R2R-CE 64.2% SR 与 SpatialNav 64.0% 接近）、[[2502-VLNav]]（同期 neuro-symbolic VLN 工作，不同路线：online exploration vs. pre-exploration）
-- Related ideas: Pre-exploration + scene graph 的范式虽然 assumptions 较强，但在 zero-shot 设定下效果惊人；如何将 SSG 的优势迁移到 online exploration 设定是重要方向
-- Related projects:
 
 ## Notes
 - Qi Wu 组（University of Adelaide）是 VLN 领域的重要力量，NavGPT 也出自该组

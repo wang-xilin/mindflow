@@ -76,10 +76,6 @@ mindmap
       低分辨率
 ```
 
-## Connections
-- Related papers: [[2501-Cosmos]]（同为 video world model，但 Cosmos 更强调 physical law adherence）、[[2501-RoboticWorldModel]]（model-based RL world model，Genie 的 latent action discovery 可互补）、[[2602-WorldVLALoop]]（world model 与 VLA 结合的思路）、[[2504-UWM]]（unified world model，可能整合 Genie 的 unsupervised action 方法）、[[2505-DreamGen]]（video generation for world model）、[[2406-IRASim]]（robotic action simulation）、[[2411-WorldModelSurvey]]（本论文被收录在该综述中）
-- Related ideas: Genie 的 latent action discovery 思路可以扩展到 robotic manipulation——如果能从大量无标注的人类操作视频中发现 latent action space，可能极大降低 robot learning 的数据需求
-- Related projects: Genie 2（DeepMind 后续工作，扩展到 3D 环境）
 
 ## Notes
 - Genie 开创了"generative interactive environment"这一新范式，后续 Genie 2 和其他工作（如 Cosmos）在此基础上持续推进

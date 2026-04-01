@@ -134,18 +134,5 @@ mindmap
       World model value prediction MAE 0.0621
 ```
 
-## Connections
-- Related papers:
-  - [[2511-PiStar06]] — π*₀.₆ 提出的 RECAP 算法被本文证明是 RAMP 的退化特例（忽略 future latent states），两者在 advantage-conditioned policy extraction 上有直接理论继承关系
-  - [[2504-Pi05]] — π0.5 是 GigaBrain 在 RoboChallenge 上的主要竞争对手，GigaBrain-0.1 比 π0.5 高 9 个百分点
-  - [[2602-WorldVLALoop]] — 同期工作，同样探索 world model + VLA + RL 的闭环训练，但 World-VLA-Loop 侧重 video world model 的 reward prediction，而 RAMP 侧重 latent state conditioning
-  - [[2602-DreamZero]] — NVIDIA 的 World Action Model，联合 video-action prediction 实现 zero-shot 泛化；与 GigaBrain 的区别在于 DreamZero 将 world model 和 policy 融合为一体，而 GigaBrain 保持 world model 和 policy 分离
-  - [[2505-DreamGen]] — 利用 video world model 生成 synthetic trajectories 来增强 policy 训练，与 RAMP 的 world model conditioning 路线不同但互补
-  - [[2504-UWM]] — Unified World Models 通过耦合 video diffusion 和 action diffusion 实现联合学习，是 world model + policy 统一架构的另一种方案
-  - [[2410-Pi0]] — Flow matching VLA 的奠基工作，GigaBrain 和 π* 系列都建立在类似的 VLA 架构之上
-- Related ideas:
-  - World model 作为 RL training signal provider（而非仅作为 simulator）是一个值得关注的趋势
-  - Stochastic attention masking 的正则化思路可能适用于其他 conditional generation 任务
-  - RAMP 对 RECAP 的理论统一暗示未来可能出现更一般化的 world model-conditioned RL 框架
 
 ## Notes

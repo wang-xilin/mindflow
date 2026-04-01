@@ -72,10 +72,6 @@ mindmap
       483m long-range navigation
 ```
 
-## Connections
-- Related papers: [[2309-ConceptGraphs]]（open-vocabulary 3D scene graph 构建，VL-Nav 的 scene graph 设计受此启发）、[[2305-NavGPT]]（LLM-based VLN reasoning，VL-Nav 类似地用 VLM 做 task decomposition）、[[2304-ETPNav]]（topological planning for VLN-CE）、[[2412-NaVILA]]（VLM-based navigation，不同架构路线）、[[2512-EfficientVLN]]（learning-based VLN SOTA，可做 complementary comparison）、[[2412-LHVLN]]（long-horizon VLN 任务和 memory 设计）
-- Related ideas: Neuro-symbolic 架构在 VLN 中的应用值得进一步探索，特别是 scene graph 的 online 构建质量如何影响下游 navigation 性能
-- Related projects:
 
 ## Notes
 - 项目网站：https://sairlab.org/vlnav/

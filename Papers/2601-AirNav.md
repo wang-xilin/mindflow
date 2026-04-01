@@ -131,10 +131,6 @@ mindmap
       Real-world SR 30%
 ```
 
-## Connections
-- Related papers: [[2402-NaVid]]（indoor VLN 的 video-based approach，AirNav 将 VLN 扩展到 outdoor UAV 场景）、[[2507-VLNPE]]（同关注 VLN 的 physical embodiment gap，VLN-PE 面向地面机器人，AirNav 面向 UAV）、[[2304-ETPNav]]（indoor VLN-CE baseline）、[[2305-NavGPT]]（LLM-based VLN agent）、[[2412-NaVILA]]（VLA for navigation，不同 embodiment）、[[2603-PROSPECT]]（streaming VLN，可扩展至 aerial setting）
-- Related ideas: SFT+RFT 两阶段训练范式（源自 DeepSeek-R1）在 embodied navigation 中的成功应用，可推广到其他 VLN/VLA 任务；Persona-conditioned instruction generation 方法论可用于其他数据集构建
-- Related projects:
 
 ## Notes
 - AirNav 与 VLN-PE 形成互补：VLN-PE 关注地面机器人的 physical embodiment gap，AirNav 关注 UAV 的 aerial navigation gap。两者共同指出了 VLN 从 sim-to-real 迁移的核心难题

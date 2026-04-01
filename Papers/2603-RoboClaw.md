@@ -81,11 +81,6 @@ mindmap
       Inverse reset assumption
 ```
 
-## Connections
-- Related papers: [[2504-Pi05|π0.5]] (底层 VLA model), SayCan, Inner Monologue (LLM for embodied tasks)
-- Related ideas:
-- Related topics: [[VLN-VLA-Unification]]
-- Related projects:
 
 ## Notes
 - 用 MCP 接口连接 VLM 和 robot tools 的设计思路值得参考
