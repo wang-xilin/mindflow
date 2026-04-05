@@ -10,24 +10,25 @@ const HomepageStats: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzCompo
   const base = urlPath.endsWith("/") ? urlPath : urlPath + "/"
 
   const sections = [
-    { label: "Papers",    color: "#3B82F6" },
-    { label: "Ideas",     color: "#10B981" },
-    { label: "Topics",    color: "#8B5CF6" },
-    { label: "Meetings",  color: "#F59E0B" },
-    { label: "Resources", color: "#EF4444" },
+    { label: "Papers",     folder: "Papers",     color: "#3B82F6" },
+    { label: "Ideas",      folder: "Ideas",      color: "#10B981" },
+    { label: "Topics",     folder: "Topics",     color: "#8B5CF6" },
+    { label: "Domain Maps", folder: "DomainMaps", color: "#F59E0B" },
+    { label: "Resources",  folder: "Resources",  color: "#EF4444" },
   ]
-  const counts = sections.map(({ label, color }) => ({
+  const counts = sections.map(({ label, folder, color }) => ({
     label,
+    folder,
     color,
     count: allFiles.filter(
-      (f) => f.slug?.startsWith(`${label}/`) && !f.slug?.endsWith("/index"),
+      (f) => f.slug?.startsWith(`${folder}/`) && !f.slug?.endsWith("/index"),
     ).length,
   }))
 
   return (
     <div class="homepage-stats">
-      {counts.map(({ label, count, color }) => (
-        <a href={`${base}${label}/`} class="stat-item" style={`--stat-color: ${color}`}>
+      {counts.map(({ label, folder, count, color }) => (
+        <a href={`${base}${folder}/`} class="stat-item" style={`--stat-color: ${color}`}>
           <span class="stat-count">{count}</span>
           <span class="stat-label">{label}</span>
         </a>
