@@ -8,7 +8,6 @@ Usage:
     python3 fetch_and_score.py                          # 当天
     python3 fetch_and_score.py --days 3                 # 过去 3 天
     python3 fetch_and_score.py --date 2026-04-07        # 指定日期
-    python3 fetch_and_score.py --history /path/to/.history.json
 
 Stderr: 进度日志。Stdout: JSON array。
 """
@@ -208,8 +207,6 @@ def fetch_arxiv_papers(start_date, end_date, days: int = 1) -> list[dict]:
             if name_el is not None and name_el.text:
                 names.append(name_el.text.strip())
 
-        cat_el = entry.find("arxiv:primary_category", ATOM_NS)
-
         paper = {
             "title": title,
             "authors": ", ".join(names),
@@ -220,8 +217,7 @@ def fetch_arxiv_papers(start_date, end_date, days: int = 1) -> list[dict]:
             "source": "arxiv",
         }
         paper["score"] = score_paper(paper)
-        if paper["score"] >= 0:
-            papers.append(paper)
+        papers.append(paper)
 
     print(
         f"  arXiv: {len(papers)} papers"
@@ -238,47 +234,9 @@ def extract_arxiv_id(url: str) -> str:
     return m.group(1) if m else ""
 
 
-def load_history(path: Path) -> list[dict]:
-    if path and path.exists():
-        try:
-            return json.loads(path.read_text(encoding="utf-8"))
-        except (json.JSONDecodeError, IOError):
-            pass
-    return []
-
-
-def update_history(history_path: Path, papers: dict[str, dict], target_date) -> None:
-    """将本次推荐论文追加到 history，保留最近 30 天记录。"""
-    if not history_path:
-        return
-
-    history = load_history(history_path)
-    existing = {h["id"]: h for h in history if "id" in h}
-
-    today_str = target_date.isoformat() if hasattr(target_date, "isoformat") else str(target_date)
-    added = 0
-    for aid, p in papers.items():
-        if aid not in existing:
-            existing[aid] = {"id": aid, "date": today_str, "title": p["title"]}
-            added += 1
-        # 同一 ID 已存在 → 保留最早 date（不覆盖）
-
-    # 只保留最近 30 天
-    cutoff = (datetime.now().date() - timedelta(days=30)).isoformat()
-    records = [r for r in existing.values() if r.get("date", "") >= cutoff]
-
-    history_path.parent.mkdir(parents=True, exist_ok=True)
-    history_path.write_text(
-        json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
-    print(f"  History updated: +{added} new, {len(records)} total (30-day window)", file=sys.stderr)
-
-
 def merge_and_rank(
     hf_papers: list[dict],
     arxiv_papers: list[dict],
-    target_date,
-    history_path: Path | None,
     days: int = 1,
     top_n: int = TOP_N,
 ) -> list[dict]:
@@ -292,19 +250,6 @@ def merge_and_rank(
             by_id[aid] = p
 
     print(f"  Merged: {len(by_id)} unique papers", file=sys.stderr)
-
-    # 多天模式跳过历史去重
-    if days > 1:
-        print(f"  Multi-day mode (days={days}): skipping history dedup", file=sys.stderr)
-    else:
-        # 单天模式：历史去重
-        history = load_history(history_path)
-        history_ids = {h["id"] for h in history if "id" in h}
-        before = len(by_id)
-        by_id = {aid: p for aid, p in by_id.items() if aid not in history_ids}
-        removed = before - len(by_id)
-        if removed:
-            print(f"  History dedup: removed {removed}", file=sys.stderr)
 
     # 过滤 + 排序
     candidates = [p for p in by_id.values() if p["score"] >= MIN_SCORE]
@@ -320,7 +265,6 @@ def main():
     parser = argparse.ArgumentParser(description="Fetch and score daily papers")
     parser.add_argument("--date", help="Target date YYYY-MM-DD (default: today)")
     parser.add_argument("--days", type=int, default=1, help="Number of days to fetch")
-    parser.add_argument("--history", help="Path to .history.json for dedup")
     parser.add_argument("--output", "-o", help="Output file path (default: stdout)")
     args = parser.parse_args()
 
@@ -333,8 +277,6 @@ def main():
     start_date = target_date - timedelta(days=days - 1)
     top_n = min(TOP_N * days, 100)
 
-    history_path = Path(args.history) if args.history else None
-
     is_weekend = target_date.weekday() >= 5
     print(
         f"[fetch_and_score] {target_date} ({'weekend' if is_weekend else 'weekday'})"
@@ -344,16 +286,7 @@ def main():
 
     hf_papers = fetch_hf_papers(start_date, target_date)
     arxiv_papers = fetch_arxiv_papers(start_date, target_date, days)
-    top = merge_and_rank(hf_papers, arxiv_papers, target_date, history_path, days=days, top_n=top_n)
-
-    # 记录 top-n 到 history
-    if history_path:
-        top_by_id = {}
-        for p in top:
-            aid = extract_arxiv_id(p["url"])
-            if aid:
-                top_by_id[aid] = p
-        update_history(history_path, top_by_id, target_date)
+    top = merge_and_rank(hf_papers, arxiv_papers, days=days, top_n=top_n)
 
     output = json.dumps(top, ensure_ascii=False, indent=2) + "\n"
     if args.output:

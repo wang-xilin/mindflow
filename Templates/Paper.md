@@ -1,10 +1,10 @@
 ---
 title:
-authors: []
-institute: []
+authors: [author1, author2, ...]
+institute: [institute1, institute2, ...]
 date_publish:
 venue:
-tags: []
+tags: [tag1, tag2, ...]
 url:
 code:
 rating: "%% 1=不相关, 2=了解即可, 3=有参考价值, 4=重要, 5=必读 %%"
