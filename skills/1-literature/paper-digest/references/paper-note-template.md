@@ -74,7 +74,7 @@ $$
 ### Results
 
 **Table #.  {caption}**
-%% 主 benchmark 对比表，复制为 Markdown 表格，包含主要 baseline + 论文方法的结果 %%
+%% 仅当原论文存在正式数字表格时使用：从原文复制为 Markdown，包含主要 baseline + 论文方法的结果。若论文主结果只用 bar/line chart 呈现（无正式数字表），删除本块，改用下面的 Figure 嵌入原结果图，禁止从图里目测编造数字表。 %%
 
 **Insights**: {关键发现和解释}
 

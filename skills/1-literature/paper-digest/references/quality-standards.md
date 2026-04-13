@@ -29,16 +29,28 @@
 
 ## 表格提取规范
 
+只在原论文存在**正式数字表格**时复制为 Markdown：
+
 ```markdown
-### Table X: {表格标题}
+**Table #. {表格标题}**
 
 | Method | Metric1 | Metric2 |
 |--------|---------|---------|
 | Baseline | 45.2 | 78.3 |
 | **Ours** | **52.1** | **85.6** |
 
-**表格说明**: {关键发现}
+**Insights**: {关键发现}
 ```
+
+### 禁止：从 bar/line chart 目测编造数字表
+
+如果论文的主结果只以柱状图/折线图呈现（例如 Physical Intelligence 的 π0.5、许多 RL/robotics 论文），**不要**把自己从图里读出来的数值组装成 Markdown 表 —— 这种"近似数字"会被未来的自己或别人当作论文原文引用，造成错误传播。正确做法：
+
+1. **直接嵌入原图**（外链优先），用 `**Figure #. {caption}**` + image 标记
+2. 在 `**Insights**` 里用**定性语言**描述趋势（"显著超过 baseline"、"比 X 高出约 20pt"），不要列 Markdown 表
+3. 若确实需要数字（如复现），在 Notes 里标记 "原文未提供数字，需查 supplementary / 项目页"
+
+只有当论文的 supplementary、附录或 GitHub 页面给出了**真正的数字表**，才把它复制进笔记。
 
 ## 图片提取规范
 

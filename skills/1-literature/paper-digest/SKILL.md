@@ -33,7 +33,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch
 #### 核心质量规则
 1. **主要图表和公式数量下限（硬性）**：
    - Figures：**架构/方法图**（嵌入 Method，必须）+ **主结果图**（嵌入 Experiments → Results 子节，必须）+ **teaser 图**（嵌入 Summary 之后，若论文有则必须，没有则跳过）。判断 teaser：看 Figure 1 是否为 "overview / concept / 动机示意"类整体图示；若 Figure 1 本身就是架构图，则不存在独立 teaser，只需嵌入到 Method 即可，不要重复嵌入
-   - Tables ≥ 1：主 benchmark 对比表，包含主要 baseline 和论文方法的结果，复制为 Markdown 表格嵌入 Experiments → Results
+   - Tables ≥ 1 **当且仅当原论文存在数字表格时**：主 benchmark 对比表（包含主要 baseline 和论文方法的结果）从原文复制为 Markdown 表格嵌入 Experiments → Results。**若论文的主结果只以 bar chart / line chart 等图形呈现，没有正式数字表格，禁止从图里目测/估算数字编造 Markdown 表格** —— 直接嵌入对应结果图替代即可，"主结果图已嵌入"这一硬性要求已经满足
    - Equations ≥ 1：核心 loss / 更新规则 / 目标函数，嵌入 Method 段
    - 图表公式必须**内嵌在对应论证段落**（Method / Experiments）中，不单独开章节
 2. **模板填写提示的处理**: 模板中形如 `%% ... %%` 的块是 Obsidian 隐藏注释，用于提示如何填写。生成笔记时必须**替换为实际内容**，或在无内容时保留为空。**禁止**把提示文本当正文写出来。
@@ -80,7 +80,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch
 - [ ] 架构/方法图已嵌入 Method 段（必须）
 - [ ] 主结果图已嵌入 Experiments → Results 子节（必须）
 - [ ] teaser 图已嵌入 Summary 之后（若论文有独立 teaser；若 Figure 1 即架构图则跳过此项）
-- [ ] Tables ≥ 1（主 benchmark 表已复制为 Markdown，包含主要 baseline 和论文方法的结果）
+- [ ] 若原文有数字表格：主 benchmark 表已复制为 Markdown（包含主要 baseline + 论文方法的结果）；若原文只用 bar/line chart 呈现主结果：用嵌入主结果图替代，**未从图中目测编造数字表**
 - [ ] Equations ≥ 1（核心公式用 `$$` 块，前后空行，含 `符号说明` 与 `含义`）
 - [ ] 模板中的 `%% ... %%` 提示已全部替换为实际内容或留空，无提示文本外泄到正文
 - [ ] `可复现性评估` checkbox 已根据论文与 GitHub repo 实际情况勾选（论文适用时）
