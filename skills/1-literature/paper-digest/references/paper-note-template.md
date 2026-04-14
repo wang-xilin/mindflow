@@ -5,8 +5,9 @@ institutes:         # [institute1, institute2, ...]
 date_publish:
 venue:
 tags:               # [tag1, tag2, ...]
-url:
-code:
+url:                # 主源 URL（arxiv / blog / PDF）
+website:            # 官方 project page URL；无则留空
+code:               # 官方 GitHub repo URL；无官方 repo 则留空，禁止填 community fork
 rating:              # 1=有参考价值, 2=重要, 3=必读
 date_added:          # 填写今天的日期 YYYY-MM-DD
 ---
@@ -19,6 +20,13 @@ date_added:          # 填写今天的日期 YYYY-MM-DD
 3. ...
 
 %% 若源有独立 teaser 图/视频（Abstract/Intro 里的 overview / concept / motivation 示意），在这里直接嵌入 caption + media；若论文唯一的 high-level 视觉就是架构图，跳过不写。 %%
+
+---
+## Sources
+%% 固定三行结构，次源未命中也保留行头写 "none found"。Blog 类 source 只保留URL一行。 %%
+- **URL**: {arxiv_url} or {blog_url}
+- **Project page**: {website_url}
+- **Code**: {github_url}
 
 ---
 <!-- ═══ Body：章节结构镜像源文档，不是固定模板 ═══ -->
@@ -38,7 +46,6 @@ Body 区使用源文档的 section 结构。原则：
 
 <!-- 可用构件 2：嵌入公式 -->
 **Equation #. {公式名}**
-
 $$
 {公式内容}
 $$
@@ -48,7 +55,6 @@ $$
 
 <!-- 可用构件 3：嵌入数字表（仅当 extraction 草稿存在正式数字表时写；禁止从 bar/line chart 目测编造） -->
 **Table #. {caption}**
-
 | Col1 | Col2 |
 | ---- | ---- |
 | ...  | ...  |
@@ -80,10 +86,11 @@ $$
 %% 两个互不替代的子轴：artifact 层（有没有开源）+ claim 层（每个 claim 有没有 grounding）。任何 content_type 都填两栏。 %%
 
 #### Artifact 可获取性
-- [ ] 代码开源
-- [ ] 模型权重开源
-- [ ] 训练细节完整
-- [ ] 数据集可获取
+%% 结合Github README和正文内容分析，未知就写 "未说明"，严禁推测。 %%
+- **代码**: {inference-only / inference+training / 未开源}
+- **模型权重**: {已发布的 checkpoint 名字与描述}
+- **训练细节**: {超参 + 数据配比 + 训练步数完整 / 仅超参 / 仅高层描述 / 未披露}
+- **数据集**: {开源（名字 + 链接）/ 私有 / 部分公开}
 
 #### Claim 可验证性
 %% 用 ✅/⚠️/❌ 三档对核心 claim 分类。若全部 ✅ 也要写出来，明确 "无 ⚠️/❌"，避免漏过潜在的 marketing 修辞 %%
