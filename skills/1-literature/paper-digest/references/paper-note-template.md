@@ -1,23 +1,14 @@
 ---
 title:
-authors:
-  - author1
-  - author2
-  - ...
-institute:
-  - institute1
-  - institute2
-  - ...
+authors:            # [author1, author2, ...]
+institutes:         # [institute1, institute2, ...]
 date_publish:
 venue:
-tags:
-  - tag1
-  - tag2
-  - ...
+tags:               # [tag1, tag2, ...]
 url:
 code:
-rating: "%% 1=有参考价值, 2=重要, 3=必读 %%"
-date_added: "{{today}}"
+rating:              # 1=有参考价值, 2=重要, 3=必读
+date_added:          # 填写今天的日期 YYYY-MM-DD
 ---
 ## Summary
 %% 用一句话概括这篇论文的核心贡献，不超过50字 %%
@@ -27,70 +18,49 @@ date_added: "{{today}}"
 2. **{Takeaway 2}**: 简要说明
 3. ...
 
-**Figure #.  {caption}**
-%% 此处嵌入 teaser 图，通常是 Figure 1 的 overview/concept 示意图，位于 Abstract 或 Introduction，外链优先。若论文无独立 teaser（如 Figure 1 就是架构图），删除本行，不要重复嵌入。 %%
+%% 若源有独立 teaser 图/视频（Abstract/Intro 里的 overview / concept / motivation 示意），在这里直接嵌入 caption + media；若论文唯一的 high-level 视觉就是架构图，跳过不写。 %%
 
 ---
-## Problem & Motivation
-%% 问题背景与动机，2-5 句话。为什么重要？现有方法有什么局限？ %%
+<!-- ═══ Body：章节结构镜像源文档，不是固定模板 ═══ -->
+%% 
+Body 区使用源文档的 section 结构。原则：
+- 标题取自源的章节名原文（`heading` 字段），层级（`##` / `###`）根据源结构和阅读顺畅度判断，不强制
+- 源里没有的 section 不写，不留 placeholder
+- 源里有但 extraction 草稿没挖出任何内容的 section 也不写
+- 图 / 公式 / 表 / 视频就近嵌入对应段落（section_id 匹配）
+%%
 
----
-## Method
-%% 核心方法/架构。可分段，列出关键组件，内嵌架构图和核心公式。 %%
+%% 以下只是"可用构件"的展示，**不是**必须按序出现的章节。实际章节数量、顺序、标题、层级都由 `source_sections[]` 决定。每种构件（图 / 公式 / 表 / 视频）在自己的 section_id 对应的 section 里就近嵌入，不需要集中。%%
 
-**Figure #.  {caption}**
-%% 此处嵌入方法架构图，通常是 Figure 1 或 2，位于 Method 或 Introduction，用于展示核心方法/架构，外链优先。 %%
+<!-- 可用构件 1：嵌入图 -->
+**Figure #. {caption}**
+![](https://.../figure.png)
 
+<!-- 可用构件 2：嵌入公式 -->
 **Equation #. {公式名}**
 
 $$
 {公式内容}
 $$
+
 **符号说明**：
 **含义**：
 
-... (Method 部分其他重要图表和公式)
+<!-- 可用构件 3：嵌入数字表（仅当 extraction 草稿存在正式数字表时写；禁止从 bar/line chart 目测编造） -->
+**Table #. {caption}**
+
+| Col1 | Col2 |
+| ---- | ---- |
+| ...  | ...  |
+
+**Insights**: {关键发现和解释}
+
+<!-- 可用构件 4：嵌入视频（外链 mp4 用 <video>，YouTube 用 ![](watch?v=...)，详见 obsidian-syntax.md §3）-->
+**Video #. {caption}**
+<video src="https://.../clip.mp4" controls muted playsinline width="720"></video>
 
 ---
-## Experiments
-%% 主要实验结果，包含具体数字和 benchmark 名称。Blog 文章可删除本段或改为 Key Points。 %%
-
-### Datasets
-
-| Dataset    | Size   | 特点   | 用途    |
-| ---------- | ------ | ---- | ----- |
-| {Dataset1} | {size} | {特点} | 训练/测试 |
-| {Dataset2} | {size} | {特点} | 测试    |
-| ...        |        |      |       |
-### Implementation Details
-
-- **Base model**: {使用的骨干网络}
-- **Optimizer**: {Adam/SGD, 学习率}
-- **Batch Size**: {大小}
-- **Training epochs**: {epochs}
-- **硬件**: {GPU 型号和数量}
-- ...
-
-### Results
-
-**Table #.  {caption}**
-%% 仅当原论文存在正式数字表格时使用：从原文复制为 Markdown，包含主要 baseline + 论文方法的结果。若论文主结果只用 bar/line chart 呈现（无正式数字表），删除本块，改用下面的 Figure 嵌入原结果图，禁止从图里目测编造数字表。 %%
-
-**Insights**: {关键发现和解释}
-
-**Table #.  {caption}**
-%% Ablation study 对比表，复制为 Markdown 表格 %%
-
-**Insights**: {关键发现和解释}
-
-**Figure #. {caption}**
-%% 可视化结果，loss curves、examples 等等 %%
-
-**Insights**: {关键发现和解释}
-
-... (Experiments 部分其他重要图表)
-
----
+<!-- ═══ 固定 outro：vault 编辑 overlay，所有笔记一致 ═══ -->
 ## 论文点评
 %% 方法亮点与局限的点评，以及对可复现性的评估。 %%
 
@@ -106,31 +76,35 @@ $$
 2. {缺点2}
 3. ...
 
-### 可复现性评估
-%% 根据论文和 GitHub repo 实际情况勾选 %%
+### 可信评估
+%% 两个互不替代的子轴：artifact 层（有没有开源）+ claim 层（每个 claim 有没有 grounding）。任何 content_type 都填两栏。 %%
+
+#### Artifact 可获取性
 - [ ] 代码开源
 - [ ] 模型权重开源
 - [ ] 训练细节完整
 - [ ] 数据集可获取
 
----
-## 关联笔记
-%% 列出相关笔记的 wikilink，无对应内容的子类直接删除 %%
+#### Claim 可验证性
+%% 用 ✅/⚠️/❌ 三档对核心 claim 分类。若全部 ✅ 也要写出来，明确 "无 ⚠️/❌"，避免漏过潜在的 marketing 修辞 %%
+- ✅ {可验证 claim}：{grounding——论文实验/视频/独立复现}
+- ⚠️ {半可信 claim}：{打折原因——归因不严、样本量不明、定义模糊}
+- ❌ {营销话术}：{为什么不算技术 claim——如 "first to cross commercial viability"}
 
+---
+## 关联工作
+%% 列出相关工作。无对应内容的子类直接删除；子类标签可自定义。 %%
 ### 基于
-- [[{前置工作1}]]: {说明}
-- [[{前置工作2}]]: {说明}
+- {前置工作}: {说明}
+- ...
 
 ### 对比
-- [[{对比方法1}]]: {为什么对比}
-- [[{对比方法2}]]: {为什么对比}
+- {对比方法}: {为什么对比}
+- ...
 
 ### 方法相关
-- [[{核心技术1}]]: 核心方法
-- [[{核心技术2}]]: 重要组件
-
-### 硬件/数据相关
-- [[{硬件或数据集}]]: {说明}
+- {核心技术}: {说明}
+- ...
 
 ---
 
