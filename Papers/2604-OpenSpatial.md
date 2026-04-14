@@ -1,7 +1,7 @@
 ---
 title: "OpenSpatial: A Principled Data Engine for Empowering Spatial Intelligence"
 authors: [Jianhui Liu, Haoze Sun, Wenbo Li, Yanbing Zhang, Rui Yang, Zhiliang Zhu, Yijun Yang, Shenghe Zheng, Nan Jiang, Jiaxiu Jiang, Haoyang Huang, Tien-Tsin Wong, Nan Duan, Xiaojuan Qi]
-institute: []
+institutes: []
 date_publish: 2026-04
 venue: arXiv
 tags: [scene-understanding, 3D-representation, VLM]

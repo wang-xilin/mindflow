@@ -13,7 +13,7 @@ authors:
   - Ivan Laptev
   - Fahad Shahbaz Khan
   - Salman Khan
-institute:
+institutes:
   - MBZUAI
 date_publish: "2025-09"
 venue: "arXiv"

@@ -1,7 +1,7 @@
 ---
 title: "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation"
 authors: [Jiazhao Zhang, Kunyu Wang, Rongtao Xu, Gengze Zhou, Yicong Hong, Xiaomeng Fang, Qi Wu, Zhizheng Zhang, He Wang]
-institute: [Peking University, Beijing Academy of Artificial Intelligence, CASIA, University of Adelaide, Australian National University, Galbot]
+institutes: [Peking University, Beijing Academy of Artificial Intelligence, CASIA, University of Adelaide, Australian National University, Galbot]
 date_publish: 2024-02
 venue: RSS 2024
 tags: [VLN, VLM, navigation]

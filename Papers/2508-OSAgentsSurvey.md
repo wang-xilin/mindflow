@@ -1,7 +1,7 @@
 ---
 title: "OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use"
 authors: [Xueyu Hu, Tao Xiong, Biao Yi, Zishu Wei, Ruixuan Xiao, Yurun Chen, Jiasheng Ye, Meiling Tao, Xiangxin Zhou, Ziyu Zhao, Yuhuai Li, Shengze Xu, Shenzhi Wang, Xinchen Xu, Shuofei Qiao, Zhaokai Wang, Kun Kuang, Tieyong Zeng, Liang Wang, Jiwei Li, Yuchen Eleanor Jiang, Wangchunshu Zhou, Guoyin Wang, Keting Yin, Zhou Zhao, Hongxia Yang, Fan Wu, Shengyu Zhang, Fei Wu]
-institute: [Zhejiang University, OPPO AI Center, Tsinghua University, Shanghai Jiao Tong University, Fudan University, Chinese Academy of Sciences, CUHK, 01.AI, Hong Kong Polytechnic University]
+institutes: [Zhejiang University, OPPO AI Center, Tsinghua University, Shanghai Jiao Tong University, Fudan University, Chinese Academy of Sciences, CUHK, 01.AI, Hong Kong Polytechnic University]
 date_publish: 2025-08-06
 venue: ACL 2025 (Oral)
 tags: [web-agent, VLM, task-planning]

@@ -1,7 +1,7 @@
 ---
 title: "Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence"
 authors: [Yuanyuan Gao, Hao Li, Yifei Liu, Xinhao Ji, Yuning Gong, Yuanjun Liao, Fangfu Liu, Manyuan Zhang, Yuchen Yang, Dan Xu, Xue Yang, Huaxi Huang, Hongjie Zhang, Ziwei Liu, Xiao Sun, Dingwen Zhang, Zhihang Zhong]
-institute: []
+institutes: []
 date_publish: 2026-03
 venue: arXiv
 tags: [3D-representation, scene-understanding, VLM]

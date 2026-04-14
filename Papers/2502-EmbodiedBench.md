@@ -1,7 +1,7 @@
 ---
 title: "EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents"
 authors: [Rui Yang, Hanyang Chen, Junyu Zhang, Mark Zhao, Cheng Qian, Kangrui Wang, Qineng Wang, Teja Venkat Koripella, Marziyeh Movahedi, Manling Li, Heng Ji, Huan Zhang, Tong Zhang]
-institute: [University of Illinois Urbana-Champaign, Stanford University, Amazon, Northwestern University]
+institutes: [University of Illinois Urbana-Champaign, Stanford University, Amazon, Northwestern University]
 date_publish: "2025-02"
 venue: ICML 2025
 tags: [VLM, navigation, manipulation, task-planning, scene-understanding, instruction-following]

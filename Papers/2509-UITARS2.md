@@ -1,7 +1,7 @@
 ---
 title: "UI-TARS-2 Technical Report: Advancing GUI Agent with Multi-Turn Reinforcement Learning"
 authors: [Yujia Qin, Shiguang Sg, Haoming Wang, Haoyang Zou, Huatong Song, Jiazhan Feng, Junjie Fang, Wanjun Zhong, Zhiyong Wu, Wayne Xin Zhao, Jie Tang]
-institute: [ByteDance Seed]
+institutes: [ByteDance Seed]
 date_publish: 2025-09-02
 venue: arXiv
 tags: [web-agent, RL, VLM, instruction-following]

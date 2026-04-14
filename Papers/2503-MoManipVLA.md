@@ -1,7 +1,7 @@
 ---
 title: "MoManipVLA: Transferring Vision-Language-Action Models for General Mobile Manipulation"
 authors: [Zhenyu Wu, Yuheng Zhou, Xiuwei Xu, Ziwei Wang, Haibin Yan]
-institute: [Beijing University of Posts and Telecommunications, Nanyang Technological University, Tsinghua University]
+institutes: [Beijing University of Posts and Telecommunications, Nanyang Technological University, Tsinghua University]
 date_publish: 2025-03-17
 venue: CVPR 2025
 tags: [VLA, mobile-manipulation, manipulation, cross-embodiment, instruction-following]

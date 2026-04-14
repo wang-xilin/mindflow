@@ -1,7 +1,7 @@
 ---
 title: "DAM-VLA: A Dynamic Action Model-Based Vision-Language-Action Framework for Robot Manipulation"
 authors: [Xiongfeng Peng, Jiaqian Yu, Dingzhe Li, Yixiang Jin, Lu Xu, Yamin Mao, Chao Zhang, Weiming Li, Sujin Jang, Dongwook Lee, Daehyun Ji]
-institute: []
+institutes: []
 date_publish: "2026-03"
 venue: "arXiv"
 tags: [VLA, manipulation]

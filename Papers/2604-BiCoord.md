@@ -1,7 +1,7 @@
 ---
 title: "BiCoord: A Bimanual Manipulation Benchmark towards Long-Horizon Spatial-Temporal Coordination"
 authors: [Xingyu Peng, Chen Gao, Liankai Jin, Annan Li, Si Liu]
-institute: [Beihang University, National University of Singapore, Zhongguancun Academy]
+institutes: [Beihang University, National University of Singapore, Zhongguancun Academy]
 date_publish: 2026-04-07
 venue: arXiv
 tags: [manipulation, imitation-learning, task-planning]

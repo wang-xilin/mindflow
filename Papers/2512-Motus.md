@@ -1,7 +1,7 @@
 ---
 title: "Motus: A Unified Latent Action World Model"
 authors: [Hongzhe Bi, Hengkai Tan, Shenghao Xie, Zeyuan Wang, Shuhe Huang, Haitian Liu, Ruowen Zhao, Yao Feng, Chendong Xiang, Yinze Rong, Hongyan Zhao, Hanyu Liu, Zhizhong Su, Lei Ma, Hang Su, Jun Zhu]
-institute: [Tsinghua University, Motus Robotics]
+institutes: [Tsinghua University, Motus Robotics]
 date_publish: "2025-12"
 venue: "arXiv"
 tags: [world-model, VLA, cross-embodiment]

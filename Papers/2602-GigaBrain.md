@@ -1,7 +1,7 @@
 ---
 title: "GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning"
 authors: [Boyuan Wang, Bohan Li, Chaojun Ni, Guan Huang, Guosheng Zhao, Hao Li, Jie Li, Jindi Lv, Jingyu Liu, Lv Feng, Mingming Yu, Peng Li, Qiuping Deng, Tianze Liu, Xinyu Zhou, Xinze Chen, Xiaofeng Wang, Yang Wang, Yifan Li, Yifei Nie, Yilong Li, Yukun Zhou, Yun Ye, Zhichao Liu, Zheng Zhu]
-institute: [GigaAI]
+institutes: [GigaAI]
 date_publish: "2026-02"
 venue: "arXiv"
 tags: [VLA, world-model, RL, manipulation]

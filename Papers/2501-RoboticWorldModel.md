@@ -1,7 +1,7 @@
 ---
 title: "Robotic World Model: A Neural Network Simulator for Robust Policy Optimization in Robotics"
 authors: [Chenhao Li, Andreas Krause, Marco Hutter]
-institute: [ETH Zurich]
+institutes: [ETH Zurich]
 date_publish: "2025-01"
 venue: "arXiv"
 tags: [world-model, RL, legged]

@@ -1,7 +1,7 @@
 ---
 title: "HomeRobot: Open-Vocabulary Mobile Manipulation"
 authors: [Sriram Yenamandra, Arun Ramachandran, Karmesh Yadav, Austin Wang, Mukul Khanna, Theophile Gervet, Tsung-Yen Yang, Vidhi Jain, Alexander William Clegg, John Turner, Zsolt Kira, Manolis Savva, Angel Chang, Devendra Singh Chaplot, Dhruv Batra, Roozbeh Mottaghi, Yonatan Bisk, Chris Paxton]
-institute: [Meta AI, Georgia Tech, CMU, Simon Fraser University]
+institutes: [Meta AI, Georgia Tech, CMU, Simon Fraser University]
 date_publish: 2023-06
 venue: NeurIPS 2023 Competition Track
 tags: [mobile-manipulation, scene-understanding, navigation]

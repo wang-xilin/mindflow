@@ -13,7 +13,7 @@ authors:
   - Zaiqiao Meng
   - Lun Zhou
   - Xiaohui Yan
-institute: []
+institutes: []
 date_publish: 2026-03
 venue: arXiv
 tags:

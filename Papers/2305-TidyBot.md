@@ -1,7 +1,7 @@
 ---
 title: "TidyBot: Personalized Robot Assistance with Large Language Models"
 authors: [Jimmy Wu, Rika Antonova, Adam Kan, Marion Lepert, Andy Zeng, Shuran Song, Jeannette Bohg, Szymon Rusinkiewicz, Thomas Funkhouser]
-institute: [Princeton University, Stanford University, Google DeepMind, Columbia University]
+institutes: [Princeton University, Stanford University, Google DeepMind, Columbia University]
 date_publish: 2023-05
 venue: Autonomous Robots
 tags: [mobile-manipulation, task-planning, instruction-following]

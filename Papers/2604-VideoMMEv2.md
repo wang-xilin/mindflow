@@ -1,7 +1,7 @@
 ---
 title: "Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding"
 authors: [Chaoyou Fu, Haozhi Yuan, Yuhao Dong, Yi-Fan Zhang, Yunhang Shen, Xiaoxing Hu, Xueying Li, Jinsen Su, Chengwu Long, Xiaoyao Xie, Yongkang Xie, Xiawu Zheng, Xue Yang, Haoyu Cao, Yunsheng Wu, Ziwei Liu, Xing Sun, Caifeng Shan, Ran He]
-institute: []
+institutes: []
 date_publish: 2026-04
 venue: arXiv
 tags: [VLM]

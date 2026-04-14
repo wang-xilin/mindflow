@@ -1,7 +1,7 @@
 ---
 title: "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents"
 authors: [Kanzhi Cheng, Qiushi Sun, Yougang Chu, Fangzhi Xu, Yantao Li, Jianbing Zhang, Zhiyong Wu]
-institute: [Nanjing University, Shanghai AI Laboratory, National University of Singapore]
+institutes: [Nanjing University, Shanghai AI Laboratory, National University of Singapore]
 date_publish: 2024-01-17
 venue: ACL 2024
 tags: [web-agent, VLM, instruction-following]

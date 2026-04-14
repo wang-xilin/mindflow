@@ -1,7 +1,7 @@
 ---
 title: "Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics"
 authors: [Dongyoung Kim, Sumin Park, Huiwon Jang, Jinwoo Shin, Jaehyung Kim, Younggyo Seo]
-institute: [KAIST]
+institutes: [KAIST]
 date_publish: "2025-06"
 venue: "NeurIPS 2025"
 tags: [VLM, RL, spatial-reasoning, manipulation, VLA]

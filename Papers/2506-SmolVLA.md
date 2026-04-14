@@ -1,7 +1,7 @@
 ---
 title: "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics"
 authors: [Mustafa Shukor, Dana Aubakirova, Francesco Capuano, Pepijn Kooijmans, Steven Palma, Adil Zouitine, Michel Aractingi, Caroline Pascal, Martino Russi, Andres Marafioti, Simon Alibert, Matthieu Cord, Thomas Wolf, Remi Cadene]
-institute: [Hugging Face]
+institutes: [Hugging Face]
 date_publish: 2025-06
 venue: arXiv
 tags: [VLA, flow-matching, imitation-learning, manipulation]

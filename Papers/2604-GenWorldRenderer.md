@@ -1,7 +1,7 @@
 ---
 title: "Generative World Renderer"
 authors: [Zheng-Hui Huang, Zhixiang Wang, Jiaming Tan, Ruihan Yu, Yidan Zhang, Bo Zheng, Yu-Lun Liu, Yung-Yu Chuang, Kaipeng Zhang]
-institute: [Shanda AI, National Taiwan University]
+institutes: [Shanda AI, National Taiwan University]
 date_publish: 2026-04-02
 venue: arXiv
 tags: [world-model, 3D-representation]

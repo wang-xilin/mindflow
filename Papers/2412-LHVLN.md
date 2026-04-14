@@ -1,7 +1,7 @@
 ---
 title: "Towards Long-Horizon Vision-Language Navigation: Platform, Benchmark and Method"
 authors: [Xinshuai Song, Weixing Chen, Yang Liu, Weikai Chen, Guanbin Li, Liang Lin]
-institute: [Sun Yat-sen University]
+institutes: [Sun Yat-sen University]
 date_publish: 2024-12
 venue: CVPR 2025
 tags: [VLN, navigation, task-planning, spatial-memory]

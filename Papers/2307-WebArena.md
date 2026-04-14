@@ -1,7 +1,7 @@
 ---
 title: "WebArena: A Realistic Web Environment for Building Autonomous Agents"
 authors: [Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Tianyue Ou, Yonatan Bisk, Daniel Fried, Uri Alon, Graham Neubig]
-institute: [CMU, UC Santa Barbara]
+institutes: [CMU, UC Santa Barbara]
 date_publish: 2023-07-25
 venue: ICLR 2024
 tags: [web-agent, VLM, instruction-following, task-planning]

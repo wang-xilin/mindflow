@@ -8,7 +8,7 @@ authors:
   - Stepan Perminov
   - Ziang Guo
   - Dzmitry Tsetserukou
-institute:
+institutes:
   - Unknown (未明确标注)
 date_publish: 2025-09-25
 venue: arXiv

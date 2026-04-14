@@ -1,7 +1,7 @@
 ---
 title: "Claw-Eval: Toward Trustworthy Evaluation of Autonomous Agents"
 authors: [Bowen Ye, Rang Li, Qibin Yang, Yuanxin Liu, Linli Yao, Hanglong Lv, Zhihui Xie, Chenxin An, Lei Li, Lingpeng Kong, Qi Liu, Zhifang Sui, Tong Yang]
-institute: [Peking University, USTC, HKU]
+institutes: [Peking University, USTC, HKU]
 date_publish: 2026-04
 venue: arXiv
 tags: [web-agent]

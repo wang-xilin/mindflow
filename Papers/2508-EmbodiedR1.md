@@ -1,7 +1,7 @@
 ---
 title: "Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation"
 authors: [Yifu Yuan, Haiqin Cui, Yaoting Huang, Yibin Chen, Fei Ni, Zibin Dong, Pengyi Li, Yan Zheng, Jianye Hao]
-institute: [Tianjin University]
+institutes: [Tianjin University]
 date_publish: "2025-08"
 venue: arXiv
 tags: [VLM, RL, manipulation, cross-embodiment, scene-understanding, VLA]

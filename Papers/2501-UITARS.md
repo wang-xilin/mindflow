@@ -1,7 +1,7 @@
 ---
 title: "UI-TARS: Pioneering Automated GUI Interaction with Native Agents"
 authors: [Yujia Qin, Yining Ye, Junjie Fang, Haoming Wang, Shihao Liang, Shizuo Tian, Junda Zhang, Jiahao Li, Yunxin Li, Shijue Huang, Wanjun Zhong, Kuanye Li, Jiale Yang, Yu Miao, Woyu Lin, Longxiang Liu, Xu Jiang, Qianli Ma, Jingyu Li, Xiaojun Xiao, Kai Cai, Chuang Li, Yaowei Zheng, Chaolin Jin, Chen Li, Xiao Zhou, Minchao Wang, Haoli Chen, Zhaojian Li, Haihua Yang, Haifeng Liu, Feng Lin, Tao Peng, Xin Liu, Guang Shi]
-institute: [ByteDance]
+institutes: [ByteDance]
 date_publish: 2025-01-21
 venue: arXiv
 tags: [web-agent, VLM, instruction-following, imitation-learning, RL]

@@ -1,7 +1,7 @@
 ---
 title: "Gemini Robotics: Bringing AI into the Physical World"
 authors: [Saminda Abeyruwan, Joshua Ainslie, Jean-Baptiste Alayrac, Montserrat Gonzalez Arenas, et al.]
-institute: [Google DeepMind]
+institutes: [Google DeepMind]
 date_publish: 2025-03-25
 venue: arXiv
 tags: [VLA, manipulation, instruction-following, cross-embodiment, scene-understanding]

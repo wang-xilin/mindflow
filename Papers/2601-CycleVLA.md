@@ -1,7 +1,7 @@
 ---
 title: "CycleVLA: Proactive Self-Correcting Vision-Language-Action Models via Subtask Backtracking and Minimum Bayes Risk Decoding"
 authors: [Chenyang Ma, Guangyu Yang, Kai Lu, Shitong Xu, Bill Byrne, Niki Trigoni, Andrew Markham]
-institute: [University of Oxford, University of Cambridge]
+institutes: [University of Oxford, University of Cambridge]
 date_publish: "2026-01"
 venue: "arXiv"
 tags: [VLA, manipulation, task-planning]

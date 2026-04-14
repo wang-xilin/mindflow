@@ -1,7 +1,7 @@
 ---
 title: "OS-Atlas: A Foundation Action Model for Generalist GUI Agents"
 authors: [Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, Yian Wang, Qiushi Sun, Chengyou Jia, Kanzhi Cheng, Zichen Ding, Liheng Chen, Paul Pu Liang, Yu Qiao]
-institute: [Shanghai AI Laboratory, Shanghai Jiaotong University, The University of Hong Kong, MIT]
+institutes: [Shanghai AI Laboratory, Shanghai Jiaotong University, The University of Hong Kong, MIT]
 date_publish: 2024-10-30
 venue: "arXiv"
 tags: [web-agent, VLM, cross-embodiment, instruction-following]

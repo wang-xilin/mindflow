@@ -1,7 +1,7 @@
 ---
 title: "BUMBLE: Unifying Reasoning and Acting with Vision-Language Models for Building-wide Mobile Manipulation"
 authors: [Rutav Shah, Albert Yu, Yifeng Zhu, Yuke Zhu, Roberto Martín-Martín]
-institute: [UT Austin]
+institutes: [UT Austin]
 date_publish: 2024-10
 venue: arXiv
 tags: [mobile-manipulation, VLM, task-planning, navigation, spatial-memory, instruction-following]

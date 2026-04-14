@@ -1,7 +1,7 @@
 ---
 title: "Genie: Generative Interactive Environments"
 authors: [Jake Bruce, Michael Dennis, Ashley Edwards, Jack Parker-Holder, Yuge Shi, Edward Hughes, Matthew Lai, Aditi Mavalankar, Richie Steigerwald, Chris Apps, Yusuf Aytar, Sarah Bechtle, Feryal Behbahani, Stephanie Chan, Nicolas Heess, Lucy Gonzalez, Simon Osindero, Sherjil Ozair, Scott Reed, Jingwei Zhang, Konrad Zolna, Jeff Clune, Nando de Freitas, Satinder Singh, Tim Rocktäschel]
-institute: [Google DeepMind]
+institutes: [Google DeepMind]
 date_publish: "2024-02"
 venue: "ICML 2024"
 tags: [world-model, RL]

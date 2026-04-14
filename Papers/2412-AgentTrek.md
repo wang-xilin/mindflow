@@ -1,7 +1,7 @@
 ---
 title: "AgentTrek: Agent Trajectory Synthesis via Guiding Replay with Web Tutorials"
 authors: [Yiheng Xu, Dunjie Lu, Zhennan Shen, Junli Wang, Zekun Wang, Yuchen Mao, Caiming Xiong, Tao Yu]
-institute: [XLANG Lab - The University of Hong Kong, Salesforce Research]
+institutes: [XLANG Lab - The University of Hong Kong, Salesforce Research]
 date_publish: 2024-12-12
 venue: "ICLR 2025 Spotlight"
 tags: [web-agent, VLM, imitation-learning, auto-research]

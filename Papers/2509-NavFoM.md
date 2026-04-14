@@ -1,7 +1,7 @@
 ---
 title: "NavFoM: Embodied Navigation Foundation Model"
 authors: [Jiazhao Zhang, Anqi Li, Yunpeng Qi, Minghan Li, Jiahang Liu, Shaoan Wang, Haoran Liu, Gengze Zhou, Yuze Wu, Xingxing Li, Yuxin Fan, Wenjun Li, Zhibo Chen, Fei Gao, Qi Wu, Zhizheng Zhang, He Wang]
-institute: [Peking University, Galbot, USTC, BAAI, University of Adelaide, Zhejiang University]
+institutes: [Peking University, Galbot, USTC, BAAI, University of Adelaide, Zhejiang University]
 date_publish: 2025-09
 venue: arXiv
 tags: [VLN, navigation, cross-embodiment]

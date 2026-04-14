@@ -1,7 +1,7 @@
 ---
 title: "Efficient-VLN: A Training-Efficient Vision-Language Navigation Model"
 authors: [Duo Zheng, Shijia Huang, Yanyang Li, Liwei Wang]
-institute: []
+institutes: []
 date_publish: 2025-12
 venue: NAACL 2025
 tags: [VLN, navigation]

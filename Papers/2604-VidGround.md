@@ -1,7 +1,7 @@
 ---
 title: "Watch Before You Answer: Learning from Visually Grounded Post-Training"
 authors: [Yuxuan Zhang, EunJeong Hwang, Huaisong Zhang, Penghui Du, Yiming Jia, Dongfu Jiang, Xuan He, Shenhui Zhang, Ping Nie, Peter West, Kelsey R. Allen]
-institute: [University of British Columbia, Vector Institute, Etude AI, Kuaishou Technology, University of Toronto, University of Waterloo, UIUC]
+institutes: [University of British Columbia, Vector Institute, Etude AI, Kuaishou Technology, University of Toronto, University of Waterloo, UIUC]
 date_publish: 2026-04-06
 venue: arXiv
 tags: [VLM, RL]

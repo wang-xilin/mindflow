@@ -1,7 +1,7 @@
 ---
 title: "OmniParser for Pure Vision Based GUI Agent"
 authors: [Yadong Lu, Jianwei Yang, Yelong Shen, Ahmed Awadallah]
-institute: [Microsoft Research, Microsoft Gen AI]
+institutes: [Microsoft Research, Microsoft Gen AI]
 date_publish: 2024-08-01
 venue: "arXiv"
 tags: [web-agent, VLM, scene-understanding]

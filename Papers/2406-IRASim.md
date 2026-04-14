@@ -1,7 +1,7 @@
 ---
 title: "IRASim: Learning Interactive Real-Robot Action Simulators"
 authors: [Fangqi Zhu, Hongtao Wu, Song Guo, Yuxiao Liu, Chilam Cheang, Tao Kong]
-institute: [ByteDance Seed]
+institutes: [ByteDance Seed]
 date_publish: "2024-06"
 venue: "ICCV 2025"
 tags: [world-model, manipulation, diffusion-policy]

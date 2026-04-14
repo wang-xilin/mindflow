@@ -1,7 +1,7 @@
 ---
 title: "Thinker: A Vision-Language Foundation Model for Embodied Intelligence"
 authors: [Baiyu Pan, Daqin Luo, Junpeng Yang, Jiyuan Wang, Yixuan Zhang, Hailin Shi, Jichao Jiao]
-institute: [Unknown]
+institutes: [Unknown]
 date_publish: "2026-01"
 venue: "IROS 2025"
 tags: [VLM, scene-understanding, task-planning, manipulation, instruction-following]

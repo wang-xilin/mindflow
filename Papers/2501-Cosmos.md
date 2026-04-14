@@ -1,7 +1,7 @@
 ---
 title: "Cosmos World Foundation Model Platform for Physical AI"
 authors: [Niket Agarwal, Arslan Ali, Maciej Bala, Yogesh Balaji, Erik Barker, Tiffany Cai, "and 71 others from NVIDIA"]
-institute: [NVIDIA]
+institutes: [NVIDIA]
 date_publish: "2025-01"
 venue: "arXiv"
 tags: [world-model]

@@ -1,7 +1,7 @@
 ---
 title: "A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions"
 authors: [Pascal J. Sager, Benjamin Meyer, Peng Yan, Rebekka von Wartburg-Kottler, Layan Etaiwi, Aref Enayati, Gabriel Nobel, Ahmed Abdulkadir, Benjamin F. Grewe, Thilo Stadelmann]
-institute: [ZHAW, University of Zurich, ETH Zurich]
+institutes: [ZHAW, University of Zurich, ETH Zurich]
 date_publish: 2025-01-27
 venue: arXiv
 tags: [web-agent, task-planning, VLM, instruction-following]

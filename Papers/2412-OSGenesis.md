@@ -1,7 +1,7 @@
 ---
 title: "OS-Genesis: Automating GUI Agent Trajectory Construction via Reverse Task Synthesis"
 authors: [Qiushi Sun, Kanzhi Cheng, Zichen Ding, Chuanyang Jin, Yian Wang, Fangzhi Xu, Zhenyu Wu, Chengyou Jia, Liheng Chen, Zhoumianze Liu, Ben Kao, Guohao Li, Junxian He, Yu Qiao, Zhiyong Wu]
-institute: [CUHK, HKU, SJTU, Shenzhen Institute of Advanced Technology]
+institutes: [CUHK, HKU, SJTU, Shenzhen Institute of Advanced Technology]
 date_publish: 2024-12-27
 venue: ACL 2025
 tags: [web-agent, imitation-learning, VLM, instruction-following]

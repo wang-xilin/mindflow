@@ -1,7 +1,7 @@
 ---
 title: "ShowUI: One Vision-Language-Action Model for GUI Visual Agent"
 authors: [Kevin Qinghong Lin, Linjie Li, Difei Gao, Zhengyuan Yang, Shiwei Wu, Zechen Bai, Weixian Lei, Lijuan Wang, Mike Zheng Shou]
-institute: [National University of Singapore, Microsoft]
+institutes: [National University of Singapore, Microsoft]
 date_publish: 2024-11-26
 venue: "arXiv"
 tags: [web-agent, VLM, instruction-following]

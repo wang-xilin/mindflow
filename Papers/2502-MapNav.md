@@ -1,7 +1,7 @@
 ---
 title: "MapNav: A Novel Memory Representation via Annotated Semantic Maps for Vision-and-Language Navigation"
 authors: [Lingfeng Zhang, Xiaoshuai Hao, Qinwen Xu, Qiang Zhang, Xinyao Zhang, Pengwei Wang, Jing Zhang, Zhongyuan Wang, Shanghang Zhang, Renjing Xu]
-institute: [HKUST(GZ), Beijing Academy of Artificial Intelligence, Tsinghua University, Wuhan University, Peking University]
+institutes: [HKUST(GZ), Beijing Academy of Artificial Intelligence, Tsinghua University, Wuhan University, Peking University]
 date_publish: "2025-02"
 venue: "arXiv"
 tags: [VLN, semantic-map, navigation]

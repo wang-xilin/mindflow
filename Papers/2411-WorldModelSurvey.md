@@ -1,7 +1,7 @@
 ---
 title: "Understanding World or Predicting Future? A Comprehensive Survey of World Models"
 authors: [Jingtao Ding, Yunke Zhang, Yu Shang, Jie Feng, Yuheng Zhang, Zefang Zong, Yuan Yuan, Hongyuan Su, Nian Li, Jinghua Piao, Yucheng Deng, Nicholas Sukiennik, Chen Gao, Fengli Xu, Yong Li]
-institute: [Tsinghua University]
+institutes: [Tsinghua University]
 date_publish: "2024-11"
 venue: "ACM CSUR 2025"
 tags: [world-model, RL]

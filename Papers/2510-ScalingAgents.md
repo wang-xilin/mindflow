@@ -1,7 +1,7 @@
 ---
 title: "The Unreasonable Effectiveness of Scaling Agents for Computer Use"
 authors: [Gonzalo Gonzalez-Pumariega, Vincent Tu, Chih-Lun Lee, Jiachen Yang, Ang Li, Xin Eric Wang]
-institute: [Simular Research]
+institutes: [Simular Research]
 date_publish: 2025-10-02
 venue: ICML
 tags: [web-agent, VLM, instruction-following]

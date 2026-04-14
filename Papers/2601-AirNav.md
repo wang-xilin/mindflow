@@ -1,7 +1,7 @@
 ---
 title: "AirNav: A Large-Scale Real-World UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions"
 authors: [Hengxing Cai, Yijie Rao, Ligang Huang, Zanyang Zhong, Jinhan Dong, Jingjun Tan, Wenhao Lu, Renxin Zhong]
-institute: [Sun Yat-Sen University, Beihang University, Peking University, Beijing University of Posts and Telecommunications, National University of Defense Technology]
+institutes: [Sun Yat-Sen University, Beihang University, Peking University, Beijing University of Posts and Telecommunications, National University of Defense Technology]
 date_publish: "2026-01"
 venue: "arXiv"
 tags: [VLN, navigation, instruction-following]

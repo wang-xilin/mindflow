@@ -1,7 +1,7 @@
 ---
 title: "VLASER: Vision-Language-Action Model with Synergistic Embodied Reasoning"
 authors: [Ganlin Yang, Tianyi Zhang, Haoran Hao, Weiyun Wang, Yibin Liu, Dehui Wang, Guanzhou Chen, Zijian Cai, Junting Chen, Weijie Su, Wengang Zhou, Yu Qiao, Jifeng Dai, Jiangmiao Pang, Gen Luo, Wenhai Wang, Yao Mu, Zhi Hou]
-institute: [Shanghai AI Laboratory, University of Science and Technology of China, Peking University, Tsinghua University]
+institutes: [Shanghai AI Laboratory, University of Science and Technology of China, Peking University, Tsinghua University]
 date_publish: "2025-10"
 venue: arXiv
 tags: [VLA, VLM, manipulation, flow-matching, scene-understanding, spatial-memory, task-planning, imitation-learning]

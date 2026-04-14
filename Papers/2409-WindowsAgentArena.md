@@ -1,7 +1,7 @@
 ---
 title: "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale"
 authors: [Rogerio Bonatti, Dan Zhao, Francesco Bonacci, Dillon Dupont, Sara Abdali, Yinheng Li, Yadong Lu, Justin Wagle, Kazuhito Koishida, Arthur Bucker, Lawrence Jang, Zack Hui]
-institute: [Microsoft]
+institutes: [Microsoft]
 date_publish: 2024-09-12
 venue: arXiv
 tags: [web-agent, VLM, instruction-following, task-planning]

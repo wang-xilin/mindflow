@@ -1,7 +1,7 @@
 ---
 title: "TongUI: Internet-Scale Trajectories from Multimodal Web Tutorials for Generalized GUI Agents"
 authors: [Bofei Zhang, Zirui Shang, Zhi Gao, Wang Zhang, Rui Xie, Xiaojian Ma, Tao Yuan, Xinxiao Wu, Song-Chun Zhu, Qing Li]
-institute: [BIGAI, Beijing Institute of Technology, Peking University, Shanghai Jiao Tong University, Tsinghua University]
+institutes: [BIGAI, Beijing Institute of Technology, Peking University, Shanghai Jiao Tong University, Tsinghua University]
 date_publish: 2025-04-17
 venue: AAAI 2026
 tags: [web-agent, VLM, imitation-learning]

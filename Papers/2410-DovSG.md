@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Open-Vocabulary 3D Scene Graphs for Long-term Language-Guided Mobile Manipulation"
 authors: [Zhijie Yan, Shufei Li, Zuoxu Wang, Lixiu Wu, Han Wang, Jun Zhu, Lijiang Chen, Jihong Liu]
-institute: [Beijing Institute of Technology]
+institutes: [Beijing Institute of Technology]
 date_publish: 2024-10
 venue: RA-L 2025
 tags: [mobile-manipulation, scene-understanding, semantic-map, 3D-representation, task-planning, instruction-following]

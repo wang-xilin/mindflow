@@ -1,7 +1,7 @@
 ---
 title: "Reward Hacking in Reinforcement Learning"
 authors: ["Lilian Weng"]
-institute: []
+institutes: []
 date_publish: "2024-11-28"
 venue: "Lilian Weng Blog"
 tags: [RL]

@@ -1,7 +1,7 @@
 ---
 title: "OccSora: 4D Occupancy Generation Models as World Simulators for Autonomous Driving"
 authors: [Lening Wang, Wenzhao Zheng, Yilong Ren, Han Jiang, Zhiyong Cui, Haiyang Yu, Jiwen Lu]
-institute: [Beihang University, UC Berkeley, Tsinghua University]
+institutes: [Beihang University, UC Berkeley, Tsinghua University]
 date_publish: 2024-05
 venue: "ICLR 2025"
 tags: [world-model, 3D-representation]

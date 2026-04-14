@@ -1,7 +1,7 @@
 ---
 title: "Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities"
 authors: [Liuyi Wang, Xinyuan Xia, Hui Zhao, Hanqing Wang, Tai Wang, Yilun Chen, Chengju Liu, Qijun Chen, Jiangmiao Pang]
-institute: [Tongji University, Shanghai AI Laboratory, Shanghai Jiao Tong University]
+institutes: [Tongji University, Shanghai AI Laboratory, Shanghai Jiao Tong University]
 date_publish: "2025-07"
 venue: "ICCV 2025"
 tags: [VLN, navigation, cross-embodiment]

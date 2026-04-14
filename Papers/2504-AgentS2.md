@@ -1,7 +1,7 @@
 ---
 title: "Agent S2: A Compositional Generalist-Specialist Framework for Computer Use Agents"
 authors: [Saaket Agashe, Kyle Wong, Vincent Tu, Jiachen Yang, Ang Li, Xin Eric Wang]
-institute: [Simular Research]
+institutes: [Simular Research]
 date_publish: 2025-04-01
 venue: arXiv
 tags: [web-agent, VLM, task-planning]

@@ -1,7 +1,7 @@
 ---
 title: "Diffusion Models Are Real-Time Game Engines"
 authors: [Dani Valevski, Yaniv Leviathan, Moab Arar, Shlomi Fruchter]
-institute: [Google Research, Google DeepMind, Tel Aviv University]
+institutes: [Google Research, Google DeepMind, Tel Aviv University]
 date_publish: 2024-08
 venue: "ICLR 2025"
 tags: [world-model, RL]
