@@ -5,9 +5,9 @@ institutes:         # [institute1, institute2, ...]
 date_publish:
 venue:
 tags:               # [tag1, tag2, ...]
-url:                # 主源 URL（arxiv / blog / PDF）
-website:            # 官方 project page URL；无则留空
-code:               # 官方 GitHub repo URL；无官方 repo 则留空，禁止填 community fork
+arxiv:
+website: 
+github:
 rating:              # 1=有参考价值, 2=重要, 3=必读
 date_added:          # 填写今天的日期 YYYY-MM-DD
 ---
@@ -22,8 +22,8 @@ date_added:          # 填写今天的日期 YYYY-MM-DD
 **Teaser. {caption}** 
 %% 若源有独立 teaser 图/视频（ Abstract / Intro 里的 overview / concept / motivation 示意），在这里直接嵌入；若论文唯一的 high-level 视觉就是架构图，跳过不写，不留 placeholder %%
 
-**Sources**: [arxiv](arxiv_url) | [blog](blog_url) | [website](website_url) | [github](github_url)
-%% 保留存在的 slot，缺失的整段删除（含 `|` 分隔符）。label 文本固定不改，只替换括号内 URL。主源是 arxiv/PDF 用 `arxiv` slot，主源是博客/发布页用 `blog` slot——两者互斥，通常只出现一个。 %%
+**Sources**: [arxiv](arxiv_url) | [website](website_url) | [github](github_url)
+%% 三类 slot 对应 sources.arxiv / sources.website / sources.github，不互斥——有几类就保留几类，缺失的整段删除（含 `|` 分隔符）。label 文本固定不改，只替换括号内 URL。 %%
 
 ---
 <!-- ═══ Body：章节结构镜像源文档，不是固定模板 ═══ -->
@@ -43,6 +43,7 @@ Body 区使用源文档的 section 结构。原则：
 
 <!-- 可用构件 2：嵌入公式 -->
 **Equation #. {公式名}**
+
 $$
 {公式内容}
 $$
@@ -52,6 +53,7 @@ $$
 
 <!-- 可用构件 3：嵌入数字表（仅当 extraction 草稿存在正式数字表时写；禁止从 bar/line chart 目测编造） -->
 **Table #. {caption}**
+
 | Col1 | Col2 |
 | ---- | ---- |
 | ...  | ...  |
