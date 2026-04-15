@@ -170,7 +170,7 @@ videos:
 
 ### Step 3：笔记生成与保存
 
-**Compose 的硬约束**：所有出现在笔记里的 URL、数字、公式、表格，**必须**来自 Step 2 extraction 草稿。compose 阶段不允许引入任何新的事实性元素。
+**Compose 的硬约束**：所有出现在笔记里的 figures, tables, equations, videos, **必须**来自 Step 2 extraction 草稿。compose 阶段不允许引入任何新的事实性元素。
 
 **两个参考文件**（都在本 skill 目录内的 `references/`，即 `{skill_dir}/references/...`，**不是** vault 根目录的 `references/`）：
 - **模板**：`{skill_dir}/references/paper-note-template.md` —— frontmatter + 固定 shell 骨架（top + outro）
