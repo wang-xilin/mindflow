@@ -5,8 +5,9 @@ institutes: [NVIDIA]
 date_publish: "2026-02"
 venue: "arXiv"
 tags: [world-model, VLA, imitation-learning, cross-embodiment, manipulation]
-url: "https://arxiv.org/abs/2602.15922"
-code: "https://github.com/dreamzero0/dreamzero"
+arxiv: "https://arxiv.org/abs/2602.15922"
+website:
+github: "https://github.com/dreamzero0/dreamzero"
 rating: 3
 date_added: "2026-03-30"
 ---

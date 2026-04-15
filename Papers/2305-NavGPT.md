@@ -5,8 +5,9 @@ institutes: [University of Adelaide]
 date_publish: 2023-05
 venue: AAAI 2024
 tags: [VLN, navigation, task-planning]
-url: https://arxiv.org/abs/2305.16986
-code: https://github.com/GengzeZhou/NavGPT
+arxiv: https://arxiv.org/abs/2305.16986
+website:
+github: https://github.com/GengzeZhou/NavGPT
 rating: 2
 date_added: "2026-03-24"
 ---

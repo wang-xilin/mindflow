@@ -5,8 +5,9 @@ institutes: [Google DeepMind]
 date_publish: 2025-03-25
 venue: arXiv
 tags: [VLA, manipulation, instruction-following, cross-embodiment, scene-understanding]
-url: https://arxiv.org/abs/2503.20020
-code:
+arxiv: https://arxiv.org/abs/2503.20020
+website:
+github:
 rating: 3
 date_added: "2026-03-30"
 ---

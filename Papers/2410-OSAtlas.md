@@ -5,8 +5,9 @@ institutes: [Shanghai AI Laboratory, Shanghai Jiaotong University, The Universit
 date_publish: 2024-10-30
 venue: "arXiv"
 tags: [web-agent, VLM, cross-embodiment, instruction-following]
-url: https://arxiv.org/abs/2410.23218
-code: https://osatlas.github.io/
+arxiv: https://arxiv.org/abs/2410.23218
+website: https://osatlas.github.io/
+github:
 rating: 2
 date_added: "2026-04-02"
 ---

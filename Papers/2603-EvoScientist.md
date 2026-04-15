@@ -18,8 +18,9 @@ date_publish: 2026-03
 venue: arXiv
 tags:
   - auto-research
-url: https://arxiv.org/abs/2603.08127
-code:
+arxiv: https://arxiv.org/abs/2603.08127
+website:
+github:
 rating: 1
 date_added: 2026-03-26
 ---

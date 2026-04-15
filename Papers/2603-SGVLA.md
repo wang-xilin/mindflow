@@ -5,8 +5,9 @@ institutes: [UC San Diego]
 date_publish: 2026-03-24
 venue: arXiv
 tags: [VLA, mobile-manipulation, scene-understanding, imitation-learning, flow-matching, spatial-memory, manipulation]
-url: https://arxiv.org/abs/2603.22760
-code:
+arxiv: https://arxiv.org/abs/2603.22760
+website:
+github:
 rating: 2
 date_added: "2026-04-02"
 ---

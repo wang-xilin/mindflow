@@ -5,8 +5,9 @@ institutes: []
 date_publish: 2025-12
 venue: NAACL 2025
 tags: [VLN, navigation]
-url: https://arxiv.org/abs/2512.10310
-code:
+arxiv: https://arxiv.org/abs/2512.10310
+website:
+github:
 rating: 2
 date_added: "2026-03-27"
 ---

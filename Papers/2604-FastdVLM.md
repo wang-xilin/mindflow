@@ -5,8 +5,9 @@ institutes: [The University of Hong Kong, NVIDIA, MIT, MBZUAI]
 date_publish: 2026-04-08
 venue: arXiv
 tags: [VLM]
-url: https://arxiv.org/abs/2604.06832
-code:
+arxiv: https://arxiv.org/abs/2604.06832
+website:
+github:
 rating: 1
 date_added: "2026-04-09"
 ---

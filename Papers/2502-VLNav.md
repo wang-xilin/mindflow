@@ -5,8 +5,9 @@ institutes: [University at Buffalo, Carnegie Mellon University]
 date_publish: "2025-02"
 venue: "arXiv"
 tags: [VLN, scene-understanding, 3D-representation]
-url: "https://arxiv.org/abs/2502.00931"
-code:
+arxiv: "https://arxiv.org/abs/2502.00931"
+website:
+github:
 rating: 2
 date_added: "2026-03-30"
 ---

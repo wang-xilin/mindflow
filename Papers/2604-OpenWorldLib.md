@@ -5,8 +5,9 @@ institutes: [DataFlow Team]
 date_publish: 2026-04
 venue: arXiv
 tags: [world-model, 3D-representation, VLA]
-url: https://arxiv.org/abs/2604.04707
-code: https://github.com/OpenDCAI/OpenWorldLib
+arxiv: https://arxiv.org/abs/2604.04707
+website:
+github: https://github.com/OpenDCAI/OpenWorldLib
 rating: 1
 date_added: "2026-04-08"
 ---

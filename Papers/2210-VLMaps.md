@@ -5,8 +5,9 @@ institutes: [Freiburg, Google]
 date_publish: 2022-10
 venue: ICRA 2023
 tags: [semantic-map, navigation, scene-understanding, VLM]
-url: https://arxiv.org/abs/2210.05714
-code: https://github.com/vlmaps/vlmaps
+arxiv: https://arxiv.org/abs/2210.05714
+website:
+github: https://github.com/vlmaps/vlmaps
 rating: 2
 date_added: "2026-03-24"
 ---

@@ -5,8 +5,9 @@ institutes: [Unknown]
 date_publish: "2025-12"
 venue: "ICLR 2026"
 tags: [VLA, mobile-manipulation, legged, RL, imitation-learning]
-url: "https://arxiv.org/abs/2512.11047"
-code: ""
+arxiv: "https://arxiv.org/abs/2512.11047"
+website:
+github:
 rating: 2
 date_added: "2026-04-02"
 ---

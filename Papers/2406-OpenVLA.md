@@ -5,8 +5,9 @@ institutes: [Stanford, UC Berkeley]
 date_publish: 2024-06
 venue: ICML 2025
 tags: [VLA, manipulation, cross-embodiment]
-url: https://arxiv.org/abs/2406.09246
-code: https://github.com/openvla/openvla
+arxiv: https://arxiv.org/abs/2406.09246
+website:
+github: https://github.com/openvla/openvla
 rating: 2
 date_added: "2026-03-24"
 ---

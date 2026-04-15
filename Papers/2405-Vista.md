@@ -5,8 +5,9 @@ institutes: [HKUST, OpenDriveLab at Shanghai AI Lab, University of TÃ¼bingen, TÃ
 date_publish: "2024-05"
 venue: "NeurIPS 2024"
 tags: [world-model]
-url: "https://arxiv.org/abs/2405.17398"
-code: "https://github.com/OpenDriveLab/Vista"
+arxiv: "https://arxiv.org/abs/2405.17398"
+website:
+github: "https://github.com/OpenDriveLab/Vista"
 rating: 2
 date_added: "2026-03-30"
 ---

@@ -5,8 +5,9 @@ institutes: [Shanghai AI Laboratory, University of Science and Technology of Chi
 date_publish: "2025-10"
 venue: arXiv
 tags: [VLA, VLM, manipulation, flow-matching, scene-understanding, spatial-memory, task-planning, imitation-learning]
-url: "https://arxiv.org/abs/2510.11027"
-code: "https://github.com/OpenGVLab/Vlaser/"
+arxiv: "https://arxiv.org/abs/2510.11027"
+website:
+github: "https://github.com/OpenGVLab/Vlaser/"
 rating: 2
 date_added: "2026-03-30"
 ---

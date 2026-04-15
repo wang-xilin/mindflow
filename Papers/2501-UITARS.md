@@ -5,8 +5,9 @@ institutes: [ByteDance]
 date_publish: 2025-01-21
 venue: arXiv
 tags: [web-agent, VLM, instruction-following, imitation-learning, RL]
-url: https://arxiv.org/abs/2501.12326
-code: https://github.com/bytedance/UI-TARS
+arxiv: https://arxiv.org/abs/2501.12326
+website:
+github: https://github.com/bytedance/UI-TARS
 rating: 3
 date_added: "2026-04-02"
 ---

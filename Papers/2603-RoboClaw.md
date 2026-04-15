@@ -5,8 +5,9 @@ institutes: [HKU, Galbot]
 date_publish: 2026-03
 venue: arXiv
 tags: [VLA, manipulation, task-planning, RL]
-url: https://arxiv.org/abs/2603.11558
-code:
+arxiv: https://arxiv.org/abs/2603.11558
+website:
+github:
 rating: 2
 date_added: "2026-03-23"
 ---

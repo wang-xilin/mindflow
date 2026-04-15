@@ -5,8 +5,9 @@ institutes: [Sun Yat-sen University, Shenzhen Campus of Sun Yat-sen University]
 date_publish: 2025-11-22
 venue: arXiv
 tags: [VLA, mobile-manipulation, spatial-memory, instruction-following]
-url: https://arxiv.org/abs/2511.18112
-code: ""
+arxiv: https://arxiv.org/abs/2511.18112
+website:
+github:
 rating: 1
 date_added: "2026-04-02"
 ---

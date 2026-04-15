@@ -5,8 +5,9 @@ institutes: [Sun Yat-sen University]
 date_publish: 2024-12
 venue: CVPR 2025
 tags: [VLN, navigation, task-planning, spatial-memory]
-url: https://arxiv.org/abs/2412.09082
-code:
+arxiv: https://arxiv.org/abs/2412.09082
+website:
+github:
 rating: 1
 date_added: "2026-03-27"
 ---

@@ -5,8 +5,9 @@ institutes: [Mila, McGill University, Universite de Montreal, ServiceNow Researc
 date_publish: 2025-11-10
 venue: arXiv
 tags: [web-agent, VLM, imitation-learning]
-url: https://arxiv.org/abs/2511.07332
-code: https://groundcua.github.io
+arxiv: https://arxiv.org/abs/2511.07332
+website: https://groundcua.github.io
+github:
 rating: 2
 date_added: "2026-04-02"
 ---

@@ -5,8 +5,9 @@ institutes: []
 date_publish: 2026-04
 venue: arXiv
 tags: [scene-understanding, 3D-representation, VLM]
-url: https://arxiv.org/abs/2604.07296
-code: https://github.com/VINHYU/OpenSpatial
+arxiv: https://arxiv.org/abs/2604.07296
+website:
+github: https://github.com/VINHYU/OpenSpatial
 rating: 1
 date_added: "2026-04-09"
 ---

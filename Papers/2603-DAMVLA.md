@@ -5,8 +5,9 @@ institutes: []
 date_publish: "2026-03"
 venue: "arXiv"
 tags: [VLA, manipulation]
-url: https://arxiv.org/abs/2603.00926
-code: ""
+arxiv: https://arxiv.org/abs/2603.00926
+website:
+github:
 rating: 1
 date_added: "2026-03-30"
 ---

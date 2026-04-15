@@ -5,8 +5,9 @@ institutes: [Beihang University, National University of Singapore, Zhongguancun 
 date_publish: 2026-04-07
 venue: arXiv
 tags: [manipulation, imitation-learning, task-planning]
-url: https://arxiv.org/abs/2604.05831v1
-code: https://github.com/buaa-colalab/BiCoord-Bench
+arxiv: https://arxiv.org/abs/2604.05831v1
+website:
+github: https://github.com/buaa-colalab/BiCoord-Bench
 rating: 1
 date_added: "2026-04-08"
 ---

@@ -5,8 +5,9 @@ institutes: [Google Research, Google DeepMind, Tel Aviv University]
 date_publish: 2024-08
 venue: "ICLR 2025"
 tags: [world-model, RL]
-url: "https://arxiv.org/abs/2408.14837"
-code: "https://gamengen.github.io/"
+arxiv: "https://arxiv.org/abs/2408.14837"
+website: "https://gamengen.github.io/"
+github:
 rating: 2
 date_added: "2026-03-30"
 ---

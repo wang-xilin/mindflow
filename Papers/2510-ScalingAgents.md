@@ -5,8 +5,9 @@ institutes: [Simular Research]
 date_publish: 2025-10-02
 venue: ICML
 tags: [web-agent, VLM, instruction-following]
-url: https://arxiv.org/abs/2510.02250
-code:
+arxiv: https://arxiv.org/abs/2510.02250
+website:
+github:
 rating: 2
 date_added: "2026-04-02"
 ---

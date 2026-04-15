@@ -5,8 +5,9 @@ institutes: [XLANG Lab - The University of Hong Kong, Salesforce Research]
 date_publish: 2024-12-12
 venue: "ICLR 2025 Spotlight"
 tags: [web-agent, VLM, imitation-learning, auto-research]
-url: https://arxiv.org/abs/2412.09605
-code: https://github.com/xlang-ai/AgentTrek
+arxiv: https://arxiv.org/abs/2412.09605
+website:
+github: https://github.com/xlang-ai/AgentTrek
 rating: 2
 date_added: "2026-04-02"
 ---

@@ -5,8 +5,9 @@ institutes: [Hugging Face]
 date_publish: 2025-06
 venue: arXiv
 tags: [VLA, flow-matching, imitation-learning, manipulation]
-url: https://arxiv.org/abs/2506.01844
-code: https://github.com/huggingface/lerobot
+arxiv: https://arxiv.org/abs/2506.01844
+website:
+github: https://github.com/huggingface/lerobot
 rating: 2
 date_added: "2026-03-27"
 ---

@@ -5,8 +5,9 @@ institutes: [National University of Singapore, Microsoft]
 date_publish: 2024-11-26
 venue: "arXiv"
 tags: [web-agent, VLM, instruction-following]
-url: https://arxiv.org/abs/2411.17465
-code: https://github.com/showlab/ShowUI
+arxiv: https://arxiv.org/abs/2411.17465
+website:
+github: https://github.com/showlab/ShowUI
 rating: 2
 date_added: "2026-04-02"
 ---

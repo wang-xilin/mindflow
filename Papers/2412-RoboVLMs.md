@@ -5,8 +5,9 @@ institutes: [Tsinghua University, ByteDance Research]
 date_publish: 2024-12
 venue: arXiv
 tags: [VLA, manipulation, imitation-learning, cross-embodiment]
-url: https://arxiv.org/abs/2412.14058
-code: https://robovlms.github.io
+arxiv: https://arxiv.org/abs/2412.14058
+website: https://robovlms.github.io
+github:
 rating: 3
 date_added: "2026-03-27"
 ---

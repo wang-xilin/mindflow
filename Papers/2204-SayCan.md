@@ -53,8 +53,9 @@ tags:
   - task-planning
   - mobile-manipulation
   - scene-understanding
-url: https://arxiv.org/abs/2204.01691
-code:
+arxiv: https://arxiv.org/abs/2204.01691
+website:
+github:
 rating: 3
 date_added: 2026-03-24
 ---

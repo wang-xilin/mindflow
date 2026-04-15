@@ -5,8 +5,9 @@ institutes: [ZHAW, University of Zurich, ETH Zurich]
 date_publish: 2025-01-27
 venue: arXiv
 tags: [web-agent, task-planning, VLM, instruction-following]
-url: https://arxiv.org/abs/2501.16150
-code:
+arxiv: https://arxiv.org/abs/2501.16150
+website:
+github:
 rating: 2
 date_added: "2026-04-02"
 ---

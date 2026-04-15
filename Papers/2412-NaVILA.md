@@ -5,8 +5,9 @@ institutes: [NVIDIA, UC San Diego]
 date_publish: 2024-12
 venue: RSS 2025
 tags: [VLA, VLN, VLM, navigation, legged]
-url: https://arxiv.org/abs/2412.04453
-code: https://github.com/AnjieCheng/NaVILA
+arxiv: https://arxiv.org/abs/2412.04453
+website:
+github: https://github.com/AnjieCheng/NaVILA
 rating: 3
 date_added: "2026-03-24"
 ---

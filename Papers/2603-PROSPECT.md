@@ -5,8 +5,9 @@ institutes: [Shanghai Jiao Tong University, University of Adelaide, HKUST Guangz
 date_publish: "2026-03"
 venue: "arXiv"
 tags: [VLN, 3D-representation, semantic-map]
-url: "https://arxiv.org/abs/2603.03739"
-code:
+arxiv: "https://arxiv.org/abs/2603.03739"
+website:
+github:
 rating: 2
 date_added: "2026-03-30"
 ---

@@ -5,8 +5,9 @@ institutes: [Jilin University, Chongqing University, University of Liverpool, Ge
 date_publish: 2026-04-07
 venue: arXiv
 tags: [VLA, flow-matching]
-url: https://arxiv.org/abs/2604.05656
-code:
+arxiv: https://arxiv.org/abs/2604.05656
+website:
+github:
 rating: 2
 date_added: "2026-04-08"
 ---

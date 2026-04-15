@@ -5,8 +5,9 @@ institutes: [Nanjing University, Shanghai AI Laboratory, National University of 
 date_publish: 2024-01-17
 venue: ACL 2024
 tags: [web-agent, VLM, instruction-following]
-url: https://arxiv.org/abs/2401.10935
-code: https://github.com/njucckevin/SeeClick
+arxiv: https://arxiv.org/abs/2401.10935
+website:
+github: https://github.com/njucckevin/SeeClick
 rating: 2
 date_added: "2026-04-02"
 ---

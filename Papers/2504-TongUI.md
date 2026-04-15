@@ -5,8 +5,9 @@ institutes: [BIGAI, Beijing Institute of Technology, Peking University, Shanghai
 date_publish: 2025-04-17
 venue: AAAI 2026
 tags: [web-agent, VLM, imitation-learning]
-url: https://arxiv.org/abs/2504.12679
-code: https://github.com/TongUI-agent/TongUI-agent
+arxiv: https://arxiv.org/abs/2504.12679
+website:
+github: https://github.com/TongUI-agent/TongUI-agent
 rating: 2
 date_added: "2026-04-02"
 ---

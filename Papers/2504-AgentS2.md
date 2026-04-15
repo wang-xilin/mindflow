@@ -5,8 +5,9 @@ institutes: [Simular Research]
 date_publish: 2025-04-01
 venue: arXiv
 tags: [web-agent, VLM, task-planning]
-url: https://arxiv.org/abs/2504.00906
-code: https://github.com/simular-ai/Agent-S
+arxiv: https://arxiv.org/abs/2504.00906
+website:
+github: https://github.com/simular-ai/Agent-S
 rating: 2
 date_added: "2026-04-02"
 ---

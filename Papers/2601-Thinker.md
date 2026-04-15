@@ -5,8 +5,9 @@ institutes: [Unknown]
 date_publish: "2026-01"
 venue: "IROS 2025"
 tags: [VLM, scene-understanding, task-planning, manipulation, instruction-following]
-url: "https://arxiv.org/abs/2601.21199"
-code: ""
+arxiv: "https://arxiv.org/abs/2601.21199"
+website:
+github:
 rating: 1
 date_added: "2026-03-30"
 ---

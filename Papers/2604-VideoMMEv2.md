@@ -5,8 +5,9 @@ institutes: []
 date_publish: 2026-04
 venue: arXiv
 tags: [VLM]
-url: https://arxiv.org/abs/2604.05015
-code:
+arxiv: https://arxiv.org/abs/2604.05015
+website:
+github:
 rating: 2
 date_added: "2026-04-08"
 ---

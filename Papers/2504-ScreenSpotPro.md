@@ -5,8 +5,9 @@ institutes: [National University of Singapore, East China Normal University, Hon
 date_publish: 2025-04-04
 venue: arXiv
 tags: [web-agent, VLM]
-url: https://arxiv.org/abs/2504.07981
-code: https://gui-agent.github.io/grounding-leaderboard/
+arxiv: https://arxiv.org/abs/2504.07981
+website: https://gui-agent.github.io/grounding-leaderboard/
+github:
 rating: 2
 date_added: "2026-04-02"
 ---

@@ -5,8 +5,9 @@ institutes: [Tsinghua University]
 date_publish: "2025-04"
 venue: arXiv
 tags: [spatial-reasoning, VLM, RL]
-url: "https://arxiv.org/abs/2504.12680"
-code: "https://github.com/EmbodiedCity/Embodied-R.code"
+arxiv: "https://arxiv.org/abs/2504.12680"
+website:
+github: "https://github.com/EmbodiedCity/Embodied-R.code"
 rating: 2
 date_added: "2026-03-30"
 ---

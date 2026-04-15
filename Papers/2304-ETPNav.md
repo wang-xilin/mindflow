@@ -5,8 +5,9 @@ institutes: [NLPR/CASIA]
 date_publish: 2023-04
 venue: TPAMI 2024
 tags: [VLN, navigation, task-planning, spatial-memory]
-url: https://arxiv.org/abs/2304.03047
-code: https://github.com/MarSaKi/ETPNav
+arxiv: https://arxiv.org/abs/2304.03047
+website:
+github: https://github.com/MarSaKi/ETPNav
 rating: 2
 date_added: "2026-03-24"
 ---

@@ -5,8 +5,9 @@ institutes: [ByteDance Seed]
 date_publish: "2024-06"
 venue: "ICCV 2025"
 tags: [world-model, manipulation, diffusion-policy]
-url: "https://arxiv.org/abs/2406.14540"
-code: "https://github.com/bytedance/IRASim"
+arxiv: "https://arxiv.org/abs/2406.14540"
+website:
+github: "https://github.com/bytedance/IRASim"
 rating: 2
 date_added: "2026-03-30"
 ---

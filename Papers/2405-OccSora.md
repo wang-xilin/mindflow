@@ -5,8 +5,9 @@ institutes: [Beihang University, UC Berkeley, Tsinghua University]
 date_publish: 2024-05
 venue: "ICLR 2025"
 tags: [world-model, 3D-representation]
-url: "https://arxiv.org/abs/2405.20337"
-code: "https://github.com/wzzheng/OccSora"
+arxiv: "https://arxiv.org/abs/2405.20337"
+website:
+github: "https://github.com/wzzheng/OccSora"
 rating: 1
 date_added: "2026-03-30"
 ---

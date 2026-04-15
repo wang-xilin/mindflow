@@ -5,8 +5,9 @@ institutes: [Tsinghua University, Z.AI, University of Chinese Academy of Science
 date_publish: 2025-08-19
 venue: arXiv
 tags: [web-agent, RL, VLM, instruction-following]
-url: https://arxiv.org/abs/2508.14040
-code: https://github.com/thudm/ComputerRL
+arxiv: https://arxiv.org/abs/2508.14040
+website:
+github: https://github.com/thudm/ComputerRL
 rating: 2
 date_added: "2026-04-02"
 ---

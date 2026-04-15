@@ -18,8 +18,9 @@ tags:
   - navigation
   - instruction-following
   - scene-understanding
-url: https://arxiv.org/abs/2509.21006
-code: ""
+arxiv: https://arxiv.org/abs/2509.21006
+website:
+github:
 rating: 1
 date_added: "2026-04-02"
 ---

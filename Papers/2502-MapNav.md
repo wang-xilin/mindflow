@@ -5,8 +5,9 @@ institutes: [HKUST(GZ), Beijing Academy of Artificial Intelligence, Tsinghua Uni
 date_publish: "2025-02"
 venue: "arXiv"
 tags: [VLN, semantic-map, navigation]
-url: "https://arxiv.org/abs/2502.13451"
-code:
+arxiv: "https://arxiv.org/abs/2502.13451"
+website:
+github:
 rating: 2
 date_added: "2026-03-30"
 ---

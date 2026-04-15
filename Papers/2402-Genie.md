@@ -5,8 +5,9 @@ institutes: [Google DeepMind]
 date_publish: "2024-02"
 venue: "ICML 2024"
 tags: [world-model, RL]
-url: "https://arxiv.org/abs/2402.15391"
-code: ""
+arxiv: "https://arxiv.org/abs/2402.15391"
+website:
+github:
 rating: 2
 date_added: "2026-03-30"
 ---

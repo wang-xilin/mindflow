@@ -5,8 +5,9 @@ institutes: [Princeton University, Stanford University, Google DeepMind, Columbi
 date_publish: 2023-05
 venue: Autonomous Robots
 tags: [mobile-manipulation, task-planning, instruction-following]
-url: https://arxiv.org/abs/2305.05658
-code: https://tidybot.cs.princeton.edu
+arxiv: https://arxiv.org/abs/2305.05658
+website: https://tidybot.cs.princeton.edu
+github:
 rating: 1
 date_added: "2026-04-02"
 ---

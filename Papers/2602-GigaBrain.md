@@ -5,8 +5,9 @@ institutes: [GigaAI]
 date_publish: "2026-02"
 venue: "arXiv"
 tags: [VLA, world-model, RL, manipulation]
-url: "https://arxiv.org/abs/2602.12099"
-code: ""
+arxiv: "https://arxiv.org/abs/2602.12099"
+website:
+github:
 rating: 2
 date_added: "2026-03-30"
 ---

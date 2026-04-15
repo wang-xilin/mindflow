@@ -5,8 +5,9 @@ institutes: [University of British Columbia, Vector Institute, Etude AI, Kuaisho
 date_publish: 2026-04-06
 venue: arXiv
 tags: [VLM, RL]
-url: https://arxiv.org/abs/2604.05117
-code:
+arxiv: https://arxiv.org/abs/2604.05117
+website:
+github:
 rating: 2
 date_added: "2026-04-08"
 ---
