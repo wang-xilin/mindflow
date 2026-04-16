@@ -120,7 +120,7 @@ $$
 > - **核心**: {一句话核心}
 > - **方法**: {关键方法}
 > - **结果**: {主要结果}
-> - **代码**: {GitHub链接}
+> - **Sources**: [arxiv](arxiv_url) | [website](website_url) | [github](github_url)
 
 ---
 ## Notes

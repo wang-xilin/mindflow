@@ -314,6 +314,7 @@ Glob DomainMaps/*<TermCamelCase>*.md   # 若目录存在
    - **output**: [[Papers/{笔记文件名}]]
    - **observation**: <一句话描述论文核心贡献>
    - **dead_links**: [term1, term2, ...]  # Step 4 未命中的 term，vault curation TODO
+   - **issues**: <执行过程中遇到的问题，如源获取失败、defuddle 解析错误、论文无 arxiv HTML 版本等；无问题则写 "none">
    - **status**: success
    ```
 
@@ -348,3 +349,4 @@ Glob DomainMaps/*<TermCamelCase>*.md   # 若目录存在
 ### Step 5 (Log) 自检
 - [ ] 日志已追加到 `Workbench/logs/YYYY-MM-DD.md`
 - [ ] Log entry 包含 `dead_links` 列表
+- [ ] Log entry 包含 `issues` 字段（记录执行过程中遇到的问题，无问题则为 "none"）
