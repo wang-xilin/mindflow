@@ -337,6 +337,8 @@ Glob DomainMaps/*<TermCamelCase>*.md   # 若目录存在
 - [ ] 每个 figure / equation / table / video 嵌在 `section_id` 对应的 section，**就近放置**
 - [ ] Teaser 媒体（若存在）嵌在 `## Summary` 段内
 - [ ] 未嵌入 OG image / social card / banner 等装饰性图片
+- [ ] **每个嵌入的 figure / equation / table / video 都有紧邻的描述**（`**Figure N. ...**` / `**Equation N. ...**` / `**Table N. ...**` / `**Video N. ...**` 格式），不存在光秃秃的 `<video>` / `![](...)` / `$$...$$` / 表格裸嵌；描述应说明**这张图/表/视频在展示什么**，而不是重复 section 标题
+- [ ] **每个元素的嵌入位置与其描述在语境上一致**：元素不应被放在会误导读者的上下文（例：一段讲 "zero-shot 失败" 的文字下方不能紧接一个展示成功的视频）。若描述和周围文字冲突，更换嵌入的位置
 
 ### Step 4 (Wikilink 注入) 自检 
 
