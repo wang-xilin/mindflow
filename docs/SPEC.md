@@ -97,8 +97,6 @@ MindFlow/
 │   ├── logs/            #   每日操作日志（YYYY-MM-DD.md）
 │   └── evolution/       #   演化记录（changelog.md）
 │
-├── examples/            # 示例文件
-│
 ├── docs/SPEC.md         # ★ 本文件
 ├── AGENTS.md            # Researcher 身份与操作指令（CLAUDE.md 为其 symlink）
 └── .obsidian/           # Obsidian 配置
