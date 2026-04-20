@@ -14,7 +14,7 @@ const HomepageStats: QuartzComponent = ({ allFiles, fileData, cfg }: QuartzCompo
     { label: "Ideas",      folder: "Ideas",      color: "#10B981" },
     { label: "Topics",     folder: "Topics",     color: "#8B5CF6" },
     { label: "Domain Maps", folder: "DomainMaps", color: "#F59E0B" },
-    { label: "Resources",  folder: "Resources",  color: "#EF4444" },
+    { label: "Projects",   folder: "Projects",   color: "#EF4444" },
   ]
   const counts = sections.map(({ label, folder, color }) => ({
     label,

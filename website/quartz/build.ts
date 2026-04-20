@@ -128,23 +128,12 @@ async function startServing(
     lastBuildMs: 0,
   }
 
-  const watcher = chokidar.watch(".", {
+  const noteFolders = ["Papers", "Topics", "Ideas", "DomainMaps", "Projects", "Reports"]
+  const watcher = chokidar.watch(noteFolders, {
     persistent: true,
     cwd: argv.directory,
     ignoreInitial: true,
-    ignored: (p, stats) => {
-      const base = path.basename(p)
-      if (
-        base === "node_modules" ||
-        base === ".git" ||
-        base === "public" ||
-        base === ".quartz-cache"
-      ) {
-        return true
-      }
-      if (stats?.isFile() && !p.endsWith(".md")) return true
-      return false
-    },
+    ignored: (p, stats) => stats?.isFile() === true && !p.endsWith(".md"),
   })
 
   const buildFromEntry = argv.fastRebuild ? partialRebuildFromEntrypoint : rebuildFromEntrypoint
