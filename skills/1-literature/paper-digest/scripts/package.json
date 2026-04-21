@@ -1,0 +1,11 @@
+{
+  "name": "paper-digest-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Node helpers for paper-digest skill. Auto-installs on first run.",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "defuddle": "*",
+    "linkedom": "*"
+  }
+}

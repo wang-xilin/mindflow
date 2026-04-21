@@ -28,3 +28,7 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 .pytest_cache/
+
+# Skill local deps (bootstrap-installed by scripts)
+skills/**/node_modules/
+skills/**/package-lock.json
