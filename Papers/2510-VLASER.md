@@ -11,18 +11,15 @@ github: https://github.com/OpenGVLab/Vlaser
 rating: 2
 date_added: 2026-04-16
 ---
-## 速查卡片
+
+## Summary
 
 > [!summary] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning
 > - **核心**: 基于 InternVL3 构建 embodied VLM，系统研究 VLM 预训练数据对下游 VLA 微调的影响
 > - **方法**: Vlaser-6M 多任务 embodied 数据集 + flow matching action expert；分离 VLM embodied reasoning 预训练和 VLA 微调两阶段
 > - **结果**: 12 个 embodied reasoning benchmark SOTA（avg 51.3@8B）；WidowX SOTA（65.1%）；关键发现：in-domain 数据远比 OOD embodied reasoning 数据对 VLA 性能更关键
 > - **Sources**: [paper](https://arxiv.org/abs/2510.11027) | [website](https://internvl.github.io/blog/2025-10-11-Vlaser/) | [github](https://github.com/OpenGVLab/Vlaser)
-
----
-## Summary
-
-Vlaser 是一个基于 InternVL3 的 embodied VLM/VLA，通过 Vlaser-6M 数据集增强 embodied reasoning 能力，并系统研究了哪些 VLM 数据流对下游 VLA 微调最有效。
+> - **Rating**: 2 - Frontier（提出 OOD reasoning vs in-domain 的重要 negative result + 完整开源 Vlaser-6M，当前在 embodied reasoning-VLA 协同方向是重要参考；但方法上沿用 π0 flow matching + InternVL3 SFT，且未跨越 sim-to-real，尚未到奠基 level）
 
 **Key Takeaways:**
 1. **In-domain 数据 >> OOD embodied reasoning 数据**: OOD embodied reasoning 数据虽然大幅提升 reasoning benchmark 分数（15.2→45.3@2B），但对下游 VLA closed-loop 性能几乎无提升（41.8→43.2）；而 in-domain 数据（来自同一仿真平台的 QA/grounding/spatial 数据）则显著提升 VLA 成功率（41.8→65.1）
@@ -165,6 +162,24 @@ $$
 论文未进行真实机器人实验，所有实验均在仿真环境中完成。
 
 ---
+## 关联工作
+
+### 基于
+- InternVL3: 作为 VLM backbone，Vlaser 在此基础上 SFT 增强 embodied reasoning
+- [[2410-Pi0|π0]]: Action expert 的 flow matching MoE 设计直接参考 [[2410-Pi0|π0]] 架构
+- open-pi-zero: VLA 训练和推理代码基于此开源实现
+
+### 对比
+- [[2507-RoboBrain2|RoboBrain2.0]]: 同期 embodied reasoning VLM，使用 RFT 方法，Vlaser 在综合分数上 +10%
+- [[2508-EmbodiedR1|Embodied-R1]]: 同期 embodied reasoning VLM，使用 RL fine-tuning，Vlaser 在多数 benchmark 上领先
+- SpatialVLA: VLA baseline，Vlaser-All 在 WidowX 上显著超越（65.1% vs 42.7%）
+
+### 方法相关
+- Flow Matching: 用于 action prediction 的生成方法，替代 diffusion
+- SimplerEnv: 标准化仿真评估框架，支持 WidowX 和 Google Robot
+- RoboTwin: 双臂操作仿真框架，用于 Aloha-AgileX 评估
+
+---
 ## 论文点评
 
 ### Strengths
@@ -195,24 +210,9 @@ $$
 - ✅ OOD 数据对 VLA 无显著提升：通过 Vlaser-OOD vs InternVL3-2B 直接对比，在三个平台均观察到一致趋势
 - ⚠️ "Urgent to shrink domain gap"：这是基于仿真实验的归因推论，未通过 real robot 实验验证这一 domain gap 假说是否在 real-world 成立
 
----
-## 关联工作
+### Notes
 
-### 基于
-- InternVL3: 作为 VLM backbone，Vlaser 在此基础上 SFT 增强 embodied reasoning
-- [[2410-Pi0|π0]]: Action expert 的 flow matching MoE 设计直接参考 [[2410-Pi0|π0]] 架构
-- open-pi-zero: VLA 训练和推理代码基于此开源实现
+### Rating
 
-### 对比
-- [[2507-RoboBrain2|RoboBrain2.0]]: 同期 embodied reasoning VLM，使用 RFT 方法，Vlaser 在综合分数上 +10%
-- [[2508-EmbodiedR1|Embodied-R1]]: 同期 embodied reasoning VLM，使用 RL fine-tuning，Vlaser 在多数 benchmark 上领先
-- SpatialVLA: VLA baseline，Vlaser-All 在 WidowX 上显著超越（65.1% vs 42.7%）
-
-### 方法相关
-- Flow Matching: 用于 action prediction 的生成方法，替代 diffusion
-- SimplerEnv: 标准化仿真评估框架，支持 WidowX 和 Google Robot
-- RoboTwin: 双臂操作仿真框架，用于 Aloha-AgileX 评估
-
----
-## Notes
-
+**分数**：2 - Frontier
+**理由**：在 embodied reasoning 与 VLA 协同方向上，Vlaser 提供了关键的 negative result（Strengths #2：OOD reasoning 数据对 closed-loop 几乎无增益），且 Vlaser-6M + 完整模型开源（Artifact 可获取性全绿），具备作为当前 "VLM data for VLA" 方向 baseline 的潜力；但方法层面（Weaknesses #3）直接沿用 π0 flow matching + InternVL3 SFT，未形成范式突破；仅发布半年、尚无大规模后续 baseline 采纳，且未验证 sim-to-real，距离 Foundation level 还有距离，不是 1 是因为 ICLR 2026 录用 + in-domain vs OOD 的实验设计在方向内已是重要参考点。
