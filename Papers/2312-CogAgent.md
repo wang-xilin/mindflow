@@ -262,5 +262,7 @@ CogAgent 在 GUI agent 历史上是 vision-only 路线 viable 的关键证据。
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=700, influential=108 (15.4%), velocity=24.73/mo; HF upvotes=31; github 6738⭐ / forks=455 / 90d commits=0 / pushed 694d ago · stale
+
 **分数**：3 - Foundation
 **理由**：CogAgent 是 pure-vision GUI agent 路线的奠基工作——Strengths 里已点明它首次在 Mind2Web 上让 screenshot-only 方案反超 HTML+LLaMA2-70B，改变了社区对 modality choice 的判断；CCS400K 的 Playwright + DOM bbox pipeline 也被 SeeClick / OS-Atlas / ShowUI 等主流后续工作显式继承。相比 2 档（Frontier/SOTA），它已经过了"待验证的前沿"阶段，进入 GUI agent 方向的必读 baseline 序列；虽然具体 dual-encoder 架构被 native dynamic resolution（Qwen2-VL 路线）边缘化（见 Weaknesses 1），但其 paradigm-level 贡献（vision-only 可行、web-scale GUI grounding 数据范式）仍是该方向主脉络的 building block。

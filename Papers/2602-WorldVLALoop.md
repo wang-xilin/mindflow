@@ -249,5 +249,7 @@ LIBERO benchmark + 自建实验室设置。硬件：Franka research arm + 单个
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=3, influential=0 (0.0%), velocity=1.2/mo; HF upvotes=0; github 21⭐ / forks=2 / 90d commits=21 / pushed 58d ago
+
 **分数**：2 - Frontier
 **理由**：这是 world-model-as-RL-simulator 方向 2026 年的一篇重要前沿工作——Strengths 里记录的 "reward head 双向 regularizer" 和 "reward hacking 实证 co-evolving loop 必要性" 是非平凡的方法贡献，直接推进了 WMPO / VLA-RFT / World-Env 未触及的问题；但不到 Foundation 档：Weaknesses 中的 real-world 仅 30 rollouts、LIBERO 只评 2/10 任务、主动放弃 LIBERO-Long、代码 "In preparation"、与多篇并行工作（2511–2601 之间的 WMPO / VLA-RFT / Cosmos Policy）尚未分出高下，所以还不是方向的必读奠基。也不算 Archived——它提出的 SANS + closed-loop 是此后 video-world-model-RL 绕不开的 reference。

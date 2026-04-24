@@ -473,5 +473,7 @@ LLM-as-grader 范式省人力但本身是 imperfect proxy。两类典型 bias：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=N/A (non-arxiv release), influential=N/A, velocity=N/A; HF upvotes=N/A; github=N/A (无代码仓库)
+
 **分数**：3 - Foundation
 **理由**：作为 Lil'Log 级别的系统综述，这篇把 reward hacking 从经典 RL 一路贯到 RLHF / LLM-as-judge / ICRH / hacking generalization 的全谱都 well-curated 起来（见 Strengths 1、2），并首次清晰 instantiate 了 three-level reward gap、"capability scaling 加剧 hacking"、ICRH 等 reusable framework（Strengths 3、4），已成为 agentic-RL / alignment 讨论的共通词汇表。相较 2 - Frontier，它不是短期 SOTA 而是长期 mental model 的 building block——Notes 里列出的多数研究场景都会直接调用它的 framing；相较 1 - Archived，它覆盖的现象（U-Sophistry、ICRH 的 scale 放大、reward tampering generalization）正是当前 RLHF / agentic-RL 研究最 active 的 pain point，不会短期过气。

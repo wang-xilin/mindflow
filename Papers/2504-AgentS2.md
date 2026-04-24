@@ -281,5 +281,7 @@ Failure 模式分布：planning > grounding > interaction > navigation > infeasi
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=103, influential=24 (23.3%), velocity=8.11/mo; HF upvotes=27; github 10905⭐ / forks=1270 / 90d commits=3 / pushed 62d ago
+
 **分数**：2 - Frontier
-**理由**：CUA compositional 路线的代表 SOTA、COLM 2025 录用，在三个 OS benchmark 上反超当时所有 monolithic 系统，且 README 显示它已成为后续 Agent S2.5 / S3 等主要工作必对比的 baseline——符合 Frontier "必须比较的 Baseline、方法范式的代表工作"定义。但它不具 Foundation 级奠基性：MoG 的 router 仍是 prompt-engineering（Weaknesses #1），Agent S3 已在 OSWorld 上反超人类把它 10 个月内取代，且其 Manager-Worker 骨架本质继承自 Agent S 前作，自身创新点是 MoG + PHP 两个工程性组合而非奠基 paradigm，因此不到 3。
+**理由**：CUA compositional 路线的代表 SOTA、COLM 2025 录用，在三个 OS benchmark 上反超当时所有 monolithic 系统，且 README 显示它已成为后续 Agent S2.5 / S3 等主要工作必对比的 baseline——符合 Frontier "必须比较的 Baseline、方法范式的代表工作"定义。但它不具 Foundation 级奠基性：MoG 的 router 仍是 prompt-engineering（Weaknesses #1），Agent S3 已在 OSWorld 上反超人类把它 10 个月内取代，且其 Manager-Worker 骨架本质继承自 Agent S 前作，自身创新点是 MoG + PHP 两个工程性组合而非奠基 paradigm，因此不到 3。2026-04 复核：citation=103 / velocity=8.11/mo、influential 比例 23.3%（远高于典型 10% 意味着技术被实质继承）+ Agent-S repo 10.9k⭐ 反映该路线整体影响力显著，但 Agent S3 的快速迭代使 S2 本身已进入 "被继承而非主读" 状态，维持 Frontier——不升 3 是因为"被引用"实际上多以 Agent-S 系列整体而非 S2 单篇为单位。

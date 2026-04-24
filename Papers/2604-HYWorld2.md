@@ -377,5 +377,7 @@ Photometric (L1 + SSIM + LPIPS) + Depth L1 (稀疏) + Normal cosine (密集，Mo
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=110; github 1601⭐ / forks=121 / 90d commits=13 / pushed 1d ago
+
 **分数**：2 - Frontier
 **理由**：在 open-source 3D world generation 的当前前沿里具有代表性——WorldMirror 2.0 在 7-Scenes/NRGBD/DTU/ScanNet 多个 reconstruction benchmark 刷新 open-source SOTA（Tab 11/12/13），WorldStereo 2.0 在 T&T/MipNeRF360 上显著超 SEVA/Gen3C/Lyra/FlashWorld（Tab 5），系统级完整度和端到端 712s 的 practical runtime 让它成为开源社区必参考的 baseline。但不到 Foundation：keyframe-latent VDM 是唯一清晰的 scientific insight，其余是 HY-World 1.0/1.5 + Uni3C + WorldMirror 1.0 + FlashWorld 的 competent integration；title 里的 "world model / simulating" 定位虚胖（无 dynamics、无 action-conditioning），不具备 Genie 3 / Marble 那种 interactive world model 的 paradigm 奠基地位。

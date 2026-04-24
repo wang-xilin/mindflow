@@ -266,5 +266,7 @@ Tab. 6 进一步验证了**仅用 web-sourced data** 走 3D lifting 走出来的
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=39; github 73⭐ / forks=1 / 90d commits=9 / pushed 9d ago
+
 **分数**：2 - Frontier
 **理由**：按 field-centric rubric，OpenSpatial 是 spatial VLM 数据工程方向当前必须参考的 Frontier 工作——OBB-centric engine + 5 类任务 taxonomy + multi-backbone 一致提升（3D-Avg +5.4~+9.5）让它成为后续 spatial data pipeline 的 default baseline；但距离 Foundation 仍差两步：(a) 核心归因 ablation 被混合训练稀释、3D lifting 缺定量质量指标，可信度未拉满；(b) evaluation suite / lifting module / model weights 都还在 roadmap，尚未成为社区 de facto 标准。若后续 roadmap 全部落地且被广泛采用，可升至 3。

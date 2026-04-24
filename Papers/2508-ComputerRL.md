@@ -304,5 +304,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=19, influential=4 (21.1%), velocity=2.35/mo; HF upvotes=3; github 27⭐ / forks=6 / 90d commits=0 / pushed 168d ago
+
 **分数**：2 - Frontier
 **理由**：9B 开源模型在 OSWorld 取得 48.9%，在笔记主结果表中明确超越 OpenAI CUA o3 (42.9%)、UI-TARS-1.5 (42.5%)、Claude 4 Sonnet (30.7%)，是当前 desktop computer-use agent 的强 baseline，模型权重与评估代码已开源（AutoGLM-OS-9B、computerrl-glm4_1v-9b），值得作为主要对比项。够不到 Foundation 的原因在 Weaknesses 已列：API-GUI 仅覆盖 6 应用 103 API，long-tail 泛化和 cross-OS 未验证，训练代码未开源，异步 RL 细节缺失——尚未成为方向的 de facto 标准，更接近 "当前 SOTA + 重要范式代表"。高于 Archived 因为它不是 incremental 工作，而是给 desktop RL 提出了一套可被后续工作继承的 stack。

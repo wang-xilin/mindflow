@@ -8,7 +8,7 @@ tags: [mobile-manipulation, VLA, SLAM]
 paper: https://arxiv.org/abs/2509.21006
 website: https://selfai-research.github.io/AnywhereVLA/
 github: https://github.com/SelfAI-research/AnywhereVLA
-rating: 2
+rating: 1
 date_added: 2026-04-21
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-21
 > - **方法**: 语言指令 → 任务图 → 三大模块（带 confidence 的 3D 语义建图 + frontier-based active exploration + Approach 规划） + SmolVLA 450M 在自采 50 episode SO-101 数据集上微调
 > - **结果**: 50 个 end-to-end episode 中 46% overall SR；其中 VLA manipulation 80%，SLAM 100%，AEE 75%；5 m 半径平均 < 133 s 完成
 > - **Sources**: [paper](https://arxiv.org/abs/2509.21006) | [website](https://selfai-research.github.io/AnywhereVLA/) | [github](https://github.com/SelfAI-research/AnywhereVLA)
-> - **Rating**: 2 - Frontier（完整 open-source 的 edge mobile manipulation system paper，fine-tune ablation 与模块 SR 拆分是同方向后续工作的有用 datapoint，但方法 novelty 接近零，不构成 foundation）
+> - **Rating**: 1 - Archived（完整 open-source 的 edge mobile manipulation system paper，但发布近 7 个月仅 3 cites / 0 influential / 23⭐，加上方法 novelty 接近零，更适合作为一次性 system reference 而非前沿 baseline）
 
 **Key Takeaways:**
 1. **Classical stack + small VLA 是 edge 部署的现实路径**：作者明确放弃 end-to-end VLA / VLN 路线，把长程导航交给 SLAM + Nav2 + frontier exploration，让 [[2506-SmolVLA|SmolVLA]] 只负责局部 grasp/place，这样在 Jetson Orin NX + NUC 上保 ≥10 Hz。
@@ -243,5 +243,7 @@ $$
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：在 edge mobile manipulation 方向，这是少见的完整 open-source system paper——硬件、SLAM、exploration、VLA 微调、部署 latency 全栈 disclosure（见 Strengths 1–3），fine-tune 10% → 46% 的 ablation 和模块 SR 拆分是后续工作可直接引用的 datapoint，足以作为方向的 Frontier 参考。但方法 novelty 接近零（Weaknesses 1）、评估场景单一（Weaknesses 3）、语言理解退化成 class token（Weaknesses 2），不具备 Foundation 档所需的奠基性或 de facto baseline 地位；也未过气，不该降到 Archived。
+**Metrics** (as of 2026-04-24): citation=3, influential=0 (0.0%), velocity=0.43/mo; HF upvotes=0; github 23⭐ / forks=1 / 90d commits=0 / pushed 180d ago
+
+**分数**：1 - Archived
+**理由**：在 edge mobile manipulation 方向，这是少见的完整 open-source system paper——硬件、SLAM、exploration、VLA 微调、部署 latency 全栈 disclosure（见 Strengths 1–3），fine-tune 10% → 46% 的 ablation 和模块 SR 拆分是后续工作可直接引用的 datapoint。但方法 novelty 接近零（Weaknesses 1）、评估场景单一（Weaknesses 3）、语言理解退化成 class token（Weaknesses 2）。2026-04 复核：发布 6.9 个月仅 3 cites / 0 influential / velocity 0.43/mo / 23⭐ / 0 HF upvotes / 90d commits=0，与 Frontier 档 "有一定使用量 / 必须比较的 baseline" 的定性不符，更符合 Archived 档的 "niche / 为某个具体问题查的一次性参考"，故从 2 - Frontier 下调至 1 - Archived；相对 2，差别在于社区未兑现 adoption，edge mobile manipulation 方向当前更活跃的参考是 [[2506-SmolVLA|SmolVLA]] 等单点 VLA 路线，本文保留作为 system-integration reference 即可，不再预期主动翻。

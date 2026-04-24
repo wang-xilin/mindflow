@@ -234,5 +234,7 @@ RL 在 7B 上从 69.2 → 70.5（+1.3），3B 上从 66.4 → 68.4（+2.0）。
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=6, influential=1 (16.7%), velocity=1.11/mo; HF upvotes=107; github 124⭐ / forks=14 / 90d commits=8 / pushed 30d ago
+
 **分数**：2 - Frontier
-**理由**：GroundCUA 是当前开源 desktop grounding 数据集中密度与 expert 质量最高的（64 elements/screen、0.13% avg area），GroundNext-7B (RL) 在 5 个 benchmark 上平均 70.5 超越 JEDI/UI-TARS-1.5/GTA1 等同期工作，已构成 GUI grounding 方向必比的 SOTA baseline；但发布仅 2025-11，尚未被后续主要工作普遍采纳为 de facto 标准，且核心贡献仍在数据策略而非范式开创，故不到 Foundation 而低于相邻的 3 档。
+**理由**：GroundCUA 是当前开源 desktop grounding 数据集中密度与 expert 质量最高的（64 elements/screen、0.13% avg area），GroundNext-7B (RL) 在 5 个 benchmark 上平均 70.5 超越 JEDI/UI-TARS-1.5/GTA1 等同期工作，已构成 GUI grounding 方向必比的 SOTA baseline；但发布仅 2025-11，尚未被后续主要工作普遍采纳为 de facto 标准，且核心贡献仍在数据策略而非范式开创，故不到 Foundation 而低于相邻的 3 档。2026-04 复核：5.4mo 发布，cite=6/inf=1 (16.7%)/vel=1.11/mo、HF=107（rubric 认可的 early adoption 信号，远高于同期多数工作）、仓库 active（30d）——influential/total 高于典型值且 HF 热度强，Frontier 档稳固；若 6-12 个月后 GUI grounding 工作开始普遍在其上做 baseline 对齐，升 3 成立。

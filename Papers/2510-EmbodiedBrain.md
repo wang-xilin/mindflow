@@ -8,7 +8,7 @@ tags: [embodied-reasoning, task-planning, agentic-RL]
 paper: https://arxiv.org/abs/2510.20578
 website: https://zterobot.github.io/EmbodiedBrain.github.io/
 github:
-rating: 2
+rating: 1
 date_added: 2026-04-21
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-21
 > - **方法**: (1) "agent-aligned" 数据格式（response + plans + actions tuple），(2) 两阶段训练—rejection-sampling SFT cold-start + Step-GRPO（在 GRPO 里把 ground-truth 计划的前 k 步作为 "Guided Precursor" 提示），(3) Generative Reward Model 走异步推理给规划合理性打分
 > - **结果**: 7B/32B 在 14 个 benchmark 全面超过 Qwen2.5-VL baseline 与同尺寸 RoboBrain 2.0；自建闭环 sim benchmark VLM-PlanSim-99 上 32B 达 46.46% 成功率（baseline ~25%）
 > - **Sources**: [paper](https://arxiv.org/abs/2510.20578) | [website](https://zterobot.github.io/EmbodiedBrain.github.io/)
-> - **Rating**: 2 - Frontier（方法上是 Qwen2.5-VL 之上的 embodied post-training recipe，Step-GRPO 是可借鉴的工程 trick，但架构零创新、评估有选择性、闭环 benchmark 规模偏小——属于同期 embodied foundation model 赛道的重要参考而非奠基）
+> - **Rating**: 1 - Archived（方法上是 Qwen2.5-VL 之上的 embodied post-training recipe，Step-GRPO 是可借鉴的工程 trick，但架构零创新、评估有选择性、闭环 benchmark 规模偏小；2026-04 复核 cite=2/inf=0/HF=0/6mo、无 github 链接，社区 traction 接近零——被同期 MiMo-Embodied / Pelican-VL 等后续工作分流）
 
 **Key Takeaways:**
 1. **Step-GRPO 是 GRPO + curriculum 的简单 trick**：长 horizon 的 planning rollout 几乎全负样本，advantage 退化；把真值前 k 步当 prompt 注入（k 随机），把任务 chunk 成易后段，等价于按难度分层学。本质是 "QuestA-style hint injection" 移植到 embodied planning。
@@ -248,5 +248,7 @@ $$
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：作为 2025Q4 embodied foundation model 赛道的同期重要参考，方法上是 Qwen2.5-VL 之上扎实的 post-training recipe，Step-GRPO (QuestA-style hint injection) 和 visual-mask-based RL data curation 都是可借用的工程 trick；但如 Weaknesses 指出，架构零创新、仅对比 Qwen2.5-VL 与 RoboBrain 2.0、内部 benchmark 评估存在 evaluator bias 风险，且与 QuestA / RoboGPT-R1 等同类 hint-based GRPO 工作无对比——影响力尚未达到 Foundation 档（非 must-cite 奠基工作），但开源 + 闭环 benchmark VLM-PlanSim-99 + 在 14 benchmark 上的系统对比足以让它保持在 Frontier 档而非降为 Archived。
+**Metrics** (as of 2026-04-24): citation=2, influential=0 (0.0%), velocity=0.33/mo; HF upvotes=0; github=N/A (无代码仓库)
+
+**分数**：1 - Archived
+**理由**：作为 2025Q4 embodied foundation model 赛道的同期工作，方法上是 Qwen2.5-VL 之上扎实的 post-training recipe，Step-GRPO (QuestA-style hint injection) 和 visual-mask-based RL data curation 都是可借用的工程 trick；但如 Weaknesses 指出，架构零创新、仅对比 Qwen2.5-VL 与 RoboBrain 2.0、内部 benchmark 评估存在 evaluator bias 风险，且与 QuestA / RoboGPT-R1 等同类 hint-based GRPO 工作无对比。2026-04 复核：发布 6mo、cite=2/inf=0/vel=0.33/mo、HF=0、笔记 frontmatter 的 github 字段已为空——rubric 特例中"inf>0、star velocity、HF upvotes"三条 early signal 任一都不成立，且同期有 MiMo-Embodied、Pelican-VL 等更有实证发现的 recipe 在竞争同一生态位；降为 1 - Archived：Step-GRPO 的 hint-injection protocol + visual-mask RL curation 仍可作为一次性方法参考，但方向主脉络已绕开。

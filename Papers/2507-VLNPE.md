@@ -293,5 +293,7 @@ VLN-PE fine-tune 在真实 Unitree Go2 上把 SR 从 7.14 提到 28.57——给"
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=15, influential=0 (0.0%), velocity=1.63/mo; HF upvotes=2; github 826⭐ / forks=111 / 90d commits=10 / pushed 45d ago
+
 **分数**：2 - Frontier
 **理由**：作为 physical VLN benchmark，这是**第一个**系统量化 embodied gap 的工作（Strengths 1），把 "VLN-CE 已够真实" 这一 community 叙事直接证伪，且引入的 FR/StR 指标与 cross-embodiment co-training 协议具备 reusable 价值（Strengths 2-3）。达不到 3 - Foundation 的原因：benchmark 尚未成为 VLN 方向的 de facto 标准（同期 VLN-R1/StreamVLN 等仍主要在 VLN-CE 评测），且 stair filtering、3DGS 单场景等 weakness 削弱了 ecological validity；高于 1 - Archived 的原因：成果已被 InternRobotics/InternNav 吸纳为 navigation foundation model 的 cross-embodiment 训练数据源，是 physical VLN 方向的重要参考。

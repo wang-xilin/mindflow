@@ -201,5 +201,7 @@ paper 自评：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=0; github 40⭐ / forks=6 / 90d commits=59 / pushed 57d ago
+
 **分数**：2 - Frontier
-**理由**：这篇作为 4 页 short report，问题诊断（视角混淆 + 视频尾部忽视）接地气、"last frame auxiliary input" 方法朴素且可被后续 video VLM 继承，EgoPlan-Bench2 上 7B 反超 32B RoboBrain2 是真实 signal——够得上被 robotic VLM 方向作为 baseline 参考的 Frontier 档。够不上 Foundation 是因为技术细节严重缺失（无超参/无 ablation/Infra 章节空话）、论文报的 7B 与 release 的 4B 不一致、Industroplan 不开源；也高于 Archived 是因为方向相关、baseline 价值未被取代，full technical report 出来后还值得回看。
+**理由**：这篇作为 4 页 short report，问题诊断（视角混淆 + 视频尾部忽视）接地气、"last frame auxiliary input" 方法朴素且可被后续 video VLM 继承，EgoPlan-Bench2 上 7B 反超 32B RoboBrain2 是真实 signal——够得上被 robotic VLM 方向作为 baseline 参考的 Frontier 档。够不上 Foundation 是因为技术细节严重缺失（无超参/无 ablation/Infra 章节空话）、论文报的 7B 与 release 的 4B 不一致、Industroplan 不开源；也高于 Archived 是因为方向相关、baseline 价值未被取代，full technical report 出来后还值得回看。2026-04 复核：发表 2.8 月（<3mo 豁免窗口）citation=0/influential=0 但 github 40⭐ + 近 90 天 59 commits 显示活跃维护，属典型 <3mo 早期 signal 形态，维持 Frontier。

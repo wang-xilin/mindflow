@@ -260,5 +260,7 @@ class BaseMemory:
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=1, influential=0 (0%), velocity=1.00/mo; HF upvotes=200; github 706⭐ / forks=35 / 90d commits=100+ / pushed 5d ago
+
 **分数**：2 - Frontier
 **理由**：作为 world model 方向的 position + tooling 论文，其定义切角（从 core objective 而非 architecture / task）对 "Sora 是不是 world simulator" 类持续争论提供了 reference point，且 codebase 覆盖了当前主流 video gen / 3D / VLA / reasoning 集成方向——这些都是 frontier 层面的贡献。但它不是 Foundation 档：定义本身可操作性边界模糊、Memory 模块流于占位、评测完全 qualitative，科学贡献集中在 wrapper layer 与 community alignment，而非奠基性方法或事实上的标准 benchmark。短期内是 world model landscape map 的有用入口，但不会成为方向必引。

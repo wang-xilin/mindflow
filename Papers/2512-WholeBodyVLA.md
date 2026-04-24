@@ -221,5 +221,7 @@ baseline 典型 failure mode（"Stumble to stop"、"lose balance and kick the bo
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=17, influential=0 (0.0%), velocity=3.86/mo; HF upvotes=N/A; github 375⭐ / forks=8 / 90d commits=4 / pushed 71d ago
+
 **分数**：2 - Frontier
-**理由**：ICLR 2026 刚放出（2025-12），在 humanoid loco-manipulation 这个正在快速发育的子方向里，本文是少数把 "action-free video pre-train + 双 LAM + 离散 command controller interface" 整套 end-to-end 跑通到真机的工作，system-level insight（LMO 的接口简化为上层 VLA 服务）对未来 VLA + controller stack 设计有迁移价值，属于当前方向前沿必读。但还没到 Foundation 档：代码与权重均未开源（README 明示 "no concrete timeline"），社区尚未把它作为 de facto baseline，而且关键论证（双 LAM vs 单 LAM）仍是 result-driven，缺 representation-level 证据；相邻的 Archived 档不合适是因为该工作的 framing 与 baseline 选择（adapt GR00T N1.5 / OpenVLA-OFT）对同期 humanoid VLA 方向仍有明确参考价值。
+**理由**：ICLR 2026 刚放出（2025-12），在 humanoid loco-manipulation 这个正在快速发育的子方向里，本文是少数把 "action-free video pre-train + 双 LAM + 离散 command controller interface" 整套 end-to-end 跑通到真机的工作，system-level insight（LMO 的接口简化为上层 VLA 服务）对未来 VLA + controller stack 设计有迁移价值，属于当前方向前沿必读。但还没到 Foundation 档：代码与权重均未开源（README 明示 "no concrete timeline"），社区尚未把它作为 de facto baseline，而且关键论证（双 LAM vs 单 LAM）仍是 result-driven，缺 representation-level 证据；相邻的 Archived 档不合适是因为该工作的 framing 与 baseline 选择（adapt GR00T N1.5 / OpenVLA-OFT）对同期 humanoid VLA 方向仍有明确参考价值。2026-04 复核：4.4 月 17 citation / 影响力 0 / velocity 3.86/mo / github 375⭐ 且仍在缓慢更新（近 90 天 4 commits），早期采纳信号中等；但代码仍未开源，维持 Frontier。

@@ -226,6 +226,8 @@ OpenVLA-OFT+ 用 7B 参数做到接近 RDT-1B（1.2B）的吞吐，单 forward p
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=404, influential=104 (25.7%), velocity=29.28/mo; HF upvotes=1; github 1158⭐ / forks=155 / 90d commits=0 / pushed 227d ago · stale
+
 **分数**：3 - Foundation
-**理由**：本文的贡献不在新模块而在 controlled comparison（见 Strengths 1-2）——把 VLA fine-tuning 的设计空间拆成 3 个正交维度并给出 PD+AC+L1 默认 recipe，过去一年里 ALOHA / bimanual / manipulation 方向的 VLA 工作（π0.5 等后续作品、各类 fine-tune pipeline）普遍把 OFT 当作必比 baseline 和默认 recipe 引用；"L1 ≈ Diffusion in VLA fine-tune" 与 "PD+AC 14% free lunch" 两个发现已被当作 field-level 共识流传。相较 2 - Frontier，它不是 "代表性 SOTA" 而是在方法范式上产生了持续影响——哪怕模型过气，这个 fine-tuning recipe 的地位不会被轻易替代，故评 3。
+**理由**：本文的贡献不在新模块而在 controlled comparison（见 Strengths 1-2）——把 VLA fine-tuning 的设计空间拆成 3 个正交维度并给出 PD+AC+L1 默认 recipe，过去一年里 ALOHA / bimanual / manipulation 方向的 VLA 工作（π0.5 等后续作品、各类 fine-tune pipeline）普遍把 OFT 当作必比 baseline 和默认 recipe 引用；"L1 ≈ Diffusion in VLA fine-tune" 与 "PD+AC 14% free lunch" 两个发现已被当作 field-level 共识流传。相较 2 - Frontier，它不是 "代表性 SOTA" 而是在方法范式上产生了持续影响——哪怕模型过气，这个 fine-tuning recipe 的地位不会被轻易替代，故评 3。2026-04 复核：citation=404 / velocity=29.28/mo 且 influential 比例 25.7% 远高于典型 10%（按 rubric 意味着 "技术被实质继承"）强化 Foundation 判定，github stale 仅反映 recipe 固化不再需要大更新，不降档。
 

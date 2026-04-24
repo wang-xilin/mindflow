@@ -293,5 +293,7 @@ OpenCUA-72B 额外使用 8K 由 o3 + Jedi 在 Ubuntu 环境中 rollout 的 traje
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=63, influential=12 (19.0%), velocity=7.50/mo; HF upvotes=33; github 740⭐ / forks=97 / 90d commits=1 / pushed 78d ago
+
 **分数**：3 - Foundation
 **理由**：OpenCUA 是开源 CUA 方向首个真正 end-to-end 的 foundation work——AgentNet Tool（首个 cross-OS 采集工具）+ 22.6K desktop trajectory（首个 desktop 大规模 trajectory 数据集）+ reflective long CoT recipe + 7B/32B/72B 多尺寸模型同时开源，直接把开源 SOTA 从 UI-TARS-72B-DPO 的 27.1% 拉到 45.0%（Strengths #1 所述）。外部信号印证 Foundation 而非 Frontier：NeurIPS 2025 Spotlight、vLLM 于 2026-01 官方支持 7B/32B/72B 全系列、被后续开源 CUA 工作作为 baseline 采用；数据集 + 工具 + recipe 这一组合的"社区基础设施"属性使其难以被单篇 SOTA 刷掉。降档为 Frontier 的唯一理由会是与 Claude Sonnet 4.5 的 16 pts gap（Weaknesses #1），但在**开源**子方向里 OpenCUA 已是必读必引。

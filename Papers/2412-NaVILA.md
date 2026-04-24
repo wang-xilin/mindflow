@@ -255,5 +255,7 @@ Vision policy 比 blind 高 +14%（Go2）/ +21%（H1）SR；NaVILA-Vision 在 Go
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=169, influential=26 (15.4%), velocity=10.18/mo; HF upvotes=0; github 589⭐ / forks=54 / 90d commits=0 / pushed 247d ago · stale
+
 **分数**：3 - Foundation
 **理由**：NaVILA 是 legged VLN 方向的奠基工作——把"language as mid-level action"范式 + YouTube 人类视频 pipeline + VLN-CE-Isaac 物理仿真 benchmark 一次性打通，RSS 2025 接收，且在 R2R-CE Val-Unseen 上 +17% SR、仅用 single-view RGB 即超越 panoramic+depth 方法（见 Strength 1-4）。 相比 Frontier 档：这不是一般的 SOTA 刷分，而是范式 + benchmark + 数据 pipeline 三位一体的 foundational contribution，后续 legged VLN 工作几乎无法绕开它作为 baseline；缺点（固定 action set、低频 VLM）是工程局限，不削弱其奠基意义。

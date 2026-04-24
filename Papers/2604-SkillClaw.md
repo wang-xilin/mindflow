@@ -288,5 +288,7 @@ Table 4-7 详细列出每晚的 candidate skill、验证决策、变化总结。
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=284; github 961⭐ / forks=96 / 90d commits=15 / pushed 1d ago
+
 **分数**：2 - Frontier
 **理由**：在 skill-evolution / self-improving agent 方向上，SkillClaw 给出了少有的完整工程闭环（day-night loop + validation gate + 8 用户 6 天的真实部署），并通过 Skill Evolve Lite 贡献了一个有用的 mechanistic boundary（evolution 解决 procedural 而非 reasoning failure），属于值得 track 的前沿参考。但它既没跟 Reflexion / SkillWeaver / Mem0 等竞品直接 benchmark，也刻意避开 Productivity Flow / Code Intelligence 两个 category，核心 claim 无直接证据；加上命名体系大量依赖不可独立验证的 \*Claw 包装，不足以进入 3 - Foundation。相对 1 - Archived：framing 和 boundary claim 有 transferable insight，未来工作需要 cite，所以 > 1。

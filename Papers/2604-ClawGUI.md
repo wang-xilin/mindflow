@@ -258,5 +258,7 @@ ClawGUI-Eval 被暴露为 agent 的 built-in skill：自然语言 "benchmark Qwe
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=141; github 828⭐ / forks=30 / 90d commits=100+ / pushed 3d ago
+
 **分数**：2 - Frontier
 **理由**：根据 Strengths 里 Eval pipeline 发布 inference predictions 与同 base controlled comparison +6 abs 这两点，这不是一次性 incremental 工作——infrastructure-first framing 对 GUI agent 领域是一个有价值的参考范式。但按照 Weaknesses，17.1 SR 仍被 Doubao-1.5-UI-TARS (26.3) 与 agentic framework (47–55) 显著领先，真机 RL 与 Agent 三组件协同也无 quantitative 证据，尚未达到必读/奠基工作的门槛，因此不到 3 - Foundation；长期价值取决于社区是否真正采纳其 eval pipeline 做 cross-paper 比较。

@@ -265,5 +265,7 @@ Ranking-based planner：从 policy sample $K$ 条 trajectory → IRASim 各 roll
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=34, influential=6 (17.6%), velocity=1.54/mo; HF upvotes=6; github 149⭐ / forks=11 / 90d commits=0 / pushed 290d ago · stale
+
 **分数**：2 - Frontier
 **理由**：Frame-level AdaLN conditioning 是 trajectory-to-video world model 方向的代表性设计（Strengths #1），三个下游任务 joint-validation 足够扎实（Strengths #2–3），ICCV 2025 被接收且由 ByteDance 完整开源 code + weights + benchmark，已被 WMPO 等后续 world-model-based policy optimization 工作作为 reference/baseline。不到 3 - Foundation 因为：(a) inference 30s/16 帧的速度瓶颈决定它短期内无法像 Mujoco/DROID 那样成为 de facto simulator（Weaknesses #1），(b) Pearson 0.99 只有 4 个数据点、real-robot 任务 value-function 可能 dominate 结果（Weaknesses #2–3），方向地位尚未定型；高于 1 - Archived 因为它仍是当前 fine-grained action-conditioned video world model 的必引参考，方法未被取代。

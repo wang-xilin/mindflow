@@ -8,7 +8,7 @@ tags: [web-agent, gui-agent, VLM]
 paper: https://arxiv.org/abs/2412.09605
 website: https://agenttrek.github.io/
 github: https://github.com/xlang-ai/AgentTrek
-rating: 2
+rating: 1
 date_added: 2026-04-20
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-20
 > - **方法**: 三阶段 pipeline——(1) FastText 分类器从 RedPajama 过滤教程；(2) GPT-4o 在 BrowserGym 中按教程引导执行，记录 screenshot/AXTree/DOM/action；(3) GPT-4o VLM evaluator 过滤无效轨迹。最终 Qwen2-VL/Qwen2.5 SFT
 > - **结果**: 10,398 条 trajectory（127 网站，平均 12.1 步，每条 $0.55），Qwen2-VL-7B+AgentTrek 在 ScreenSpot Web 67.4 (vs 30.7 baseline)，Mind2Web 全面超过 GPT-4 baseline
 > - **Sources**: [paper](https://arxiv.org/abs/2412.09605) | [website](https://agenttrek.github.io/) | [github](https://github.com/xlang-ai/AgentTrek)
-> - **Rating**: 2 - Frontier（GUI agent data synthesis 方向的代表性 pipeline 工作，+230% replay ablation 提供清晰因果证据，但 WebArena 最终分数未突破 in-domain baseline，属前沿参考而非奠基）
+> - **Rating**: 1 - Archived（+230% replay ablation 有清晰因果证据、ICLR 2025 Spotlight，但发表 16 个月后 cc=69 / gh 54⭐ stale、未被 OS-Atlas / UI-TARS 等 GUI agent 主线采纳，作为 tutorial-as-plan 的单点参考）
 
 **Key Takeaways:**
 1. **Tutorial-as-supervision**: 把网上现成的"how-to"教程当成弱监督的轨迹脚手架——human 已经免费写好了 step-by-step 计划，剩下的只是让 agent 在真实环境里 grounding 执行，避开了纯 LLM self-instruct 在长 horizon 上的脆弱
@@ -241,5 +241,7 @@ Insight: 当前 VLM 在 long-horizon 任务上的瓶颈不是 grounding，而是
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：AgentTrek 是 GUI agent trajectory synthesis 方向的代表性 pipeline 工作——ICLR 2025 Spotlight、开源模型/数据、+230% replay ablation 因果清晰，已被后续 GUI agent 工作作为 data 对比基线。但它定位在 data layer 而非方法范式奠基，最终 WebArena 16.26 仍被 in-domain RFT 超过，capability ceiling 证据不足；且 tutorial-as-plan 的范式尚未被 OS-Atlas / UI-TARS / OpenCUA 这条主线广泛复用（这些工作走的是更直接的 large-scale GUI grounding 路线），因此不到 Foundation 档。
+**Metrics** (as of 2026-04-24): citation=69, influential=4 (5.8%), velocity=4.21/mo; HF upvotes=30; github 54⭐ / forks=2 / 90d commits=0 / pushed 427d ago · stale
+
+**分数**：1 - Archived
+**理由**：AgentTrek 是 GUI agent trajectory synthesis 方向的单点 pipeline 参考——ICLR 2025 Spotlight、+230% replay ablation 因果清晰，开源模型/数据，有 tutorial-as-supervision 的 transferable insight。定位在 data layer 而非方法范式奠基，WebArena 16.26 仍被 in-domain RFT 超过，且 tutorial-as-plan 未被 OS-Atlas / UI-TARS / OpenCUA 这条主线广泛采纳。2026-04 复核：发表 16 个月 cc=69 / ic=4（5.8%，无深度继承）/ velocity 4.21/mo，github 54⭐ / pushed 427d 深度 stale——社区未把它作为 GUI agent 数据合成的代表性 baseline，属"为某个具体问题查的一次性参考"。相邻不选 Frontier，因为缺"当前 SOTA 或必比 baseline"的证据；不选更低档是 replay ablation 与 tutorial-as-plan 作为 data pipeline 的 framing 仍有 readable value。

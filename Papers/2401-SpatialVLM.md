@@ -224,5 +224,7 @@ GPT-4V 几乎总是拒答距离问题（"I'm sorry, but I cannot provide an exac
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=723, influential=58 (8.0%), velocity=26.78/mo; HF upvotes=29; github 559⭐ / forks=26 / 90d commits=0 / pushed 108d ago
+
 **分数**：3 - Foundation
 **理由**：本文把"VLM 空间推理"从架构归因重 frame 为数据归因，并用 off-the-shelf expert 搭出 internet-scale 3D 监督合成 pipeline——这个 framing 直接开启了 VQASynth、SpatialRGPT、SpatialBot 等一整条后续工作线（第三方 VQASynth 已成为社区复现的 de facto 工具）。相比 Frontier 档，它不只是"当前 SOTA 或重要 baseline"，而是一个方向的 agenda-setter，后续 spatial-reasoning VLM 基本都把它作为必引起点；Weakness 里未开源、benchmark 自建等问题不改变它的方向性地位。

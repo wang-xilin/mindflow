@@ -301,5 +301,7 @@ OS-Genesis 在 instruction 与 trajectory 两个维度的 diversity 都最高。
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=112, influential=13 (11.6%), velocity=7.04/mo; HF upvotes=87; github 188⭐ / forks=13 / 90d commits=0 / pushed 197d ago · stale
+
 **分数**：2 - Frontier
 **理由**：Reverse task synthesis 是 GUI agent 数据合成的代表性 frontier 方法，被 ACL 2025 收录，HuggingFace 上开源了 9 个 checkpoint + 两个数据集，已在 GUI agent 社区作为 data synthesis 的 baseline 被引用对比。但方法 pipeline 深度依赖 GPT-4o 且 rule-based exploration 有结构性 coverage 上限（见 Weaknesses 1、2、4），未成为像 AndroidWorld / WebArena 那样的 de facto 标准，也还没在后续工作中沉淀为必引的奠基技术——所以是 Frontier 而非 Foundation；又明显高于 Archived，因为 idea 本身仍被当前 GUI agent 数据合成方向继续追随和扩展。

@@ -276,5 +276,7 @@ WebArena 是第一个四项都打勾的——这就是它能成为 web agent 标
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=1146, influential=159 (13.9%), velocity=34.73/mo; HF upvotes=27; github 1443⭐ / forks=232 / 90d commits=0 / pushed 148d ago
+
 **分数**：3 - Foundation
 **理由**：WebArena 已成为 web agent 方向 de facto 标准评测——后续 AgentLab / BrowserGym 直接在其之上构建统一基础设施，[[2404-OSWorld|OSWorld]]、TheAgentCompany 等严肃 benchmark 复用其 "self-hosted real software + functional correctness + Docker reproducibility" 三件套（见 Strengths #1）。其方法论贡献（program-based state locator、unachievable task、multi-tab action space）被广泛沿用，任何 web/GUI agent 工作 related work 必引。相比 2 档的 frontier SOTA 方法，它的定位更底层——是方向的 building block 而不仅是 SOTA 候选。

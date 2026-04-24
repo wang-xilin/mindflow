@@ -323,5 +323,7 @@ CUT3R 同时更快更准，作者归因于 absolute scale 优于 VGGT 系的 fir
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.0/mo; HF upvotes=0; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
 **理由**：PROSPECT 是 streaming VLN + latent-space world-model signal 方向的前沿代表工作：方法干净（unified streaming + 推理时砍掉预测分支），VLN-CE R2R/RxR val-unseen 取得 first-tier 成绩且真机鲁棒性优于 NaVid / StreamVLN（见 Strengths 1/2 与 Table I/VI）。但 distinguishing from Foundation：核心 "latent > pixel target" claim 缺直接 controlled ablation（Weaknesses 1），code/checkpoint 未开源（Weaknesses 5，Artifact 可获取性），且方向内有 NavForesee / JanusVLN 等 concurrent 工作，尚未被社区公认为奠基工作。Distinguishing from Archived：方法在 streaming VLN 上刷新 first-tier，mask ablation 显示设计 non-cosmetic，CUT3R vs VGGT 的比较提供了 generalizable 的 spatial encoder 选型 insight。

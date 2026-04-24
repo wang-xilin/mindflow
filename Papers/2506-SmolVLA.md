@@ -8,7 +8,7 @@ tags: [VLA, flow-matching, manipulation]
 paper: https://arxiv.org/abs/2506.01844
 website: https://huggingface.co/blog/smolvla
 github: https://github.com/huggingface/lerobot
-rating: 2
+rating: 3
 date_added: 2026-04-20
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-20
 > - **方法**: SmolVLM-2 backbone（冻结）+ flow-matching action expert；架构上 (i) 跳过 VLM 后半层，(ii) 限制每帧 64 个 visual tokens，(iii) 在 expert 内交错 cross-attention 与 causal self-attention 层；推理上把 chunk prediction 与 action execution 解耦到 RobotClient/PolicyServer。
 > - **结果**: LIBERO 平均 87.3%（>π0-3.3B 的 86.0），Meta-World 57.3%，real-world SO100 三任务平均 78.3%（π0 为 61.7）；async vs sync 任务时长 9.7s vs 13.75s，固定时间内完成 cube 数 3.8 vs 1.8。
 > - **Sources**: [paper](https://arxiv.org/abs/2506.01844) | [website](https://huggingface.co/blog/smolvla) | [github](https://github.com/huggingface/lerobot)
-> - **Rating**: 2 - Frontier（全开源 recipe + async inference，sub-1B VLA 路线的必比 baseline，但方法是对 π0 的工程化而非奠基）
+> - **Rating**: 3 - Foundation（发布 10 个月累积 244 cites / 43 influential (17.6%)、22.8/mo velocity，已成为 sub-1B VLA 路线的 de facto open recipe，但注意 23k⭐ 来自 HF lerobot 生态聚合，非单论文信号）
 
 **Key Takeaways:**
 1. **小模型 + 社区数据足以对标 SOTA**: 450M 参数 + <30K episodes（社区贡献）即可在 LIBERO/Meta-World 超过 π0-3.3B-Paligemma（无机器人预训练版本），且与机器人预训练的 π0 持平，挑战了"VLA 必须靠学术/工业大规模数据"的主流叙事。
@@ -282,5 +282,7 @@ Pretraining 给了 26.6 个点（最大那一刀），multi-task finetune 又额
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：按 field-centric rubric，SmolVLA 是当前"小型 VLA + 社区数据"路线最具代表性的开源工作，凭 Strengths 里的"完全 reproducible recipe + 密集 ablation + async inference"成为 sub-1B VLA 的必比 baseline；但 Weaknesses 指出其 real-world benchmark 局限在 SO100 桌面 cube、cross-embodiment 与 community-data scaling 论据都偏单薄，方法本身（flow-matching expert + skip layer + interleaved CA/SA）属于对 π0 的聪明工程化而非奠基性突破，故未到 3 - Foundation；相较 1 - Archived，它在发布不足一年内已被 HF 社区作为 de facto 起点且 lerobot codebase 正在被后续 VLA 工作复用，仍处前沿。
+**Metrics** (as of 2026-04-24): citation=244, influential=43 (17.6%), velocity=22.80/mo; HF upvotes=158; github 23512⭐ / forks=4339 / 90d commits=100+ / pushed 0d ago
+
+**分数**：3 - Foundation
+**理由**：按 field-centric rubric，SmolVLA 是当前"小型 VLA + 社区数据"路线最具代表性的开源工作，凭 Strengths 里的"完全 reproducible recipe + 密集 ablation + async inference"成为 sub-1B VLA 的必比 baseline；Weaknesses 指出其 real-world benchmark 局限在 SO100 桌面 cube、cross-embodiment 与 community-data scaling 论据都偏单薄，方法本身（flow-matching expert + skip layer + interleaved CA/SA）属于对 π0 的聪明工程化而非奠基性突破。2026-04 复核：发布 10.7 个月累积 244 cites / 43 influential（17.6% 属健康继承比例）、velocity 22.8/mo 属同期 VLA 第一梯队，HF 158 upvotes + lerobot 仓库高活跃度（100+ commits/90d）共同印证社区 de facto adoption（注意 23k⭐ 是 HF 整个机器人 codebase 的聚合信号，不能单独归因于本论文），综合判断从 2 - Frontier 上调至 3 - Foundation；相对 2，证据差别在 citation velocity 与 "下游 VLA 工作必比 baseline" 已兑现，相对可能的停滞降档，活跃度无忧。

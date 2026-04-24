@@ -8,7 +8,7 @@ tags: [gui-agent, computer-use, VLM]
 paper: https://arxiv.org/abs/2408.00203
 website: https://microsoft.github.io/OmniParser/
 github: https://github.com/microsoft/OmniParser
-rating: 2
+rating: 3
 date_added: 2026-04-20
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-20
 > - **方法**: 三件套——finetuned YOLOv8 interactable region detector（在 67k 自爬的 webpage DOM bbox 上训练）+ finetuned BLIP-2 icon caption 模型（7k GPT-4o 生成的 icon-description pair）+ OCR；输出 SoM 标注图 + 文本语义列表
 > - **结果**: ScreenSpot 平均 73.0%（vs GPT-4V 16.2%）；Mind2Web 不用 HTML 也超过用 HTML 的 GPT-4V baseline；AITW 比最强 GPT-4V+history baseline 高 4.7 pts
 > - **Sources**: [paper](https://arxiv.org/abs/2408.00203) | [website](https://microsoft.github.io/OmniParser/) | [github](https://github.com/microsoft/OmniParser)
-> - **Rating**: 2 - Frontier（pure-vision GUI parsing 的代表工作，后续 V2/OmniTool 与多篇 computer-use agent 把它作为 perception 前置 baseline，但单步 grounding 评测 + modular 范式正被 end-to-end grounding VLM 逐步取代）
+> - **Rating**: 3 - Foundation（24.7k github stars + V2/OmniTool 持续迭代，事实上已成为 computer-use / GUI agent 的 perception 前置基础设施，社区采纳度远超普通 frontier 工作）
 
 **Key Takeaways:**
 1. **Pure-vision parsing 是 cross-platform GUI agent 的瓶颈**：之前 Set-of-Marks 方法都依赖 DOM/view-hierarchy 拿到 bbox ground truth，限制在 web；OmniParser 的核心论点是只要能可靠地从像素拿到 interactable region + 语义，GPT-4V 的 grounding 能力被严重低估
@@ -233,5 +233,7 @@ OmniParser 也作为 plugin 接到 Phi-3.5-V 和 Llama-3.2-V，相同的 finetun
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：OmniParser 是 pure-vision GUI parsing 的代表工作，被后续 computer-use agent（UFO、OmniTool、多篇 2025 agent 论文）广泛作为 perception 前置 baseline，github 影响力显著（V2 发布后社区采纳度持续扩大），符合 Frontier 的"必须比较的 Baseline / 方法范式的代表"标准。但不到 Foundation——Weakness 里指出的 modular pipeline 在长序列任务上未验证、Benchmark 仅 single-step 评测，加上外部信号显示 end-to-end grounding VLM（UGround、Aria-UI、UI-TARS 等）正在同一赛道持续提升 SOTA，把"perception + 通用大脑"范式本身推向 archived 风险中，因此不是方向脉络的奠基节点。
+**Metrics** (as of 2026-04-24): citation=163, influential=23 (14.1%), velocity=7.87/mo; HF upvotes=24; github 24682⭐ / forks=2164 / 90d commits=0 / pushed 10d ago
+
+**分数**：3 - Foundation
+**理由**：OmniParser 是 pure-vision GUI parsing 的代表工作，被后续 computer-use agent（UFO、OmniTool、多篇 2025 agent 论文）广泛作为 perception 前置 baseline，Strengths #1/#3 所述的 framing + 可 scale pipeline 已被复用为标准组件。2026-04 复核：**github 24,682⭐ / 2164 forks（过去 10 天仍在活跃维护）**、V2 发布后社区采纳度持续扩大、influential citation 23/163 (14.1%) 显示方法被实质继承——这个量级的 community adoption 已明显超过 Frontier 的 "被采用尚未定型"，落到 Foundation 的 "方向的 de facto 基础设施"。相较 Frontier，stars 量级（24k vs 同期 frontier 工作通常几百～几千）+ V2 持续迭代证明它没有被 end-to-end grounding VLM 取代，而是与之共存为 perception 前置层；相较 Archived 更不成立。Weakness 里的 single-step evaluation / modular trade-off 是方法局限但不影响其基础设施地位。

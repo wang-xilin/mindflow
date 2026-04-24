@@ -268,6 +268,8 @@ RL 比 Heuristic 多成功 1 个 episode；差距主要来自 Pick——RL Gaze 
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=130, influential=17 (13.1%), velocity=3.81/mo; HF upvotes=17; github 1201⭐ / forks=152 / 90d commits=0 / pushed 684d ago · stale
+
 **分数**：2 - Frontier
 
 **理由**：OVMM task formulation 和 HomeRobot stack 被 NeurIPS 2023 / CVPR 2024 Challenge 复用为 de facto 基准，具备较强的社区采纳信号，这是 frontier 档的核心证据。但本身 method 贡献较薄（heuristic + DDPPO，见 Weaknesses #4 缺 end-to-end baseline），且随后续 VLA / end-to-end 路线兴起，它作为 benchmark 的地位稳固但作为方法并未上升为 building block——因此留在 2 而非升到 3。

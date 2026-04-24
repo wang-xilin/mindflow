@@ -304,5 +304,7 @@ CycleVLA 让总 inference 时间增加 ~30%。MBR 本身计算成本可忽略；
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2, influential=0 (0.0%), velocity=0.56/mo; HF upvotes=N/A; github 2⭐ / forks=0 / 90d commits=0 / pushed 227d ago · stale
+
 **分数**：2 - Frontier
-**理由**：问题 framing（proactive vs post hoc self-correction）和 MBR-as-test-time-scaling 的系统化实证（Table III 跨 ckpt 跨 N 的一致 trend、weak model 收益更大）足以作为 VLA self-correction 方向的前沿参考，也是后续工作的合理 baseline。但这不是 foundation 档——pipeline 重度依赖 engineered 组件（LLM-prompted subtask 切分、reverse-execute backtrack、closed-source VLM）、真机实验缺席、density-MBR 与 main equation 的 standard MBR 不一致，distance 未来成为 de facto 范式的概率有限；且发表时间仅两个多月，外部采纳信号尚不足以支撑 3 档。
+**理由**：问题 framing（proactive vs post hoc self-correction）和 MBR-as-test-time-scaling 的系统化实证（Table III 跨 ckpt 跨 N 的一致 trend、weak model 收益更大）足以作为 VLA self-correction 方向的前沿参考，也是后续工作的合理 baseline。但这不是 foundation 档——pipeline 重度依赖 engineered 组件（LLM-prompted subtask 切分、reverse-execute backtrack、closed-source VLM）、真机实验缺席、density-MBR 与 main equation 的 standard MBR 不一致，distance 未来成为 de facto 范式的概率有限；且发表时间仅两个多月，外部采纳信号尚不足以支撑 3 档。2026-04 复核：3.6 月 2 citation / 影响力 0 / github 仅 2⭐ 且 stale（pushed 227d、近 90 天 0 commit），社区采纳与维护信号均偏弱；按 <3mo 豁免刚过的边缘处理，方法 framing 仍保留 indexed 价值，暂维持 Frontier，下轮若仍停滞应降至 Archived。

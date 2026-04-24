@@ -368,5 +368,7 @@ GUI-only / GUI-SDK 双 interface 同时训练，每 interface 数据减半，但
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=104, influential=9 (8.7%), velocity=13.51/mo; HF upvotes=127; github 10132⭐ / forks=738 / 90d commits=0 / pushed 87d ago
+
 **分数**：2 - Frontier
-**理由**：作为 2025-09 发布的 GUI agent 技术报告，UI-TARS-2 在 OSWorld / WindowsAgentArena / AndroidWorld / Online-Mind2Web 上刷新 SOTA（Strengths #1-2），加之 Hybrid GUI+SDK、data flywheel、multi-turn PPO 的全栈系统披露，属当前方向必 baseline 的前沿工作；但不达 Foundation 一档——模型权重与 RL/sandbox 代码均未开源（Weaknesses #4），核心机制 claim 缺乏实证（Weaknesses #1），且 UI-TARS 系列的"奠基"角色更多落在 UI-TARS-1 上，UI-TARS-2 尚未被后续工作大规模采纳为标准参考。
+**理由**：作为 2025-09 发布的 GUI agent 技术报告，UI-TARS-2 在 OSWorld / WindowsAgentArena / AndroidWorld / Online-Mind2Web 上刷新 SOTA（Strengths #1-2），加之 Hybrid GUI+SDK、data flywheel、multi-turn PPO 的全栈系统披露，属当前方向必 baseline 的前沿工作；但不达 Foundation 一档——模型权重与 RL/sandbox 代码均未开源（Weaknesses #4），核心机制 claim 缺乏实证（Weaknesses #1），且 UI-TARS 系列的"奠基"角色更多落在 UI-TARS-1 上，UI-TARS-2 尚未被后续工作大规模采纳为标准参考。2026-04 复核：cite=104/inf=9 (8.7%)/vel=13.51/mo、HF=127、仓库 10132⭐（repo 包含 UI-TARS 全系列，非 UI-TARS-2 专属）——引用与社区关注都处于 Foundation 量级的入口水平，但 influential/total ~8.7% 接近 RT-2 式"被当 landmark 频繁提及、实质继承弱"的形态（见 rubric 特例条）；加上 UI-TARS-2 权重至今未单独发布，社区采纳度仍被 UI-TARS-1 截流——保留 2 符合 field-centric 判断；若 UI-TARS-3 出现且 UI-TARS-2 仍无独立 weight release 则降为 1 候选。

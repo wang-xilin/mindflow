@@ -261,5 +261,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.0/mo; HF upvotes=N/A; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
 **理由**：方法上是 multi-task co-training + multi-view/depth + FM head 等 known recipe 在 mobile manipulation 场景的系统化组合，不构成 foundational 贡献（见 Weakness 5）；但 progressive training recipe（naive 0.51 vs progressive 0.73）是可推广的 finding，且 mobile manipulation VLA 目前仍是 nascent area、baselines 稀缺（Weakness 2），这篇属于该方向当前前沿参考，所以不是 1 - Archived。距 3 - Foundation 还差 real robot 验证、code release 和独立 lab 的采纳证据——arXiv 2026-03 新文，尚未观察到社区 baseline 化迹象。

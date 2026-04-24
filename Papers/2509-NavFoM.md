@@ -282,5 +282,7 @@ BATS 在 nDTW（轨迹与 GT 对齐度）上保持鲁棒，uniform sampling 掉 
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=33, influential=3 (9.1%), velocity=4.52/mo; HF upvotes=0; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
-**理由**：按 field-centric rubric，NavFoM 是 navigation VLM 方向当前的重要参考工作——任务公式统一 + TVI/BATS 两个有 ablation 支撑的设计使其成为后续 cross-embodiment/cross-task navigation 工作绕不开的 baseline（Strengths 1-3）；同时在 VLN-CE R2R/RxR 多视角上刷新 SOTA（关联工作 对比段中超过 HNR/BEVBert/StreamVLN）。但够不上 3 - Foundation：未开源代码和权重、naming inflation、driving 仅中游（Weaknesses 1-3）意味着社区复现和长期影响力有限；距离 NaVid 那种被广泛 fork 的奠基工作仍有一档差距。也不是 1 - Archived——发表仅半年、方向活跃、方法不是 incremental。
+**理由**：按 field-centric rubric，NavFoM 是 navigation VLM 方向当前的重要参考工作——任务公式统一 + TVI/BATS 两个有 ablation 支撑的设计使其成为后续 cross-embodiment/cross-task navigation 工作绕不开的 baseline（Strengths 1-3）；同时在 VLN-CE R2R/RxR 多视角上刷新 SOTA（关联工作 对比段中超过 HNR/BEVBert/StreamVLN）。但够不上 3 - Foundation：未开源代码和权重、naming inflation、driving 仅中游（Weaknesses 1-3）意味着社区复现和长期影响力有限；距离 NaVid 那种被广泛 fork 的奠基工作仍有一档差距。也不是 1 - Archived——发表仅半年、方向活跃、方法不是 incremental。2026-04 复核：cite=33/inf=3 (9.1%)/vel=4.52/mo，影响力/总引接近 rubric "典型 ~10%"，Frontier 档的引用节奏成立；HF=0、代码未发布说明社区 reproduce 门槛仍高，与 Weaknesses 2（未开源）判断一致——保留 2，而非升 3。

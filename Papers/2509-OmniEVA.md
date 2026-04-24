@@ -237,5 +237,7 @@ TE-GRPO 训练的 OmniEVA-ER 相比 OmniEVA-Base：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2, influential=1 (50.0%), velocity=0.27/mo; HF upvotes=3; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
-**理由**：Strengths 显示该工作在 embodied reasoning + planning 方向给出了清晰的方法范式（TAGR + TE-GRPO），且在 8 个公开 benchmark 中 7 个 SOTA、8B 规模超过 [[2507-RoboBrain2|RoboBrain2.0]]-32B，具备"必须比较的 baseline"的前沿性；但 Weaknesses 指出代码/模型/自定义 benchmark 均未开源，核心 claim 中跨 embodiment 泛化与 TE-GRPO 增益仅在私有 benchmark 上验证，社区尚未广泛采纳或复现，因此达不到 Foundation 档；又明显强于 incremental/niche 的 Archived 档。
+**理由**：Strengths 显示该工作在 embodied reasoning + planning 方向给出了清晰的方法范式（TAGR + TE-GRPO），且在 8 个公开 benchmark 中 7 个 SOTA、8B 规模超过 [[2507-RoboBrain2|RoboBrain2.0]]-32B，具备"必须比较的 baseline"的前沿性；但 Weaknesses 指出代码/模型/自定义 benchmark 均未开源，核心 claim 中跨 embodiment 泛化与 TE-GRPO 增益仅在私有 benchmark 上验证，社区尚未广泛采纳或复现，因此达不到 Foundation 档；又明显强于 incremental/niche 的 Archived 档。2026-04 复核：cite=2 偏低但 inf=1（influential/total 50%）是 rubric 认可的 early signal，vel=0.27/mo、HF=3 偏弱；发布 7.4mo 未开源对 reproduce 是明显阻力——保留 2 依赖 TAGR + TE-GRPO 的方法新意，若 6 个月内仍无开源或独立复现则考虑降 1。

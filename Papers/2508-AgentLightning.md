@@ -303,5 +303,7 @@ Calc-X 数据集（在 GSM8K / Ape210K 基础上加入 calculator tool）。单 
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=30, influential=6 (20.0%), velocity=3.49/mo; HF upvotes=141; github 17004⭐ / forks=1487 / 90d commits=7 / pushed 21d ago
+
 **分数**：2 - Frontier
 **理由**：Strengths 里的 "system-level decoupling + OpenTelemetry-as-trajectory 抽象扎实、已获 Tencent Youtu-Agent / Tinker / AgentFlow 等 ecosystem adoption" 让它高于 Archived 档——是当前 agentic RL 框架赛道上必须对比的 baseline 之一。但够不到 Foundation：Weaknesses 指出 algorithm contribution 薄（credit assignment 就是 identical final return）、无 head-to-head 对比 concatenation+masking 路线、缺 test accuracy / 通信开销等关键 metric，尚未成为 de facto 标准，且赛道仍在快速演化（RAGEN / rLLM / SkyRL 等并行竞争），尚未被时间验证为必读奠基。

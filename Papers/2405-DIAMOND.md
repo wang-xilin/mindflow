@@ -225,5 +225,7 @@ NeurIPS 接收后追加的 §6。在 5M 帧 / 87h Dust II 人类 gameplay（Pear
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=202, influential=25 (12.4%), velocity=8.74/mo; HF upvotes=30; github 2020⭐ / forks=151 / 90d commits=0 / pushed 503d ago · stale
+
 **分数**：3 - Foundation
 **理由**：DIAMOND 是 pixel-space diffusion world model 这一支的奠基工作，NeurIPS 2024 Spotlight，且 §5.1 的 EDM-c_skip 稳定性 insight（Strengths 2）具备跨方向的可复用性——任何长时序 image-space 自回归生成（video gen、VLA future prediction）都能直接借鉴。CS:GO 10Hz neural game engine 的跨数量级 scale 证据与完整开源 release 使其成为 world-model / diffusion-for-RL 路线的 de facto 必引；不是 2 - Frontier 是因为它已改变了"discrete latent 是 WM 必由之路"的社区共识判断，而非仅是一个 SOTA baseline。

@@ -308,5 +308,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=382, influential=131 (34.3%), velocity=25.47/mo; HF upvotes=64; github 10132⭐ / forks=738 / 90d commits=0 / pushed 87d ago
+
 **分数**：3 - Foundation
 **理由**：Strengths 中"范式确立"与 Notes 中"四阶段演化框架成为后续工作标准 framing"共同说明 UI-TARS 在 GUI agent 方向扮演奠基角色——它不仅是 SOTA（这让它够 Frontier），更把 native agent model 作为一条清晰路线推上主流，后续 Aguvis、OS-Atlas、Operator、UI-TARS-1.5 等主要工作都以它为 baseline 或 framing 来源。相比 Frontier 档，它的 **数据飞轮闭环（online bootstrap + reflection tuning + DPO）** 和 **System-1 vs System-2 边界条件** 已被多个独立工作复现并作为 de facto 构件——这类影响力已超出"当期 SOTA"范畴。

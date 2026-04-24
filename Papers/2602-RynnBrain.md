@@ -258,5 +258,7 @@ CoP reasoning（SFT + RL）在 trajectory prediction 任务上提升约 7%。Ryn
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=4, influential=0 (0.0%), velocity=1.74/mo; HF upvotes=45; github 734⭐ / forks=70 / 90d commits=45 / pushed 9d ago
+
 **分数**：2 - Frontier
 **理由**：RynnBrain 是当前 embodied brain model 前沿的大规模系统工程，在 20 个 benchmark 上大幅超越 [[2507-RoboBrain2|RoboBrain 2.0]]、MiMo-Embodied、Pelican-VL、Cosmos-reason2 等同规模对手（参见 Strengths 1/4 和主要实验结果），具备必须比较的 baseline 价值；CoP reasoning 与 physically grounded output space 的设计代表方法范式的前沿尝试。但尚未达到 Foundation 档——方法范式（coordinate token 化、embodied 多任务 pretraining）并非开创性，VLA 验证规模过小（Weaknesses 1），作为新开源工作社区采纳度尚在形成中，不像 Qwen3-VL / π0 那样已成为 de facto backbone。

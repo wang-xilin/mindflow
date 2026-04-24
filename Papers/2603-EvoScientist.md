@@ -301,5 +301,7 @@ Meta-review 的三个 pattern：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=6, influential=0 (0.0%), velocity=4.0/mo; HF upvotes=14; github 2581⭐ / forks=163 / 90d commits=100+ / pushed 0d ago
+
 **分数**：2 - Frontier
 **理由**：在 multi-agent auto-research 方向属于当前前沿参考——problem framing（cross-task experience accumulation）抓住了 AI Scientist-v2 / AI-Researcher / InternAgent 等 static pipeline 的共同盲点，且 ICAIS 2025 6/6 接收 + Best Paper 是外部 venue 信号。但尚未到 Foundation：Weaknesses 已指出 "evolution" 本质是 prompt-level RAG、baseline control 不透明、ICAIS 样本小且有 selection bias，方法范式未被社区广泛采纳为 de facto 标准；相比 AI Scientist-v2（已作为 baseline 被多数后续工作引用）仍属 "重要参考 / 候选 baseline" 档而非奠基工作。不到 Archived 是因为它在 memory-driven auto-research 这一 subthread 里是目前最完整的工程化实现之一，做该方向必读必对比。

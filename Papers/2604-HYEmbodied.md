@@ -322,5 +322,7 @@ Visual attention 精确定位显著物体和关键空间区域，language attent
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=185; github 651⭐ / forks=12 / 90d commits=10 / pushed 9d ago
+
 **分数**：2 - Frontier
 **理由**：Field-centric 看，这是 embodied VLM 方向当下必须比较的前沿 baseline——2B 模型在 22 个 embodied/spatial benchmark 中拿下 16 个 SOTA，MoT + 迭代 RL/RFT + OPD 是方法范式的代表组合。但距离 Foundation 档（如 π0、ImageNet 级 de facto 标准）仍有距离：32B teacher 和 100M+ 数据闭源、robot control 仅 3 个任务缺乏标准化 benchmark 背书、发布时间尚短未经社区广泛采纳验证，未来可能升 3 也可能被快速迭代的同档工作取代。

@@ -292,5 +292,7 @@ Result: RoboClaw 显著高于两者。25% 提升的来源是 "monitor task progr
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2, influential=0 (0.0%), velocity=1.43/mo; HF upvotes=N/A; github 95⭐ / forks=9 / 90d commits=10 / pushed 13d ago
+
 **分数**：2 - Frontier
 **理由**：RoboClaw 把 data collection / training / deployment 用同一 VLM agent 串成 closed loop + EAP self-reset，是 real-robot 上 frontier 级的 system contribution，且真机四场景 50-trial 评测比多数 VLA 论文扎实，值得作为 hierarchical VLA + lifecycle data 的参考 baseline。但不够 Foundation：核心 "unified semantics" claim 缺消融（Weaknesses #1）、EAP 依赖 "reset 比 forward 简单" 的假设在 wiping/pouring 等不可逆任务未验证（Weaknesses #2）、VLM controller 具体型号未披露影响 reproducibility（Weaknesses #5）；加之 2603 发表时间新、尚无后续工作以其为 de facto baseline 的信号，仍在 Frontier 档而非 Foundation。高于 Archived：EAP 的 problem reformulation 和 degrading/non-degrading 失败分类有方法论迁移价值（Notes），不是 incremental 或一次性参考。

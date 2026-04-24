@@ -205,5 +205,7 @@ Thinking 对 embodied reasoning 的效果：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=40, influential=8 (20.0%), velocity=5.97/mo; HF upvotes=N/A; github 576⭐ / forks=51 / 90d commits=4 / pushed 10d ago
+
 **分数**：2 - Frontier
-**理由**：GR 1.5 是当前 cross-embodiment VLA + embodied-thinking 方向的 SOTA 代表工作之一，GR-ER 1.5 在 15 个 embodied reasoning benchmark 上刷新纪录，是后续工作必须比较的 baseline（符合 Frontier 标准）。但未能升为 Foundation：MT 机制未披露细节（见 Weakness 2）、VLA 权重仅限 Trusted Tester（见 Weakness 3），社区无法独立复现或在其基础上迭代；与开源且已被广泛采纳的 Pi0 / OpenVLA 等 Foundation 级工作相比，其对社区知识生产的贡献受限。
+**理由**：GR 1.5 是当前 cross-embodiment VLA + embodied-thinking 方向的 SOTA 代表工作之一，GR-ER 1.5 在 15 个 embodied reasoning benchmark 上刷新纪录，是后续工作必须比较的 baseline（符合 Frontier 标准）。但未能升为 Foundation：MT 机制未披露细节（见 Weakness 2）、VLA 权重仅限 Trusted Tester（见 Weakness 3），社区无法独立复现或在其基础上迭代；与开源且已被广泛采纳的 Pi0 / OpenVLA 等 Foundation 级工作相比，其对社区知识生产的贡献受限。2026-04 复核：cite=40/inf=8 (20.0%)/vel=5.97/mo——influential/total=20% 明显高于 rubric "典型 ~10%"，接近 π0 (19%) 的高继承形态；SDK 仓库仍在 active（pushed 10d ago）但 star 数 (576) 受限于 VLA 未开放；保留 2，升 3 需等核心 VLA 权重开放或跨 embodiment 工作系统引用其 MT framing 而非仅作 performance baseline 对比。

@@ -266,5 +266,7 @@ GRPO w/o KL 攻击更强（11.35 vs 20.45 succ rate）但 diversity 反而更低
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=N/A; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
 **理由**：方法层面不是奠基（作者自承 DAERT = ROVER + cascaded reward 的应用，Weaknesses #1），不构成 Foundation；但它在 VLA linguistic robustness 这条前沿线上有两个值得被引用的经验贡献——(1) "no action" diagnostic 把 "fragility 研究"的前置条件立起来（Strengths #1），(2) SimplerEnv 上 GRPO < ERT < DAERT 这个反直觉结果把 "diversity 是 transferability 前提" 从口号变成证据（Strengths #2）。不到 3 是因为 benchmark 集中在 LIBERO/CALVIN sim + 没 real robot + 没 defense closing-the-loop；高于 1 是因为这些经验 findings 会成为后续 VLA robustness / red-teaming 工作的必引 baseline。

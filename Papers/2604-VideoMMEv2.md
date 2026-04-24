@@ -276,5 +276,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=1, influential=0 (0%), velocity=1.00/mo; HF upvotes=233; github 353⭐ / forks=1 / 90d commits=27 / pushed 9d ago
+
 **分数**：2 - Frontier
 **理由**：field-centric 看，这是 video understanding 方向当前最值得跑的 benchmark 之一——group non-linear scoring（quadratic + first-error truncation）是真正新且锐利的方法学贡献（见 Strengths #1），且已集成到 VLMEvalKit / lmms-eval 形成可复现路径。但它尚未成为 de facto 标准（Video-MME v1 仍是现役 baseline），规模（800 videos）与 frame budget 不一致（见 Weaknesses #1, #3）也限制其成为 Foundation 级的可比性基石，因此是前沿而非奠基。高于 1 - Archived 的理由：其 metric 思路对 spatial / embodied reasoning evaluation 有直接借鉴价值（见 Notes 的 Action）。

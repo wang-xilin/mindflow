@@ -279,5 +279,7 @@ failure modes 和 sim-to-real challenges 在 Appendix N。
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2, influential=1 (50.0%), velocity=0.57/mo; HF upvotes=N/A; github 19⭐ / forks=1 / 90d commits=6 / pushed 3d ago
+
 **分数**：2 - Frontier
-**理由**：作为 UAV-VLN 方向的 benchmark + R1-style training recipe，143K 样本 + persona-conditioned instruction 的规模和多样性在现有 aerial VLN dataset 中居首（见 Table 1，相比 OpenFly 100K / CityNav 32K），有被后续工作作为 baseline 的潜力——这是 Frontier 档的典型特征。不够 3 - Foundation 是因为：(1) 论文 2026-01 新发，尚未形成社区采纳证据；(2) "real-world" framing 有 overclaim 嫌疑，视觉仍是 sim-rendered；(3) 方法层面与 [[2506-VLNR1|VLN-R1]] 高度重合，novelty 主要在 dataset 而非 method；这些风险让它难以成为 de facto 标准。不降到 1 - Archived 是因为 dataset 本身质量和规模有实打实的 community 价值，不属于 incremental / niche。
+**理由**：作为 UAV-VLN 方向的 benchmark + R1-style training recipe，143K 样本 + persona-conditioned instruction 的规模和多样性在现有 aerial VLN dataset 中居首（见 Table 1，相比 OpenFly 100K / CityNav 32K），有被后续工作作为 baseline 的潜力——这是 Frontier 档的典型特征。不够 3 - Foundation 是因为：(1) 论文 2026-01 新发，尚未形成社区采纳证据；(2) "real-world" framing 有 overclaim 嫌疑，视觉仍是 sim-rendered；(3) 方法层面与 [[2506-VLNR1|VLN-R1]] 高度重合，novelty 主要在 dataset 而非 method；这些风险让它难以成为 de facto 标准。不降到 1 - Archived 是因为 dataset 本身质量和规模有实打实的 community 价值，不属于 incremental / niche。2026-04 复核：3.5 月 2 citation / 1 influential (50%，仅 2 篇基数偏小) / github 19⭐ 但近 3 天仍有提交（活跃维护），属典型 <3mo 新发 benchmark 的早期信号形态，维持 Frontier。

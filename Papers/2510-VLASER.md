@@ -214,5 +214,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=10, influential=1 (10.0%), velocity=1.59/mo; HF upvotes=23; github 45⭐ / forks=0 / 90d commits=5 / pushed 37d ago
+
 **分数**：2 - Frontier
-**理由**：在 embodied reasoning 与 VLA 协同方向上，Vlaser 提供了关键的 negative result（Strengths #2：OOD reasoning 数据对 closed-loop 几乎无增益），且 Vlaser-6M + 完整模型开源（Artifact 可获取性全绿），具备作为当前 "VLM data for VLA" 方向 baseline 的潜力；但方法层面（Weaknesses #3）直接沿用 π0 flow matching + InternVL3 SFT，未形成范式突破；仅发布半年、尚无大规模后续 baseline 采纳，且未验证 sim-to-real，距离 Foundation level 还有距离，不是 1 是因为 ICLR 2026 录用 + in-domain vs OOD 的实验设计在方向内已是重要参考点。
+**理由**：在 embodied reasoning 与 VLA 协同方向上，Vlaser 提供了关键的 negative result（Strengths #2：OOD reasoning 数据对 closed-loop 几乎无增益），且 Vlaser-6M + 完整模型开源（Artifact 可获取性全绿），具备作为当前 "VLM data for VLA" 方向 baseline 的潜力；但方法层面（Weaknesses #3）直接沿用 π0 flow matching + InternVL3 SFT，未形成范式突破；仅发布半年、尚无大规模后续 baseline 采纳，且未验证 sim-to-real，距离 Foundation level 还有距离，不是 1 是因为 ICLR 2026 录用 + in-domain vs OOD 的实验设计在方向内已是重要参考点。2026-04 复核：cite=10/inf=1 (10.0%)/vel=1.59/mo、HF=23、gh=45⭐——influential/total 正好处 rubric "典型 ~10%"，early signal 支撑 Frontier 档；star 数偏低但仓库近期 active（37d）+ ICLR 接收会在接下来半年继续拉 citation，维持 2 是 field-centric 稳妥判断。

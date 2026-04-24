@@ -8,7 +8,7 @@ tags: [gui-agent, computer-use]
 paper: https://arxiv.org/abs/2504.07981
 website: https://gui-agent.github.io/grounding-leaderboard/
 github: https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding
-rating: 2
+rating: 3
 date_added: 2026-04-20
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-20
 > - **方法**: ScreenSeekeR——用 GPT-4o 作 planner 提出候选区域, 递归裁剪缩小搜索空间, 再交给 grounder (OS-Atlas-7B) 定位; 训练免费
 > - **结果**: ScreenSeekeR 把 OS-Atlas-7B 从 18.9% 拉到 48.1% (+29.2 abs, +254% rel); 简单的 ReGround crop-and-reground 也能到 40.2%
 > - **Sources**: [paper](https://arxiv.org/abs/2504.07981) | [website](https://gui-agent.github.io/grounding-leaderboard/) | [github](https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding)
-> - **Rating**: 2 - Frontier（已成为专业高分屏 GUI grounding 的 de facto benchmark, 但 benchmark 属性尚未定型到 Foundation 级别, 且 ScreenSeekeR 方法本身已被后续训练-based 方法超越）
+> - **Rating**: 3 - Foundation（2026-04 升档：influential 比例 30.1% 远高于典型 10%，被 UI-TARS / Qwen2.5-VL / OS-Atlas / OmniParser v2 等主流 GUI grounding 工作作为专业高分屏评测的 de facto 标准）
 
 **Key Takeaways:**
 1. **Benchmark gap exposed**: 1,581 真实高分辨率截图 (>1080p), 23 个专业应用, 5 类行业 + 3 OS, 平均目标只占整图 0.07% 面积 (vs. ScreenSpot 的 2.01%)——以前的 grounding benchmark 在难度上 underclaim 太多。
@@ -243,5 +243,7 @@ ScreenSpot-Pro-CN 上 SOTA 的 OS-Atlas-7B 仅 16.8% (英文 18.9%), UGround 从
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**: 作为 benchmark, ScreenSpot-Pro 已被 [[2501-UITARS|UI-TARS]] / Qwen2.5-VL / OmniParser v2 / [[2410-OSAtlas|OS-Atlas]] 等后续主要 GUI grounding 工作广泛采用, 是专业高分屏场景下的 de facto 评测, 具备 Frontier 的社区采纳度; 但相比 [[2401-SeeClick|SeeClick]]-ScreenSpot 那样真正奠基性的评测地位仍有差距 (场景专业化也意味着不如原始 ScreenSpot 通用), 尚未升格为 Foundation。ScreenSeekeR 方法层面属于 training-free 的聪明 baseline, 已被训练-based 后续工作 (SE-GUI 等) 性能追平, 不是方向主脉络。综合二者取 Frontier。
+**Metrics** (as of 2026-04-24): citation=173, influential=52 (30.1%), velocity=13.73/mo; HF upvotes=5; github 366⭐ / forks=51 / 90d commits=6 / pushed 10d ago
+
+**分数**：3 - Foundation
+**理由**：初评 2 - Frontier 时已指出本 benchmark 被 UI-TARS / Qwen2.5-VL / OmniParser v2 / OS-Atlas 等后续主要 GUI grounding 工作广泛采用，当时担心 "场景专业化也意味着不如原始 ScreenSpot 通用" 而未升 Foundation。2026-04 复核升档：12.6 个月后 citation=173 / velocity=13.73/mo、**influential 比例 30.1% 远高于典型 10%**（按 rubric 属 "技术被实质继承" 的最强信号之一，此处具体表现为 GUI grounding 训练工作把 ScreenSpot-Pro 当核心 target benchmark）、github 仍在维护（90d 6 commits, pushed 10d），已形成 "Benchmark / Dataset: 已成为方向的 de facto 标准评测" 的 Foundation 档 rubric 定义，即使 ScreenSeekeR 方法本身被后续训练-based 工作 (SE-GUI) 性能追平——benchmark 的 Foundation 地位由评测采纳度而非方法本身决定，升 3。

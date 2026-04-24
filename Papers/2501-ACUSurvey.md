@@ -8,7 +8,7 @@ tags: [computer-use, gui-agent, web-agent]
 paper: https://arxiv.org/abs/2501.16150
 website: https://sagerpascal.github.io/agents-for-computer-use/
 github:
-rating: 2
+rating: 1
 date_added: 2026-04-20
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-20
 > - **方法**: 半结构化文献检索 + snowballing；归纳式 coding 出三视角分类（domain × observation/action × agent design/learning）
 > - **结果**: 识别趋势——specialized → foundation agent、text → image observation、BC 主导 environment learning；提出 6 条 recommendation——视觉观察 + low-level control、cost-efficient learning、planning、高复杂度 benchmark、统一以 task success rate 评估、对齐 deployment 假设
 > - **Sources**: [paper](https://arxiv.org/abs/2501.16150) | [website](https://sagerpascal.github.io/agents-for-computer-use/)
-> - **Rating**: 2 - Frontier（technology-agnostic 三视角 taxonomy 有结构性贡献，但 evidence 多 illustrative 且未覆盖 2025 年 GUI grounding + 商业系统前沿，不构成 foundation 级必读）
+> - **Rating**: 1 - Archived（technology-agnostic 三视角 taxonomy 有单点参考，但 15 个月后 cc=18 / ic=1、相邻存在 OS Agents / GUI Agent Survey 等更被采纳的竞争综述，社区未把它当 ACU 方向的入口综述）
 
 **Key Takeaways:**
 1. **三视角 taxonomy**：domain（Web/Android/PC）、interaction（observation / action 空间）、agent（policy 类型 + 三阶段 learning：pre-training → environment learning → episodic improvement）。设计上 domain-agnostic，把 RL-era 和 foundation-agent-era 的工作放在同一坐标系里讨论
@@ -273,5 +273,7 @@ Specialized 在窄任务、弱 instruction conditioning 下高效；Foundation a
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：三视角 technology-agnostic taxonomy + 三阶段 learning 框架（见 Strengths 1-2）把 RL 时代与 foundation agent 时代统一到一个坐标系，对 ACU 方向研究者有结构性参考价值，够到 Frontier 档。但 evidence 多 illustrative（Weakness 1）、缺定量 meta-analysis（Weakness 2）、且在 2026-04 读已显著落后于 GUI grounding model 线与商业系统线（Weakness 5-6），不是必读必引的 foundation 级综述——相邻领域存在 OS Agents (ACL 2025 Oral) 等竞争 survey，本文未成为 de facto reference。相比 Archived 档的一次性参考，本文 taxonomy 章节仍值得回查。
+**Metrics** (as of 2026-04-24): citation=18, influential=1 (5.6%), velocity=1.21/mo; HF upvotes=N/A; github=N/A (无代码仓库)
+
+**分数**：1 - Archived
+**理由**：三视角 technology-agnostic taxonomy + 三阶段 learning 框架（Strengths 1-2）把 RL 时代与 foundation agent 时代统一到一个坐标系，taxonomy 章节单点值得回查；"self-supervised alignment 阶段"作为 recommendation 有方向性启发。但 evidence 多 illustrative（Weakness 1）、缺定量 meta-analysis、未覆盖 2025 年 GUI grounding model 线与商业系统（Weakness 5-6）。2026-04 复核：发表 15 个月 cc=18 / ic=1（5.6%）/ velocity 1.21/mo，JAIR 录用但社区几乎未采纳——[[2411-GUIAgentSurvey|GUIAgentSurvey]] 同期 cc=156、OS Agents (ACL 2025 Oral) 占据了 ACU 方向的入口综述位置，本文基本是"读过但不在方向主脉络和前沿"的 Archived 定位。不选更低档是因为 taxonomy + learning framework 仍有 reusable value；不选 Frontier 因为缺乏社区采纳证据。

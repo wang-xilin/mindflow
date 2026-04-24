@@ -304,5 +304,7 @@ front-view + top-down (Nav) 或 front-view + wrist-view (Man) 的双视角输入
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=128, influential=11 (8.6%), velocity=8.95/mo; HF upvotes=35; github 293⭐ / forks=32 / 90d commits=11 / pushed 9d ago
+
 **分数**：2 - Frontier
-**理由**：ICML 2025 Oral、同时具备 multimodal + fine-grained + high/low-level 两种 action-level 覆盖的唯一 embodied MLLM benchmark（见"与同类 benchmark 的定位差异"表），且有 24 模型 × 4 环境的规模证据。其 fine-grained capability subsets 和 vision-ablation 协议已被后续 ERA 等工作作为训练/评测平台采纳，但尚未达到 ImageNet / DROID 级的 de facto 标准（社区里 VLMBench、EmbodiedEval 等竞争者并存），仍处 Frontier 而非 Foundation；同时 simulation-only、grid 不规则等 Weaknesses 限制了它升档的证据强度。
+**理由**：ICML 2025 Oral、同时具备 multimodal + fine-grained + high/low-level 两种 action-level 覆盖的唯一 embodied MLLM benchmark（见"与同类 benchmark 的定位差异"表），且有 24 模型 × 4 环境的规模证据。其 fine-grained capability subsets 和 vision-ablation 协议已被后续 ERA 等工作作为训练/评测平台采纳，但尚未达到 ImageNet / DROID 级的 de facto 标准（社区里 VLMBench、EmbodiedEval 等竞争者并存），仍处 Frontier 而非 Foundation；同时 simulation-only、grid 不规则等 Weaknesses 限制了它升档的证据强度。2026-04 复核：citation=128 / velocity=8.95/mo、influential 比例 8.6%（接近典型 ~10%）、github 仍在维护（90d 11 commits、pushed 9d）且 HF 35 upvotes，表明社区采纳仍在积累但尚未进入 Foundation 级必引行列，维持 Frontier。

@@ -268,5 +268,7 @@ SSR vs. Joint Training vs. Sequential Training 的对比：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.0/mo; HF upvotes=4; github 75⭐ / forks=2 / 90d commits=23 / pushed 42d ago
+
 **分数**：2 - Frontier
 **理由**：SSR 范式（scaffold / specialize / reconcile）与 24-benchmark 的 cross-domain SOTA 验证使其成为当前 cross-embodiment MLLM 的重要参考——Strengths 里的 "清晰 insight" 与 "消融闭环" 支持它作为 frontier 代表作。但正如 Weaknesses 所指出，它不是 VLA（无 action generation），且 evaluation 局限于 QA/reasoning；方法组合（model merging + GRPO + staged SFT）也更像 engineering 整合而非开创性贡献，加之 2026-03 新发布、尚未被社区广泛采纳为 baseline，因此落在 Frontier 而非 Foundation。

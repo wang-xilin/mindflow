@@ -247,5 +247,7 @@ Zero-shot VLN agents（NavGPT、Open-Nav、MapGPT 等）相比监督学习的 VL
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=7, influential=2 (28.6%), velocity=2.06/mo; HF upvotes=N/A; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
-**理由**：论文在 R2R-CE zero-shot 上 SR 64.0 大幅超过上一代 zero-shot SOTA VLN-Zero (42.4) 并接近监督 ETPNav (57.0)，同时提出 head-up spatial map + compass panorama + remote object preview 的三件套组合，是 zero-shot VLN 方向当前必比的 baseline（Strengths 1-3）。但它不够 Foundation：方法 novelty 偏组合（SSG / head-up map / collage / retrieval 都继承前人，Weakness 5），"pre-exploration zero-shot" 设定 stretch（Weakness 1 + ❌ claim），且未开源（Weakness 6），短期内不会像 ConceptGraphs / ETPNav 那样成为 de facto 标准；也明显高于 Archived——RxR-CE 上表现弱归弱，但 R2R / REVERIE / R2R-CE 三个标准 split 上的 SR 提升足以使其进入 zero-shot VLN 文献的 must-compare 组。
+**理由**：论文在 R2R-CE zero-shot 上 SR 64.0 大幅超过上一代 zero-shot SOTA VLN-Zero (42.4) 并接近监督 ETPNav (57.0)，同时提出 head-up spatial map + compass panorama + remote object preview 的三件套组合，是 zero-shot VLN 方向当前必比的 baseline（Strengths 1-3）。但它不够 Foundation：方法 novelty 偏组合（SSG / head-up map / collage / retrieval 都继承前人，Weakness 5），"pre-exploration zero-shot" 设定 stretch（Weakness 1 + ❌ claim），且未开源（Weakness 6），短期内不会像 ConceptGraphs / ETPNav 那样成为 de facto 标准；也明显高于 Archived——RxR-CE 上表现弱归弱，但 R2R / REVERIE / R2R-CE 三个标准 split 上的 SR 提升足以使其进入 zero-shot VLN 文献的 must-compare 组。2026-04 复核：3.4 月 7 citation / 2 influential (28.6%) / velocity 2.06/mo，早期采纳信号相对 2601 月同批发布作品居上；但未开源削弱了 sustained adoption 的预期，维持 Frontier。

@@ -220,5 +220,7 @@ Decoder 支持三种输出：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=69, influential=9 (13.0%), velocity=7.11/mo; HF upvotes=36; github 868⭐ / forks=72 / 90d commits=6 / pushed 54d ago
+
 **分数**：2 - Frontier
 **理由**：从 Strengths 看，3B/7B/32B 全量开源 + 12+ benchmark 系统评估 + 31 类空间概念数据 pipeline，使其成为 embodied VLM 方向当前必引的 open-weight baseline（已被 awesome-embodied-vla 等列入代表工作，与 [[2506-VeBrain|VeBrain]]、Cosmos-Reason1 形成同期对比）。但从 Weaknesses 看，架构只是 Qwen2.5-VL 的 embodied 微调，没有 real-robot 定量评估，也未形成 de facto benchmark 或被多数后续工作作为核心比较基座，不足以升 3；同时其完整的 artifact 开放度和紧凑模型打赢闭源的结果明显高于一次性参考，不应降 1。

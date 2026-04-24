@@ -236,5 +236,7 @@ Scaling 对保持语言能力至关重要：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2564, influential=108 (4.2%), velocity=68.19/mo; HF upvotes=0; github=N/A (无代码仓库)
+
 **分数**：3 - Foundation
 **理由**：PaLM-E 是 "把连续感知直接注入 LLM token 空间" 的奠基工作，在 embodied AI / VLA 方向是无可绕过的必读——它定义的 multi-modal sentence 范式被 [[2307-RT2|RT-2]]、[[2406-OpenVLA|OpenVLA]]、[[2504-Pi05|π0.5]] 等后续 VLA 工作直接继承，positive transfer 与 scaling 减轻灾难性遗忘两个发现被反复在后续工作中引用。相比 rating=2，它的方法范式并未过气反而被行业标准化（区别于一次性 SOTA），且作为 [[2204-SayCan|SayCan]] 之后、VLA 出现之前的关键过渡，理解这个方向历史的 pipeline 绕不开它。

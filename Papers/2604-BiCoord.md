@@ -316,5 +316,7 @@ multi-task 普遍腰斩，但少数任务反而提升（OpenVLA-OFT 在 Sweep Bl
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=N/A; github 4⭐ / forks=0 / 90d commits=5 / pushed 15d ago
+
 **分数**：2 - Frontier
 **理由**：属于当前 bimanual 长程协同评测的前沿参考——STI/SMP/ARD 这组指标在 Strengths 里被评估为"把一直定性的问题数值化"并能揭示已有 benchmark 4× 差距，Artifact 可获取性完整（checkpoints + dataset 全开源），是 Pi0/RDT/OpenVLA-OFT 这批 VLA 在 bimanual 长程场景下的少数可复现评测。但距离 Foundation 还差关键两点：一是 Weaknesses 指出 18 个任务规模小、强依赖 RoboTwin 2.0，未能成为独立的 de facto 标准；二是 2026-04 发布时间过近，尚无充足外部信号显示已被主流后续工作采纳，因此不到 3；也不是 Archived，因为它并未被更通用的 benchmark 取代。

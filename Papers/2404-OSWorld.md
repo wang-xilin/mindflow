@@ -235,5 +235,7 @@ POMDP $(S, O, A, T, R)$：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=593, influential=99 (16.7%), velocity=24.30/mo; HF upvotes=52; github 2807⭐ / forks=447 / 90d commits=62 / pushed 6d ago
+
 **分数**：3 - Foundation
 **理由**：OSWorld 已是 computer-use / GUI agent 方向事实上的标准评测——后续主线工作（UI-TARS / UI-TARS-2、Agent-S2、OS-Atlas、ComputerRL、WindowsAgentArena）均以它为主评测或直接扩展，GUI Agent Survey / OS Agents Survey 也把它列为 de facto benchmark（见 Strengths-2/5 与「后续影响」列表）。相比 Frontier 档的 Benchmark 2（"有一定使用量、尚未定型"），OSWorld 已经跨过 adoption 门槛并被持续维护（OSWorld-Verified 2025-07）；12.24% vs 72.36% 的 gap + 134 个 example-specific eval 的护城河使其短期内难被取代，因此计入 Foundation 而非 Frontier。

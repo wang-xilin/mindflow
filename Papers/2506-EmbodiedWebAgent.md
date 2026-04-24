@@ -201,5 +201,7 @@ Benchmark 包含约 **1.5k 任务**，覆盖 5 个领域：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=11, influential=0 (0.0%), velocity=1.08/mo; HF upvotes=23; github 36⭐ / forks=5 / 90d commits=0 / pushed 329d ago · stale
+
 **分数**：2 - Frontier
 **理由**：这是第一个系统将 web agent + embodied agent 统一到同一 benchmark 的工作，NeurIPS 2025 D&B Spotlight，benchmark 设计系统、error analysis（66.6% 跨域错误）揭示了 LLM agent 的核心短板，具备作为 cross-domain agent 评测前沿的条件；但它本身是 benchmark contribution 无方法创新（见 Weaknesses 3），环境仍是受控仿真（Weaknesses 1-2），方向尚新也未形成 ALFRED / WebArena 级的 de facto 地位，所以不到 3 - Foundation。

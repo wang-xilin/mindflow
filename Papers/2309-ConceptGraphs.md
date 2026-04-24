@@ -270,5 +270,9 @@ Node 准确率约 70%，主要错误来自 LLaVA 自身的 caption 错误；Edge
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=388, influential=61 (15.7%), velocity=12.56/mo; HF upvotes=10; github 829⭐ / forks=117 / 90d commits=0 / pushed 189d ago · stale
+
 **分数**：3 - Foundation
-**理由**：ConceptGraphs 是 open-vocabulary 3D scene graph 方向的奠基工作——它把 "per-point feature map → object-centric graph" 的 representation shift 立住（Strengths 1 + Weaknesses 3 中 framing），并完整展示了 segmentation / retrieval / search / traversability / pick-place 全栈可用性。ICRA 2024 发表后被 DovSG、后续 3DGS + scene graph、embodied QA 等方向广泛作为 baseline 或直接扩展（同目录下的 `2410-DovSG.md` 即明确 build on），citation 已破千量级。不给 2 是因为它不是"只是一个 SOTA"——它定义了 foundation-model-driven 3D scene graph 这个子方向的 template；不给更高是因为已经出现 LLaVA caption 瓶颈和 MST 剪枝等被后续工作修正的设计缺陷（Weaknesses 3-4）。
+**理由**：ConceptGraphs 是 open-vocabulary 3D scene graph 方向的奠基工作——它把 "per-point feature map → object-centric graph" 的 representation shift 立住（Strengths 1 + Weaknesses 3 中 framing），并完整展示了 segmentation / retrieval / search / traversability / pick-place 全栈可用性。ICRA 2024 发表后被 DovSG、后续 3DGS + scene graph、embodied QA 等方向广泛作为 baseline 或直接扩展（同目录下的 `2410-DovSG.md` 即明确 build on）。不给 2 是因为它不是"只是一个 SOTA"——它定义了 foundation-model-driven 3D scene graph 这个子方向的 template；不给更高是因为已经出现 LLaVA caption 瓶颈和 MST 剪枝等被后续工作修正的设计缺陷（Weaknesses 3-4）。
+
+2026-04 复核：citation=388 / influential=61 (15.7%) / velocity=12.56/mo——citation 总数不如我原文"破千量级"断言（撤回该说法），但 influential ratio 15.7% 明显高于典型 ~10%，说明方法被后续工作实质继承而非仅作 landmark reference，维持 Foundation 判断；相邻档 2（Frontier）的工作往往是 SOTA 对照而非被继承的 building block，ConceptGraphs 的 pattern 符合前者。

@@ -270,5 +270,7 @@ Pre-train 反而比纯 in-domain 还差！作者归因 fine-tune 阶段的灾难
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=615, influential=29 (4.7%), velocity=22.28/mo; HF upvotes=33; github 4410⭐ / forks=733 / 90d commits=0 / pushed 670d ago · stale
+
 **分数**：3 - Foundation
 **理由**：tether-to-base 全身遥操作 + naive cross-morphology co-training 两个 insight 简洁且可复用，已被 HumanPlus / TeleVision / RDT / [[2410-Pi0|π0]] 等后续 bimanual & VLA 工作沿用为 data collection 与训练范式；32k USD 开源硬件 + AgileX 商业化套件使它成为该方向的事实起点（笔记「后续影响」段已记录）。相比 Frontier(2)，它不是某代 SOTA 而是范式奠基；相比 Archived(1)，尚未被更通用的 teleop/co-training 方案取代，仍是方向必读。

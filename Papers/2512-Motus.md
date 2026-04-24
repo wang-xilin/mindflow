@@ -347,5 +347,7 @@ w/o Pretrain (77%) → Stage 1 only (82%) → Motus full (87%)。每个阶段都
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=32, influential=6 (18.8%), velocity=7.44/mo; HF upvotes=0; github 995⭐ / forks=48 / 90d commits=0 / pushed 108d ago
+
 **分数**：2 - Frontier
-**理由**：按 Strengths 所述，Motus 是目前少数把 VLA/WM/IDM/VGM/Joint 五种 paradigm 同一模型同一组参数跑通并给出完整定量评估的工作，真实机器人长任务（coffee / grinder / towel folding）从个位数跃升到 60%+ 的幅度与 LIBERO-Long 97.6 持平 X-VLA SOTA，使其作为当前 unified VLA+WM 方向的 must-compare baseline 当之无愧；但 Weaknesses 指出架构 novelty 相对 [[2504-UWM|UWM]] + Bagel 偏合并、18000 GPU-hour 门槛远超学术可复现范围、且"cross-embodiment"卖点下游评测全是 Aloha 未被直接验证——这些阻止了它跨入 3 - Foundation 的"方向必读奠基"档，属于需要跟进引用但尚未经过时间检验定型的前沿工作。
+**理由**：按 Strengths 所述，Motus 是目前少数把 VLA/WM/IDM/VGM/Joint 五种 paradigm 同一模型同一组参数跑通并给出完整定量评估的工作，真实机器人长任务（coffee / grinder / towel folding）从个位数跃升到 60%+ 的幅度与 LIBERO-Long 97.6 持平 X-VLA SOTA，使其作为当前 unified VLA+WM 方向的 must-compare baseline 当之无愧；但 Weaknesses 指出架构 novelty 相对 [[2504-UWM|UWM]] + Bagel 偏合并、18000 GPU-hour 门槛远超学术可复现范围、且"cross-embodiment"卖点下游评测全是 Aloha 未被直接验证——这些阻止了它跨入 3 - Foundation 的"方向必读奠基"档，属于需要跟进引用但尚未经过时间检验定型的前沿工作。2026-04 复核：4.3 月 32 citation / 6 influential (18.8%，远高于典型 ~10%，说明方法被实质继承) / velocity 7.44/mo / github 995⭐ 表明早期采纳活跃；但近 90 天 0 commit、HF=0 且"cross-embodiment" claim 仍未在 non-Aloha 下游验证，升级到 Foundation 的证据尚不足，维持 Frontier。

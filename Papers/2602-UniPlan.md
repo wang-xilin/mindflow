@@ -241,5 +241,7 @@ UniPlan 失败 ~16% 的分布：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=1, influential=0 (0.0%), velocity=0.42/mo; HF upvotes=N/A; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
 **理由**：这篇是 2026 年 2 月的新 arXiv，neuro-symbolic task planning 方向的代表前沿工作——factored PDDL construction (w/o Injection 崩到 31% 的 ablation) 和 AST-based programmatic domain expansion 是有 transferability 的设计原则，且明确与 SayPlan / DELTA / ConceptGraphs 这条主线对话。不够 Foundation 的原因：(1) 完全跳过低层执行，在真机上未验证，SR 数字的语义比 end-to-end VLA 工作窄；(2) 单一环境 + 单一 base domain (UniDomain)，"general programmatic extension" 的 claim 还缺跨域证据；(3) 论文太新尚无社区采纳信号。不是 Archived 的原因：factored injection 的分工原则和 compressed topological map 对 PDDL latency 的改进是过硬的贡献，不是 incremental 也非 niche。

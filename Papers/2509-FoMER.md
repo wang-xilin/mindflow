@@ -8,7 +8,7 @@ tags: [embodied-reasoning, VLM, spatial-reasoning]
 paper: https://arxiv.org/abs/2509.15293
 website: https://mbzuai-oryx.github.io/FoMER-Bench/
 github: https://github.com/mbzuai-oryx/FoMER-Bench
-rating: 2
+rating: 1
 date_added: 2026-04-21
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-21
 > - **方法**: 从 9 个已有数据集（Cosmos-R1 子集、Pbench、HRIBench、NYU VINN、Recon、RoboSet）curate 1112 题；用 Qwen2.5-VL-32B 自动生成 QA + reasoning trail，再人工校验剔除 ~12%；GPT-4o / Qwen3-32B 作为 judge 按 10 维 rubric 打分
 > - **结果**: 9 个 SoTA 模型评测，OpenAI o4-mini 综合最强；模型在 social navigation 和 human-robot object interaction 上普遍较差；human baseline 比最强模型高 ~30%
 > - **Sources**: [paper](https://arxiv.org/abs/2509.15293) | [website](https://mbzuai-oryx.github.io/FoMER-Bench/) | [github](https://github.com/mbzuai-oryx/FoMER-Bench)
-> - **Rating**: 2 - Frontier（首个把 reasoning trail 作为一等公民评估的 embodied benchmark，disentangled RA/FA metric 有诊断价值，但 annotation 自循环 + 未纳入 VLA baseline 限制其成为 de facto 标准）
+> - **Rating**: 1 - Archived（首个把 reasoning trail 作为一等公民评估的 embodied benchmark，disentangled RA/FA metric 有诊断价值；但 annotation 自循环 + 未纳入 VLA baseline + 社区 traction 接近零（7.2mo 仅 1 cite / 3⭐ / 0 HF upvote），实际已被其他 embodied reasoning benchmark 分流）
 
 **Key Takeaways:**
 1. **Reasoning trail evaluation 是必要的**：作者用 Gemini 2.5 Pro 和 Qwen2.5-VL 的 case 表明，两个模型可以给出同样的最终答案 ("withdraw bolt")，但底层推理路径完全不同——只评最终答案会漏掉这种"对的答案 + 错的理由"的情况
@@ -311,6 +311,8 @@ OpenAI o4-mini 各维度均匀领先；Qwen / Gemini / Claude 也较均衡。**C
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：这是首个把 reasoning trail annotation + 10 维 rubric 评估做成一等公民的 embodied reasoning benchmark，disentangled RA/FA 的诊断价值（如 Strengths 2 所述的 Cosmos-R1 "FA 还行 RA 全输" 案例）是 benchmark design 的真 insight；但方法贡献主要停留在数据 curation + LLM-as-judge 工程，且 Weaknesses 1/4 指出的 annotation 自循环 + 未纳入 VLA baseline 两个问题使它难以成为 de facto 标准。相比相邻档，它比 Archived 有明确方法学贡献与可扩展的 rubric 框架，但距 Foundation 级（如 OpenEQA 这类已被广泛沿用的评测基线）还差社区采纳度的时间检验——发布于 2025-09，尚未显示显著的下游 baseline 采用信号。
+**Metrics** (as of 2026-04-24): citation=1, influential=0 (0.0%), velocity=0.14/mo; HF upvotes=0; github 3⭐ / forks=0 / 90d commits=0 / pushed 168d ago
+
+**分数**：1 - Archived
+**理由**：这是首个把 reasoning trail annotation + 10 维 rubric 评估做成一等公民的 embodied reasoning benchmark，disentangled RA/FA 的诊断价值（如 Strengths 2 所述的 Cosmos-R1 "FA 还行 RA 全输" 案例）是 benchmark design 的真 insight；但方法贡献主要停留在数据 curation + LLM-as-judge 工程，且 Weaknesses 1/4 指出的 annotation 自循环 + 未纳入 VLA baseline 两个问题使它难以成为 de facto 标准。2026-04 复核：发布 7.2mo 已过 <3mo 保护期，cite=1/inf=0/vel=0.14/mo、HF=0、gh=3⭐/90d 无 commit，早期采纳信号几乎为零，社区实际已在用其他 embodied reasoning benchmark（ERQA、EgoPlan 等），原 Frontier 档高估了影响力——降为 1 - Archived：rubric 特例"inf>0 / star velocity / HF upvotes"任一都未显示早期信号。仍不是完全 niche：rubric 设计在写 embodied VLM eval 论文时可作一次性参考。
 

@@ -257,5 +257,7 @@ LTM 是连接"单 episode agent" 与 "lifelong learning agent" 的关键，但 s
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=156, influential=5 (3.2%), velocity=9.23/mo; HF upvotes=30; github 229⭐ / forks=15 / 90d commits=0 / pushed 305d ago · stale
+
 **分数**：2 - Frontier
 **理由**：本作是当前 GUI agent 领域覆盖最全、结构最完整的 cookbook-style living survey（v1→v8，配 searchable site + GitHub paper list），在 Strengths 中体现为 "8 RQ pipeline + 平台 × 维度二维切分 + Microsoft/UFO 团队的 desktop 第一手经验"，足以作为方向入门 index 和文献定位重要参考，因此高于 Archived。但 Weaknesses 指出其**批判性弱、数据层 meta-analysis 缺失、方法维度被平台切分打散**，且 v8 后的 2025H2–2026 RL agent 浪潮未覆盖，并未像 ImageNet/DROID 级工作那样成为方向必引奠基，所以不到 Foundation——停在 Frontier 档是更准确的定位。

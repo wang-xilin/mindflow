@@ -210,5 +210,7 @@ VQA 任务按两个维度组织：中间表示类型（spatial vs temporal）和
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=3, influential=0 (0.0%), velocity=1.25/mo; HF upvotes=0; github 125⭐ / forks=6 / 90d commits=26 / pushed 68d ago
+
 **分数**：2 - Frontier
 **理由**：RoboInter 以 230k episodes 的密集中间表示标注 + 三种 plan-then-execute 范式的统一对比构成系统性的 frontier 贡献，在 RoboRefIt / RoboVQA 等第三方 benchmark 上对 [[2507-RoboBrain2|RoboBrain2.0]] 大幅领先（Strengths #2、#3）。未到 Foundation 档的原因是：VLA 权重尚未释放（Weaknesses #3），RoboInter-VQA 作为 benchmark 尚未被社区广泛采纳为 de facto 标准；未降到 Archived 则是因为数据集+工具+VLM 的开源组合对方向研究者而言是重要参考（Strengths #4）。

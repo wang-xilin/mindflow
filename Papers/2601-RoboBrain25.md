@@ -208,5 +208,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=7, influential=2 (28.6%), velocity=2.26/mo; HF upvotes=13; github 868⭐ / forks=72 / 90d commits=6 / pushed 54d ago
+
 **分数**：2 - Frontier
-**理由**：作为 RoboBrain 系列最新迭代，在多 spatial/temporal benchmark 上取得 SOTA（CrossPoint、TraceSpatial、Reverse VOC 等，尤其 TraceSpatial Success 44 vs 7 的巨大差距），并提出 hop-normalized value estimation 和 reverse VOC 评估这类值得推广的设计，因此高于 Archived；但尚未达到 Foundation 档——缺乏 end-to-end manipulation 评估、RL 应用仅有 qualitative demo、核心新增数据独立贡献不明，社区采纳度也需时间验证是否会成为 de facto embodied foundation。
+**理由**：作为 RoboBrain 系列最新迭代，在多 spatial/temporal benchmark 上取得 SOTA（CrossPoint、TraceSpatial、Reverse VOC 等，尤其 TraceSpatial Success 44 vs 7 的巨大差距），并提出 hop-normalized value estimation 和 reverse VOC 评估这类值得推广的设计，因此高于 Archived；但尚未达到 Foundation 档——缺乏 end-to-end manipulation 评估、RL 应用仅有 qualitative demo、核心新增数据独立贡献不明，社区采纳度也需时间验证是否会成为 de facto embodied foundation。2026-04 复核：3.1 月 7 citation / 2 influential (28.6%，远高于 ~10% 典型值，说明方法被实质继承) / github 868⭐ / HF upvotes=13 / 仍在维护（pushed 54d、90 天 6 commits），早期采纳信号强于同期作品；但与方向 landmark（π0 系列）的 adoption 差距仍大，维持 Frontier。

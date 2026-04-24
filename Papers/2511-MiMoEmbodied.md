@@ -326,5 +326,7 @@ Token 数从 2304/4096 压到 796（作者归因 3D conv 替代 patch），PDMS 
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=11, influential=0 (0.0%), velocity=2.16/mo; HF upvotes=26; github 380⭐ / forks=15 / 90d commits=2 / pushed 8d ago
+
 **分数**：2 - Frontier
-**理由**：方法层无创新（架构继承 MiMo-VL、训练是 standard SFT→CoT-SFT→GRPO pipeline），但本工作的 Table 7 消融给出了**非平凡的实证发现**（embodied→AD 迁移 +25 pts、反向 -3.5 pts、多阶段课程 +4~8 pts over joint training），加上 NAVSIM 规划上 7B+796 token 达 PDMS 91.0 超过 8B+2304 token 的 ReCogDrive-Large，属于真正的 deployment 而非纯 benchmark 打榜——这些是我做 unified VLM / spatial-VLM 方向时会主动引用的 data point。不够 Foundation 的原因：方法无范式贡献、cross-embodiment 命名存在 inflation、数据细节不透明阻碍复现、真机 manipulation success 缺席。比起 [[2503-GeminiRobotics|Gemini Robotics]] / [[2502-RoboBrain|RoboBrain]] 这种定义方向或奠基 eval 的工作要低一档。
+**理由**：方法层无创新（架构继承 MiMo-VL、训练是 standard SFT→CoT-SFT→GRPO pipeline），但本工作的 Table 7 消融给出了**非平凡的实证发现**（embodied→AD 迁移 +25 pts、反向 -3.5 pts、多阶段课程 +4~8 pts over joint training），加上 NAVSIM 规划上 7B+796 token 达 PDMS 91.0 超过 8B+2304 token 的 ReCogDrive-Large，属于真正的 deployment 而非纯 benchmark 打榜——这些是我做 unified VLM / spatial-VLM 方向时会主动引用的 data point。不够 Foundation 的原因：方法无范式贡献、cross-embodiment 命名存在 inflation、数据细节不透明阻碍复现、真机 manipulation success 缺席。比起 [[2503-GeminiRobotics|Gemini Robotics]] / [[2502-RoboBrain|RoboBrain]] 这种定义方向或奠基 eval 的工作要低一档。2026-04 复核：5.1mo 发布、cite=11/vel=2.16/mo（发布不到半年就达 Frontier 区间的 citation 节奏）、HF=26、仓库 active（8d）；inf=0 反映被引但尚无实质继承，与方法无原创的判断一致——保留 2 合理。

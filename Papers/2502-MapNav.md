@@ -8,7 +8,7 @@ tags: [VLN, semantic-map, spatial-memory]
 paper: https://arxiv.org/abs/2502.13451
 website: 
 github:
-rating: 2
+rating: 1
 date_added: 2026-04-20
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-20
 > - **方法**: 由 RGB-D + pose 投影点云 → 2D top-down 语义地图（Mask2Former 分割）→ 在每个语义连通域质心处嵌入文本标签生成 ASM，与当前 RGB + 指令一起喂入 LLaVA-OneVision (SigLIP + Qwen2-7B) 端到端预测 next action
 > - **结果**: VLN-CE R2R Val-Unseen SR 36.5 / SPL 34.3（仅当前帧 + ASM），加 2 帧历史后 SR 39.7 / SPL 37.2 超越 NaVid 全帧 baseline；内存恒定 0.015 MB（vs NaVid 在 300 步时 276 MB），单步推理 0.25 s vs 1.22 s
 > - **Sources**: [paper](https://arxiv.org/abs/2502.13451)
-> - **Rating**: 2 - Frontier （把 "历史帧 vs 结构化地图" 作为 VLN memory 独立研究维度的代表工作，ACL 2025 长文，消融扎实；但 fair-comparison 局限且未开源 checkpoint，尚未长成该方向必读 Foundation）
+> - **Rating**: 1 - Archived（2026-04 复核降档：influential citation 仅 1/52 ≈ 1.9% 远低于典型 ~10%，承诺的代码/数据至今未 release，方法未被后续 VLN 主脉采纳为 baseline）
 
 **Key Takeaways:** 
 1. **结构化文本注释让 VLM "看懂"地图**：比起原始 top-down 或语义掩码，把物体类别名直接写在地图上的对应位置，能利用 VLM 预训练时形成的物体-语言关联，注意力收敛到 labelled regions（attention peak >0.8 vs 语义图 <0.4）
@@ -283,5 +283,7 @@ ASM 输入下注意力 sharp peak (>0.8) 精确对齐到带标签的物体；语
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：把 "VLN memory representation" 作为独立研究维度提出、并以 ASM 做出 ACL 2025 长文级别的 publishable insight（Strengths#1/#2），消融严谨（top-down/semantic/ASM 三档对比 + RGB+Depth 反直觉发现），是该细分方向当前必须 cite 的前沿工作；但 fair-comparison 仅限 monocular NaVid 流派、绝对 SR 仍远低于 panoramic+waypoint SOTA（Weaknesses#1），且承诺的代码/数据集/权重均未 release，没有成为 de facto baseline 的基础设施，尚不够格 Foundation；比 Archived 档次高在方法范式（"render 结构化记忆喂 VLM"）已在更广 embodied-AI / VLA 场景有延伸价值，外部信号上被 awesome-embodied-vla-vln 等综述列表收录。
+**Metrics** (as of 2026-04-24): citation=52, influential=1 (1.9%), velocity=3.69/mo; HF upvotes=0; github=N/A (无代码仓库)
+
+**分数**：1 - Archived
+**理由**：初评为 2 - Frontier 是因为把 "VLN memory representation" 作为独立研究维度提出、ACL 2025 长文、消融严谨。2026-04 复核降档：14 个月后 influential citation 仅 1/52 ≈ 1.9%（远低于典型 ~10%，按 rubric "influential 比例远低" 意味着被当 landmark reference 提及但继承性弱）、velocity 仅 3.69/mo、HF upvotes=0；更关键的是承诺的代码 / 数据集至今未 release（项目主页无 github 链接），使其无法像 NaVid 那样成为 de facto baseline，方法范式 "render 结构化记忆喂 VLM" 被后续 StreamVLN / NaVILA 等工作各自独立 reframe 而非直接继承 MapNav。相比 2 - Frontier，它已不在 VLN memory 主脉络上；相比完全 incremental 的 1，还保留 ASM + attention 分析的清晰 insight，仍值得作为一次性参考查阅。

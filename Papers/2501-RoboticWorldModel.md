@@ -8,7 +8,7 @@ tags: [world-model, RL, legged]
 paper: https://arxiv.org/abs/2501.10100
 website: https://sites.google.com/view/roboticworldmodel
 github: https://github.com/leggedrobotics/robotic_world_model
-rating: 2
+rating: 1
 date_added: 2026-04-21
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-21
 > - **方法**: RWM (历史 horizon M、forecast horizon N、外层把预测喂回输入、内层 GRU 隐状态自回归更新；同时预测 contact 等 privileged 信号) + MBPO-PPO（PPO 在 imagined rollout 里更新策略，同时持续收集真实数据 fine-tune 模型）
 > - **结果**: 在 6 类 manipulation/locomotion 任务里 autoregressive prediction error 低于 MLP/RSSM/Transformer baseline；ANYmal D 与 Unitree G1 上 zero-shot 部署成功，velocity tracking reward 与 250M-step PPO 持平 (0.90 vs 0.90)，但 RWM pretraining 仅 6M state transitions
 > - **Sources**: [paper](https://arxiv.org/abs/2501.10100) | [website](https://sites.google.com/view/roboticworldmodel) | [github](https://github.com/leggedrobotics/robotic_world_model)
-> - **Rating**: 2 - Frontier（legged MBRL + PPO 的重要 frontier 参考，Outstanding Paper Award + 硬件证据，但方向较窄且作者自己的 follow-up 已取代核心 limitation）
+> - **Rating**: 1 - Archived（legged MBRL + PPO 的单点工程参考，NeurIPS 2025 Workshop Outstanding Paper + 硬件证据，但 15 个月后 cc=29 / ic=2、作者 follow-up RWM-U 已替代核心 limitation，方向窄且未被社区广泛采纳）
 
 **Key Takeaways:**
 1. **核心 bet**：world model 不一定要 latent-space 或者 transformer——只要 autoregressive 训练时 horizon 给够、把自己的预测当输入，简单 GRU 就能撑住 100+ 步 rollout。和 Dreamer 系强调 latent + KL 正则的路线形成对照。
@@ -262,5 +262,7 @@ MBPO-PPO 训出的 velocity tracking 策略 zero-shot 部署到 ANYmal D 与 Uni
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：位于 legged MBRL + PPO 这条窄而重要的 frontier 上——NeurIPS 2025 Embodied World Models Workshop Outstanding Paper，提供了以往被认为不可行的 "long-horizon PPO + learned model" 在 ANYmal D / G1 上的真硬件证据（见 Strengths 2），是做 learned-dynamics + on-policy RL 绕不开的对比点；但未够 Foundation——作者自己承认 architecture 不是核心贡献（Weaknesses 3 + 3.3 节），well-tuned model-free PPO 在 high-fidelity sim 上仍更强，且作者团队自己的 follow-up RWM-U 已替掉 "policy exploit model error" 的核心 limitation，意味着本文更像 stepping stone 而非定型工作；高于 Archived 是因为 hardware transfer 证据与 privileged head trick 仍有可移植价值。
+**Metrics** (as of 2026-04-24): citation=29, influential=2 (6.9%), velocity=1.91/mo; HF upvotes=0; github 593⭐ / forks=46 / 90d commits=2 / pushed 15d ago
+
+**分数**：1 - Archived
+**理由**：位于 legged MBRL + PPO 这条窄方向上——NeurIPS 2025 Embodied World Models Workshop Outstanding Paper，提供了以往被认为不可行的 "long-horizon PPO + learned model" 在 ANYmal D / G1 上的真硬件证据（Strengths 2），privileged head trick 与 "autoregressive training > architecture" 的 honest finding 仍有 transferable value。2026-04 复核：发表 15 个月 cc=29 / ic=2（6.9%）/ velocity 1.91/mo，github 593⭐ active 但规模偏小；作者自己承认 architecture 不是核心贡献，well-tuned model-free PPO 在 high-fidelity sim 上仍更强，且作者团队 follow-up RWM-U（arXiv 2504.16680）已替掉 "policy exploit model error" 的核心 limitation——符合 Archived 档 "被后续工作取代 / niche / 为某个具体问题查的一次性参考"的定位。不选更低档是因为 hardware transfer 证据与 autoregressive-training-matters-more-than-architecture 的结论仍可查；不选 Frontier 因为当前已不是 learned-dynamics + on-policy RL 方向的代表性必比工作。

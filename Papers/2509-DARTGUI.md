@@ -271,6 +271,8 @@ DART-GUI-7B 在**max 30 步**的限制下取得 **42.13%** OSWorld SR：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=5, influential=0 (0.0%), velocity=0.74/mo; HF upvotes=14; github 87⭐ / forks=6 / 90d commits=1 / pushed 57d ago
+
 **分数**：2 - Frontier
 
-**理由**：从 "是不是方向必读" 的角度，这篇是当前 (2026-04) 做 GUI agent RL 的人**绕不过去**的参考——不是因为它有奠基性 insight，而是因为它是**OSWorld 上唯一一个把 system + data curation + open-source artifact 都做扎实**的工作，且数值（42.13% @ 30 steps）进入了 closed-source 竞争区间。但 algorithmic novelty 和 cross-benchmark 验证都不足以把它抬到 Foundation——每个 component 都可以在 prior work 里找到，且没有 cross-domain generalization 的证据。等 UI-TARS-2 或下一代 GUI agent RL 工作出来，它会快速降到 1 的候选。属于典型的 "重要 baseline，有效期 6-12 个月"。
+**理由**：从 "是不是方向必读" 的角度，这篇是当前 (2026-04) 做 GUI agent RL 的人**绕不过去**的参考——不是因为它有奠基性 insight，而是因为它是**OSWorld 上唯一一个把 system + data curation + open-source artifact 都做扎实**的工作，且数值（42.13% @ 30 steps）进入了 closed-source 竞争区间。但 algorithmic novelty 和 cross-benchmark 验证都不足以把它抬到 Foundation——每个 component 都可以在 prior work 里找到，且没有 cross-domain generalization 的证据。等 UI-TARS-2 或下一代 GUI agent RL 工作出来，它会快速降到 1 的候选。属于典型的 "重要 baseline，有效期 6-12 个月"。2026-04 复核：cite=5/inf=0/vel=0.74/mo、HF=14、87⭐/90d 仅 1 commit，social signal 偏弱；发布 6.8mo 已不在 <3mo 保护期，但早期 influential=0 让 Frontier 档略偏乐观——保留 2 是因为 GUI agent RL 方向 OSWorld 全流程 open-source baseline 仍稀缺，社区采纳还在爬坡阶段；若 6 个月内仍无 inf>0，需考虑降 1。

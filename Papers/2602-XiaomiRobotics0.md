@@ -352,5 +352,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=3, influential=0 (0.0%), velocity=1.3/mo; HF upvotes=7; github 433⭐ / forks=48 / 90d commits=4 / pushed 57d ago
+
 **分数**：2 - Frontier
 **理由**：方法层面不是 VLA 的奠基工作——MoT、flow-matching、training RTC 都是继承 [[2410-Pi0|π0]] / [[2504-Pi05|π0.5]] 的既有范式，Λ-mask 本身源自 streaming LLM 领域的迁移应用；但它在 real-time async execution + VL preservation 两条正交维度上给出了可复用的 deployment recipe，并在三个主流 sim benchmark（LIBERO/CALVIN/SimplerEnv）上当前 SOTA 且已发布 6 个 fine-tuned checkpoint，是 VLA 方向近期必须对比的 frontier baseline。不升 Foundation 是因为只开源 inference、关键超参（Λ-mask 窗口、Beta 分布、1:6 ratio、reweight 公式）未放，复现门槛高，尚未被后续工作作为 de facto baseline；不降 Archived 是因为 Λ-mask fix 是 training RTC shortcut 问题的 first-principles 解决方案，即使方法被替代，"prefix shortcut 存在且需要显式 fix" 这一 insight 有持久价值。

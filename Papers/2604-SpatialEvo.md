@@ -249,5 +249,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=62; github 66⭐ / forks=1 / 90d commits=3 / pushed 8d ago
+
 **分数**：2 - Frontier
 **理由**：DGE 这个 primitive（把 3D asset 当 deterministic oracle 替换 majority-vote pseudo-label）是 observation-driven 的真 insight，且 `w/o Physical Grounding` VSI-Bench 46.1→18.8 的 ablation 把 thesis 证得很干净，在 spatial reasoning 这一 field 是当前明确的 SOTA + must-compare baseline。但没到 Foundation 档——scope 被 ScanNet 族静态室内 3D asset 死死卡住（outdoor / dynamic / embodied execution 直接 not applicable，作者自承认），16 类 task 是 methodology-shaped 的手工精选子集而非 capability-shaped 的覆盖，且 online RL 相对 offline SFT (46.3 vs 43.9) 的 delta 只有 2.4 点，不足以论证"self-evolving 范式本身"的奠基性价值。

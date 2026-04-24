@@ -231,5 +231,7 @@ GR00T N1 baseline 仅在 2,884 GR1 pick-and-place trajectory 上训。然后 Dre
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=64, influential=13 (20.3%), velocity=5.71/mo; HF upvotes=0; github 524⭐ / forks=52 / 90d commits=0 / pushed 182d ago · stale
+
 **分数**：3 - Foundation
-**理由**：不是 2-Frontier 因为它不仅是一个 SOTA 数据点——它把 "video world model as offline data engine" 明确定义为一个与 UniSim/UniPi 路线对立的 sub-paradigm（见 Strengths 1），配套 DreamGen Bench 给 video community 提供了 "对 robotics 有用" 的可量化目标（见 Strengths 4），且 NT-vs-success 的 log-linear scaling 曲线是方向层面的奠基证据（见 Strengths 2）。不是 1-Archived 因为出自 NVIDIA GEAR + UW + KAIST 主力团队，配套 GR00T-Dreams repo 开源，已被 VLA × World Model 交叉方向作为绕不开的参照（见 Notes "对我的影响"）。
+**理由**：不是 2-Frontier 因为它不仅是一个 SOTA 数据点——它把 "video world model as offline data engine" 明确定义为一个与 UniSim/UniPi 路线对立的 sub-paradigm（见 Strengths 1），配套 DreamGen Bench 给 video community 提供了 "对 robotics 有用" 的可量化目标（见 Strengths 4），且 NT-vs-success 的 log-linear scaling 曲线是方向层面的奠基证据（见 Strengths 2）。不是 1-Archived 因为出自 NVIDIA GEAR + UW + KAIST 主力团队，配套 GR00T-Dreams repo 开源，已被 VLA × World Model 交叉方向作为绕不开的参照（见 Notes "对我的影响"）。2026-04 复核：citation=64 / velocity=5.71/mo、**influential 比例 20.3% 远高于典型 10%**（按 rubric 属"技术被实质继承"）印证 sub-paradigm 定义已被后续 VLA × World Model 工作实质继承，github stale（pushed 182d / 90d 0 commits）仅反映 NVIDIA 把维护重心迁到 Cosmos-Predict2 主仓而非本路线过气，维持 Foundation。

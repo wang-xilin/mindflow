@@ -284,5 +284,7 @@ Random policy 训出来的模型已经 surprisingly 好——在 easy 区域跟 
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=200, influential=17 (8.5%), velocity=10.05/mo; HF upvotes=126; github 91⭐ / forks=9 / 90d commits=0 / pushed 603d ago · stale
+
 **分数**：3 - Foundation
 **理由**：按 field-centric rubric，GameNGen 是 video-game-as-world-model / auto-regressive diffusion 方向的奠基工作。Strengths (1) 指出它首次在 real-time + long-horizon + visual-quality 三维同时跑通 neural game engine，是此前 GameGAN/World Models 都未达到的 capability frontier；Strengths (2) 的 noise augmentation trick 已被后续 auto-regressive diffusion / video world model 工作普遍采纳为标准组件，ICLR 2025 oral 发表后 citation 持续攀升、被 DIAMOND 等并列视为 diffusion world model 的代表性 baseline。相比 2 - Frontier 档（"当前 SOTA / 重要 baseline 但未奠基"），GameNGen 的影响已外溢到 robotics world model 的 inference-cost 讨论和 long-horizon diffusion rollout 设计，属于方向主脉络的必读必引工作。

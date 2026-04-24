@@ -223,6 +223,8 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2982, influential=188 (6.3%), velocity=61.23/mo; HF upvotes=1; github 37785⭐ / forks=8395 / 90d commits=79 / pushed 0d ago
+
 **分数**：3 - Foundation
 
 **理由**：Building Block 档。证据：(1) 笔记 Strengths #1/#3 指出它是"把 LLM 搬进 robotics 最低门槛的接口"并给出 LLM-scaling → embodied-performance 的首条实证，(2) 关联工作里 PaLM-E / Inner Monologue / RT-2 / π0 / TidyBot / BUMBLE 全部把 SayCan 作为必引的 baseline 或起点，(3) 方法核心"scoring over closed-set action × affordance"这一抽象已被外推到 GUI agent / function calling 等邻域。相比 2 档（Frontier/SOTA），它已经脱离了"当前 SOTA baseline"的时间窗口，但由于其接口定义地位而成为不可回避的 must-cite——这是 3 档而非 2 档的关键差别。

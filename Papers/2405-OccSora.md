@@ -292,5 +292,7 @@ Reverse 用 DiT 预测噪声，$L_{simple} = \frac{1}{2} (\hat{R}_{re}^{g} - R_{
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=72, influential=10 (13.9%), velocity=3.16/mo; HF upvotes=N/A; github 197⭐ / forks=10 / 90d commits=0 / pushed 693d ago · stale
+
 **分数**：2 - Frontier
 **理由**：在 occupancy-based world model 这个子方向里，OccSora 是把 diffusion 范式引入 4D occupancy 生成的首个代表性尝试，后续 DynamicCity / OccLLaMA / OccTENS 等工作在 framing 和 baseline 对比上多次引用它，属于该细分方向的必知参考。但它并非 foundational——重建质量在 VRU 上崩塌、trajectory control 有效性存疑、缺下游验证（见 Weaknesses 1/2/5），因此只能是 Frontier 档的代表 baseline，而非像 OccWorld / DiT 那种定义范式的 Foundation 工作。

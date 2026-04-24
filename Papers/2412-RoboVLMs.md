@@ -8,7 +8,7 @@ tags: [VLA, manipulation, cross-embodiment]
 paper: https://arxiv.org/abs/2412.14058
 website: https://robovlms.github.io
 github: https://github.com/Robot-VLAs/RoboVLMs
-rating: 3
+rating: 2
 date_added: "2026-03-27"
 ---
 ## Summary
@@ -18,7 +18,7 @@ date_added: "2026-03-27"
 > - **方法**: 提出 RoboVLMs 统一框架，把任意 VLM 转成四类 VLA（One-Step-Disc/Cont、Interleaved-Cont、Policy-Head-Cont），在 CALVIN / SimplerEnv / 真实 Kinova Gen3 上做 controlled comparison
 > - **结果**: KosMos / PaliGemma + policy-head + 连续动作 + 完整 chunk 执行 = best recipe；CALVIN ABC→D 上 Avg.Len. 4.25/5（前 SOTA GR-1 为 3.06），real-robot 20 任务上对 unseen 设置鲁棒，并出现训练数据中没有的 self-correction 行为
 > - **Sources**: [paper](https://arxiv.org/abs/2412.14058) | [website](https://robovlms.github.io) | [github](https://github.com/Robot-VLAs/RoboVLMs)
-> - **Rating**: 3 - Foundation（VLA 设计空间的第一份大规模 controlled study，其 4 类 taxonomy 与 "policy-head + 连续动作 + chunk 执行" recipe 已成为后续 VLA 工作的 default baseline 和 reference framework）
+> - **Rating**: 2 - Frontier（VLA 设计空间第一份大规模 controlled study，taxonomy + recipe 有 reference 价值；但 16 个月后 cc=96 / ic=6（6.3% 低继承）低于 Foundation 档奠基工作的典型社区采纳度）
 
 **Key Takeaways:**
 1. **VLM pretraining 是 VLA 性能的真正源头**：KosMos / PaliGemma（pretrain 数据规模大）显著优于 LLaVA / Flamingo / Qwen-VL / MoonDream / UForm，证明"vision-language alignment 质量 → 操作性能"是底层因果链
@@ -265,5 +265,7 @@ OOD (CALVIN, 不在 OXE 中) few-shot：
 
 ### Rating
 
-**分数**：3 - Foundation
-**理由**：这是 VLA 领域第一份覆盖 8 backbone × 4 结构 × 多训练目标 / 数据策略的大规模 controlled study，其 4 类 taxonomy（One-Step-Disc/Cont、Interleaved-Cont、Policy-Head-Cont）已成为后续工作（如 [[2502-OpenVLA-OFT|OpenVLA-OFT]]）的标准 reference 框架，且 "Policy-Head + 连续动作 + Chunk 执行" 的 recipe 是当前 VLA 工程实践的 default baseline。相较于 2 - Frontier，这篇的价值不在单点 SOTA 数字（CALVIN ABC→D 4.25 已被后续工作刷新），而在于 design space 的 systematic mapping——任何人想做 VLA 设计都绕不开这份 guidebook，符合 Foundation 档 "方向必读、必引的奠基工作" 的定位。
+**Metrics** (as of 2026-04-24): citation=96, influential=6 (6.3%), velocity=5.93/mo; HF upvotes=1; github 465⭐ / forks=21 / 90d commits=1 / pushed 10d ago
+
+**分数**：2 - Frontier
+**理由**：这是 VLA 领域第一份覆盖 8 backbone × 4 结构 × 多训练目标 / 数据策略的大规模 controlled study，其 4 类 taxonomy（One-Step-Disc/Cont、Interleaved-Cont、Policy-Head-Cont）已被 [[2502-OpenVLA-OFT|OpenVLA-OFT]] 等后续工作作为 reference 框架，"Policy-Head + 连续动作 + Chunk 执行" recipe 有 engineering reference 价值。2026-04 复核：发表 16 个月 cc=96 / ic=6（6.3%，远低于 Foundation 典型的 10%+ 继承率）/ velocity 5.93/mo，github 465⭐ active 但规模与 π0 / RT-2 这类 Foundation 档工作差一个量级——社区更多把它作为"有价值的 design space 参考"而非"方向必读必引的奠基工作"，且其 "in-domain > cross-embodiment" 的数据结论已被 π0 / π0.5 的大规模 scaling 事实反驳。改定 Frontier 更准确；不选 Archived 因为 taxonomy 仍被当前 VLA 工作持续引用作 reference。

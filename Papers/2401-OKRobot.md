@@ -8,7 +8,7 @@ tags: [mobile-manipulation, scene-understanding, manipulation]
 paper: https://arxiv.org/abs/2401.12202
 website: https://ok-robot.github.io/
 github: https://github.com/ok-robot/ok-robot
-rating: 2
+rating: 1
 date_added: 2026-04-20
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-20
 > - **方法**: iPhone 扫房间建 VoxelMap（CLIP+OWL-ViT+SAM）→ 语义查询导航点 → AnyGrasp+LangSam 做 language-filtered grasping → 启发式 dropping；状态机串联，无需任何训练
 > - **结果**: 10 个真实家庭、171 个 trial，zero-shot pick-and-drop 成功率 58.5%（去 clutter / 解歧义后达 82.4%），相对 NeurIPS'23 OVMM 冠军 33% 提升约 1.8x
 > - **Sources**: [paper](https://arxiv.org/abs/2401.12202) | [website](https://ok-robot.github.io/) | [github](https://github.com/ok-robot/ok-robot)
-> - **Rating**: 2 - Frontier（OVMM 方向的代表性 modular 系统 + 标志性 ablation 设计，被主要后续工作作为 baseline，但非 de facto 标准）
+> - **Rating**: 1 - Archived（cleanup-level × module 二维 ablation 的方法论价值保留，但 27 个月累计 citation=39 / influential=1、repo 停更 780 天，社区实际采纳远低于"代表性 modular 系统"预期）
 
 **Key Takeaways:**
 1. **Open-knowledge stack 在真实家庭可行但脆弱**：finely tuned modular 组合超过 end-to-end SOTA 1.8x，但 multiplicative error 让单模块 80% 的成功率压缩成整体 < 60%。
@@ -218,5 +218,8 @@ Categorical failure：扁平物体（巧克力条、书本）——two-finger gr
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：它是 OVMM 方向里被广泛引用的代表性 modular 系统——Strengths 里点出的 "cleanup level × 模块" 二维 ablation 设计和 "80%×80%×80%≈50% multiplicative error" 论点，已成为后续 open-vocabulary mobile manipulation 工作（包括 end-to-end VLA 对比）必须对照的参照系，外部也持续作为 baseline 被引用（RAL'24 Demo track 收录、github 维护中）。不够 Foundation 在于：方法本身是 "怎么拼现成模块" 的 systems contribution，CLIP-Fields / HomeRobot / AnyGrasp 这些底层组件才是真正的奠基工作；且 Weaknesses 里的 static VoxelMap / 无 closed-loop / 跨 benchmark 1.8x 等局限让它不会成为方向必读第一篇。高于 Archived 则因为它提供的 failure-mode 结构化证据至今仍被引用，尚未被后续工作完全取代。
+**Metrics** (as of 2026-04-24): citation=39, influential=1 (2.6%), velocity=1.44/mo; HF upvotes=10; github 589⭐ / forks=42 / 90d commits=0 / pushed 780d ago · stale
+
+**分数**：1 - Archived
+
+**理由**：原定位为 OVMM 方向代表性 modular 系统 + 标志性 cleanup-level × module ablation 设计（Strengths #1-2）——这些方法论观察本身仍然成立。2026-04 复核：27 个月累计 citation=39、influential=1 (2.6%)、velocity=1.44/mo、repo 停更 780 天并且 90d commits=0，与"持续作为 baseline 被引用"的原断言严重不符；对照同档位 2 的 HomeRobot (influential=17)、TidyBot (influential=19)、NavGPT (influential=30)，OK-Robot 的社区实际采纳至少低一个数量级。降到 1 - Archived：为某个具体问题查的一次性参考 / 被后续 end-to-end VLA 与更成熟 modular 系统取代；为什么不是相邻档（2 - Frontier）——引用与 influential citation 两项都明显不达前沿代表工作的阈值，不应继续作为方向必引 baseline。

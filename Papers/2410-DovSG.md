@@ -8,7 +8,7 @@ tags: [mobile-manipulation, scene-understanding, semantic-map, task-planning]
 paper: https://arxiv.org/abs/2410.11989
 website: https://bjhyzj.github.io/dovsg-web/
 github: https://github.com/BJHYZJ/DovSG
-rating: 2
+rating: 1
 date_added: 2026-04-21
 ---
 
@@ -19,7 +19,7 @@ date_added: 2026-04-21
 > - **方法**: RGB-D 扫描 → DROID-SLAM 估姿 → RAM+GroundingDINO+SAM2+CLIP 做 open-vocab 物体检测与特征提取 → 构建带 "on/belong/inside" 关系的 3D scene graph → ACE+LightGlue+ICP 多阶段重定位 → 投影深度/颜色对比剔除过时 voxel → GPT-4o 任务分解 → AnyGrasp / 启发式抓取
 > - **结果**: 4 个真实房间 ×3 种 modification ×80 trials；long-term 任务成功率 35% vs Ok-Robot 5%；memory 比 Ok-Robot 小 13×，更新比 ConceptGraphs 快 27×
 > - **Sources**: [paper](https://arxiv.org/abs/2410.11989) | [website](https://bjhyzj.github.io/dovsg-web/) | [github](https://github.com/BJHYZJ/DovSG)
-> - **Rating**: 2 - Frontier（dynamic mobile manipulation 下首个端到端可跑通的 local-update scene graph 方案，RA-L 2025，但方法组合性强、依赖 off-the-shelf components，非奠基）
+> - **Rating**: 1 - Archived（dynamic mobile manipulation 下首个端到端可跑通的 local-update scene graph 方案，RA-L 2025，但方法组合性强、依赖 off-the-shelf components，18 个月后 cc=36 / gh 151⭐ stale，社区采纳有限）
 
 **Key Takeaways:**
 1. **Local sub-graph update 是 dynamic 场景下的关键工程点**：先用 RGB-D 投影筛出 affected voxels → 找出受影响 object → 顺藤摸瓜把它们的 parent/child 也拉进 affected set → 只对这部分重算关系。绕开了 ConceptGraphs / HOV-SG / Ok-Robot 必须全场景重建的代价。
@@ -275,5 +275,7 @@ DovSG 与 ConceptGraphs 同样用 scene graph 所以内存接近，但 local upd
 
 ### Rating
 
-**分数**：2 - Frontier
-**理由**：这是 dynamic mobile manipulation 场景下首个端到端把 3D scene graph 做成可增量 local update 的系统工作（RA-L 2025，代码开源），填补了 ConceptGraphs / HOV-SG / Ok-Robot 的静态假设死角，属于方向前沿的代表性参考；但方法本身是 off-the-shelf components（DROID-SLAM + RAM + GroundingDINO + SAM2 + CLIP + ACE + LightGlue + AnyGrasp）的工程整合，核心 insight（local sub-graph update）是重要但不颠覆性的贡献，同期还有 DynaMem 等类似思路，因此不到 Foundation；相较 Archived，它已经被 dynamic scene understanding 方向作为代表性 baseline 讨论，且提供的 13× memory / 27× update 比较是有实质工程价值的参考点。
+**Metrics** (as of 2026-04-24): citation=36, influential=5 (13.9%), velocity=1.97/mo; HF upvotes=N/A; github 151⭐ / forks=9 / 90d commits=0 / pushed 371d ago · stale
+
+**分数**：1 - Archived
+**理由**：这是 dynamic mobile manipulation 场景下首个端到端把 3D scene graph 做成可增量 local update 的系统工作（RA-L 2025，代码开源），填补了 ConceptGraphs / HOV-SG / Ok-Robot 的静态假设死角，核心 insight（local sub-graph update）具工程价值，但方法本身是 off-the-shelf components 的整合、非奠基性贡献。2026-04 复核：发表 18 个月 cc 仅 36、ic=5（13.9%，继承性一般）、velocity 1.97/mo，github 151⭐ / pushed 371d / 90d 无 commit 已 stale，且同期 DynaMem 等类似思路并存——社区未把它作为 frontier 代表性 baseline，而是作为"为这个具体问题查的一次性参考"，符合 Archived 档；不降到更低档因其 local-update scene graph 的工程 insight 仍有 readable value，也未到 Frontier 因为缺乏持续被 dynamic scene understanding 方向主线采纳的证据。

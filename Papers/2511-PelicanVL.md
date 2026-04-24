@@ -273,5 +273,7 @@ Pelican-VL 72B 仅用 1M 轨迹和 100K 对象训练，即在 embodied benchmark
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2, influential=0 (0.0%), velocity=0.34/mo; HF upvotes=0; github 78⭐ / forks=3 / 90d commits=0 / pushed 143d ago
+
 **分数**：2 - Frontier
-**理由**：方法层面 DPPO metaloop 虽有 systematicness（Strengths #1），但理论统一偏事后解释（Weaknesses #5），clean ablation 缺失（Weaknesses #1）使其难以被后续工作作为必引奠基；作为 artifact，开源 72B embodied VLM + 全栈 downstream 验证（Strengths #2、#4）使其成为当前 embodied VLM 方向的重要参考 baseline，符合 Frontier 定义。论文发布时间较近（2025-11），尚未沉淀出"de facto"级别的社区采纳证据，因此不到 Foundation 档。
+**理由**：方法层面 DPPO metaloop 虽有 systematicness（Strengths #1），但理论统一偏事后解释（Weaknesses #5），clean ablation 缺失（Weaknesses #1）使其难以被后续工作作为必引奠基；作为 artifact，开源 72B embodied VLM + 全栈 downstream 验证（Strengths #2、#4）使其成为当前 embodied VLM 方向的重要参考 baseline，符合 Frontier 定义。论文发布时间较近（2025-11），尚未沉淀出"de facto"级别的社区采纳证据，因此不到 Foundation 档。2026-04 复核：5.8mo 发布、cite=2/inf=0/vel=0.34/mo、HF=0、gh=78⭐/90d 无 commit（pushed 143d ago）——rubric 特例 early signal 三条均偏弱，且与同期 MiMo-Embodied (vel=2.16) / Vlaser (vel=1.59) 相比明显落后；暂保留 2 给予 DPPO metaloop 与 72B 开源 checkpoint 的方法/artifact 价值一次观察机会，若 2026Q3 仍无 inf>0 或明显 star/HF 增长则降 1。

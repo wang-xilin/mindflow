@@ -251,5 +251,7 @@ StreamVLN 在 **RGB-only** 设定下创 SOTA：
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=62, influential=16 (25.8%), velocity=6.46/mo; HF upvotes=48; github 478⭐ / forks=37 / 90d commits=0 / pushed 173d ago
+
 **分数**：2 - Frontier
 **理由**：在 RGB-only VLN-CE setting 下是当前 SOTA（R2R SR 56.9 / SPL 51.9，Table 1），且 streaming multi-turn dialogue + KV cache 复用是未来 long-context Video-LLM agent 的 reusable design pattern（见 Notes 第一条），属于方向的必比 baseline。未到 Foundation 档是因为它仍是 RGB-only Video-LLM VLA 路线的优化而非范式重定义，且已自报 long-horizon 一致性等 limitations；未降至 Archived 是因为方法仍是前沿 SOTA、代码/权重/数据全开源、ICRA 2026 收录，社区复用概率高。

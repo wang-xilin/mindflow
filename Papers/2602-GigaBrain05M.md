@@ -282,5 +282,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=3, influential=0 (0.0%), velocity=1.3/mo; HF upvotes=61; github 2491⭐ / forks=193 / 90d commits=12 / pushed 44d ago
+
 **分数**：2 - Frontier
 **理由**：Strengths 列出的 "RECAP-as-special-case-of-RAMP 概率推导" 和 "joint state+value prediction 的 sweet-spot ablation" 属于 world-model-conditioned VLA 方向上有清晰 insight 的前沿贡献，且 RoboChallenge 上 51.67% vs π0.5 42.67% + 长程任务 +30% 是目前必须对比的 baseline 水准。但方法本质是 RECAP + future latent injection 的 reformulation（Weakness 1），预训练依赖 10K 小时私有数据、代码/权重未明确开源（可信评估），尚未形成方向的 de facto 标准，不够 Foundation；同时又明显不是 incremental/niche，所以不是 Archived。

@@ -306,5 +306,7 @@ Qwen3-VL（2B & 8B）用 1.2M spatial QA fine-tune 1 epoch，bs=1024，32× H800
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=2, influential=0 (0.0%), velocity=1.33/mo; HF upvotes=86; github 294⭐ / forks=4 / 90d commits=14 / pushed 23d ago
+
 **分数**：2 - Frontier
 **理由**：这篇在 "data engine for spatial intelligence" 方向上是当前重要参考——问题 framing 准（Sec 1 直击数据而非架构 bottleneck）、pipeline 工程完整（tri-level confidence + agent recall 的互补设计有 Table 5 消融支撑）、artifact 已开源（2K+ Gaussian + HoliSpatial-QA-2M + checkpoint）。之所以不升到 Foundation，是因为 Weaknesses 里列出的硬伤未解：raw-video 是 misnomer（输入仍是已 calibrated 的 indoor scan）、3D Grounding eval 与训练同分布、MMSI-Bench 真实提升仅 +1.5pt。论文于 2026-03 发布、尚无大量后续 adoption 的外部信号，定位为 "值得跟进的前沿参考" 比 "方向必读" 更诚实。

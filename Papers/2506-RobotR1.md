@@ -241,5 +241,7 @@ SFT 直接归零（catastrophic forgetting + format mismatch）；Robot-R1 在 b
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=17, influential=1 (5.9%), velocity=1.57/mo; HF upvotes=29; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
 **理由**：R1-paradigm 在 embodied reasoning 上的早期代表工作（NeurIPS 2025 接收），Strengths 里的 MCQA reformulation + 完整 SFT/RL 对比 是当前 embodied-RL 前沿需要比较的 baseline 之一，且提出了 Robot-R1 Bench 这个针对 robot reasoning 的评测设计。不够 3 是因为：no real-robot、no code、训练 task 仅 5 个（见 Weaknesses 1-2），且 Embodied-R1 等后续工作已用 grounding-as-action 推得更远（见 Weakness 6），本身不具备 foundation 级的奠基性或社区 de facto 地位。不降到 1 是因为作为 "R1 范式如何适配 robotics" 的 design pattern reference 仍在方向前沿被引用。

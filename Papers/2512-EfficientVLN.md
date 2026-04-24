@@ -281,5 +281,7 @@ Dynamic ratio 比 β=0.25 SR 略高，但 #Train Step 从 128 降到 82——同
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=6, influential=0 (0.0%), velocity=1.36/mo; HF upvotes=N/A; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
-**理由**：在 RGB-only MLLM-based VLN 方向是当前 SR-vs-cost 帕累托前沿（R2R-CE 64.2 / RxR-CE 67.0 在 282 H800·h 下刷过 StreamVLN / NavFoM / NaVILA），且 progressive memory（KS/3 token budget）和 dynamic DAgger（β=1−α^(t/T)）都是可迁移到其他 video LLM / imitation learning 场景的 building block——满足 Frontier 的"当前 SOTA + 必比 baseline"定义。没到 Foundation 档：作为 2025-12 新发论文尚无社区采纳信号（无 github 代码发布、未被后续工作采用），且方法上是 StreamVLN/NaVILA 脉络的高效化改进而非范式开创（NaVid/StreamVLN 才是该脉络的奠基者）；也不至于 Archived，因为 efficiency frontier 本身对小实验室是 actionable，方法尚未被更强工作取代。
+**理由**：在 RGB-only MLLM-based VLN 方向是当前 SR-vs-cost 帕累托前沿（R2R-CE 64.2 / RxR-CE 67.0 在 282 H800·h 下刷过 StreamVLN / NavFoM / NaVILA），且 progressive memory（KS/3 token budget）和 dynamic DAgger（β=1−α^(t/T)）都是可迁移到其他 video LLM / imitation learning 场景的 building block——满足 Frontier 的"当前 SOTA + 必比 baseline"定义。没到 Foundation 档：作为 2025-12 新发论文尚无社区采纳信号（无 github 代码发布、未被后续工作采用），且方法上是 StreamVLN/NaVILA 脉络的高效化改进而非范式开创（NaVid/StreamVLN 才是该脉络的奠基者）；也不至于 Archived，因为 efficiency frontier 本身对小实验室是 actionable，方法尚未被更强工作取代。2026-04 复核：4.4 月累计 6 citation / 影响力 0、velocity 1.36/mo、仍无代码发布，早期信号温和偏弱，但 <3mo 豁免窗口刚过且 GTA 等后续工作已把它列为监督 baseline 引用，维持 Frontier。

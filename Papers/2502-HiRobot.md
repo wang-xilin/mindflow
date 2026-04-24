@@ -263,5 +263,7 @@ Action chunking 让有效控制频率到 50 Hz；high-level 1 Hz 完全够用。
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=165, influential=15 (9.1%), velocity=11.87/mo; HF upvotes=1; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
-**理由**：方法上 hierarchical VLM + VLA 的拆分和 synthetic interaction data pipeline 是 instruction-following 方向目前的代表做法（Strengths 1-3），且跨三种 embodiment 验证（Strengths 4），在 situated grounding 上压 GPT-4o（Strengths 5），属于 Physical Intelligence 路线里必须比较的 baseline。但尚未达到 Foundation 档：代码/权重/合成数据 pipeline 细节均未公开（Artifact 可获取性全部未发布），且该工作已被同团队后续 [[2504-Pi05|π0.5]] 整合覆盖，社区更多被 π0 / π0.5 作为 baseline 引用而非 Hi Robot 本身——Hi Robot 更像 PI 技术路线的中间产物，未形成独立标准。
+**理由**：方法上 hierarchical VLM + VLA 的拆分和 synthetic interaction data pipeline 是 instruction-following 方向目前的代表做法（Strengths 1-3），且跨三种 embodiment 验证（Strengths 4），在 situated grounding 上压 GPT-4o（Strengths 5），属于 Physical Intelligence 路线里必须比较的 baseline。但尚未达到 Foundation 档：代码/权重/合成数据 pipeline 细节均未公开（Artifact 可获取性全部未发布），且该工作已被同团队后续 [[2504-Pi05|π0.5]] 整合覆盖，社区更多被 π0 / π0.5 作为 baseline 引用而非 Hi Robot 本身——Hi Robot 更像 PI 技术路线的中间产物，未形成独立标准。2026-04 复核：citation=165 / velocity=11.87/mo、influential 比例 9.1%（接近典型 ~10%）证明被后续工作合理引用但继承性不算特别强，且无独立代码仓库使其无法像 π0 / π0.5 那样形成 de facto baseline，维持 Frontier。

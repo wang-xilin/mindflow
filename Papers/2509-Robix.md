@@ -233,5 +233,7 @@ $$
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=15, influential=1 (6.7%), velocity=1.95/mo; HF upvotes=53; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
-**理由**：按 Strengths 所述，Robix 将 reasoning/planning/interaction 统一到单 VLM + thought-action consistency reward 是层级式机器人系统的一个代表性设计范式，offline/online 评测均超过 GPT-4o 与 Gemini-2.5-Pro，具备作为 baseline 被后续工作对比的价值；但 Weaknesses 和可信评估显示代码、权重、评测集均未公开，训练细节不完整，复现门槛高，且方法本身没有突破范式层面的新认知（仍是 high-level VLM + low-level VLA 的标准层级架构），还不具备 Foundation 档所要求的"只读这篇就能理解方向脉络"的奠基性。
+**理由**：按 Strengths 所述，Robix 将 reasoning/planning/interaction 统一到单 VLM + thought-action consistency reward 是层级式机器人系统的一个代表性设计范式，offline/online 评测均超过 GPT-4o 与 Gemini-2.5-Pro，具备作为 baseline 被后续工作对比的价值；但 Weaknesses 和可信评估显示代码、权重、评测集均未公开，训练细节不完整，复现门槛高，且方法本身没有突破范式层面的新认知（仍是 high-level VLM + low-level VLA 的标准层级架构），还不具备 Foundation 档所要求的"只读这篇就能理解方向脉络"的奠基性。2026-04 复核：cite=15/inf=1/vel=1.95/mo、HF=53，7.7mo 发布，citation 节奏处于 Frontier 档正常区间但 influential/total=6.7% 偏低（rubric "典型 ~10%"），意味着被当 landmark 引用多、实质继承少；仍保留 2，若 cite 继续上升但 inf 停滞则可判定为 "frequently-cited reference but low inheritance"，仍属 Frontier 范畴。

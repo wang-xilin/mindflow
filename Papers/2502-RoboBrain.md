@@ -231,5 +231,7 @@ Spec_Token + 显式 end_point 的增益异常大，HD 降 94.2% 几乎等于"消
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=131, influential=16 (12.2%), velocity=9.49/mo; HF upvotes=2; github 387⭐ / forks=26 / 90d commits=0 / pushed 193d ago · stale
+
 **分数**：2 - Frontier
-**理由**：作为 BAAI RoboBrain 系列的 1.0 版本，方法和数据（ShareRobot）都是后续 2.0/2.5 的骨架来源，属于 "embodied brain" 赛道的一个代表工作，因此高于 Archived。但如 Weaknesses 指出——无真机、planning evaluation in-distribution、affordance/trajectory 本体在 2.5 已被推翻，方法本身的奠基性不够达到 Foundation；其定位是"产品演化链的锚点"而非独立的经典参考。
+**理由**：作为 BAAI RoboBrain 系列的 1.0 版本，方法和数据（ShareRobot）都是后续 2.0/2.5 的骨架来源，属于 "embodied brain" 赛道的一个代表工作，因此高于 Archived。但如 Weaknesses 指出——无真机、planning evaluation in-distribution、affordance/trajectory 本体在 2.5 已被推翻，方法本身的奠基性不够达到 Foundation；其定位是"产品演化链的锚点"而非独立的经典参考。2026-04 复核：citation=131 / velocity=9.49/mo、influential 比例 12.2%（略高于典型 10%）确认作为产品演化链 anchor 被持续引用但不足以升 Foundation；github stale（pushed 193d / 90d 0 commits）符合 1.0 已被 2.0/2.5 取代的演化现实，维持 Frontier。

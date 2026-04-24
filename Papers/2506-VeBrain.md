@@ -205,5 +205,7 @@ VeBrain 通过组合能力处理复杂机器人任务：例如寻找隐藏的辣
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=23, influential=3 (13.0%), velocity=2.13/mo; HF upvotes=35; github 88⭐ / forks=7 / 90d commits=0 / pushed 321d ago · stale
+
 **分数**：2 - Frontier
 **理由**: VeBrain 以 keypoint+skill 文本化的 reformulation 提供了一个简洁有效的统一 MLLM 与 VLA 的范式，实验覆盖 13+ 多模态 benchmark 与双平台真机任务，是同期 unified embodied MLLM 方向的代表工作之一（与 [[2502-RoboBrain|RoboBrain]]、ChatVLA 形成直接对比）。但不够格升 3：代码未开源、VeBrain-600k 中 88k 控制数据私有、机器人评估自建且仅 10 次试验，未形成 de facto benchmark 或被后续主要工作广泛作为基准；也不应降 1：来自 Shanghai AI Lab/OpenGVLab 的高质量执行、问题定义清晰、消融完整，仍是该方向必须参考的 frontier 工作。

@@ -252,5 +252,7 @@ Pure consistency 没有 FM 维持 $\mathbf{u}_\theta$ 估计就崩；no embeddin
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=0; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
 **理由**：SnapFlow 把 flow-matching VLA 从 10 步压到 1 步（π0.5 LIBERO 98.75% vs 10-step 97.75%、E2E 274→83ms），并在 π0.5 + SmolVLA 两个架构上同套超参验证，是 VLA 推理加速这一前沿方向里 solid 的代表方法。未到 Foundation 是因为：理论部分（Theorem 1-2）相对 MeanFlow/ShortCut/α-Flow 属 incremental，Theorem 3 偏 informal；无真机、无开源、LIBERO 每 task 10 episode 分辨率限制；且 offline MSE 与 closed-loop success 不一致这个诚实观察也削弱了核心 claim 的普适性。是"必比 baseline / 重要参考"级别，但不是"方向必读奠基"级别。

@@ -267,5 +267,7 @@ Human eval：33 名参与者、4 数据集 60 场景共 2640 答案，用 2-Alte
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=272, influential=47 (17.3%), velocity=11.88/mo; HF upvotes=1; github 873⭐ / forks=62 / 90d commits=0 / pushed 296d ago · stale
+
 **分数**：2 - Frontier
 **理由**：Vista 发表于 NeurIPS 2024，在 driving world model 这条线上是当前必须对比的强 baseline——FID/FVD 全面刷新前作（见 Strengths #4 和 Experiments Table 2），且代码 + 模型权重 + 训练 pipeline 完整开源，被 GAIA-2、DriveDreamer-2 等后续工作作为标准对比对象。但不足以升为 Foundation：架构本质是 SVD-finetune（Weakness #1），三个 loss trick 虽干净但不具备颠覆性，reward function 的实用性尚未在 closed-loop planning 上验证（Weakness #2、#5），整体属于"当前前沿参考"而非"方向奠基"。相较 Archived，Vista 仍是活跃 baseline 且方法 trick 具备迁移价值，未被取代。

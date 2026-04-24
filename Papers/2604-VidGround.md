@@ -261,5 +261,7 @@ Benchmarks: **VideoMME** (general perception+reasoning), **VideoMMMU** (expert-l
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=0, influential=0 (0%), velocity=0.00/mo; HF upvotes=35; github=N/A (无代码仓库)
+
 **分数**：2 - Frontier
 **理由**：按 field-centric rubric，这是 video VLM post-training / video understanding 方向当下的重要 frontier 参考，而非 foundational。一方面，它对"video benchmark 视觉含量不足"这一问题给出了干净且可复现的证据 (Table 1) 并带出一个极简 drop-in filter 打过同期 fancy RL baseline (Table 3, 4)——这是近期 video RL 论文做比较时绕不开的节点；另一方面，贡献仍是单一经验性 finding + 单一 base model + 单一 corpus 的外推，既没有奠定范式 (Foundation)，也不是 one-off 查阅型工作 (Archived)，因此定为 Frontier。

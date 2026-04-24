@@ -285,5 +285,7 @@ Judge Subset = 159 个"至少一对一错"的可改进任务。其中 35 个 BJu
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=12, influential=3 (25.0%), velocity=1.79/mo; HF upvotes=25; github 10905⭐ / forks=1270 / 90d commits=3 / pushed 62d ago
+
 **分数**：2 - Frontier
-**理由**：这是 CUA test-time scaling 当前最强的 baseline——OSWorld 72.6% 超人类 + 跨 WindowsAgentArena/AndroidWorld 零样本迁移，Agent S3 + BJudge 会被 2025-2026 年的 CUA 工作作为必比对象（Strengths 1-3）。但本质是 BoN + comparative selector 的工程化组合，behavior narrative 虽 principled 但非新范式（Weaknesses 1），mental-model 更新有限。够不上 Foundation（无方法论突破、未产出新 benchmark），也远高于 Archived（短期内会是主流对比基线而非被取代）。
+**理由**：这是 CUA test-time scaling 当前最强的 baseline——OSWorld 72.6% 超人类 + 跨 WindowsAgentArena/AndroidWorld 零样本迁移，Agent S3 + BJudge 会被 2025-2026 年的 CUA 工作作为必比对象（Strengths 1-3）。但本质是 BoN + comparative selector 的工程化组合，behavior narrative 虽 principled 但非新范式（Weaknesses 1），mental-model 更新有限。够不上 Foundation（无方法论突破、未产出新 benchmark），也远高于 Archived（短期内会是主流对比基线而非被取代）。2026-04 复核：cite=12 但 inf=3（25%）高于 rubric 典型 10%、Agent-S 仓库 10.9k⭐/1.27k forks 反映 Agent S 系列整体影响力（并非仅 S3），vel=1.79/mo 处于 Frontier 区间；保留 2 与原判断一致。

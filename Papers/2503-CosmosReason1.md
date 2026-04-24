@@ -280,5 +280,7 @@ RL 设置：batch size 128，每 prompt 采样 9 个 output，max length 6144 to
 
 ### Rating
 
+**Metrics** (as of 2026-04-24): citation=95, influential=11 (11.6%), velocity=7.2/mo; HF upvotes=50; github 936⭐ / forks=83 / 90d commits=0 / pushed 108d ago
+
 **分数**：2 - Frontier
-**理由**：属于 Physical AI reasoning VLM 的代表工作之一——NVIDIA 品牌效应 + 开源 7B 权重 + ontology 框架让它成为该方向的重要参考，Strengths 指出的 intuitive physics 发现和 MCQ-RL 范式有方法论贡献。但未达到 Foundation 档：benchmark 自建自评、RL 数据仅 3 万条难以 scale（Weaknesses 2）、56B 没 RL 结果（Weaknesses 3）、输出停留语言层没有闭环到 action（Weaknesses 4），整体更像一个能力探索而非 de facto 标准。高于 Archived 档的理由是方法并未过气，社区仍在引用其 ontology 和 MCQ-reward 设计作为 Physical AI reasoning 的参考点。
+**理由**：属于 Physical AI reasoning VLM 的代表工作之一——NVIDIA 品牌效应 + 开源 7B 权重 + ontology 框架让它成为该方向的重要参考，Strengths 指出的 intuitive physics 发现和 MCQ-RL 范式有方法论贡献。但未达到 Foundation 档：benchmark 自建自评、RL 数据仅 3 万条难以 scale（Weaknesses 2）、56B 没 RL 结果（Weaknesses 3）、输出停留语言层没有闭环到 action（Weaknesses 4），整体更像一个能力探索而非 de facto 标准。高于 Archived 档的理由是方法并未过气，社区仍在引用其 ontology 和 MCQ-reward 设计作为 Physical AI reasoning 的参考点。2026-04 复核：citation=95 / velocity=7.2/mo、influential 比例 11.6%（略高于典型 10%）+ HF 50 upvotes + 936⭐ github 证明社区采纳稳步增长，但仍在 "前沿参考" 而非 "方向奠基" 量级，维持 Frontier。
