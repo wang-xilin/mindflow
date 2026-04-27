@@ -10,6 +10,7 @@ website: https://xiaomi-robotics-0.github.io
 github: https://github.com/XiaomiRobotics/Xiaomi-Robotics-0
 rating: 2
 date_added: 2026-04-19
+last_updated: 2026-04-27
 ---
 ## Summary
 
@@ -18,14 +19,15 @@ date_added: 2026-04-19
 > - **方法**: pre-train 两步（Choice Policies + VL co-train 1:6 防遗忘 → 冻结 VLM 训 DiT 用 flow matching）；post-train RoPE offset + Λ-mask + L1-error 动态 loss reweight 解决 prefix shortcut
 > - **结果**: LIBERO 98.7%，CALVIN ABCD→D 4.80 / ABC→D 4.75，SimplerEnv VM 85.5% / VA 74.7% / WidowX 79.2%；real-robot Towel Folding 1.2 vs [[2504-Pi05|π0.5]] 1.0 pcs/min；ERQA 40.8 略超基座 Qwen3-VL-4B 的 40.0
 > - **Sources**: [paper](https://arxiv.org/abs/2602.12684) | [website](https://xiaomi-robotics-0.github.io) | [github](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0)
-> - **Rating**: 2 - Frontier（Λ-mask 针对 training RTC 的 prefix shortcut 给出 first-principles fix，三个 sim benchmark SOTA，但方法承袭 π0/π0.5 范式且只开源 inference，关键超参未放出，复现门槛高，属 Frontier baseline）
+> - **Update 2026-04-27**: 完整 post-training pipeline 已开源（[`xr0/`](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0)，commit 89c1a58），含训练脚本 + earphone（packing earbuds）任务样例配置 + 数据格式文档 + DeepSpeed 训练器。原 ❓ 关键超参全部对上号：Λ-mask 窗口 $w=4$、Beta(1.5, 1.0)、L1 reweight clamp 到 [0.5, 5.0]、async 50% 概率触发 + prefix 长度 uniform [1, min(6, T)]——**与正文"uniform {0,...,6}"描述存在差异**。详见末尾 Update Log。
+> - **Rating**: 2 - Frontier（Λ-mask 针对 training RTC 的 prefix shortcut 给出 first-principles fix，三个 sim benchmark SOTA；方法承袭 π0/π0.5 范式，但 2026-04-27 后训练 pipeline 开源 + 关键超参全部可查，复现门槛大幅下降，仍属 Frontier baseline）
 
 **Key Takeaways:**
 1. **Λ-shape attention mask 治 action-prefix shortcut**：training-time RTC 把 committed prefix 拼到 noisy action 前，但 later-timestep 的 noisy action 会走捷径直接 copy prefix 而忽略视觉/语言条件，导致 reactive 能力下降。Λ-mask 让后段 token 无法 attend prefix，强制它们 attend VLM KV cache。
 2. **VLM + DiT 的 MoT 架构 + KV cache 桥接**：Qwen3-VL-4B-Instruct 冻结后作 multimodal conditioner，16-layer DiT 从 scratch 训，只 condition 于 VLM 最后 16 层的 KV cache 来压缩推理延迟到 80 ms @ RTX 4090。
 3. **VL co-train 是必需品而非 nice-to-have**：w/o VL data 的 ablation 在所有 10 个 VL benchmark 全部归零，VL co-train 后 ERQA 甚至略超基座（40.8 vs 40.0）——robot-trajectory-derived 的 VL 数据反而强化了 robot-centric 的 embodied perception。
 4. **三个 sim benchmark SOTA + real-robot 最高吞吐**：LIBERO 98.7%、CALVIN 4.75/4.80、SimplerEnv 三个设置全胜；Towel Folding 1.2 pcs/min 比 [[2504-Pi05|π0.5]] 的 1.0 高 20%，Training RTC 变体会陷入 repetitive fling loop 失败——直接印证 prefix shortcut 假设。
-5. **开源但 inference-only**：base + 5 个 fine-tune checkpoint 发布到 HuggingFace，推理代码走 transformers 生态，**未放出训练代码、VL 数据 curation pipeline 与 Λ-mask 窗口/Beta 分布/reweight 公式等关键超参**。
+5. **开源完整度（2026-04-27 更新）**：base + 5 个 fine-tune checkpoint 已在 HF 发布；2026-04-27 加开 [`xr0/`](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0) 完整后训练 pipeline——训练脚本（`tools/train.py` + DeepSpeed ZeRO 配置）、earphone 样例任务配置、weight 转换工具、Lightning trainer。**正文里 ❓ 的关键超参全部从代码反查到**（Λ-mask $w=4$、Beta(1.5,1.0)、reweight 公式、RoPE +10、async 触发概率 0.5）。**仍未公开**：pre-training（VLM Step 1 + DiT Step 2）训练代码、200M robot trajectories + 80M VL 数据的 curation pipeline、Lego/Towel 真机 teleop 数据。
 
 **Teaser.** 项目主页 hero 视频，展示 Lego Disassembly 与 Towel Folding 两个 in-house 任务的真实机器人执行效果。
 
@@ -95,7 +97,9 @@ $$
 
 **架构细节**：adaLN 注入 timestep 条件；proprioceptive state 和 noisy action 走 MLP 编码；最前面插一个 learnable **attention sink token** 稳定 attention；DiT 内部 causal attention；DiT 只 condition 于 VLM 最后 16 层的 KV cache 压低延迟；Step 2 里 VLM 的输入不含 Step 1 引入的 `[A_i]`/`[S]` token。
 
-> ❓ Beta 分布的具体 shape 参数（$\alpha, \beta$）论文没给，只说 "placing more weight on noisier timesteps"。
+> ✅ **Beta 分布参数（2026-04-27 由代码披露）**：`Beta(1.5, 1.0)`，再 rescale 到 [0, 0.999]（`u = (1-u) * 0.999`）。形状参数 $(\alpha,\beta)=(1.5,1.0)$ 对应 PDF $\propto \tau^{0.5}$，密度随 $\tau$ 单调上升——确实 "place more weight on noisier timesteps"（$\tau$ 大 = noise 在 $\tilde{\mathbf{a}}^{\tau}$ 中占比高的 timestep）。代码同时提供 `LogisticNormal(0, 1)` 作为可选 sampling distribution。
+
+> 📌 **代码新发现（论文未提）**：`XR0.py` 含一个可选的频域损失项 `freq_coefficient`（默认 `enable_freq=False`），但 `configs/model/XR0.yaml` 默认设置 `frequency_features: enabled`——**正文未讨论这个分支**，可能是 ablation 或后续工作的实验性 feature。
 
 #### Post-training
 
@@ -121,7 +125,15 @@ $$
 
 **训练采样**：$\Delta t_c$ 从 $\{0, 1, \ldots, 6\}$ 均匀采样。当 $\Delta t_c > 0$ 时，根据 **online-predicted actions** 相对 ground truth 的 $L_1$ error 动态 reweight flow-matching loss——优先学偏差大的样本。
 
-> ❓ Λ-mask 的窗口大小 $w$ 具体值、以及 reweight 公式都没在正文给出，需要看代码或 appendix。
+> ✅ **Λ-mask 窗口（2026-04-27 由代码披露）**：`local_window = 4`——noisy action token 可 attend prefix 末尾 4 个 timestep + VLM KV + sink + state；更靠后的 noisy action 看不到 prefix。
+>
+> ✅ **Reweight 公式（2026-04-27 由代码披露）**：
+> $$ w_i = \mathrm{clamp}\!\left(\frac{|\mathbf{a}^{\text{pred}}_i - \mathbf{a}^{\text{gt}}_i|}{\overline{|\mathbf{a}^{\text{pred}} - \mathbf{a}^{\text{gt}}|}},\ 0.5,\ 5.0\right) $$
+> 即"按 sample 内 mean 归一化的 L1 error，再 clamp 到 [0.5, 5.0]"——既保留偏差大样本的 emphasis，又防止极端值主导。
+>
+> ⚠️ **采样 schedule 与正文有出入**：正文写 "$\Delta t_c \sim \text{Uniform}\{0,1,\ldots,6\}$"（蕴含 sync $\Delta t_c=0$ 概率 1/7 ≈ 14%）。代码（`XR0.py`）实际是 **`if random.random() < 0.5: prefix_length = random.randint(1, min(6, T))`，否则 sync**——即 50% sync + 50% async with $\Delta t_c \in \{1,...,6\}$。配置 `prefix_masking_prob: 0.5` 显式控制此概率。这一差异未必影响结论，但 sync/async 训练比例从 paper-implied 的 1:6 变成了 1:1，是真实运行时的 recipe。
+>
+> 📌 **额外细节**：动作维度 `action_dim = 32`（而非简单的 14=2×7-DoF，多余维度可能是 grippers + 余量）；DiT `dit_hidden_size = 1024`，`kv_heads = 8`，`head_dim = 128`；earphone 任务训练 batch_size=16，与 paper 提到的 Lego/Towel batch=2,048 差距大（earphone 是 sample 任务，规模缩小）。
 
 ### Deployment
 
@@ -253,6 +265,9 @@ $$
 **Video 5. Towel Folding — put back.** 抓出两条毛巾时先放回多余的再开始折叠，需要 attend 当前视觉而非按 prefix 惯性继续。
 <video src="https://robotics.xiaomi.com/robot-model/xiaomi-robotics-0-towel-folding-put-back.mp4" controls muted playsinline width="720"></video>
 
+**Video 6 (2026-04-27 release). Packing Earbuds.** 不在原论文实验中——配合 post-training pipeline 开源新增的双臂任务（对应 `xr0/configs/data/earphone.yaml` 样例配置）：从盒外抓取 earbuds → 放入收纳盒。无定量指标公布，无对应 HF checkpoint，仅作为 post-training pipeline 的 reference task 演示。
+<video src="https://robotics.xiaomi.com/robot-static-resource/home/xiaomi-robotics-video.mp4" controls muted playsinline width="720"></video>
+
 ### Preservation of Vision-Language Capabilities
 
 10 个 VL benchmark（含 ERQA embodied reasoning），对比 [[2410-Pi0|π0]]（无 VL co-train）、[[2504-Pi05|π0.5]]（有 VL 训练）、MolmoAct（有 VL 训练）、Xiaomi-Robotics-0 自己的 w/o VL data ablation、以及基座 Qwen3-VL-4B-Instruct。
@@ -320,18 +335,19 @@ $$
 1. **"Λ-mask 解决 shortcut"仅是强相关，未闭合因果**。缺少 mask 前后 noisy action token 对 visual token 的 attention 分布对比（entropy、attention mass）；目前只有 throughput 差距和一个 failure video。如果能给出 attention 可视化/定量分析会大大加强。
 2. **Real-robot 结果只有 Fig.6c 条形图，没有数字表**。正文口述 "Towel 1.2 vs 1.0 pcs/min"，Lego 的 throughput 具体数字要读图。一个正式 table 会让 claim 更可验证。
 3. **LIBERO 98.7% vs EO-1 98.2% 已近饱和噪声**，不应作为核心卖点；real-time 和 VL preservation 才是本文的 novelty。
-4. **只开源 inference + fine-tuned checkpoint，训练代码 / VL 数据 curation pipeline / 关键超参缺失**。Beta 分布参数、Λ-mask 窗口 $w$、reweight 具体公式、Grounded SAM + DINO 1.5 + LLMDet 的共识机制阈值——这些都不是从 inference code 能反推的，**实际复现门槛相当高**。
-5. **关键超参未做 ablation**：VL:robot 的 1:6 比例、Λ-mask 窗口 $w$——前者可能是拍脑袋，后者决定 reactive vs smooth 的 trade-off。一个 ratio sweep + 窗口 sweep 会让方法更 scalable。
+4. ~~**只开源 inference + fine-tuned checkpoint，训练代码 / VL 数据 curation pipeline / 关键超参缺失**~~ — **2026-04-27 部分修复**：post-training 训练代码 + DeepSpeed 配置 + earphone 样例任务已开源，论文里的 ❓ 关键超参（Λ-mask $w$、Beta 参数、reweight 公式、async 采样概率）从代码全部对上号；**仍未开源**：pre-training 两步训练代码、VL 数据 curation pipeline（Grounded SAM + DINO 1.5 + LLMDet 共识阈值）、Lego/Towel 真机 teleop 数据。要从头复现 4.7B base 仍不可行，但单机做 post-training 已可走通。
+5. **关键超参未做 ablation**：VL:robot 的 1:6 比例、Λ-mask 窗口 $w=4$——前者可能是拍脑袋，后者（现在已知是 4）决定 reactive vs smooth 的 trade-off。一个 ratio sweep + 窗口 sweep 会让方法更 scalable。
 6. **只在两个 in-house 任务验证 post-training**，对 mobile manipulation、接触丰富、非-bimanual embodiment 的泛化没给证据。
+7. **代码-论文细节不一致**：async 采样 schedule（论文说 Uniform{0,...,6}，代码是 50% sync + 50% Uniform{1..6}）、`freq_coefficient` 频域损失（代码有但论文未提）。需要在论文 v3 或 appendix 中澄清。
 
 ### 可信评估
 
-#### Artifact 可获取性
+#### Artifact 可获取性（2026-04-27 修订）
 
-- **代码**: **inference-only**（README 明确只包含 inference + evaluation scripts，无训练代码）
-- **模型权重**: 6 个 checkpoint 全部发布在 HuggingFace `XiaomiRobotics` collection——base `Xiaomi-Robotics-0` (4.7B pre-trained)、`Xiaomi-Robotics-0-LIBERO`（4 suite 合并微调）、`Xiaomi-Robotics-0-Calvin-ABCD_D`、`Xiaomi-Robotics-0-Calvin-ABC_D`、`Xiaomi-Robotics-0-SimplerEnv-Google-Robot` (Fractal)、`Xiaomi-Robotics-0-SimplerEnv-WidowX` (Bridge)
-- **训练细节**: 部分——pre-train 40k steps / batch 32,768，post-train Lego 40k / Towel 80k / batch 2,048，AdamW + DeepSpeed ZeRO-2，$T=30$ 对应 1 秒，VL:robot=1:6；**Beta 分布参数、Λ-mask 窗口 $w$、reweight 公式、学习率调度**等细节不全。完整复现困难。
-- **数据集**: 部分公开。开源：DROID、MolmoAct 轨迹数据、Conceptual 12M/Conceptual Captions/Cambrian-1/FineVision 等通用 VL 数据集。私有：Lego 338h + Towel 400h in-house teleop；VL 数据 curation pipeline（Grounded SAM + DINO 1.5 + LLMDet 共识 + VLM re-label）只有高层描述。
+- **代码**: **inference + post-training**。inference / evaluation 自 2026-02 起在仓库根目录；2026-04-27 commit `89c1a58` 加入 [`xr0/`](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0) 完整 post-training pipeline——`tools/train.py` + `scripts/train.sh`（torchrun 多机多卡）+ DeepSpeed ZeRO config + Lightning trainer + earphone 样例任务的 data/model/trainer config。**仍缺 pre-training 代码**（VLM Step 1 的 Choice Policies + DiT Step 2 的 from-scratch flow-matching）。
+- **模型权重**: HF `XiaomiRobotics` collection 6 个 checkpoint，自 2026-02-10 发布、2026-03-05 最后更新（截至 2026-04-27 **未新增 earphone checkpoint**）：base `Xiaomi-Robotics-0-Pretrain` (4.7B)、`-LIBERO`、`-Calvin-ABC_D`、`-Calvin-ABCD_D`、`-SimplerEnv-WidowX` (Bridge)、`-SimplerEnv-Google-Robot` (Fractal)。需要 `xr0/tools/weight_convert.py` 转换为训练 / 推理可用格式。
+- **训练细节**: pre-train 40k steps / batch 32,768，post-train Lego 40k / Towel 80k / batch 2,048（论文）；earphone 样例 8 GPU × 30k steps / batch 16（代码）；AdamW lr=1e-4 + cosine warmup + grad clip 1.0、DeepSpeed ZeRO + bf16-mixed、$T=30$ 动作 chunk、`action_dim=32`、`dit_hidden_size=1024` / 16 层 / `kv_heads=8`、Λ-mask `local_window=4`、Beta(1.5, 1.0)、async 触发概率 0.5 + prefix uniform [1, min(6,T)]、L1 reweight clamp [0.5, 5.0]、RoPE +10 offset；**仍缺**：VL:robot=1:6 的实际打散方式、completed full LR schedule、earphone teleop 数据集规模。
+- **数据集**: 部分公开。开源：DROID、MolmoAct 轨迹数据、Conceptual 12M/Conceptual Captions/Cambrian-1/FineVision 等通用 VL 数据集；earphone 任务 sample data 在 `xr0/configs/data/`（含 32 维归一化 stats，但样本本身路径占位）。私有：Lego 338h + Towel 400h in-house teleop、earphone 完整 teleop dataset、VL curation pipeline（Grounded SAM + DINO 1.5 + LLMDet 共识 + VLM re-label）只有高层描述。
 
 #### Claim 可验证性
 
@@ -355,4 +371,46 @@ $$
 **Metrics** (as of 2026-04-24): citation=3, influential=0 (0.0%), velocity=1.3/mo; HF upvotes=7; github 433⭐ / forks=48 / 90d commits=4 / pushed 57d ago
 
 **分数**：2 - Frontier
-**理由**：方法层面不是 VLA 的奠基工作——MoT、flow-matching、training RTC 都是继承 [[2410-Pi0|π0]] / [[2504-Pi05|π0.5]] 的既有范式，Λ-mask 本身源自 streaming LLM 领域的迁移应用；但它在 real-time async execution + VL preservation 两条正交维度上给出了可复用的 deployment recipe，并在三个主流 sim benchmark（LIBERO/CALVIN/SimplerEnv）上当前 SOTA 且已发布 6 个 fine-tuned checkpoint，是 VLA 方向近期必须对比的 frontier baseline。不升 Foundation 是因为只开源 inference、关键超参（Λ-mask 窗口、Beta 分布、1:6 ratio、reweight 公式）未放，复现门槛高，尚未被后续工作作为 de facto baseline；不降 Archived 是因为 Λ-mask fix 是 training RTC shortcut 问题的 first-principles 解决方案，即使方法被替代，"prefix shortcut 存在且需要显式 fix" 这一 insight 有持久价值。
+**理由**：方法层面不是 VLA 的奠基工作——MoT、flow-matching、training RTC 都是继承 [[2410-Pi0|π0]] / [[2504-Pi05|π0.5]] 的既有范式，Λ-mask 本身源自 streaming LLM 领域的迁移应用；但它在 real-time async execution + VL preservation 两条正交维度上给出了可复用的 deployment recipe，并在三个主流 sim benchmark（LIBERO/CALVIN/SimplerEnv）上当前 SOTA 且已发布 6 个 fine-tuned checkpoint，是 VLA 方向近期必须对比的 frontier baseline。**2026-04-27 后**：post-training 代码 + 关键超参全部公开，复现门槛降到 "拿到机器人就能 fine-tune"——评级仍维持 2，但 Frontier 内部位置上移；继续不升 Foundation 是因为 pre-training 代码 + VL curation pipeline 仍未开源，独立复现 4.7B base 不可行，社区当前主要把它当 "fine-tune from base" 的 deployable 选项而非可重新训练的开放 stack。不降 Archived 是因为 Λ-mask fix 的 insight 有持久价值。
+
+---
+## Update Log
+
+### 2026-04-27 — Post-training pipeline 开源
+**触发**：项目 README 公告 "the full post-training pipeline is now available. Watch our model packing earbuds and explore the post-training code!"
+
+**新增 artifact**（commit [`89c1a58`](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/commit/89c1a58) + README polish [`fa170bc`](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/commit/fa170bc)）：
+- `xr0/tools/train.py` + `xr0/scripts/train.sh`（torchrun launcher）
+- `xr0/configs/`：data（earphone）+ model（XR0）+ trainer（DeepSpeed ZeRO）三套 hydra 配置
+- `xr0/mibot/`：完整训练栈——`models/VLA/XR0.py` (903 行 DiT + Λ-mask 实现)、`models/VLM/qwen3vl.py` (1543 行)、`models/runner/base_runner.py` (Lightning runner)、`data/datasets/json_dataset.py`、`data/collate/custom_collate.py`、`utils/cosine_warmup.py`
+- `xr0/mibot/server/`：`deploy.py` + `runtime/{server,client}.py` 异步 inference server
+- `xr0/tools/weight_convert.py`：HF checkpoint → 训练 format 转换
+- `xr0/docs/data_format.md`：自定义数据格式规范
+
+**关键超参从代码反查**（修正了正文里的 ❓）：
+
+| 超参 | 论文描述 | 代码实际值 |
+|---|---|---|
+| Λ-mask window $w$ | "前 $w$ 个 timestep" 未给值 | `local_window = 4` |
+| Beta 分布 | "more weight on noisier timesteps" | `Beta(1.5, 1.0)`，rescale `(1-u)*0.999` |
+| L1 reweight 公式 | "动态 reweight" 无公式 | $\mathrm{clamp}(\lvert \text{pred}-\text{gt}\rvert / \overline{\lvert\cdot\rvert},\ 0.5,\ 5.0)$ |
+| RoPE offset | "+10" | 确认 `position_ids[..., suffix] += 10` |
+| async 采样 | Uniform $\{0,...,6\}$ | **50% sync + 50% Uniform [1, min(6,T)]**（差异！） |
+| action_dim | bimanual 隐含 | 32 |
+| DiT 超参 | 16 层 | 16 层 / hidden=1024 / 8 KV heads / head_dim=128 |
+| Optimizer | AdamW + DeepSpeed ZeRO-2 | lr=1e-4 + cosine warmup + grad clip 1.0 + bf16-mixed |
+| earphone 样例 | — | 8 GPU × 30k steps × batch 16 |
+
+**未在论文中但在代码中出现**：
+- `freq_coefficient` / `enable_freq` — 频域损失项（默认 disabled），可能是后续 ablation 的实验性 feature
+- `flow_sampling` 可选 `LogisticNormal(0,1)` 作为 Beta 的替代
+
+**未释放**（仍是复现障碍）：
+- Pre-training 两步（VLM Choice Policies + DiT from-scratch）训练代码
+- 200M robot trajectory 标注 pipeline + 80M VL 数据 curation
+- Lego/Towel/Earphone 真机 teleop 数据集
+- Earphone 任务的 fine-tuned checkpoint（HF 上仍只有原 6 个 sim 任务 checkpoint，最后更新 2026-03-05）
+
+**Packing earbuds 视频**：[xiaomi-robotics-video.mp4](https://robotics.xiaomi.com/robot-static-resource/home/xiaomi-robotics-video.mp4)（已嵌入 Real-Robot Experiments 段 Video 6）。任务配置在 `xr0/configs/data/earphone.yaml`，但 fine-tuned checkpoint 未上传 HF。
+
+**评级影响**：维持 2 (Frontier)，但在 Frontier 内部上移——post-training 现在是 "拿到 4.7B base + 自己机器人数据即可 fine-tune" 的可走通路径。要升 Foundation 仍需 pre-training 代码 + 数据 pipeline 的完整开源。
