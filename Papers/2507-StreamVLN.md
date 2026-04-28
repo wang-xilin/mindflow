@@ -105,7 +105,7 @@ DAgger 阶段：先训第一阶段（仅 oracle VLN），用其 rollout + Habita
 
 ### 3.1 Setup
 
-- **Sim**: VLN-CE R2R-CE（5.6K 英文轨迹，平均 10m）和 RxR-CE（126K 多语言指令，平均 15m），均为 Val-Unseen split；HFOV 79°
+- **Sim**: VLN-CE（5.6K 英文轨迹，平均 10m）和 RxR-CE（126K 多语言指令，平均 15m），均为 Val-Unseen split；HFOV 79°
 - **Real-world**: Unitree Go2 + RealSense D455（RGB-D，朝上）+ 远端 RTX 4090；推理 0.27s/4 actions，通信延迟室内 0.2s / 室外 1.0s
 - **Train**: LLaVA-Video-7B + Qwen2-7B；2 stage（warm-up + co-train）；batch 128 video clips；lr 2e-5 (LM) / 5e-6 (vision encoder)；总 ~1500 A100 hours
 

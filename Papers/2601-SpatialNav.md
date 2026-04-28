@@ -17,16 +17,16 @@ date_added: 2026-04-20
 > [!summary] SpatialNav: Leveraging Spatial Scene Graphs for Zero-Shot Vision-and-Language Navigation
 > - **核心**: 在零样本 VLN 中放宽 "纯在线感知" 的设定，允许 agent 先用 SLAM 预探索环境构建分层 Spatial Scene Graph (floor → room → object)；再以三件套（agent-centric spatial map + compass-style 全景图 + remote object localization）让 MLLM 在每一步把全局空间结构和当前观测对齐使用
 > - **方法**: 离线建图（DBSCAN 分层 + 几何启发式分房 + GPT-5 房间分类 + 微调 SpatialLM 物体检测）；运行时把 SSG 投影成 7.68m 半径、agent-heading 朝上的 top-down map；八方向全景拼成 3×3 compass grid；为每个 navigable waypoint 检索周边物体语义注入上下文
-> - **结果**: 用 GPT-5.1 作 backbone，在 R2R / REVERIE / R2R-CE / RxR-CE val-unseen 上 SR 分别达 57.7 / 49.6 / 64.0 / 32.4，全面超过 SpatialGPT、SmartWay、VLN-Zero 等 zero-shot baseline，且在 R2R-CE 上 SR 与 ETPNav 等监督方法接近；用 ground-truth 标注的上限版还能再涨 5–8 pt
+> - **结果**: 用 GPT-5.1 作 backbone，在 R2R / REVERIE / VLN-CE / RxR-CE val-unseen 上 SR 分别达 57.7 / 49.6 / 64.0 / 32.4，全面超过 SpatialGPT、SmartWay、VLN-Zero 等 zero-shot baseline，且在 VLN-CE 上 SR 与 ETPNav 等监督方法接近；用 ground-truth 标注的上限版还能再涨 5–8 pt
 > - **Sources**: [paper](https://arxiv.org/abs/2601.06806)
-> - **Rating**: 2 - Frontier（重新定义 zero-shot VLN 设定 + 三件套 spatial representation 设计，在 R2R-CE 上 zero-shot SR 大幅领先且接近监督 SOTA，是当前 zero-shot VLN 前沿必读；但方法 novelty 偏组合、pre-exploration 设定 stretch、未开源，离 Foundation 还差 de facto 标准地位）
+> - **Rating**: 2 - Frontier（重新定义 zero-shot VLN 设定 + 三件套 spatial representation 设计，在 VLN-CE 上 zero-shot SR 大幅领先且接近监督 SOTA，是当前 zero-shot VLN 前沿必读；但方法 novelty 偏组合、pre-exploration 设定 stretch、未开源，离 Foundation 还差 de facto 标准地位）
 
 **Key Takeaways:**
 1. **重新定义 zero-shot VLN 的设定**: 论文主张 "允许 pre-exploration" 是更贴合家用机器人（扫地机、家庭服务机器人）部署现实的 zero-shot 设定，而不是必须坚持 online-only。这是个 framing claim，比方法本身更值得讨论
 2. **SSG = SLAM 点云 + 4 阶段标注**: floor segmentation (height histogram + DBSCAN) → room segmentation (几何启发式 + 人工修正大于 20 m² 的区域) → room classification (GPT-5 看 RGB) → object detection (在 Matterport3D 上 fine-tune 的 SpatialLM)。这个流水线是经典的 hierarchical scene graph 套路，本身没什么新意
 3. **Compass-style 全景表示**: 把 8 个 90° FOV 视角拼成单张 1024×1024 图，中心放一个指北针图标。视觉 token 从 1700+（sequential）压到 ~640，性能仅小幅下降（SR 60.3 vs 62.5）
 4. **Spatial map 单独已经很强**: "SMap Only" baseline（只看 top-down map + 指令、不看任何视觉/文本观测）在 R2R-Val-Sampled 上 SR 已达 40.8。把 spatial map 加到 NavGPT、SmartWay 上都能涨 8–11 pt，可移植性好
-5. **GT 上限说明 perception 仍是瓶颈**: GT 标注版（SpatialNav†）在 R2R-CE 上 SR 提到 68.0（vs 64.0 自动版），说明房间分割和物体检测的质量是当前自动 pipeline 的主要瓶颈而非 reasoning
+5. **GT 上限说明 perception 仍是瓶颈**: GT 标注版（SpatialNav†）在 VLN-CE 上 SR 提到 68.0（vs 64.0 自动版），说明房间分割和物体检测的质量是当前自动 pipeline 的主要瓶颈而非 reasoning
 
 **Teaser. 局部感知 vs 全局感知的 motivation 对比** —— 当指令提到 "bedroom" 而场景里有多个 bedroom 时，仅靠局部感知的 agent 会困惑；具备全局空间信息的 agent 则可以消歧。
 
@@ -106,9 +106,9 @@ Zero-shot VLN agents（NavGPT、Open-Nav、MapGPT 等）相比监督学习的 VL
 | Zero-Shot | **SpatialNav** | **57.7** | **47.8** | **49.6** | **34.6** |
 | Zero-Shot | SpatialNav† (GT) | 59.3 | 48.0 | 50.4 | 33.7 |
 
-**Table 2. Continuous environment (R2R-CE / RxR-CE val-unseen) 对比** —— SpatialNav 在 R2R-CE 上 SR 64.0，比上一代 zero-shot SOTA VLN-Zero (42.4) +21.6，比监督的 ETPNav (57.0) 还高 7 pt；只输给 NavFoM、Efficient-VLN 这种最新的大模型监督方法。在 RxR-CE（多语言指令更难）上 SR 32.4 略胜 MapNav (32.6) 不到。SpatialNav† 进一步把 R2R-CE SR 推到 68.0。
+**Table 2. Continuous environment (VLN-CE / RxR-CE val-unseen) 对比** —— SpatialNav 在 VLN-CE 上 SR 64.0，比上一代 zero-shot SOTA VLN-Zero (42.4) +21.6，比监督的 ETPNav (57.0) 还高 7 pt；只输给 NavFoM、Efficient-VLN 这种最新的大模型监督方法。在 RxR-CE（多语言指令更难）上 SR 32.4 略胜 MapNav (32.6) 不到。SpatialNav† 进一步把 VLN-CE SR 推到 68.0。
 
-| Settings | Methods | R2R-CE SR(↑) | R2R-CE SPL(↑) | RxR-CE SR(↑) | RxR-CE SPL(↑) |
+| Settings | Methods | VLN-CE SR(↑) | VLN-CE SPL(↑) | RxR-CE SR(↑) | RxR-CE SPL(↑) |
 | --- | --- | --- | --- | --- | --- |
 | Supervised | ETPNav | 57.0 | 49.0 | 54.8 | 44.9 |
 | Supervised | NavFoM | 61.7 | 55.3 | 64.4 | 56.2 |
@@ -118,11 +118,11 @@ Zero-shot VLN agents（NavGPT、Open-Nav、MapGPT 等）相比监督学习的 VL
 | Zero-Shot | **SpatialNav** | **64.0** | **51.1** | 32.4 | 24.6 |
 | Zero-Shot | SpatialNav† (GT) | 68.0 | 53.4 | 39.0 | 28.4 |
 
-> RxR-CE 上的 SR 跟 R2R-CE 差距巨大（32.4 vs 64.0），说明对长指令、多语言、复杂路径的处理还远没解决。论文里没怎么讨论这个 gap，是个值得追问的弱点。
+> RxR-CE 上的 SR 跟 VLN-CE 差距巨大（32.4 vs 64.0），说明对长指令、多语言、复杂路径的处理还远没解决。论文里没怎么讨论这个 gap，是个值得追问的弱点。
 
 ### Q1: Spatial knowledge 的可移植性
 
-**Table 3. Spatial map 加到不同 baseline 上的增益** —— 仅用 spatial map（无视觉/文本 obs）在 R2R-Val-Sampled 上 SR 40.8 已经不错；NavGPT + SMap 比 NavGPT 涨 8.6（43.5 → 52.1）；SmartWay + SMap 在 R2R-CE 上涨 11（51.0 → 62.0）。说明 spatial map 是个 plug-and-play 的有效增强信号。
+**Table 3. Spatial map 加到不同 baseline 上的增益** —— 仅用 spatial map（无视觉/文本 obs）在 R2R-Val-Sampled 上 SR 40.8 已经不错；NavGPT + SMap 比 NavGPT 涨 8.6（43.5 → 52.1）；SmartWay + SMap 在 VLN-CE 上涨 11（51.0 → 62.0）。说明 spatial map 是个 plug-and-play 的有效增强信号。
 
 | Method | R2R Sampled SR(↑) | R2R Sampled SPL(↑) | REVERIE Sampled SR(↑) |
 | --- | --- | --- | --- |
@@ -184,7 +184,7 @@ Zero-shot VLN agents（NavGPT、Open-Nav、MapGPT 等）相比监督学习的 VL
 
 ### 对比
 - **SpatialGPT** (Jiang & Wang 2025)：另一篇用 spatial CoT + structured spatial memory 做 zero-shot VLN 的工作，是 R2R 上最强 zero-shot baseline。本文 SR +9.3
-- **VLN-Zero** (Bhatt et al. 2025)：同样 leverage pre-exploration 构建 symbolic scene graph，但只关注 symbolic constraint。本文在 R2R-CE 上 SR +21.6，论证 spatial layout + semantics 比纯 symbolic 更有效
+- **VLN-Zero** (Bhatt et al. 2025)：同样 leverage pre-exploration 构建 symbolic scene graph，但只关注 symbolic constraint。本文在 VLN-CE 上 SR +21.6，论证 spatial layout + semantics 比纯 symbolic 更有效
 - **MapGPT** (Chen et al. ACL 2024)：用 map-guided prompting，是 R2R 上的另一个 zero-shot baseline
 - **Smartway** (Shi et al. 2025)：continuous env 上的 waypoint predictor + backtracking，本文借用了它的 waypoint predictor 模块；并在 Table 3(b) 用作 +SMap 的对照
 - **[[2402-NaVid|NaVid]]**, **[[2502-MapNav|MapNav]]**, **[[2304-ETPNav|ETPNav]]**, **[[2509-NavFoM|NavFoM]]**, **[[2512-EfficientVLN|Efficient-VLN]]**, **[[2202-DUET|DUET]]**, **[[2507-StreamVLN|StreamVLN]]**：监督学习侧的 SOTA，作为 supervised group 的 reference points
@@ -210,7 +210,7 @@ Zero-shot VLN agents（NavGPT、Open-Nav、MapGPT 等）相比监督学习的 VL
 
 1. **"Zero-shot" 标签 stretch**：允许 pre-exploration + GT 点云 + fine-tune SpatialLM + GPT-5 标注房间类型，已经离传统 zero-shot VLN 很远了。该和监督方法重新画 boundary，而不是仍归类在 zero-shot 组对比
 2. **Pre-exploration 成本未量化**：SLAM 重建、人工修正、SpatialLM 标注都有成本，但论文没给端到端的 wall-clock / 算力对比。"home robot 可以预先建图" 是合理论据，但成本到底是 minutes 还是 hours 该说清楚
-3. **RxR-CE 上提升有限且未深入分析**：RxR-CE SR 仅 32.4，比 R2R-CE 的 64.0 差了一倍，长指令/多语言场景里 spatial map 的优势似乎被稀释。论文回避了这个 negative signal
+3. **RxR-CE 上提升有限且未深入分析**：RxR-CE SR 仅 32.4，比 VLN-CE 的 64.0 差了一倍，长指令/多语言场景里 spatial map 的优势似乎被稀释。论文回避了这个 negative signal
 4. **MLLM backbone-agnostic 的 claim 有反例**：Qwen3-VL-Plus 加 SMap 反而变差，论文给的解释（output pattern repetitive）只是 hypothesis，没做 controlled experiment 验证
 5. **方法 novelty 偏组合**：SSG（继承 ConceptGraphs / Werby et al.）+ head-up map（导航文献的老 trick）+ collage panorama + retrieval-augmented context，没有真正新的 algorithmic contribution。Insight 主要来自 "把这些拼对了"
 6. **No code / no project page**：截至检索没找到开源代码或项目页，复现成本高
@@ -222,16 +222,16 @@ Zero-shot VLN agents（NavGPT、Open-Nav、MapGPT 等）相比监督学习的 VL
 - **代码**: 未开源（截至 2026-04-20 未发现 GitHub repo）
 - **模型权重**: 不适用（方法是 prompt-based，依赖 GPT-5.1 / Gemini-2.5-Pro 等闭源 backbone）
 - **训练细节**: 仅高层描述（SpatialLM fine-tune 在 Matterport3D 训练 scan，超参未披露；spatial map 1024×1024、grid 0.015m、半径 7.68m 等推理超参给了）
-- **数据集**: 评测用 R2R、REVERIE、R2R-CE、RxR-CE，全公开；环境用 Matterport3D + Habitat，公开
+- **数据集**: 评测用 R2R、REVERIE、VLN-CE、RxR-CE，全公开；环境用 Matterport3D + Habitat，公开
 
 #### Claim 可验证性
 
-- ✅ **R2R / REVERIE / R2R-CE / RxR-CE val-unseen 上的 SR 数字**：标准 benchmark + 标准 split + 标准 metric，可由独立方在公开数据上复现（前提是 prompt + GPT-5.1 调用复现）
+- ✅ **R2R / REVERIE / VLN-CE / RxR-CE val-unseen 上的 SR 数字**：标准 benchmark + 标准 split + 标准 metric，可由独立方在公开数据上复现（前提是 prompt + GPT-5.1 调用复现）
 - ✅ **Spatial map 加到 NavGPT / SmartWay 都能涨**：消融组合 + sampled subset 数字给了，可复现
 - ✅ **Compass image 比 sequential 视觉 token 少 ~60%**：1024×1024 vs 8×256×256 是物理事实，可验证
-- ⚠️ **"接近 SOTA learning-based"**：在 R2R-CE 上对 ETPNav 成立，但对最新的 NavFoM、Efficient-VLN 还有 4-7 pt 差距；R2R 上对 ScaleVLN 仍差 23 pt。"narrows the gap" 比 "matches SOTA" 更准确
+- ⚠️ **"接近 SOTA learning-based"**：在 VLN-CE 上对 ETPNav 成立，但对最新的 NavFoM、Efficient-VLN 还有 4-7 pt 差距；R2R 上对 ScaleVLN 仍差 23 pt。"narrows the gap" 比 "matches SOTA" 更准确
 - ⚠️ **"backbone-agnostic"**：Qwen3-VL-Plus 是反例，论文用 hand-wavy 的 prior fine-tuning 解释回避，未做对照
-- ⚠️ **"global spatial information 是 generalizable signal"**：在 R2R-CE 上很 generalizable，但 RxR-CE 上提升有限。Generalization 的边界没说清
+- ⚠️ **"global spatial information 是 generalizable signal"**：在 VLN-CE 上很 generalizable，但 RxR-CE 上提升有限。Generalization 的边界没说清
 - ❌ **"zero-shot agent"**：在允许 pre-exploration、依赖 GT 点云、用 fine-tuned SpatialLM 的设定下，"zero-shot" 这个标签 misleading，更像 "training-free at navigation time, but offline-prepared map"
 
 ### Notes
@@ -250,4 +250,4 @@ Zero-shot VLN agents（NavGPT、Open-Nav、MapGPT 等）相比监督学习的 VL
 **Metrics** (as of 2026-04-24): citation=7, influential=2 (28.6%), velocity=2.06/mo; HF upvotes=N/A; github=N/A (无代码仓库)
 
 **分数**：2 - Frontier
-**理由**：论文在 R2R-CE zero-shot 上 SR 64.0 大幅超过上一代 zero-shot SOTA VLN-Zero (42.4) 并接近监督 ETPNav (57.0)，同时提出 head-up spatial map + compass panorama + remote object preview 的三件套组合，是 zero-shot VLN 方向当前必比的 baseline（Strengths 1-3）。但它不够 Foundation：方法 novelty 偏组合（SSG / head-up map / collage / retrieval 都继承前人，Weakness 5），"pre-exploration zero-shot" 设定 stretch（Weakness 1 + ❌ claim），且未开源（Weakness 6），短期内不会像 ConceptGraphs / ETPNav 那样成为 de facto 标准；也明显高于 Archived——RxR-CE 上表现弱归弱，但 R2R / REVERIE / R2R-CE 三个标准 split 上的 SR 提升足以使其进入 zero-shot VLN 文献的 must-compare 组。2026-04 复核：3.4 月 7 citation / 2 influential (28.6%) / velocity 2.06/mo，早期采纳信号相对 2601 月同批发布作品居上；但未开源削弱了 sustained adoption 的预期，维持 Frontier。
+**理由**：论文在 VLN-CE zero-shot 上 SR 64.0 大幅超过上一代 zero-shot SOTA VLN-Zero (42.4) 并接近监督 ETPNav (57.0)，同时提出 head-up spatial map + compass panorama + remote object preview 的三件套组合，是 zero-shot VLN 方向当前必比的 baseline（Strengths 1-3）。但它不够 Foundation：方法 novelty 偏组合（SSG / head-up map / collage / retrieval 都继承前人，Weakness 5），"pre-exploration zero-shot" 设定 stretch（Weakness 1 + ❌ claim），且未开源（Weakness 6），短期内不会像 ConceptGraphs / ETPNav 那样成为 de facto 标准；也明显高于 Archived——RxR-CE 上表现弱归弱，但 R2R / REVERIE / VLN-CE 三个标准 split 上的 SR 提升足以使其进入 zero-shot VLN 文献的 must-compare 组。2026-04 复核：3.4 月 7 citation / 2 influential (28.6%) / velocity 2.06/mo，早期采纳信号相对 2601 月同批发布作品居上；但未开源削弱了 sustained adoption 的预期，维持 Frontier。

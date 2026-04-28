@@ -15,19 +15,19 @@ date_added: 2026-04-20
 ## Summary
 
 > [!summary] Efficient-VLN: A Training-Efficient Vision-Language Navigation Model
-> - **核心**: 用两类高效 memory 表征 + 动态 DAgger mixing ratio，把 MLLM-based VLN 的训练成本压到 282 H800 GPU·h，同时刷到 R2R-CE / RxR-CE SOTA。
+> - **核心**: 用两类高效 memory 表征 + 动态 DAgger mixing ratio，把 MLLM-based VLN 的训练成本压到 282 H800 GPU·h，同时刷到 VLN-CE / RxR-CE SOTA。
 > - **方法**: (1) Progressive memory：仿"人类遗忘"，对近期帧低压缩、远期帧逐级 4× 下采样，token 总量收敛到 KS/3；(2) Recursive memory：把可学习 sentinel tokens 的 KV cache 作为 memory state 跨步传递；(3) Dynamic mixed policy：DAgger 中 oracle 概率 β=1−α^(t/T) 随步数递增，前期靠 learned policy 制造 compounding error，后期靠 oracle 兜底完成任务。
-> - **结果**: R2R-CE 64.2% SR、RxR-CE 67.0% SR；训练 282 H800·h，相比 NavFoM (4032 H100·h) / StreamVLN (1500 A100·h) 大幅降本；DAgger #Train Step 从 128 降到 82（−36%）。
+> - **结果**: VLN-CE 64.2% SR、RxR-CE 67.0% SR；训练 282 H800·h，相比 NavFoM (4032 H100·h) / StreamVLN (1500 A100·h) 大幅降本；DAgger #Train Step 从 128 降到 82（−36%）。
 > - **Sources**: [paper](https://arxiv.org/abs/2512.10310) | [website](https://lavi-lab.github.io/Efficient-VLN)
 > - **Rating**: 2 - Frontier（SR-vs-cost 帕累托前沿上的 MLLM-based VLN SOTA，progressive memory + dynamic DAgger 是值得借鉴的 building block，但尚未成为方向奠基工作）
 
 **Key Takeaways:**
 1. **Recency-aware memory 比 uniform compression 强**: 对所有帧统一压到 4 token 的 NaVid 式做法在 R2R/RxR 上都吃亏；保留 recent K=3 帧高分辨率、对更早帧逐级 4× 下采样后，R2R SR +2.6, RxR SR +3.0。
-2. **Recursive (state-based) memory 在长 trajectory 上崩**: 64-token KV-cache 作为 state 在 R2R-CE (短 traj) 与 progressive 持平甚至更优，但 RxR-CE (长 traj) 上 SR 降了 7+。state compression 在长 horizon 上仍是开放问题。
+2. **Recursive (state-based) memory 在长 trajectory 上崩**: 64-token KV-cache 作为 state 在 VLN-CE (短 traj) 与 progressive 持平甚至更优，但 RxR-CE (长 traj) 上 SR 降了 7+。state compression 在长 horizon 上仍是开放问题。
 3. **DAgger β 是个被忽略的成本旋钮**: 固定 β=0.25 比 β=0.75 SR 高 8.8 pt，但 trajectory 长度近乎翻倍（66→128）。Curriculum 式动态 β（前期 explore 后期 oracle）能拿到 β=0.25 的 SR，trajectory 只增加 16 步。
-4. **3D geometry 注入 RGB-only VLN 是几乎免费的午餐**: StreamVGGT/Stream3R 提取的 latent geometry token 与 2D feature 元素相加，R2R-CE SR +3.6 / +4.8，无需 depth sensor。
+4. **3D geometry 注入 RGB-only VLN 是几乎免费的午餐**: StreamVGGT/Stream3R 提取的 latent geometry token 与 2D feature 元素相加，VLN-CE SR +3.6 / +4.8，无需 depth sensor。
 
-**Teaser. Efficient-VLN 在 R2R-CE 上以 282 H800·h 训练成本拿到 64.2% SR，把 NavFoM/StreamVLN 等需要 1.5K–4K 卡时的方法甩在 SR-vs-cost 帕累托前沿之外。**
+**Teaser. Efficient-VLN 在 VLN-CE 上以 282 H800·h 训练成本拿到 64.2% SR，把 NavFoM/StreamVLN 等需要 1.5K–4K 卡时的方法甩在 SR-vs-cost 帕累托前沿之外。**
 
 ![](https://arxiv.org/html/2512.10310v1/x1.png)
 
@@ -121,14 +121,14 @@ a_t* = π*(s_t)         # 用 oracle 重标注当前 state
 
 ### 2.6 训练加速
 
-- **两阶段训练**：Stage 1 在 R2R-CE + RxR-CE 上训练基础导航能力（去掉了 StreamVLN 用的 EnvDrop，作者说继续训练比加 EnvDrop 更划算）；Stage 2 加 ScaleVLN-150K + ScanQA + SQA3D + LLaVA-Video-178K subset + DAgger 数据。
+- **两阶段训练**：Stage 1 在 VLN-CE + RxR-CE 上训练基础导航能力（去掉了 StreamVLN 用的 EnvDrop，作者说继续训练比加 EnvDrop 更划算）；Stage 2 加 ScaleVLN-150K + ScanQA + SQA3D + LLaVA-Video-178K subset + DAgger 数据。
 - **Sequence packing**：把同一 trajectory 的多个连续步 (step×16) 拼成一个 flatten sequence，配 block-sparse attention。每次 backward 处理的步数从 8 翻到 16，总训练成本降 41.2%；同时也是 recursive memory 跨步反传的前提。
 
 ## 3. 实验结果
 
 ### 3.1 主结果
 
-**Table 1（节选）. R2R-CE / RxR-CE Val-Unseen SR (%) 对比。† 表示加了 Matterport3D 之外的额外数据。**
+**Table 1（节选）. VLN-CE / RxR-CE Val-Unseen SR (%) 对比。† 表示加了 Matterport3D 之外的额外数据。**
 
 | Method | R2R SR | R2R SPL | RxR SR | RxR SPL | nDTW |
 |---|---|---|---|---|---|
@@ -188,13 +188,13 @@ Dynamic ratio 比 β=0.25 SR 略高，但 #Train Step 从 128 降到 82——同
 
 ### 3.4 Data composition ablation
 
-**Figure 4. R2R-CE 上 stage-2 数据消融：R2R+RxR 基线 (45.9) → +DAgger (60.8) → +ScaleVLN (64.2)。DAgger 数据贡献最大。**
+**Figure 4. VLN-CE 上 stage-2 数据消融：R2R+RxR 基线 (45.9) → +DAgger (60.8) → +ScaleVLN (64.2)。DAgger 数据贡献最大。**
 
 ![](https://arxiv.org/html/2512.10310v1/x4.png)
 
 ### 3.5 3D geometry encoder ablation
 
-**Table 5. R2R-CE，仅 stage-1 训练。**
+**Table 5. VLN-CE，仅 stage-1 训练。**
 
 |  | NE ↓ | OS ↑ | SR ↑ | SPL ↑ |
 |---|---|---|---|---|
@@ -202,7 +202,7 @@ Dynamic ratio 比 β=0.25 SR 略高，但 #Train Step 从 128 降到 82——同
 | + StreamVGGT | 6.41 | 54.5 | 45.9 | 41.9 |
 | + Stream3R | 6.39 | 55.5 | 47.1 | 42.6 |
 
-注入 latent geometry token 在 R2R-CE 上 +3.6~4.8 SR。Stream3R 略好但 StreamVGGT 显存友好，故主实验选 StreamVGGT。
+注入 latent geometry token 在 VLN-CE 上 +3.6~4.8 SR。Stream3R 略好但 StreamVGGT 显存友好，故主实验选 StreamVGGT。
 
 ### 3.6 3D QA 副产物
 
@@ -249,7 +249,7 @@ Dynamic ratio 比 β=0.25 SR 略高，但 #Train Step 从 128 降到 82——同
 2. **Sequence packing 的 41.2% 加速没拆开归因**：到底是 GPU 利用率提升、attention pattern 变化、还是别的？没有对比 step-by-step 训练相同 step 数的精度，无法排除 packing 改变了梯度估计的可能。
 3. **3D geometry encoder 的运行成本被淡化**：StreamVGGT-1B 本身不便宜，inference 时也要跑 3D encoder。Figure 1 / Table 2 只算了 MLLM 的训练成本，3D encoder 的 forward 时间和显存有多少应该单列。
 4. **β decay rate α=0.5 是手调的**：α 这个超参对 final SR 的敏感度未见消融，且 α 与 trajectory 长度 T 耦合，长 traj 上等效"前期 explore 时间"更长，这种隐含 curriculum 是否最优没讨论。
-5. **Conclusion 数字不一致**：Conclusion 写的是 "R2R-CE 62.3% SR / RxR-CE 64.5% SR"，与 abstract / Table 1 的 64.2 / 67.0 对不上。**编辑事故，但暴露 polish 不足**。
+5. **Conclusion 数字不一致**：Conclusion 写的是 "VLN-CE 62.3% SR / RxR-CE 64.5% SR"，与 abstract / Table 1 的 64.2 / 67.0 对不上。**编辑事故，但暴露 polish 不足**。
 6. **没和 [[2509-NavFoM|NavFoM]] / JanusVLN 做 RGB-only 同设置的细颗粒对比**：NavFoM 是多机器人形态、NaviLLM 是多任务，比较粒度不一致，效率优势可能部分来自 task scope 收窄（仅 R2R/RxR/ScaleVLN 三个数据源）。
 
 ### 可信评估
@@ -259,11 +259,11 @@ Dynamic ratio 比 β=0.25 SR 略高，但 #Train Step 从 128 降到 82——同
 - **代码**: 未说明（项目页 https://lavi-lab.github.io/Efficient-VLN 存在，但论文中未给出 code repo URL；GitHub 搜索仅能找到 LaVi-Lab.github.io 页面 repo）
 - **模型权重**: 未说明
 - **训练细节**: 完整——backbone (Qwen2.5-VL-3B)、3D encoder (StreamVGGT-1B)、batch 128、lr 1e-5、8×H800、stride Δ=4、window N=12、α=0.5、stage-2 数据混合 (R2R + RxR + DAgger + ScaleVLN-150K + ScanQA + SQA3D + LLaVA-Video-178K subset) 都给了
-- **数据集**: 全部公开（R2R-CE / RxR-CE / ScaleVLN-150K / ScanQA / SQA3D / LLaVA-Video-178K），易于复现训练数据
+- **数据集**: 全部公开（VLN-CE / RxR-CE / ScaleVLN-150K / ScanQA / SQA3D / LLaVA-Video-178K），易于复现训练数据
 
 #### Claim 可验证性
 
-- ✅ **R2R-CE 64.2 SR / RxR-CE 67.0 SR**：Table 1 完整指标 (NE/OS/SR/SPL/nDTW)，配 ablation Table 3-5，数字闭环
+- ✅ **VLN-CE 64.2 SR / RxR-CE 67.0 SR**：Table 1 完整指标 (NE/OS/SR/SPL/nDTW)，配 ablation Table 3-5，数字闭环
 - ✅ **Progressive > Spatial Compression**：Table 3 row 1 vs row 4 在相同 #Token (~700) 下 +5.4 SR R2R / +3.7 SR RxR，可信
 - ✅ **Dynamic ratio 减少 trajectory 长度**：Table 4 row 4 vs row 5 数字明确（128→82, −36%）
 - ⚠️ **"282 H800 GPU hours" 的训练效率宣称**：H800 vs A100/H100 算力不同，不同 batch / sequence packing 设置下不可直接横比；StreamVLN 用 A100，等效折算后 Efficient-VLN 真实优势是 ~3-5×（仍很可观），但论文给读者"10×+"的视觉印象（Figure 1 横轴 log scale）
@@ -284,4 +284,4 @@ Dynamic ratio 比 β=0.25 SR 略高，但 #Train Step 从 128 降到 82——同
 **Metrics** (as of 2026-04-24): citation=6, influential=0 (0.0%), velocity=1.36/mo; HF upvotes=N/A; github=N/A (无代码仓库)
 
 **分数**：2 - Frontier
-**理由**：在 RGB-only MLLM-based VLN 方向是当前 SR-vs-cost 帕累托前沿（R2R-CE 64.2 / RxR-CE 67.0 在 282 H800·h 下刷过 StreamVLN / NavFoM / NaVILA），且 progressive memory（KS/3 token budget）和 dynamic DAgger（β=1−α^(t/T)）都是可迁移到其他 video LLM / imitation learning 场景的 building block——满足 Frontier 的"当前 SOTA + 必比 baseline"定义。没到 Foundation 档：作为 2025-12 新发论文尚无社区采纳信号（无 github 代码发布、未被后续工作采用），且方法上是 StreamVLN/NaVILA 脉络的高效化改进而非范式开创（NaVid/StreamVLN 才是该脉络的奠基者）；也不至于 Archived，因为 efficiency frontier 本身对小实验室是 actionable，方法尚未被更强工作取代。2026-04 复核：4.4 月累计 6 citation / 影响力 0、velocity 1.36/mo、仍无代码发布，早期信号温和偏弱，但 <3mo 豁免窗口刚过且 GTA 等后续工作已把它列为监督 baseline 引用，维持 Frontier。
+**理由**：在 RGB-only MLLM-based VLN 方向是当前 SR-vs-cost 帕累托前沿（VLN-CE 64.2 / RxR-CE 67.0 在 282 H800·h 下刷过 StreamVLN / NavFoM / NaVILA），且 progressive memory（KS/3 token budget）和 dynamic DAgger（β=1−α^(t/T)）都是可迁移到其他 video LLM / imitation learning 场景的 building block——满足 Frontier 的"当前 SOTA + 必比 baseline"定义。没到 Foundation 档：作为 2025-12 新发论文尚无社区采纳信号（无 github 代码发布、未被后续工作采用），且方法上是 StreamVLN/NaVILA 脉络的高效化改进而非范式开创（NaVid/StreamVLN 才是该脉络的奠基者）；也不至于 Archived，因为 efficiency frontier 本身对小实验室是 actionable，方法尚未被更强工作取代。2026-04 复核：4.4 月累计 6 citation / 影响力 0、velocity 1.36/mo、仍无代码发布，早期信号温和偏弱，但 <3mo 豁免窗口刚过且 GTA 等后续工作已把它列为监督 baseline 引用，维持 Frontier。

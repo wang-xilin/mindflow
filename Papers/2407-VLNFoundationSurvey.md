@@ -249,7 +249,7 @@ FM 在这三步都可以插入：
 - [[2303-PaLME]]：embodied FM，§6 Agent Model 讨论的代表
 
 ### 与 [[DomainMaps/VLN]] 的关系
-- 本 survey 写于 2024-07，截至 2026-04 的发展在 DomainMap 已更新：R2R-CE SOTA 从 survey 写作时的 ~55%（HAMT/DUET）被新一代（ETPNav 57%、NaVILA、PROSPECT 60.3%、Efficient-VLN 64.2%、GTA zero-shot 48.8%）超越；streaming VLA 路线和 VLN-R1 的 GRPO 训练在 survey 里完全没出现。所以本 survey 的"未来方向"部分（2D→3D、embodied FM）基本被验证，但它没预见到 **VLN → VLA unification** 这条路径。
+- 本 survey 写于 2024-07，截至 2026-04 的发展在 DomainMap 已更新：VLN-CE SOTA 从 survey 写作时的 ~55%（HAMT/DUET）被新一代（ETPNav 57%、NaVILA、PROSPECT 60.3%、Efficient-VLN 64.2%、GTA zero-shot 48.8%）超越；streaming VLA 路线和 VLN-R1 的 GRPO 训练在 survey 里完全没出现。所以本 survey 的"未来方向"部分（2D→3D、embodied FM）基本被验证，但它没预见到 **VLN → VLA unification** 这条路径。
 
 ---
 

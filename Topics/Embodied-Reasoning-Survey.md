@@ -38,7 +38,7 @@ papers_analyzed: 18
 - **[[Papers/2506-RobotR1|Robot-R1]]** (NeurIPS 2025)：将 next-state prediction 重构为 MCQ，降低 RL 探索复杂度。7B 模型超越 GPT-4o，SFT 0% vs RL 11.68%。
 - **[[Papers/2504-EmbodiedR|Embodied-R]]** (2025)：解耦 perception (72B VLM) 和 reasoning (3B LM)，提出 logical consistency reward（用 reference model 验证推理链一致性，无需视觉输入）。3B 超越 OpenAI-o1 和 Gemini-2.5-Pro。仅需 5,000 训练样本。
 - **[[Papers/2508-EmbodiedR1|Embodied-R1]]** (2025)：用 "pointing"（2D 坐标）作为 embodiment-agnostic 中间表示，两阶段 GRPO 训练。3B 模型超越 7B-13B baselines。
-- **[[Papers/2512-ETPR1|ETP-R1]]** (2025)：首次将 GRPO 应用于 graph-based VLN-CE，在 R2R-CE 达到 65% SR。
+- **[[Papers/2512-ETPR1|ETP-R1]]** (2025)：首次将 GRPO 应用于 graph-based VLN-CE，在 VLN-CE 达到 65% SR。
 
 **核心发现**：RL 系统性优于 SFT。Robot-R1 (SFT 0% vs RL 11.68%)、Embodied-R1 (65.50% vs 41.25%)、Embodied-R (OOD 泛化更强) 一致验证了这一结论。
 

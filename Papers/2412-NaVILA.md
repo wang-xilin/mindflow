@@ -15,8 +15,8 @@ date_added: "2026-03-24"
 
 > [!summary] NaVILA: Legged Robot Vision-Language-Action Model for Navigation
 > - **核心**: 把 VLA 拆成 high-level VLM（生成"move forward 75cm"这类语言化 mid-level action）+ low-level vision-based RL locomotion policy 的两级架构，让 legged robot 能跑 VLN-CE 并迁移到真机
-> - **方法**: 基于 VILA 的 image-based VLM，融合 R2R-CE / RxR-CE / EnvDrop / ScanQA / 2K YouTube 人类游览视频（通过 MASt3R 估计 metric pose 提取 trajectory）+ general VQA 做 SFT；底层用 single-stage PPO + LiDAR height map 训练 vision-based locomotion
-> - **结果**: R2R-CE Val-Unseen SR 54%（+17% over prior SOTA，且仅用 single-view RGB 就超过用 panoramic+depth+odometry 的方法），ScanQA CIDEr 102.7 超过依赖 3D scan 的 LMM；real-world Unitree Go2/H1 + Booster T1 上 25 条指令 88% SR，跨形态零迁移
+> - **方法**: 基于 VILA 的 image-based VLM，融合 VLN-CE / RxR-CE / EnvDrop / ScanQA / 2K YouTube 人类游览视频（通过 MASt3R 估计 metric pose 提取 trajectory）+ general VQA 做 SFT；底层用 single-stage PPO + LiDAR height map 训练 vision-based locomotion
+> - **结果**: VLN-CE Val-Unseen SR 54%（+17% over prior SOTA，且仅用 single-view RGB 就超过用 panoramic+depth+odometry 的方法），ScanQA CIDEr 102.7 超过依赖 3D scan 的 LMM；real-world Unitree Go2/H1 + Booster T1 上 25 条指令 88% SR，跨形态零迁移
 > - **Sources**: [paper](https://arxiv.org/abs/2412.04453) | [website](https://navila-bot.github.io/) | [github](https://github.com/AnjieCheng/NaVILA)
 > - **Rating**: 3 - Foundation（legged VLN 方向的奠基工作——RSS 2025 接收，"language as mid-level action" 范式 + YouTube video pipeline + VLN-CE-Isaac benchmark 已被后续 legged VLN 工作作为 de facto baseline 引用）
 
@@ -40,7 +40,7 @@ VLN 在过去几年里从 discrete graph navigation（MP3D 节点跳转）走向
 
 NaVILA 的 first-principles 回答是：让 VLA 输出**仍然停留在语言域**——"move forward 75cm"、"turn left 30 degrees"——再让一个独立的 RL locomotion policy 把这些语言短语解释成 joint trajectory。这样：
 
-- VLM 训练数据不必是 robot demonstration，可以用 R2R-CE 的 oracle action、YouTube 人类视频、ScanQA 这种异构数据混训
+- VLM 训练数据不必是 robot demonstration，可以用 VLN-CE 的 oracle action、YouTube 人类视频、ScanQA 这种异构数据混训
 - 同一个 VLA 可以驱动不同形态机器人（quadruped / humanoid），只需替换 low-level policy
 - 大模型低频跑 / locomotion 高频跑的 dual-frequency 模式天然 robust
 
@@ -68,7 +68,7 @@ NaVILA 是一个 2-level framework：上层是 VLA（基于 VILA 微调），输
 **SFT 数据 blend（4 类）**：
 
 1. **Navigational data from real videos**——2K YouTube egocentric touring videos → 20K trajectories（关键贡献，下面详述）
-2. **Navigational data from simulations**——R2R-CE 和 RxR-CE，用 shortest path follower 在 Habitat 内生成 oracle action 序列。 trick：合并最多 3 个连续相同动作（两个 forward 25cm 合并成 forward 50cm），既减小数据集又增加动作多样性，并对 stop action 做 rebalancing
+2. **Navigational data from simulations**——VLN-CE 和 RxR-CE，用 shortest path follower 在 Habitat 内生成 oracle action 序列。 trick：合并最多 3 个连续相同动作（两个 forward 25cm 合并成 forward 50cm），既减小数据集又增加动作多样性，并对 stop action 做 rebalancing
 3. **Auxiliary navigational data**——EnvDrop augmented instructions、ScanQA 3D QA（用 multi-view RGB 而不是 3D scan）、trajectory summarization
 4. **General VQA datasets**——保住 broad reasoning capability
 
@@ -112,7 +112,7 @@ NaVILA 是一个 2-level framework：上层是 VLA（基于 VILA 微调），输
 
 ### High-level VLA on VLN-CE benchmarks
 
-**Table I 摘要（R2R-CE / RxR-CE Val-Unseen）**：
+**Table I 摘要（VLN-CE / RxR-CE Val-Unseen）**：
 
 | Method | Obs | R2R SR ↑ | R2R SPL ↑ | RxR SR ↑ | RxR SPL ↑ |
 | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -236,7 +236,7 @@ Vision policy 比 blind 高 +14%（Go2）/ +21%（H1）SR；NaVILA-Vision 在 Go
 - **数据集**: 部分公开——R2R / RxR / EnvDrop / ScanQA / Human 的 annotations 在 [HuggingFace dataset](https://huggingface.co/datasets/a8cheng/NaVILA-Dataset) 上；YouTube 人类游览原视频因版权只放 video IDs，需用户自己 yt-dlp 下载；EnvDrop 视频也需用户自己用 VLN-CE renderer 重渲染
 
 #### Claim 可验证性
-- ✅ **"+17% SR on R2R-CE Val-Unseen vs prior SOTA"**：Table I 数字清楚，对比的 baseline 公开（NaVid 等），可在公开 benchmark 上独立复现
+- ✅ **"+17% SR on VLN-CE Val-Unseen vs prior SOTA"**：Table I 数字清楚，对比的 baseline 公开（NaVid 等），可在公开 benchmark 上独立复现
 - ✅ **"single-stage RL 比 ROA distillation 更优"**：Table V 三个 metric 都报了，code 开源可复现
 - ✅ **"VLA 跨 embodiment 零迁移到 Booster T1"**：Table VI + 真机视频佐证；T1 上 simple SR 0.93 / complex 0.67 是 nontrivial 的迁移强度
 - ⚠️ **"88% real-world SR on 25 instructions"**：trial 数 75 偏少；simple vs complex / 三类环境分布不均；GPT-4o baseline 是否在公平 prompt 下评估未细说
@@ -258,4 +258,4 @@ Vision policy 比 blind 高 +14%（Go2）/ +21%（H1）SR；NaVILA-Vision 在 Go
 **Metrics** (as of 2026-04-24): citation=169, influential=26 (15.4%), velocity=10.18/mo; HF upvotes=0; github 589⭐ / forks=54 / 90d commits=0 / pushed 247d ago · stale
 
 **分数**：3 - Foundation
-**理由**：NaVILA 是 legged VLN 方向的奠基工作——把"language as mid-level action"范式 + YouTube 人类视频 pipeline + VLN-CE-Isaac 物理仿真 benchmark 一次性打通，RSS 2025 接收，且在 R2R-CE Val-Unseen 上 +17% SR、仅用 single-view RGB 即超越 panoramic+depth 方法（见 Strength 1-4）。 相比 Frontier 档：这不是一般的 SOTA 刷分，而是范式 + benchmark + 数据 pipeline 三位一体的 foundational contribution，后续 legged VLN 工作几乎无法绕开它作为 baseline；缺点（固定 action set、低频 VLM）是工程局限，不削弱其奠基意义。
+**理由**：NaVILA 是 legged VLN 方向的奠基工作——把"language as mid-level action"范式 + YouTube 人类视频 pipeline + VLN-CE-Isaac 物理仿真 benchmark 一次性打通，RSS 2025 接收，且在 VLN-CE Val-Unseen 上 +17% SR、仅用 single-view RGB 即超越 panoramic+depth 方法（见 Strength 1-4）。 相比 Frontier 档：这不是一般的 SOTA 刷分，而是范式 + benchmark + 数据 pipeline 三位一体的 foundational contribution，后续 legged VLN 工作几乎无法绕开它作为 baseline；缺点（固定 action set、低频 VLM）是工程局限，不削弱其奠基意义。

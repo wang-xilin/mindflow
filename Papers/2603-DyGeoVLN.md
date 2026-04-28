@@ -17,7 +17,7 @@ date_added: 2026-04-23
 > [!summary] DyGeoVLN: Infusing Dynamic Geometry Foundation Model into Vision-Language Navigation
 > - **核心**: 把一个**自研的 dynamic-aware geometry foundation model (DGFM)** 作为 3D 分支塞进 MLLM-based VLN，用 cross-branch attention 融合 2D 语义 token 与 3D 几何 token，对付现有 VLN 在动态场景里 3D 几何崩坏的问题。
 > - **方法**: DGFM = `π³`/`VGGT` 风格的 feed-forward 几何 backbone + `Depth Anything` 生成的 local point map 作为显式 3D 条件（zero-init conv 残差注入）+ 分层 latent 解码（camera / local / global）；训练用新构造的 DyHM3D 数据集（HM3D 上贴 ~50k 条 skeletal-driven 人体运动轨迹）。上层 VLN 用 [[2412-NaVILA|NaVILA]]-style Qwen2-VL 作为 2D 分支、cross-attention 把几何 token 融进去，再加一个 **pose-free occupancy-aware voxel token pruning** 压缩长历史。
-> - **结果**: R2R-CE Val-Unseen **SR 60.8 / SPL 55.8 / NE 4.41 / OSR 70.1**，在单目 RGB 方法中 SOTA，并反超依赖 panoramic RGB-D + waypoint predictor 的 g3D-LF / ETPNav；HA-VLN dynamic benchmark SR 0.40（Val-Unseen），比 [[2507-StreamVLN|StreamVLN]] 的 0.33 高 +7 pt、CR 从 0.42→0.38。
+> - **结果**: VLN-CE Val-Unseen **SR 60.8 / SPL 55.8 / NE 4.41 / OSR 70.1**，在单目 RGB 方法中 SOTA，并反超依赖 panoramic RGB-D + waypoint predictor 的 g3D-LF / ETPNav；HA-VLN dynamic benchmark SR 0.40（Val-Unseen），比 [[2507-StreamVLN|StreamVLN]] 的 0.33 高 +7 pt、CR 从 0.42→0.38。
 > - **Sources**: [paper](https://arxiv.org/abs/2603.21269)
 > - **Rating**: 2 - Frontier（动态 VLN 方向当下最强的 SR 数字 + 对 "dynamic 3D foundation model" 这一子方向做了一次 end-to-end 尝试，但 DGFM 和 VLN 两侧都缺 ablation 粒度、无代码）
 
@@ -25,7 +25,7 @@ date_added: 2026-04-23
 1. **VGGT/π³ 类 static 几何 FM 在动态场景会崩**：作者用红框 qualitative 给出证据（Fig. 2b）——人体部位 reconstruction 扭曲、定位不准。对 VLN 是致命的，因为动态障碍（行人）本身就是主要交互对象。
 2. **"Dynamic geometry" 的实现其实是 depth-guided residual 注入**：DGFM 并没有重新设计 dynamic geometry 架构，而是把 Depth Anything 的单目深度→local point map→point-map Transformer→zero-init conv 作为**残差分支**加到 π³/VGGT backbone 上，再在 DyHM3D 上 finetune。这是工程上合理、但理论上保守的做法——"动态" 的增量主要来自**带人体运动的训练数据**，而不是架构级的时序建模。
 3. **Pose-free token pruning 是实用亮点**：相比 StreamVLN 依赖 Habitat 提供的 GT pose / depth 做 voxel pruning，本文用 DGFM 自推 pose + point cloud 做 voxelization，真机部署只要单目 RGB——这个 pipeline 上的改动对 real-world deployment 的价值可能比 DGFM 本身更大。
-4. **单目 RGB 反超 panoramic RGB-D 是本工作最硬的信号**：R2R-CE 上 60.8 SR > g3D-LF 61.0 SR 只差 0.2 但 SPL 55.8 > 52.0 明显更高，且只用 Monocular RGB；证明 "几何 FM 语义 token 融合" 比 "panoramic sensor + waypoint predictor" 这一条传统路径更 scalable。
+4. **单目 RGB 反超 panoramic RGB-D 是本工作最硬的信号**：VLN-CE 上 60.8 SR > g3D-LF 61.0 SR 只差 0.2 但 SPL 55.8 > 52.0 明显更高，且只用 Monocular RGB；证明 "几何 FM 语义 token 融合" 比 "panoramic sensor + waypoint predictor" 这一条传统路径更 scalable。
 
 ---
 
@@ -104,7 +104,7 @@ $$
 ![](https://arxiv.org/html/2603.21269v1/x4.png)
 **Figure 4.** 动态 HA-VLN 定性对比：StreamVLN 在有行人的场景丢失路径、撞人，DyGeoVLN 能绕行并到达目标。
 
-**Static R2R-CE Benchmark（Val-Unseen）**：
+**Static VLN-CE Benchmark（Val-Unseen）**：
 
 | Method | Observation | NE↓ | OSR↑ | SR↑ | SPL↑ |
 |---|---|---|---|---|---|
@@ -119,7 +119,7 @@ $$
 **单目 RGB 反超 panoramic RGB-D** 是本工作最硬的信号：SPL 55.8 > g3D-LF 的 52.0。
 
 ![](https://arxiv.org/html/2603.21269v1/x5.png)
-**Figure 5.** R2R-CE 定性对比：StreamVLN 中途停下，DyGeoVLN 轨迹一致性更好。
+**Figure 5.** VLN-CE 定性对比：StreamVLN 中途停下，DyGeoVLN 轨迹一致性更好。
 
 **真机实验（Unitree Go1 + D435i + Jetson Orin Nano）**。用 DyGeoVLN 作为 high-level 规划头输出 pixel goal，下接 diffusion action head 做连续轨迹，MPC 跟踪。20 episodes / 场景，SR 作为指标。
 
@@ -167,7 +167,7 @@ $$
 
 1. **明确的问题定位**：static geometry FM（VGGT/π³）在动态场景会崩这一 observation 精准——Fig. 2b 红框对比给出直观证据，对比 JanusVLN 只做 "plug-and-play 3D FM 进 VLN" 的做法，本文至少试图解决一个具体失败模式。
 2. **Pose-free pruning 的工程价值**：相比 StreamVLN 依赖 Habitat GT pose/depth 的 voxel pruning，本文用 DGFM 自推 pose/point cloud 实现 real-world 单目部署，这在 deployability 上是一个真实进步。
-3. **R2R-CE 单目 RGB 反超 Panoramic RGB-D**：SPL 55.8 > g3D-LF 52.0，说明 geometry FM 注入 > panoramic sensor 这条传统范式，有"表示 > 传感器"的意义。
+3. **VLN-CE 单目 RGB 反超 Panoramic RGB-D**：SPL 55.8 > g3D-LF 52.0，说明 geometry FM 注入 > panoramic sensor 这条传统范式，有"表示 > 传感器"的意义。
 4. **消融相对干净**：4 个组件各有 +3~+10 pt SR 的清晰贡献，不是 additive + 虚增。
 
 ### Weaknesses
@@ -184,10 +184,10 @@ $$
 - **代码**：未开源（arXiv v1 没给 code link，搜到的 GitHub 都是同名/相关但不相关工作）
 - **模型权重**：未说明
 - **训练细节**：仅高层描述（初始化策略 + DAgger + 几个训练数据集名字；超参、batch size、step 数未披露）
-- **数据集**：DyHM3D 声明会提供（~50k trajectories）但未给链接；训练用的其他数据集（R2R-CE、RxR-CE、EnvDrop、HA-VLN、ScaleVLN）都公开
+- **数据集**：DyHM3D 声明会提供（~50k trajectories）但未给链接；训练用的其他数据集（VLN-CE、RxR-CE、EnvDrop、HA-VLN、ScaleVLN）都公开
 
 #### Claim 可验证性
-- ✅ **R2R-CE 和 HA-VLN 数字表现**：有完整 table，benchmark 公开，数字可独立复现（前提是开源）
+- ✅ **VLN-CE 和 HA-VLN 数字表现**：有完整 table，benchmark 公开，数字可独立复现（前提是开源）
 - ✅ **Sliding-window KV + pruning 的基本思路**：算法 1 给出伪代码，逻辑自洽
 - ⚠️ **"Dynamic geometry FM > static FM"**：只有 qualitative Fig. 2b 和 Fig. 9 支持，没有在标准几何 benchmark（如 ScanNet dynamic subset、动态 3D reconstruction metric）上量化；DGFM 自身的几何质量没有定量报数
 - ⚠️ **"Pose-free pruning 与 StreamVLN pose-based 相当或更好"**：没有直接的 pose 误差对比，只能靠端到端 SR 间接推断
@@ -204,4 +204,4 @@ $$
 **Metrics** (as of 2026-04-23): citation=0, influential=0 (0%), velocity=0.0/mo; HF upvotes=N/A（HF 无对应 paper 页）; github N/A（未开源）
 
 **分数**：2 - Frontier
-**理由**：在 VLN 方向上属于**当前时点最强的 Monocular RGB 数字**（R2R-CE SR 60.8 / SPL 55.8 反超 panoramic RGB-D；HA-VLN SR 0.40 明显超 StreamVLN 0.33），思路 clear 且对 "dynamic VLN" 这一被忽视的子方向做了正面回应——因此高于 Archived。但**不进 Foundation** 是因为：(1) 刚发布 1 个月 citation=0、无代码无 HF 页面，影响力信号未到 landmark 级；(2) DGFM 的"dynamic" 增量主要来自数据（DyHM3D human 轨迹）而非架构创新，相对 VGGT/π³ 的方法论增量较保守；(3) 动态范围仅限 skeletal human。若半年后 DGFM 开源且被后续 VLN/VLA 工作广泛作为 3D FM baseline，可升 3。
+**理由**：在 VLN 方向上属于**当前时点最强的 Monocular RGB 数字**（VLN-CE SR 60.8 / SPL 55.8 反超 panoramic RGB-D；HA-VLN SR 0.40 明显超 StreamVLN 0.33），思路 clear 且对 "dynamic VLN" 这一被忽视的子方向做了正面回应——因此高于 Archived。但**不进 Foundation** 是因为：(1) 刚发布 1 个月 citation=0、无代码无 HF 页面，影响力信号未到 landmark 级；(2) DGFM 的"dynamic" 增量主要来自数据（DyHM3D human 轨迹）而非架构创新，相对 VGGT/π³ 的方法论增量较保守；(3) 动态范围仅限 skeletal human。若半年后 DGFM 开源且被后续 VLN/VLA 工作广泛作为 3D FM baseline，可升 3。

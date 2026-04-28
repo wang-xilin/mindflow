@@ -10,10 +10,10 @@ year_range: 2022-2026
 
 **一句话定位**：VLN（Vision-and-Language Navigation）要求 agent 按自然语言指令在未见环境中导航到目标，是 embodied AI 中语言 grounding 与空间推理最成熟的落点之一。
 
-**领域活跃度**：过去 3 年 VLN 从"discrete nav-graph + task-specific encoder-decoder"稳态跃迁到"continuous environment + streaming VLM"的新范式，R2R-CE val-unseen SR 从 2022 年 ~50%（DUET, HAMT）提升到 2026 年 64%+（Efficient-VLN, ETP-R1），同时 zero-shot MLLM 路线从 <10%（NavGPT 早期尝试）追到 48.8%（GTA）。四大活跃方向并行推进：**graph-based supervised** ([[Papers/2202-DUET|DUET]] → [[Papers/2304-ETPNav|ETPNav]] → [[Papers/2512-EfficientVLN|Efficient-VLN]] / [[Papers/2512-ETPR1|ETP-R1]])、**streaming VLA** ([[Papers/2402-NaVid|NaVid]] → [[Papers/2412-NaVILA|NaVILA]] → [[Papers/2507-StreamVLN|StreamVLN]] → [[Papers/2603-PROSPECT|PROSPECT]] → [[Papers/2603-DyGeoVLN|DyGeoVLN]])、**zero-shot MLLM with EWR** ([[Papers/2305-NavGPT|NavGPT]] → [[Papers/2602-GTA|GTA]] / [[Papers/2601-SpatialNav|SpatialNav]])、**GRPO-based RFT** ([[Papers/2506-VLNR1|VLN-R1]] → [[Papers/2512-ETPR1|ETP-R1]])。
+**领域活跃度**：过去 3 年 VLN 从"discrete nav-graph + task-specific encoder-decoder"稳态跃迁到"continuous environment + streaming VLM"的新范式，VLN-CE val-unseen SR 从 2022 年 ~50%（DUET, HAMT）提升到 2026 年 64%+（Efficient-VLN, ETP-R1），同时 zero-shot MLLM 路线从 <10%（NavGPT 早期尝试）追到 48.8%（GTA）。四大活跃方向并行推进：**graph-based supervised** ([[Papers/2202-DUET|DUET]] → [[Papers/2304-ETPNav|ETPNav]] → [[Papers/2512-EfficientVLN|Efficient-VLN]] / [[Papers/2512-ETPR1|ETP-R1]])、**streaming VLA** ([[Papers/2402-NaVid|NaVid]] → [[Papers/2412-NaVILA|NaVILA]] → [[Papers/2507-StreamVLN|StreamVLN]] → [[Papers/2603-PROSPECT|PROSPECT]] → [[Papers/2603-DyGeoVLN|DyGeoVLN]])、**zero-shot MLLM with EWR** ([[Papers/2305-NavGPT|NavGPT]] → [[Papers/2602-GTA|GTA]] / [[Papers/2601-SpatialNav|SpatialNav]])、**GRPO-based RFT** ([[Papers/2506-VLNR1|VLN-R1]] → [[Papers/2512-ETPR1|ETP-R1]])。
 
 **整体趋势**：
-1. **Continuous > discrete**：R2R-CE / RxR-CE 已成 de facto benchmark，discrete nav-graph 上的 SOTA 主要是历史参考；R2R-CE 是 VLN 在 2025–2026 的核心战场。
+1. **Continuous > discrete**：VLN-CE / RxR-CE 已成 de facto benchmark，discrete nav-graph 上的 SOTA 主要是历史参考；VLN-CE 是 VLN 在 2025–2026 的核心战场。
 2. **VLM backbone 是默认起点**：LLaVA-Video / Qwen2-VL / VILA 已取代 task-specific encoder-decoder，social 2024 survey ([[Papers/2407-VLNFoundationSurvey|VLN Foundation Survey]]) 所说的 "FM-as-agent" 已从预言变成现实。
 3. **Hierarchical + language-as-action 成为部署范式**：[[Papers/2412-NaVILA|NaVILA]] 的 "language mid-level action" 把 VLA 拆成 high-level VLM（1–2 Hz）+ low-level RL locomotion（real-time），这条架构正在成为 legged / real-robot VLN 的默认模板。
 4. **3D/spatial prior 的价值被反复验证**：从 [[Papers/2602-GTA|GTA]] 的 TSDF + BEV visual prompting，到 [[Papers/2603-PROSPECT|PROSPECT]] 的 CUT3R 3D fusion，到 [[Papers/2603-DyGeoVLN|DyGeoVLN]] 的 dynamic geometry FM——显式 3D 表示在 continuous VLN 中几乎一致地涨分。
@@ -36,20 +36,20 @@ year_range: 2022-2026
 
 ## 技术路线对比
 
-VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表，Problem framing、数据需求、训练成本、部署难度各不相同。
+VLN 当前四条主流路线在 VLN-CE val-unseen 上的代表性数字见下表，Problem framing、数据需求、训练成本、部署难度各不相同。
 
 ### 1) Graph-based Supervised（topological planner）
 
 **思路**：在线构建拓扑图（visited / current / navigable / ghost nodes），用 cross-modal graph transformer 在全图上选 long-term goal，再用 waypoint predictor + low-level controller 执行。
 
-**代表工作**：[[Papers/2202-DUET|DUET]]（dual-scale graph transformer，CVPR 2022 Oral）、[[Papers/2304-ETPNav|ETPNav]]（online topo map + Tryout 避障，TPAMI 2024；RxR-CE +26 SR 范式级跃升）、[[Papers/2512-EfficientVLN|Efficient-VLN]]（progressive memory + dynamic DAgger，R2R-CE 64.2% SR 以 282 H800·h 训练成本拿到 SR-vs-cost 帕累托前沿）、[[Papers/2512-ETPR1|ETP-R1]]（首次把 closed-loop GRPO 搬到 graph-based VLN-CE，R2R-CE test-unseen 64 SR）。
+**代表工作**：[[Papers/2202-DUET|DUET]]（dual-scale graph transformer，CVPR 2022 Oral）、[[Papers/2304-ETPNav|ETPNav]]（online topo map + Tryout 避障，TPAMI 2024；RxR-CE +26 SR 范式级跃升）、[[Papers/2512-EfficientVLN|Efficient-VLN]]（progressive memory + dynamic DAgger，VLN-CE 64.2% SR 以 282 H800·h 训练成本拿到 SR-vs-cost 帕累托前沿）、[[Papers/2512-ETPR1|ETP-R1]]（首次把 closed-loop GRPO 搬到 graph-based VLN-CE，VLN-CE test-unseen 64 SR）。
 
 **核心优势**：
 - 显式 global memory 支持 long-range backtracking，抑制 oscillation 失败模式（ETPNav Table 7 +3.29 SR）；
 - Waypoint 级 high-level action space 等价于 RL 的 token，天然支持 closed-loop multi-turn GRPO（ETP-R1）；
 - GASA（Graph-Aware Self-Attention）把 all-pair shortest distance 作为 attention bias，是轻量有效的结构先验。
 
-**实际效果与瓶颈**：R2R-CE SR 64% 是 2026-04 supervised SOTA 上限，但依赖 pretrained waypoint predictor（CWP）+ ground-truth pose + 预定义 navigable 节点，sim-to-real 部署仍需工程化。方法层面已比较成熟，但**被 LLM-based agent 路线部分替代**的风险真实存在——ETP-R1 用 GRPO 续命是目前的补救策略。
+**实际效果与瓶颈**：VLN-CE SR 64% 是 2026-04 supervised SOTA 上限，但依赖 pretrained waypoint predictor（CWP）+ ground-truth pose + 预定义 navigable 节点，sim-to-real 部署仍需工程化。方法层面已比较成熟，但**被 LLM-based agent 路线部分替代**的风险真实存在——ETP-R1 用 GRPO 续命是目前的补救策略。
 
 ### 2) Streaming VLA（Video-LLM as end-to-end navigator）
 
@@ -58,10 +58,10 @@ VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表
 **代表工作演化**：
 
 - [[Papers/2402-NaVid|NaVid]]（RSS 2024）：首个 video-based VLM for VLN-CE，不对称 token 预算（current 64 token / history 4 token），直接输出 "FORWARD 75 cm" 而非 waypoint 坐标。
-- [[Papers/2412-NaVILA|NaVILA]]（RSS 2025）：引入 language-as-mid-level-action + dual-frequency 架构，R2R-CE SR 54%，real Unitree Go2/H1/T1 跨形态 88% SR；YouTube touring video + MASt3R metric pose 是最 reusable 的数据 pipeline。
+- [[Papers/2412-NaVILA|NaVILA]]（RSS 2025）：引入 language-as-mid-level-action + dual-frequency 架构，VLN-CE SR 54%，real Unitree Go2/H1/T1 跨形态 88% SR；YouTube touring video + MASt3R metric pose 是最 reusable 的数据 pipeline。
 - [[Papers/2507-StreamVLN|StreamVLN]]（ICRA 2026）：slow-fast context——fast sliding-window KV（N=8 dialogue）+ slow voxel-pruned long memory，RGB-only R2R SR 56.9 / SPL 51.9；voxel pruning 剪 20% token 同时涨 1% SR。
-- [[Papers/2603-PROSPECT|PROSPECT]]（2026-03）：SigLIP + CUT3R 3D fusion + JEPA-style latent prediction 分支（训练时附加，推理时砍掉，零 latency 代价），R2R-CE SR 58.9 / SPL 54.0；CUT3R 因 absolute scale 优于 VGGT 系在长 episode 上。
-- [[Papers/2603-DyGeoVLN|DyGeoVLN]]（2026-03）：自研 dynamic geometry FM（π³/VGGT + Depth Anything residual + DyHM3D 数据）+ pose-free occupancy voxel pruning，单目 RGB R2R-CE SR 60.8——反超 panoramic RGB-D + waypoint predictor。
+- [[Papers/2603-PROSPECT|PROSPECT]]（2026-03）：SigLIP + CUT3R 3D fusion + JEPA-style latent prediction 分支（训练时附加，推理时砍掉，零 latency 代价），VLN-CE SR 58.9 / SPL 54.0；CUT3R 因 absolute scale 优于 VGGT 系在长 episode 上。
+- [[Papers/2603-DyGeoVLN|DyGeoVLN]]（2026-03）：自研 dynamic geometry FM（π³/VGGT + Depth Anything residual + DyHM3D 数据）+ pose-free occupancy voxel pruning，单目 RGB VLN-CE SR 60.8——反超 panoramic RGB-D + waypoint predictor。
 - [[Papers/2509-NavFoM|NavFoM]]（2025-09）：generalist navigation VLM，TVI tokens（view angle + time step indicator）+ BATS（budget-aware token sampling），统一 VLN / OVON / tracking / autonomous driving 四类任务，RxR-CE SR 64.4。
 
 **核心优势**：
@@ -70,7 +70,7 @@ VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表
 - KV cache 复用把 per-step prefill 成本从 O(T²) 降到 O(T)（StreamVLN Figure 5）。
 
 **实际效果与瓶颈**：
-- R2R-CE val-unseen SR 目前在 54–60% 区间，与 graph-based 的 64% 仍有 4–10 pt gap；
+- VLN-CE val-unseen SR 目前在 54–60% 区间，与 graph-based 的 64% 仍有 4–10 pt gap；
 - 训练成本高（StreamVLN 1500 A100·h / NavFoM 4032 H100·h），Efficient-VLN 证明通过 recency-aware memory 可压到 282 H800·h；
 - Long-horizon 一致性、动态障碍下的 reactive 避障、VLM 低频推理下的闭环控制仍是限制。
 
@@ -78,7 +78,7 @@ VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表
 
 **思路**：冻结大型 MLLM（GPT-5/Gemini/Qwen3-VL），用确定性 pipeline 维护显式 metric world representation（TSDF / topological graph / scene graph），把 spatial estimation 解耦给工程组件，semantic planning 交给 MLLM 在渲染的 BEV + ego view + coordinate grid 上选 waypoint。
 
-**代表工作**：[[Papers/2305-NavGPT|NavGPT]]（AAAI 2024，早期 caption-based LLM-as-VLN-agent 的 existence proof，R2R val-unseen SR 34%）、[[Papers/2602-GTA|GTA]]（zero-shot VLN-CE SOTA：R2R-CE SR 48.8%，EWR plug-in 在 NavGPT/OpenNav/SmartWay 上一致涨分）、[[Papers/2601-SpatialNav|SpatialNav]]（放宽到 "允许 pre-exploration" 设定，分层 spatial scene graph + compass-style 全景 + remote object localization，GPT-5.1 后端 R2R-CE zero-shot SR 64.0%，逼近监督 SOTA）。
+**代表工作**：[[Papers/2305-NavGPT|NavGPT]]（AAAI 2024，早期 caption-based LLM-as-VLN-agent 的 existence proof，R2R val-unseen SR 34%）、[[Papers/2602-GTA|GTA]]（zero-shot VLN-CE SOTA：VLN-CE SR 48.8%，EWR plug-in 在 NavGPT/OpenNav/SmartWay 上一致涨分）、[[Papers/2601-SpatialNav|SpatialNav]]（放宽到 "允许 pre-exploration" 设定，分层 spatial scene graph + compass-style 全景 + remote object localization，GPT-5.1 后端 VLN-CE zero-shot SR 64.0%，逼近监督 SOTA）。
 
 **核心优势**：
 - **Sim-to-real gap 小**：MLLM 看的是 BEV + topo graph 这种 domain-invariant representation，不依赖 raw pixel 训练分布——GTA TurtleBot 40% / drone 42% real SR vs supervised VLN-BERT 16% / RDP 20%，是这类方法最强的卖点；
@@ -86,7 +86,7 @@ VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表
 - **Backbone 越强越好**：GPT 5.1 > Gemini 2.5 Pro > Qwen3-VL-235B（GTA Table IV 单调上升），方法"半衰期"长。
 
 **实际效果与瓶颈**：
-- 与监督 SOTA 仍有 10–15 pt 绝对 SR gap（GTA 48.8 vs Efficient-VLN 64.2 on R2R-CE）；
+- 与监督 SOTA 仍有 10–15 pt 绝对 SR gap（GTA 48.8 vs Efficient-VLN 64.2 on VLN-CE）；
 - 核心性能依赖闭源 frontier MLLM，开源 backbone 显著掉点（GPT-5.1 → Qwen3-VL 掉 10 pt）；
 - [[Papers/2601-SpatialNav|SpatialNav]] 通过允许 pre-exploration（SLAM 先扫场景）把 zero-shot 拉到 64%，但 "zero-shot" 的定义因此被 relax。
 
@@ -94,7 +94,7 @@ VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表
 
 **思路**：把 DeepSeek-R1 的 RLVR / GRPO 范式搬到 VLN——通过 verifiable reward（action correctness + path fidelity + 时间衰减）对 LVLM-based VLN agent 做 RL 微调。
 
-**代表工作**：[[Papers/2506-VLNR1|VLN-R1]]（Qwen2-VL + Long-Short Memory + Time-Decayed Reward，R2R val-unseen 从 23.8 → 30.2 SR；2B-RFT 追上 7B-SFT；10K 样本跨域迁移超过 1.2M 完整数据）、[[Papers/2512-ETPR1|ETP-R1]]（graph-based VLN-CE 上首次 closed-loop GRPO，R2R-CE test-unseen 64 SR）。
+**代表工作**：[[Papers/2506-VLNR1|VLN-R1]]（Qwen2-VL + Long-Short Memory + Time-Decayed Reward，R2R val-unseen 从 23.8 → 30.2 SR；2B-RFT 追上 7B-SFT；10K 样本跨域迁移超过 1.2M 完整数据）、[[Papers/2512-ETPR1|ETP-R1]]（graph-based VLN-CE 上首次 closed-loop GRPO，VLN-CE test-unseen 64 SR）。
 
 **核心发现**：
 - **Small-model lift**：RFT 让小模型追上大模型 SFT，复刻 DeepSeek-R1 现象；
@@ -108,7 +108,7 @@ VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表
 
 ### 路线综合对比
 
-| 路线 | 代表方法 | R2R-CE SR | Obs | 训练成本 | Sim-to-real | 核心权衡 |
+| 路线 | 代表方法 | VLN-CE SR | Obs | 训练成本 | Sim-to-real | 核心权衡 |
 |---|---|---|---|---|---|---|
 | Graph-based | [[Papers/2512-EfficientVLN\|Efficient-VLN]] | **64.2%** | Pano+Depth | 282 H800·h | 需 waypoint predictor + GT pose | SOTA 上限高但依赖预训练组件 |
 | Graph + GRPO | [[Papers/2512-ETPR1\|ETP-R1]] | 64.0% (test) | Pano+Depth | 较高 | 同上 | closed-loop RFT，需要三阶段训练 |
@@ -135,24 +135,24 @@ VLN 当前四条主流路线在 R2R-CE val-unseen 上的代表性数字见下表
 
 VLN 主流训练资源（按规模）：
 
-| Dataset | 场景 | 规模 | 用途 | 备注 |
-|---|---|---|---|---|
-| **R2R** (Anderson 2018) | MP3D 90 scenes | 7,189 trajectories × 3 instr | fine-grained 指令 | VLN 的 de facto 起点 |
-| **R4R** (Jain 2019) | MP3D | ~30K | R2R 拼接 | 长路径 variants |
-| **RxR** (Ku 2020) | MP3D | 126K instr (en/hi/te) | 多语言、长指令 (~120 词) | 平均 15 m |
-| **R2R-CE** (Krantz 2020) | MP3D + Habitat | R2R 迁移 | continuous action space | 当前主 benchmark |
-| **RxR-CE** | MP3D + Habitat | RxR 迁移 | 长程 continuous + sliding-forbidden | 大底盘（0.18m） |
-| **REVERIE** (Qi 2020) | MP3D | 10K | goal-oriented，含 object grounding | 高层指令 |
-| **SOON** (Zhu 2021) | MP3D | 4K | 目标导航 | object-oriented |
-| **R2R-EnvDrop** (Tan 2019) | MP3D augmented | 大规模 | environment augmentation | NaVILA / StreamVLN 均用 |
-| **ScaleVLN** | HM3D 700 scenes | 3M | 大规模 augmentation | StreamVLN 仅用 150K 子集即 SOTA |
-| **YouTube touring**（NaVILA） | real urban + indoor | 2K 原 video → 20K trajectory | real-world navigation | MASt3R metric pose 关键 |
-| **DyHM3D**（DyGeoVLN） | HM3D + skeletal human | ~50K | 动态障碍训练 | 人形运动数据增强 |
-| **Sekai + SLAM**（NavFoM） | web video | 2.03M | navigation foundation model | VLM 标指令 + SLAM 标 trajectory |
+| Dataset                     | 场景                    | 规模                           | 用途                                | 备注                          |
+| --------------------------- | --------------------- | ---------------------------- | --------------------------------- | --------------------------- |
+| **R2R** (Anderson 2018)     | MP3D 90 scenes        | 7,189 trajectories × 3 instr | fine-grained 指令                   | VLN 的 de facto 起点           |
+| **R4R** (Jain 2019)         | MP3D                  | ~30K                         | R2R 拼接                            | 长路径 variants                |
+| **RxR** (Ku 2020)           | MP3D                  | 126K instr (en/hi/te)        | 多语言、长指令 (~120 词)                  | 平均 15 m                     |
+| **VLN-CE** (Krantz 2020)    | MP3D + Habitat        | R2R 迁移                       | continuous action space           | 当前主 benchmark               |
+| **RxR-CE**                  | MP3D + Habitat        | RxR 迁移                       | 长程 continuous + sliding-forbidden | 大底盘（0.18m）                  |
+| **REVERIE** (Qi 2020)       | MP3D                  | 10K                          | goal-oriented，含 object grounding  | 高层指令                        |
+| **SOON** (Zhu 2021)         | MP3D                  | 4K                           | 目标导航                              | object-oriented             |
+| **R2R-EnvDrop** (Tan 2019)  | MP3D augmented        | 大规模                          | environment augmentation          | NaVILA / StreamVLN 均用       |
+| **ScaleVLN**                | HM3D 700 scenes       | 3M                           | 大规模 augmentation                  | StreamVLN 仅用 150K 子集即 SOTA  |
+| **YouTube touring**（NaVILA） | real urban + indoor   | 2K 原 video → 20K trajectory  | real-world navigation             | MASt3R metric pose 关键       |
+| **DyHM3D**（DyGeoVLN）        | HM3D + skeletal human | ~50K                         | 动态障碍训练                            | 人形运动数据增强                    |
+| **Sekai + SLAM**（NavFoM）    | web video             | 2.03M                        | navigation foundation model       | VLM 标指令 + SLAM 标 trajectory |
 
 ### Benchmarks & SOTA
 
-**R2R-CE Val-Unseen leaderboard**（2026-04 精选，含单位统一）：
+**VLN-CE Val-Unseen leaderboard**（2026-04 精选，含单位统一）：
 
 | Method | Date | Obs | SR↑ | SPL↑ |
 |---|---|---|---|---|
