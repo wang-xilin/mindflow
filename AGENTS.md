@@ -78,4 +78,6 @@ Embodied AI: VLA, World Model, Spatial Intelligence, Robot Manipulation & Naviga
 
 **语言**：中英文，技术术语（模型名、方法名、数据集名等）保持英文不翻译
 
+**Markdown 语法**：写笔记前先参考 [[references/obsidian-syntax|references/obsidian-syntax.md]]——公式 / 表格 / 图片 / 视频 / wikilink alias / 表格内 pipe 转义 / `*` 字面字符等坑都在那里。
+
 认真维护和使用你的notebook!
