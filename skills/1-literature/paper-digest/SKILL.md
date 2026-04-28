@@ -48,10 +48,11 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
 
 读取生成的源文件，检查是否出现以下问题：
 
-| 问题                           | 应用源     | 失败处理                                  |
-| ---------------------------- | ------- | ------------------------------------- |
-| 文件不完整                        | 全部      | 返回上一步，重新抓取                            |
-| video 和 figure 的 URL 丢失或者不完整 | website | 用 `curl` 抓取 raw HTML，找到完整 URL 后补充到源文件 |
+| 问题                                                                                                                                                                                                                                            | 应用源                | 失败处理                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| 文件不完整                                                                                                                                                                                                                                         | 全部                 | 返回上一步，重新抓取                                                                                                                      |
+| video 和 figure 的 URL 丢失或者不完整                                                                                                                                                                                                                  | website            | 用 `curl` 抓取 raw HTML，找到完整 URL 后补充到源文件                                                                                           |
+| **多 panel figure 只抓到第一张**：arxiv HTML 把 multi-panel 图包成 `<figure class="ltx_figure"><div class="ltx_flex_figure"><div class="ltx_flex_cell"><img></div>×N</div></figure>`，defuddle 默认只取第一张。逐 figure 检查源里 `ltx_flex_figure` 块的 sub-image 数量是否齐全 | paper (arxiv html) | 用 `curl` 抓 raw HTML 把同 figure 所有 `<img src=...>` URL 补全；嵌入时按 [[references/obsidian-syntax \| obsidian-syntax]] §2.3 的 flex 写法并排 |
 
 #### Step 2.4：影响力指标
 
